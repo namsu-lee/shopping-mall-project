@@ -25,7 +25,8 @@
     padding: 14px 16px;
     width: 16.6%;
 	}
-	.tablink:hover {
+	.tablink:hover,:active{
+	background-color: gray;
 	}
 	
 	.FAQcategory{

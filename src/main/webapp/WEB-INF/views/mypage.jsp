@@ -99,8 +99,9 @@ div.content {
 </style>
 </head>
 <body>
+<%@include file="/exclude/topnav.jsp" %>
 <h2>Tabs</h2>
-<p>Click on the buttons inside the tabbed menu:</p>
+<p>Click on the buttons inside the tabed menu:</p>
 
 <div class="tab">
   <button class="tablinks" onclick="#">º£½ºÆ®</button>

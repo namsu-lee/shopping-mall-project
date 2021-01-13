@@ -5,23 +5,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 네비바 css -->
-  <link rel="stylesheet" type="text/css" href="./css/nav.css" />
-  <!-- 채팅방 리스트 css -->
-  <link rel="stylesheet" type="text/css" href="./css/chatlist.css" />
+  
   <!-- 회원가입 css -->
-  <link rel="stylesheet" type="text/css" href="./css/register.css" />
+  <link href="/resources/css/register1.css" rel="stylesheet">
+  <link href="/resources/css/register2.css" rel="stylesheet">
+  <link href="/resources/css/register3.css" rel="stylesheet">
   
   <!-- 우편번호 js -->
   <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js?autoload=false"></script>
-  <script src="./js/jquery-3.5.1.min.js"></script>
+  
+  <script src="/resources/js/jquery-3.5.1.min.js"></script>
+  
   <!-- 회원가입페이지 js -->
-  <script src="./js/register.js"></script>
+  <script src="/resources/js/register.js"></script>
   <title>회원가입</title>
 
 </head>
 <body>    
+
   <div class="container">
   <!-- 왼쪽 공백 -->
   <div class="leftem" style="width:25%; height: 94%; float: left; background-color: white;">

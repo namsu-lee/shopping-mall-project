@@ -44,6 +44,6 @@
 	
 	<task:annotation-driven/>
 	
-	<context:component-scan base-package="edu.study.dao"/>
-	<context:component-scan base-package="edu.study.service"/>
+	<context:component-scan base-package="com.shoppingmall.dao"/>
+	<context:component-scan base-package="com.shoppingmall.service"/>
 </beans>

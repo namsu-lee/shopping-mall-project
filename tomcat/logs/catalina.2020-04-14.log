@@ -1,0 +1,202 @@
+14-Apr-2020 08:47:03.577 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/8.5.51
+14-Apr-2020 08:47:03.593 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Feb 5 2020 22:26:25 UTC
+14-Apr-2020 08:47:03.593 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         8.5.51.0
+14-Apr-2020 08:47:03.593 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 7
+14-Apr-2020 08:47:03.593 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            6.1
+14-Apr-2020 08:47:03.593 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+14-Apr-2020 08:47:03.609 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jre1.8.0_212
+14-Apr-2020 08:47:03.609 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           1.8.0_212-b10
+14-Apr-2020 08:47:03.609 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+14-Apr-2020 08:47:03.609 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\tomcat
+14-Apr-2020 08:47:03.609 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\tomcat
+14-Apr-2020 08:47:03.609 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=D:\tomcat\conf\logging.properties
+14-Apr-2020 08:47:03.609 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Apr-2020 08:47:03.609 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+14-Apr-2020 08:47:03.609 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Apr-2020 08:47:03.609 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+14-Apr-2020 08:47:03.609 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=D:\tomcat
+14-Apr-2020 08:47:03.624 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=D:\tomcat
+14-Apr-2020 08:47:03.624 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=D:\tomcat\temp
+14-Apr-2020 08:47:03.624 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.23]을(를) 로드했습니다.
+14-Apr-2020 08:47:03.624 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+14-Apr-2020 08:47:03.624 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+14-Apr-2020 08:47:03.671 정보 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1c  28 May 2019]
+14-Apr-2020 08:47:04.045 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+14-Apr-2020 08:47:04.123 정보 [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+14-Apr-2020 08:47:04.123 정보 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 2028 ms
+14-Apr-2020 08:47:04.155 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+14-Apr-2020 08:47:04.155 정보 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.51
+14-Apr-2020 08:47:04.170 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\board]을(를) 배치합니다.
+14-Apr-2020 08:47:04.810 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 08:47:04.841 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\board]에 대한 배치가 [671] 밀리초에 완료되었습니다.
+14-Apr-2020 08:47:04.841 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\board_]을(를) 배치합니다.
+14-Apr-2020 08:47:05.059 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 08:47:05.059 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\board_]에 대한 배치가 [218] 밀리초에 완료되었습니다.
+14-Apr-2020 08:47:05.059 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\docs]을(를) 배치합니다.
+14-Apr-2020 08:47:05.200 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 08:47:05.200 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\docs]에 대한 배치가 [141] 밀리초에 완료되었습니다.
+14-Apr-2020 08:47:05.200 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\examples]을(를) 배치합니다.
+14-Apr-2020 08:47:05.543 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 08:47:05.590 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\examples]에 대한 배치가 [374] 밀리초에 완료되었습니다.
+14-Apr-2020 08:47:05.590 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\host-manager]을(를) 배치합니다.
+14-Apr-2020 08:47:05.777 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 08:47:05.793 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\host-manager]에 대한 배치가 [203] 밀리초에 완료되었습니다.
+14-Apr-2020 08:47:05.793 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\manager]을(를) 배치합니다.
+14-Apr-2020 08:47:05.933 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 08:47:05.933 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\manager]에 대한 배치가 [140] 밀리초에 완료되었습니다.
+14-Apr-2020 08:47:05.933 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\ROOT]을(를) 배치합니다.
+14-Apr-2020 08:47:06.073 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 08:47:06.089 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\ROOT]에 대한 배치가 [156] 밀리초에 완료되었습니다.
+14-Apr-2020 08:47:06.089 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+14-Apr-2020 08:47:06.120 정보 [main] org.apache.catalina.startup.Catalina.start Server startup in 1987 ms
+14-Apr-2020 09:03:44.051 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/8.5.51
+14-Apr-2020 09:03:44.051 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Feb 5 2020 22:26:25 UTC
+14-Apr-2020 09:03:44.066 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         8.5.51.0
+14-Apr-2020 09:03:44.066 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 7
+14-Apr-2020 09:03:44.066 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            6.1
+14-Apr-2020 09:03:44.066 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+14-Apr-2020 09:03:44.066 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jre1.8.0_212
+14-Apr-2020 09:03:44.066 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           1.8.0_212-b10
+14-Apr-2020 09:03:44.066 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+14-Apr-2020 09:03:44.066 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\tomcat
+14-Apr-2020 09:03:44.066 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\tomcat
+14-Apr-2020 09:03:44.066 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=D:\tomcat\conf\logging.properties
+14-Apr-2020 09:03:44.082 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Apr-2020 09:03:44.082 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+14-Apr-2020 09:03:44.082 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Apr-2020 09:03:44.082 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+14-Apr-2020 09:03:44.082 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=D:\tomcat
+14-Apr-2020 09:03:44.082 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=D:\tomcat
+14-Apr-2020 09:03:44.082 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=D:\tomcat\temp
+14-Apr-2020 09:03:44.082 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.23]을(를) 로드했습니다.
+14-Apr-2020 09:03:44.082 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+14-Apr-2020 09:03:44.082 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+14-Apr-2020 09:03:44.097 정보 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1c  28 May 2019]
+14-Apr-2020 09:03:44.207 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+14-Apr-2020 09:03:44.207 심각 [main] org.apache.catalina.core.StandardService.initInternal Failed to initialize connector [Connector[HTTP/1.1-8090]]
+	org.apache.catalina.LifecycleException: 프로토콜 핸들러 초기화가 실패했습니다.
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1032)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:552)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:848)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:639)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:662)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+		at java.lang.reflect.Method.invoke(Unknown Source)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:303)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:473)
+	Caused by: java.net.BindException: Address already in use: bind
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Unknown Source)
+		at sun.nio.ch.Net.bind(Unknown Source)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+		at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:221)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1118)
+		at org.apache.tomcat.util.net.AbstractJsseEndpoint.init(AbstractJsseEndpoint.java:223)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:587)
+		at org.apache.coyote.http11.AbstractHttp11Protocol.init(AbstractHttp11Protocol.java:74)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:1030)
+		... 13 more
+14-Apr-2020 09:03:44.222 정보 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 411 ms
+14-Apr-2020 09:03:44.238 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+14-Apr-2020 09:03:44.238 정보 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.51
+14-Apr-2020 09:03:44.238 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\board]을(를) 배치합니다.
+14-Apr-2020 09:03:44.628 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 09:03:44.690 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\board]에 대한 배치가 [452] 밀리초에 완료되었습니다.
+14-Apr-2020 09:03:44.690 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\board_]을(를) 배치합니다.
+14-Apr-2020 09:03:44.877 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 09:03:44.877 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\board_]에 대한 배치가 [187] 밀리초에 완료되었습니다.
+14-Apr-2020 09:03:44.877 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\docs]을(를) 배치합니다.
+14-Apr-2020 09:03:45.018 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 09:03:45.018 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\docs]에 대한 배치가 [141] 밀리초에 완료되었습니다.
+14-Apr-2020 09:03:45.033 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\examples]을(를) 배치합니다.
+14-Apr-2020 09:03:45.267 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 09:03:45.299 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\examples]에 대한 배치가 [266] 밀리초에 완료되었습니다.
+14-Apr-2020 09:03:45.299 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\host-manager]을(를) 배치합니다.
+14-Apr-2020 09:03:45.501 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 09:03:45.501 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\host-manager]에 대한 배치가 [202] 밀리초에 완료되었습니다.
+14-Apr-2020 09:03:45.501 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\manager]을(를) 배치합니다.
+14-Apr-2020 09:03:45.689 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 09:03:45.704 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\manager]에 대한 배치가 [203] 밀리초에 완료되었습니다.
+14-Apr-2020 09:03:45.704 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\ROOT]을(를) 배치합니다.
+14-Apr-2020 09:03:45.876 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 09:03:45.876 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\ROOT]에 대한 배치가 [172] 밀리초에 완료되었습니다.
+14-Apr-2020 09:03:45.891 정보 [main] org.apache.catalina.startup.Catalina.start Server startup in 1668 ms
+14-Apr-2020 09:03:45.891 심각 [main] org.apache.catalina.core.StandardServer.await StandardServer.await: create[localhost:8005]: 
+	java.net.BindException: Address already in use: JVM_Bind
+		at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+		at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+		at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+		at java.net.PlainSocketImpl.bind(Unknown Source)
+		at java.net.ServerSocket.bind(Unknown Source)
+		at java.net.ServerSocket.<init>(Unknown Source)
+		at org.apache.catalina.core.StandardServer.await(StandardServer.java:421)
+		at org.apache.catalina.startup.Catalina.await(Catalina.java:776)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:722)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+		at java.lang.reflect.Method.invoke(Unknown Source)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:343)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:474)
+14-Apr-2020 09:03:45.891 정보 [main] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+14-Apr-2020 09:03:45.891 정보 [main] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+14-Apr-2020 09:03:45.923 정보 [main] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+14-Apr-2020 09:03:45.923 정보 [main] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+14-Apr-2020 16:07:45.887 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/8.5.51
+14-Apr-2020 16:07:45.887 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Feb 5 2020 22:26:25 UTC
+14-Apr-2020 16:07:45.887 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         8.5.51.0
+14-Apr-2020 16:07:45.887 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 7
+14-Apr-2020 16:07:45.887 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            6.1
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jre1.8.0_212
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           1.8.0_212-b10
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\tomcat
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\tomcat
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=D:\tomcat\conf\logging.properties
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=D:\tomcat
+14-Apr-2020 16:07:45.902 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=D:\tomcat
+14-Apr-2020 16:07:45.918 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=D:\tomcat\temp
+14-Apr-2020 16:07:45.918 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.23]을(를) 로드했습니다.
+14-Apr-2020 16:07:45.918 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+14-Apr-2020 16:07:45.918 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+14-Apr-2020 16:07:45.918 정보 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1c  28 May 2019]
+14-Apr-2020 16:07:46.043 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+14-Apr-2020 16:07:46.090 정보 [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+14-Apr-2020 16:07:46.105 정보 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 459 ms
+14-Apr-2020 16:07:46.121 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+14-Apr-2020 16:07:46.121 정보 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.51
+14-Apr-2020 16:07:46.136 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\board]을(를) 배치합니다.
+14-Apr-2020 16:07:46.495 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 16:07:46.526 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\board]에 대한 배치가 [390] 밀리초에 완료되었습니다.
+14-Apr-2020 16:07:46.526 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\board_]을(를) 배치합니다.
+14-Apr-2020 16:07:46.698 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 16:07:46.714 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\board_]에 대한 배치가 [188] 밀리초에 완료되었습니다.
+14-Apr-2020 16:07:46.714 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\docs]을(를) 배치합니다.
+14-Apr-2020 16:07:46.854 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 16:07:46.854 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\docs]에 대한 배치가 [140] 밀리초에 완료되었습니다.
+14-Apr-2020 16:07:46.854 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\examples]을(를) 배치합니다.
+14-Apr-2020 16:07:47.104 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 16:07:47.150 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\examples]에 대한 배치가 [296] 밀리초에 완료되었습니다.
+14-Apr-2020 16:07:47.150 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\host-manager]을(를) 배치합니다.
+14-Apr-2020 16:07:47.322 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 16:07:47.338 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\host-manager]에 대한 배치가 [188] 밀리초에 완료되었습니다.
+14-Apr-2020 16:07:47.338 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\manager]을(를) 배치합니다.
+14-Apr-2020 16:07:47.494 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 16:07:47.494 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\manager]에 대한 배치가 [156] 밀리초에 완료되었습니다.
+14-Apr-2020 16:07:47.494 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\ROOT]을(를) 배치합니다.
+14-Apr-2020 16:07:47.681 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+14-Apr-2020 16:07:47.681 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\tomcat\webapps\ROOT]에 대한 배치가 [187] 밀리초에 완료되었습니다.
+14-Apr-2020 16:07:47.696 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+14-Apr-2020 16:07:47.696 정보 [main] org.apache.catalina.startup.Catalina.start Server startup in 1594 ms
+14-Apr-2020 16:21:59.335 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.undeploy 컨텍스트 [/board_]의 배치를 제거합니다.

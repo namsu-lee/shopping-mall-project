@@ -1,0 +1,603 @@
+16-Mar-2020 13:59:56.577 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+16-Mar-2020 13:59:56.577 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+16-Mar-2020 13:59:56.577 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5e7facf4')
+16-Mar-2020 14:37:43.701 심각 [http-nio-8080-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/cal.jsp]의 [2] 행에서 오류가 발생했습니다.
+Syntax error, insert "AssignmentOperator Expression" to complete Assignment
+1: <%@ page pageEncoding="UTF-8"%>
+2: <% "Hello" %>
+3: <meta charset="UTF-8">
+4: <form id="calculater" name="calculater" action="cal.html">
+5: <table width="400px" border="1">
+
+
+JSP 파일 [/cal.jsp]의 [2] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete Statement
+1: <%@ page pageEncoding="UTF-8"%>
+2: <% "Hello" %>
+3: <meta charset="UTF-8">
+4: <form id="calculater" name="calculater" action="cal.html">
+5: <table width="400px" border="1">
+
+
+JSP 파일 [/cal.jsp]의 [2] 행에서 오류가 발생했습니다.
+The left-hand side of an assignment must be a variable
+1: <%@ page pageEncoding="UTF-8"%>
+2: <% "Hello" %>
+3: <meta charset="UTF-8">
+4: <form id="calculater" name="calculater" action="cal.html">
+5: <table width="400px" border="1">
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/cal.jsp]의 [2] 행에서 오류가 발생했습니다.
+Syntax error, insert "AssignmentOperator Expression" to complete Assignment
+1: <%@ page pageEncoding="UTF-8"%>
+2: <% "Hello" %>
+3: <meta charset="UTF-8">
+4: <form id="calculater" name="calculater" action="cal.html">
+5: <table width="400px" border="1">
+
+
+JSP 파일 [/cal.jsp]의 [2] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete Statement
+1: <%@ page pageEncoding="UTF-8"%>
+2: <% "Hello" %>
+3: <meta charset="UTF-8">
+4: <form id="calculater" name="calculater" action="cal.html">
+5: <table width="400px" border="1">
+
+
+JSP 파일 [/cal.jsp]의 [2] 행에서 오류가 발생했습니다.
+The left-hand side of an assignment must be a variable
+1: <%@ page pageEncoding="UTF-8"%>
+2: <% "Hello" %>
+3: <meta charset="UTF-8">
+4: <form id="calculater" name="calculater" action="cal.html">
+5: <table width="400px" border="1">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+16-Mar-2020 14:37:48.350 심각 [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/cal.jsp]의 [2] 행에서 오류가 발생했습니다.
+Syntax error, insert "AssignmentOperator Expression" to complete Assignment
+1: <%@ page pageEncoding="UTF-8"%>
+2: <% "Hello" %>
+3: <meta charset="UTF-8">
+4: <form id="calculater" name="calculater" action="cal.html">
+5: <table width="400px" border="1">
+
+
+JSP 파일 [/cal.jsp]의 [2] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete Statement
+1: <%@ page pageEncoding="UTF-8"%>
+2: <% "Hello" %>
+3: <meta charset="UTF-8">
+4: <form id="calculater" name="calculater" action="cal.html">
+5: <table width="400px" border="1">
+
+
+JSP 파일 [/cal.jsp]의 [2] 행에서 오류가 발생했습니다.
+The left-hand side of an assignment must be a variable
+1: <%@ page pageEncoding="UTF-8"%>
+2: <% "Hello" %>
+3: <meta charset="UTF-8">
+4: <form id="calculater" name="calculater" action="cal.html">
+5: <table width="400px" border="1">
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/cal.jsp]의 [2] 행에서 오류가 발생했습니다.
+Syntax error, insert "AssignmentOperator Expression" to complete Assignment
+1: <%@ page pageEncoding="UTF-8"%>
+2: <% "Hello" %>
+3: <meta charset="UTF-8">
+4: <form id="calculater" name="calculater" action="cal.html">
+5: <table width="400px" border="1">
+
+
+JSP 파일 [/cal.jsp]의 [2] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete Statement
+1: <%@ page pageEncoding="UTF-8"%>
+2: <% "Hello" %>
+3: <meta charset="UTF-8">
+4: <form id="calculater" name="calculater" action="cal.html">
+5: <table width="400px" border="1">
+
+
+JSP 파일 [/cal.jsp]의 [2] 행에서 오류가 발생했습니다.
+The left-hand side of an assignment must be a variable
+1: <%@ page pageEncoding="UTF-8"%>
+2: <% "Hello" %>
+3: <meta charset="UTF-8">
+4: <form id="calculater" name="calculater" action="cal.html">
+5: <table width="400px" border="1">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+16-Mar-2020 14:43:01.273 심각 [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/cal.jsp]의 [3] 행에서 오류가 발생했습니다.
+string cannot be resolved to a type
+1: <%@ page pageEncoding="UTF-8"%>
+2: <%
+3: string mValueA = request.getParameter("x");
+4: %>
+5: <meta charset="UTF-8">
+6: <form id="calculater" name="calculater" action="cal.jsp">
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/cal.jsp]의 [3] 행에서 오류가 발생했습니다.
+string cannot be resolved to a type
+1: <%@ page pageEncoding="UTF-8"%>
+2: <%
+3: string mValueA = request.getParameter("x");
+4: %>
+5: <meta charset="UTF-8">
+6: <form id="calculater" name="calculater" action="cal.jsp">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+16-Mar-2020 14:43:05.812 심각 [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/cal.jsp]의 [3] 행에서 오류가 발생했습니다.
+string cannot be resolved to a type
+1: <%@ page pageEncoding="UTF-8"%>
+2: <%
+3: string mValueA = request.getParameter("x");
+4: %>
+5: <meta charset="UTF-8">
+6: <form id="calculater" name="calculater" action="cal.jsp">
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/cal.jsp]의 [3] 행에서 오류가 발생했습니다.
+string cannot be resolved to a type
+1: <%@ page pageEncoding="UTF-8"%>
+2: <%
+3: string mValueA = request.getParameter("x");
+4: %>
+5: <meta charset="UTF-8">
+6: <form id="calculater" name="calculater" action="cal.jsp">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+16-Mar-2020 15:43:50.703 심각 [http-nio-8080-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [37]에서 [/cal.jsp]을(를) 처리하는 중 예외 발생
+
+34: 		<td align="left" width="50">
+35: 			<select id="op" name="op">
+36: 			<%
+37: 			if(mValueC.equals("+"))
+38: 			{
+39: 				%>
+40: 				<option value="+" selected>+</option>
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.lang.NullPointerException
+		at org.apache.jsp.cal_jsp._jspService(cal_jsp.java:152)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+16-Mar-2020 17:10:51.886 심각 [http-nio-8080-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/cal.jsp]의 [24] 행에서 오류가 발생했습니다.
+Cannot invoke toString() on the primitive type int
+21: int mInputA = Integer.parseInt(mValueA);
+22: int mInputB = Integer.parseInt(mValueB);
+23: int mSum    = mInputA + mInputB;
+24: mValueD     = mSum.toString();
+25: %>
+26: 怨꾩궛媛� : <%= mSum %>
+27: <meta charset="UTF-8">
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/cal.jsp]의 [24] 행에서 오류가 발생했습니다.
+Cannot invoke toString() on the primitive type int
+21: int mInputA = Integer.parseInt(mValueA);
+22: int mInputB = Integer.parseInt(mValueB);
+23: int mSum    = mInputA + mInputB;
+24: mValueD     = mSum.toString();
+25: %>
+26: 怨꾩궛媛� : <%= mSum %>
+27: <meta charset="UTF-8">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+16-Mar-2020 17:31:51.723 심각 [http-nio-8080-exec-10] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [39]에서 [/cal.jsp]을(를) 처리하는 중 예외 발생
+
+36: }
+37: if(mValueC.equals("/"))
+38: {
+39: 	mSum = mInputA / mInputB;
+40: }
+41: 
+42: mValueD     = Integer.toString(mSum);
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.lang.ArithmeticException: / by zero
+		at org.apache.jsp.cal_jsp._jspService(cal_jsp.java:148)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+16-Mar-2020 17:39:18.864 심각 [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [21]에서 [/cal.jsp]을(를) 처리하는 중 예외 발생
+
+18: 	mValueC = "+";
+19: }
+20: 
+21: int mInputA = Integer.parseInt(mValueA);
+22: int mInputB = Integer.parseInt(mValueB);
+23: int mSum    = 0;
+24: 
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.lang.NumberFormatException: For input string: "abc"
+		at java.lang.NumberFormatException.forInputString(Unknown Source)
+		at java.lang.Integer.parseInt(Unknown Source)
+		at java.lang.Integer.parseInt(Unknown Source)
+		at org.apache.jsp.cal_jsp._jspService(cal_jsp.java:130)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+16-Mar-2020 17:39:26.284 심각 [http-nio-8080-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [21]에서 [/cal.jsp]을(를) 처리하는 중 예외 발생
+
+18: 	mValueC = "+";
+19: }
+20: 
+21: int mInputA = Integer.parseInt(mValueA);
+22: int mInputB = Integer.parseInt(mValueB);
+23: int mSum    = 0;
+24: 
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.lang.NumberFormatException: For input string: "abc"
+		at java.lang.NumberFormatException.forInputString(Unknown Source)
+		at java.lang.Integer.parseInt(Unknown Source)
+		at java.lang.Integer.parseInt(Unknown Source)
+		at org.apache.jsp.cal_jsp._jspService(cal_jsp.java:130)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+16-Mar-2020 17:44:24.224 심각 [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke 경로 []의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/cal.jsp]의 [65] 행에서 오류가 발생했습니다.
+The method toString(int) in the type Integer is not applicable for the arguments (double)
+62: 	}
+63: }
+64: 
+65: mValueD     = Integer.toString(mSum);
+66: %>
+67: 怨꾩궛媛� : <%= mSum %>
+68: <meta charset="UTF-8">
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/cal.jsp]의 [65] 행에서 오류가 발생했습니다.
+The method toString(int) in the type Integer is not applicable for the arguments (double)
+62: 	}
+63: }
+64: 
+65: mValueD     = Integer.toString(mSum);
+66: %>
+67: 怨꾩궛媛� : <%= mSum %>
+68: <meta charset="UTF-8">
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)

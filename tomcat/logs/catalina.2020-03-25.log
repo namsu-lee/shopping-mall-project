@@ -1,0 +1,352 @@
+25-Mar-2020 13:40:19.158 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/8.5.51
+25-Mar-2020 13:40:19.158 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Feb 5 2020 22:26:25 UTC
+25-Mar-2020 13:40:19.158 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         8.5.51.0
+25-Mar-2020 13:40:19.158 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 7
+25-Mar-2020 13:40:19.174 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            6.1
+25-Mar-2020 13:40:19.174 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+25-Mar-2020 13:40:19.174 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jre1.8.0_212
+25-Mar-2020 13:40:19.174 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           1.8.0_212-b10
+25-Mar-2020 13:40:19.174 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+25-Mar-2020 13:40:19.174 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\htmlstudy\tomcat
+25-Mar-2020 13:40:19.174 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\htmlstudy\tomcat
+25-Mar-2020 13:40:19.174 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=D:\htmlstudy\tomcat\conf\logging.properties
+25-Mar-2020 13:40:19.174 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Mar-2020 13:40:19.174 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+25-Mar-2020 13:40:19.189 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+25-Mar-2020 13:40:19.189 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+25-Mar-2020 13:40:19.189 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=D:\htmlstudy\tomcat
+25-Mar-2020 13:40:19.189 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=D:\htmlstudy\tomcat
+25-Mar-2020 13:40:19.189 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=D:\htmlstudy\tomcat\temp
+25-Mar-2020 13:40:19.189 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.23]을(를) 로드했습니다.
+25-Mar-2020 13:40:19.189 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+25-Mar-2020 13:40:19.189 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+25-Mar-2020 13:40:19.236 정보 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1c  28 May 2019]
+25-Mar-2020 13:40:19.376 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+25-Mar-2020 13:40:19.439 정보 [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+25-Mar-2020 13:40:19.439 정보 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 713 ms
+25-Mar-2020 13:40:19.486 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+25-Mar-2020 13:40:19.486 정보 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.51
+25-Mar-2020 13:40:19.517 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\docs]을(를) 배치합니다.
+25-Mar-2020 13:40:19.987 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+25-Mar-2020 13:40:20.050 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\docs]에 대한 배치가 [533] 밀리초에 완료되었습니다.
+25-Mar-2020 13:40:20.050 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\examples]을(를) 배치합니다.
+25-Mar-2020 13:40:20.424 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+25-Mar-2020 13:40:20.455 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\examples]에 대한 배치가 [405] 밀리초에 완료되었습니다.
+25-Mar-2020 13:40:20.455 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\host-manager]을(를) 배치합니다.
+25-Mar-2020 13:40:20.614 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+25-Mar-2020 13:40:20.614 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\host-manager]에 대한 배치가 [159] 밀리초에 완료되었습니다.
+25-Mar-2020 13:40:20.614 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\manager]을(를) 배치합니다.
+25-Mar-2020 13:40:20.770 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+25-Mar-2020 13:40:20.770 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\manager]에 대한 배치가 [156] 밀리초에 완료되었습니다.
+25-Mar-2020 13:40:20.770 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\ROOT]을(를) 배치합니다.
+25-Mar-2020 13:40:20.941 정보 [localhost-startStop-1] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+25-Mar-2020 13:40:20.941 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\ROOT]에 대한 배치가 [171] 밀리초에 완료되었습니다.
+25-Mar-2020 13:40:20.941 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+25-Mar-2020 13:40:20.957 정보 [main] org.apache.catalina.startup.Catalina.start Server startup in 1511 ms
+25-Mar-2020 16:22:23.982 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/8.5.51
+25-Mar-2020 16:22:23.986 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Feb 5 2020 22:26:25 UTC
+25-Mar-2020 16:22:23.988 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         8.5.51.0
+25-Mar-2020 16:22:23.989 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 7
+25-Mar-2020 16:22:23.990 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            6.1
+25-Mar-2020 16:22:23.991 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+25-Mar-2020 16:22:23.992 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jre1.8.0_212
+25-Mar-2020 16:22:23.993 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           1.8.0_212-b10
+25-Mar-2020 16:22:23.994 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+25-Mar-2020 16:22:23.995 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\htmlstudy\tomcat
+25-Mar-2020 16:22:23.996 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\htmlstudy\tomcat
+25-Mar-2020 16:22:23.997 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=D:\htmlstudy\tomcat\conf\logging.properties
+25-Mar-2020 16:22:23.998 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Mar-2020 16:22:23.999 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+25-Mar-2020 16:22:24.001 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+25-Mar-2020 16:22:24.002 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+25-Mar-2020 16:22:24.003 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=D:\htmlstudy\tomcat
+25-Mar-2020 16:22:24.004 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=D:\htmlstudy\tomcat
+25-Mar-2020 16:22:24.006 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=D:\htmlstudy\tomcat\temp
+25-Mar-2020 16:22:24.007 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.23]을(를) 로드했습니다.
+25-Mar-2020 16:22:24.009 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+25-Mar-2020 16:22:24.010 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+25-Mar-2020 16:22:24.016 정보 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1c  28 May 2019]
+25-Mar-2020 16:22:24.094 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+25-Mar-2020 16:22:24.171 정보 [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+25-Mar-2020 16:22:24.181 정보 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 437 ms
+25-Mar-2020 16:22:24.199 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+25-Mar-2020 16:22:24.201 정보 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.51
+25-Mar-2020 16:22:24.207 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\docs]을(를) 배치합니다.
+25-Mar-2020 16:22:24.372 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\docs]에 대한 배치가 [164] 밀리초에 완료되었습니다.
+25-Mar-2020 16:22:24.374 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\examples]을(를) 배치합니다.
+25-Mar-2020 16:22:24.553 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\examples]에 대한 배치가 [179] 밀리초에 완료되었습니다.
+25-Mar-2020 16:22:24.555 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\host-manager]을(를) 배치합니다.
+25-Mar-2020 16:22:24.575 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\host-manager]에 대한 배치가 [19] 밀리초에 완료되었습니다.
+25-Mar-2020 16:22:24.582 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\manager]을(를) 배치합니다.
+25-Mar-2020 16:22:24.596 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\manager]에 대한 배치가 [20] 밀리초에 완료되었습니다.
+25-Mar-2020 16:22:24.600 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\ROOT]을(를) 배치합니다.
+25-Mar-2020 16:22:24.611 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\ROOT]에 대한 배치가 [11] 밀리초에 완료되었습니다.
+25-Mar-2020 16:22:24.614 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+25-Mar-2020 16:22:24.622 정보 [main] org.apache.catalina.startup.Catalina.start Server startup in 440 ms
+25-Mar-2020 16:23:09.311 정보 [http-nio-8080-exec-10] org.apache.coyote.http11.Http11Processor.service HTTP 요청 헤더를 파싱하는 중 오류 발생
+비고: HTTP 요청 파싱 오류들이 더 발생하는 경우 DEBUG 레벨 로그로 기록될 것입니다.
+	java.lang.IllegalArgumentException: 메소드 이름에 유효하지 않은 문자가 발견되었습니다. HTTP 메소드 이름은 유효한 토큰이어야 합니다.
+		at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:430)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:502)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+25-Mar-2020 16:23:48.699 정보 [http-nio-8080-exec-9] org.apache.coyote.http11.Http11Processor.service HTTP 요청 헤더를 파싱하는 중 오류 발생
+비고: HTTP 요청 파싱 오류들이 더 발생하는 경우 DEBUG 레벨 로그로 기록될 것입니다.
+	java.lang.IllegalArgumentException: 메소드 이름에 유효하지 않은 문자가 발견되었습니다. HTTP 메소드 이름은 유효한 토큰이어야 합니다.
+		at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:430)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:502)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+25-Mar-2020 16:31:24.834 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 []을(를) 다시 로드합니다.
+25-Mar-2020 16:31:24.836 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:31:24.874 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:31:24.878 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/examples]을(를) 다시 로드합니다.
+25-Mar-2020 16:31:24.893 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/examples]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:31:25.020 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/examples]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:31:25.022 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/host-manager]을(를) 다시 로드합니다.
+25-Mar-2020 16:31:25.024 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/host-manager]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:31:25.037 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/host-manager]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:31:25.040 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/manager]을(를) 다시 로드합니다.
+25-Mar-2020 16:31:25.042 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/manager]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:31:25.058 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/manager]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:31:25.059 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/docs]을(를) 다시 로드합니다.
+25-Mar-2020 16:31:25.062 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/docs]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:31:25.071 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/docs]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:32:18.592 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/8.5.51
+25-Mar-2020 16:32:18.597 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Feb 5 2020 22:26:25 UTC
+25-Mar-2020 16:32:18.598 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         8.5.51.0
+25-Mar-2020 16:32:18.599 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 7
+25-Mar-2020 16:32:18.600 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            6.1
+25-Mar-2020 16:32:18.601 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+25-Mar-2020 16:32:18.602 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jre1.8.0_212
+25-Mar-2020 16:32:18.603 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           1.8.0_212-b10
+25-Mar-2020 16:32:18.604 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+25-Mar-2020 16:32:18.605 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\htmlstudy\tomcat
+25-Mar-2020 16:32:18.606 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\htmlstudy\tomcat
+25-Mar-2020 16:32:18.607 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=D:\htmlstudy\tomcat\conf\logging.properties
+25-Mar-2020 16:32:18.608 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Mar-2020 16:32:18.609 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+25-Mar-2020 16:32:18.611 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+25-Mar-2020 16:32:18.612 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+25-Mar-2020 16:32:18.613 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=D:\htmlstudy\tomcat
+25-Mar-2020 16:32:18.614 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=D:\htmlstudy\tomcat
+25-Mar-2020 16:32:18.615 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=D:\htmlstudy\tomcat\temp
+25-Mar-2020 16:32:18.616 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.23]을(를) 로드했습니다.
+25-Mar-2020 16:32:18.618 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+25-Mar-2020 16:32:18.619 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+25-Mar-2020 16:32:18.626 정보 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1c  28 May 2019]
+25-Mar-2020 16:32:18.712 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+25-Mar-2020 16:32:18.789 정보 [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+25-Mar-2020 16:32:18.797 정보 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 464 ms
+25-Mar-2020 16:32:18.814 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+25-Mar-2020 16:32:18.816 정보 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.51
+25-Mar-2020 16:32:18.822 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\docs]을(를) 배치합니다.
+25-Mar-2020 16:32:19.022 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\docs]에 대한 배치가 [198] 밀리초에 완료되었습니다.
+25-Mar-2020 16:32:19.025 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\examples]을(를) 배치합니다.
+25-Mar-2020 16:32:19.226 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\examples]에 대한 배치가 [202] 밀리초에 완료되었습니다.
+25-Mar-2020 16:32:19.228 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\host-manager]을(를) 배치합니다.
+25-Mar-2020 16:32:19.252 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\host-manager]에 대한 배치가 [24] 밀리초에 완료되었습니다.
+25-Mar-2020 16:32:19.254 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\manager]을(를) 배치합니다.
+25-Mar-2020 16:32:19.269 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\manager]에 대한 배치가 [14] 밀리초에 완료되었습니다.
+25-Mar-2020 16:32:19.270 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\ROOT]을(를) 배치합니다.
+25-Mar-2020 16:32:19.284 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\ROOT]에 대한 배치가 [14] 밀리초에 완료되었습니다.
+25-Mar-2020 16:32:19.289 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+25-Mar-2020 16:32:19.298 정보 [main] org.apache.catalina.startup.Catalina.start Server startup in 499 ms
+25-Mar-2020 16:32:49.293 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 []을(를) 다시 로드합니다.
+25-Mar-2020 16:32:49.295 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:32:49.323 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:32:49.343 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/examples]을(를) 다시 로드합니다.
+25-Mar-2020 16:32:49.345 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/examples]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:32:49.464 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/examples]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:32:49.467 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/host-manager]을(를) 다시 로드합니다.
+25-Mar-2020 16:32:49.470 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/host-manager]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:32:49.485 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/host-manager]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:32:49.488 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/manager]을(를) 다시 로드합니다.
+25-Mar-2020 16:32:49.490 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/manager]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:32:49.508 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/manager]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:32:49.510 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/docs]을(를) 다시 로드합니다.
+25-Mar-2020 16:32:49.512 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/docs]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:32:49.528 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/docs]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:33:09.532 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 []을(를) 다시 로드합니다.
+25-Mar-2020 16:33:09.534 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:33:09.553 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:33:09.561 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/examples]을(를) 다시 로드합니다.
+25-Mar-2020 16:33:09.562 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/examples]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:33:09.656 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/examples]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:33:09.659 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/host-manager]을(를) 다시 로드합니다.
+25-Mar-2020 16:33:09.660 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/host-manager]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:33:09.672 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/host-manager]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:33:09.675 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/manager]을(를) 다시 로드합니다.
+25-Mar-2020 16:33:09.677 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/manager]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:33:09.688 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/manager]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:33:09.690 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/docs]을(를) 다시 로드합니다.
+25-Mar-2020 16:33:09.693 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/docs]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:33:09.705 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/docs]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:34:39.720 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 []을(를) 다시 로드합니다.
+25-Mar-2020 16:34:39.721 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 16:34:39.733 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 16:34:49.742 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/8.5.51
+25-Mar-2020 16:34:49.746 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Feb 5 2020 22:26:25 UTC
+25-Mar-2020 16:34:49.749 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         8.5.51.0
+25-Mar-2020 16:34:49.750 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 7
+25-Mar-2020 16:34:49.752 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            6.1
+25-Mar-2020 16:34:49.753 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+25-Mar-2020 16:34:49.755 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jre1.8.0_212
+25-Mar-2020 16:34:49.756 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           1.8.0_212-b10
+25-Mar-2020 16:34:49.758 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+25-Mar-2020 16:34:49.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\htmlstudy\tomcat
+25-Mar-2020 16:34:49.760 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\htmlstudy\tomcat
+25-Mar-2020 16:34:49.761 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=D:\htmlstudy\tomcat\conf\logging.properties
+25-Mar-2020 16:34:49.762 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Mar-2020 16:34:49.764 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+25-Mar-2020 16:34:49.765 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+25-Mar-2020 16:34:49.767 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+25-Mar-2020 16:34:49.769 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=D:\htmlstudy\tomcat
+25-Mar-2020 16:34:49.770 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=D:\htmlstudy\tomcat
+25-Mar-2020 16:34:49.771 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=D:\htmlstudy\tomcat\temp
+25-Mar-2020 16:34:49.772 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.23]을(를) 로드했습니다.
+25-Mar-2020 16:34:49.774 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+25-Mar-2020 16:34:49.775 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+25-Mar-2020 16:34:49.783 정보 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1c  28 May 2019]
+25-Mar-2020 16:34:49.886 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+25-Mar-2020 16:34:49.975 정보 [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+25-Mar-2020 16:34:49.985 정보 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 530 ms
+25-Mar-2020 16:34:50.008 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+25-Mar-2020 16:34:50.009 정보 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.51
+25-Mar-2020 16:34:50.018 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\docs]을(를) 배치합니다.
+25-Mar-2020 16:34:50.211 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\docs]에 대한 배치가 [192] 밀리초에 완료되었습니다.
+25-Mar-2020 16:34:50.213 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\examples]을(를) 배치합니다.
+25-Mar-2020 16:34:50.445 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\examples]에 대한 배치가 [232] 밀리초에 완료되었습니다.
+25-Mar-2020 16:34:50.448 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\host-manager]을(를) 배치합니다.
+25-Mar-2020 16:34:50.468 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\host-manager]에 대한 배치가 [20] 밀리초에 완료되었습니다.
+25-Mar-2020 16:34:50.470 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\manager]을(를) 배치합니다.
+25-Mar-2020 16:34:50.498 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\manager]에 대한 배치가 [28] 밀리초에 완료되었습니다.
+25-Mar-2020 16:34:50.502 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\ROOT]을(를) 배치합니다.
+25-Mar-2020 16:34:50.516 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\ROOT]에 대한 배치가 [14] 밀리초에 완료되었습니다.
+25-Mar-2020 16:34:50.521 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+25-Mar-2020 16:34:50.529 정보 [main] org.apache.catalina.startup.Catalina.start Server startup in 542 ms
+25-Mar-2020 16:41:40.847 정보 [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\board]을(를) 배치합니다.
+25-Mar-2020 16:41:40.863 정보 [localhost-startStop-2] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\board]에 대한 배치가 [16] 밀리초에 완료되었습니다.
+25-Mar-2020 17:16:54.037 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 []을(를) 다시 로드합니다.
+25-Mar-2020 17:16:54.037 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 17:16:54.069 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 17:16:54.069 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/examples]을(를) 다시 로드합니다.
+25-Mar-2020 17:16:54.069 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/examples]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 17:16:54.225 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/examples]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 17:16:54.240 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/host-manager]을(를) 다시 로드합니다.
+25-Mar-2020 17:16:54.240 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/host-manager]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 17:16:54.256 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/host-manager]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 17:16:54.256 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/board]을(를) 다시 로드합니다.
+25-Mar-2020 17:16:54.256 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/board]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 17:16:54.271 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/board]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 17:16:54.271 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/manager]을(를) 다시 로드합니다.
+25-Mar-2020 17:16:54.271 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/manager]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 17:16:54.287 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/manager]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 17:16:54.287 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 [/docs]을(를) 다시 로드합니다.
+25-Mar-2020 17:16:54.303 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/docs]인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 17:16:54.303 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 [/docs]인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 17:17:03.539 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/8.5.51
+25-Mar-2020 17:17:03.539 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Feb 5 2020 22:26:25 UTC
+25-Mar-2020 17:17:03.539 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         8.5.51.0
+25-Mar-2020 17:17:03.539 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 7
+25-Mar-2020 17:17:03.539 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            6.1
+25-Mar-2020 17:17:03.539 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+25-Mar-2020 17:17:03.555 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jre1.8.0_212
+25-Mar-2020 17:17:03.555 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           1.8.0_212-b10
+25-Mar-2020 17:17:03.555 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+25-Mar-2020 17:17:03.555 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\htmlstudy\tomcat
+25-Mar-2020 17:17:03.555 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\htmlstudy\tomcat
+25-Mar-2020 17:17:03.555 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=D:\htmlstudy\tomcat\conf\logging.properties
+25-Mar-2020 17:17:03.555 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Mar-2020 17:17:03.555 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+25-Mar-2020 17:17:03.555 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+25-Mar-2020 17:17:03.555 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+25-Mar-2020 17:17:03.555 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=D:\htmlstudy\tomcat
+25-Mar-2020 17:17:03.570 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=D:\htmlstudy\tomcat
+25-Mar-2020 17:17:03.570 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=D:\htmlstudy\tomcat\temp
+25-Mar-2020 17:17:03.570 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.23]을(를) 로드했습니다.
+25-Mar-2020 17:17:03.570 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+25-Mar-2020 17:17:03.570 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+25-Mar-2020 17:17:03.570 정보 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1c  28 May 2019]
+25-Mar-2020 17:17:03.664 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+25-Mar-2020 17:17:03.742 정보 [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+25-Mar-2020 17:17:03.742 정보 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 451 ms
+25-Mar-2020 17:17:03.758 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+25-Mar-2020 17:17:03.758 정보 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.51
+25-Mar-2020 17:17:03.773 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\board]을(를) 배치합니다.
+25-Mar-2020 17:17:03.945 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\board]에 대한 배치가 [172] 밀리초에 완료되었습니다.
+25-Mar-2020 17:17:03.945 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\docs]을(를) 배치합니다.
+25-Mar-2020 17:17:03.960 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\docs]에 대한 배치가 [15] 밀리초에 완료되었습니다.
+25-Mar-2020 17:17:03.960 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\examples]을(를) 배치합니다.
+25-Mar-2020 17:17:04.179 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\examples]에 대한 배치가 [219] 밀리초에 완료되었습니다.
+25-Mar-2020 17:17:04.179 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\host-manager]을(를) 배치합니다.
+25-Mar-2020 17:17:04.194 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\host-manager]에 대한 배치가 [15] 밀리초에 완료되었습니다.
+25-Mar-2020 17:17:04.210 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\manager]을(를) 배치합니다.
+25-Mar-2020 17:17:04.226 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\manager]에 대한 배치가 [16] 밀리초에 완료되었습니다.
+25-Mar-2020 17:17:04.226 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\ROOT]을(를) 배치합니다.
+25-Mar-2020 17:17:04.241 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\ROOT]에 대한 배치가 [15] 밀리초에 완료되었습니다.
+25-Mar-2020 17:17:04.241 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+25-Mar-2020 17:17:04.257 정보 [main] org.apache.catalina.startup.Catalina.start Server startup in 505 ms
+25-Mar-2020 17:17:44.285 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 []을(를) 다시 로드합니다.
+25-Mar-2020 17:17:44.285 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 17:17:44.300 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 17:18:04.331 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 []을(를) 다시 로드합니다.
+25-Mar-2020 17:18:04.331 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 17:18:04.331 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 17:18:24.377 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.startup.HostConfig.reload 컨텍스트 []을(를) 다시 로드합니다.
+25-Mar-2020 17:18:24.377 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 작업이 시작되었습니다.
+25-Mar-2020 17:18:24.377 정보 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] org.apache.catalina.core.StandardContext.reload 이름이 []인 컨텍스트를 다시 로드하는 것을 완료했습니다.
+25-Mar-2020 17:18:36.743 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:        Apache Tomcat/8.5.51
+25-Mar-2020 17:18:36.743 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:          Feb 5 2020 22:26:25 UTC
+25-Mar-2020 17:18:36.743 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:         8.5.51.0
+25-Mar-2020 17:18:36.743 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:               Windows 7
+25-Mar-2020 17:18:36.743 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:            6.1
+25-Mar-2020 17:18:36.743 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+25-Mar-2020 17:18:36.743 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:             C:\Program Files\Java\jre1.8.0_212
+25-Mar-2020 17:18:36.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:           1.8.0_212-b10
+25-Mar-2020 17:18:36.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:            Oracle Corporation
+25-Mar-2020 17:18:36.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         D:\htmlstudy\tomcat
+25-Mar-2020 17:18:36.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         D:\htmlstudy\tomcat
+25-Mar-2020 17:18:36.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.config.file=D:\htmlstudy\tomcat\conf\logging.properties
+25-Mar-2020 17:18:36.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+25-Mar-2020 17:18:36.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djdk.tls.ephemeralDHKeySize=2048
+25-Mar-2020 17:18:36.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+25-Mar-2020 17:18:36.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dignore.endorsed.dirs=
+25-Mar-2020 17:18:36.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.base=D:\htmlstudy\tomcat
+25-Mar-2020 17:18:36.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Dcatalina.home=D:\htmlstudy\tomcat
+25-Mar-2020 17:18:36.759 정보 [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트: -Djava.io.tmpdir=D:\htmlstudy\tomcat\temp
+25-Mar-2020 17:18:36.775 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.0]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [1.2.23]을(를) 로드했습니다.
+25-Mar-2020 17:18:36.775 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 용량정보들: IPv6 [true], sendfile [true], accept filters [false], random [true].
+25-Mar-2020 17:18:36.775 정보 [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR/OpenSSL 설정: useAprConnector [false], useOpenSSL [true]
+25-Mar-2020 17:18:36.775 정보 [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 1.1.1c  28 May 2019]
+25-Mar-2020 17:18:36.868 정보 [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8080"]을(를) 초기화합니다.
+25-Mar-2020 17:18:36.946 정보 [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+25-Mar-2020 17:18:36.946 정보 [main] org.apache.catalina.startup.Catalina.load Initialization processed in 456 ms
+25-Mar-2020 17:18:36.977 정보 [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+25-Mar-2020 17:18:36.977 정보 [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.51
+25-Mar-2020 17:18:36.977 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\board]을(를) 배치합니다.
+25-Mar-2020 17:18:37.165 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\board]에 대한 배치가 [188] 밀리초에 완료되었습니다.
+25-Mar-2020 17:18:37.165 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\docs]을(를) 배치합니다.
+25-Mar-2020 17:18:37.180 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\docs]에 대한 배치가 [15] 밀리초에 완료되었습니다.
+25-Mar-2020 17:18:37.196 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\examples]을(를) 배치합니다.
+25-Mar-2020 17:18:37.399 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\examples]에 대한 배치가 [203] 밀리초에 완료되었습니다.
+25-Mar-2020 17:18:37.399 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\host-manager]을(를) 배치합니다.
+25-Mar-2020 17:18:37.414 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\host-manager]에 대한 배치가 [15] 밀리초에 완료되었습니다.
+25-Mar-2020 17:18:37.414 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\manager]을(를) 배치합니다.
+25-Mar-2020 17:18:37.430 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\manager]에 대한 배치가 [16] 밀리초에 완료되었습니다.
+25-Mar-2020 17:18:37.430 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\ROOT]을(를) 배치합니다.
+25-Mar-2020 17:18:37.445 정보 [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory 웹 애플리케이션 디렉토리 [D:\htmlstudy\tomcat\webapps\ROOT]에 대한 배치가 [15] 밀리초에 완료되었습니다.
+25-Mar-2020 17:18:37.445 정보 [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8080"]을(를) 시작합니다.
+25-Mar-2020 17:18:37.461 정보 [main] org.apache.catalina.startup.Catalina.start Server startup in 507 ms

@@ -1,0 +1,2213 @@
+14-Apr-2020 08:47:05.574 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+14-Apr-2020 08:47:05.574 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+14-Apr-2020 08:47:05.574 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@5b0e79f1')
+14-Apr-2020 09:03:45.299 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+14-Apr-2020 09:03:45.299 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+14-Apr-2020 09:03:45.299 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@6bd1ce20')
+14-Apr-2020 09:03:45.907 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+14-Apr-2020 09:03:45.907 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+14-Apr-2020 09:17:36.157 심각 [http-nio-8090-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+Connection cannot be resolved to a type
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+DriverManager cannot be resolved
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+dbstring cannot be resolved to a variable
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+user cannot be resolved to a variable
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+pass cannot be resolved to a variable
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [80] 행에서 오류가 발생했습니다.
+PreparedStatement cannot be resolved to a type
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+
+
+JSP 파일 [/list.jsp]의 [80] 행에서 오류가 발생했습니다.
+ResultSet.TYPE_SCROLL_INSENSITIVE cannot be resolved to a type
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+
+
+JSP 파일 [/list.jsp]의 [81] 행에서 오류가 발생했습니다.
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+84: 	//寃��깋�맂 寃곌낵瑜� �뼸�뒗�떎.
+
+
+JSP 파일 [/list.jsp]의 [82] 행에서 오류가 발생했습니다.
+ResultSet cannot be resolved to a type
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+84: 	//寃��깋�맂 寃곌낵瑜� �뼸�뒗�떎.
+85: 	while( mResultSet.next() )
+
+
+JSP 파일 [/list.jsp]의 [90] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+87: 		String no    =  mResultSet.getString("no");
+88: 		String title  =  mResultSet.getString("title");
+89: 		String type  =  mResultSet.getString("type");
+90: 		String hit    =  mResultSet.getString("hit")
+91: 
+92: 		%>
+93: 		<tr>
+
+
+JSP 파일 [/list.jsp]의 [94] 행에서 오류가 발생했습니다.
+i cannot be resolved to a variable
+91: 
+92: 		%>
+93: 		<tr>
+94: 			<td align="center"><%= i %></td>
+95: 			<td><a href="view.jsp?category=&key=&pageno=&no=">�뀒�뒪�듃瑜� �쐞�븳 寃뚯떆�뙋�엯�땲�떎.</a></td>
+96: 			<td align="center">100</td>
+97: 		</tr>
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+Connection cannot be resolved to a type
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+DriverManager cannot be resolved
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+dbstring cannot be resolved to a variable
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+user cannot be resolved to a variable
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+pass cannot be resolved to a variable
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [80] 행에서 오류가 발생했습니다.
+PreparedStatement cannot be resolved to a type
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+
+
+JSP 파일 [/list.jsp]의 [80] 행에서 오류가 발생했습니다.
+ResultSet.TYPE_SCROLL_INSENSITIVE cannot be resolved to a type
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+
+
+JSP 파일 [/list.jsp]의 [81] 행에서 오류가 발생했습니다.
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+84: 	//寃��깋�맂 寃곌낵瑜� �뼸�뒗�떎.
+
+
+JSP 파일 [/list.jsp]의 [82] 행에서 오류가 발생했습니다.
+ResultSet cannot be resolved to a type
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+84: 	//寃��깋�맂 寃곌낵瑜� �뼸�뒗�떎.
+85: 	while( mResultSet.next() )
+
+
+JSP 파일 [/list.jsp]의 [90] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+87: 		String no    =  mResultSet.getString("no");
+88: 		String title  =  mResultSet.getString("title");
+89: 		String type  =  mResultSet.getString("type");
+90: 		String hit    =  mResultSet.getString("hit")
+91: 
+92: 		%>
+93: 		<tr>
+
+
+JSP 파일 [/list.jsp]의 [94] 행에서 오류가 발생했습니다.
+i cannot be resolved to a variable
+91: 
+92: 		%>
+93: 		<tr>
+94: 			<td align="center"><%= i %></td>
+95: 			<td><a href="view.jsp?category=&key=&pageno=&no=">�뀒�뒪�듃瑜� �쐞�븳 寃뚯떆�뙋�엯�땲�떎.</a></td>
+96: 			<td align="center">100</td>
+97: 		</tr>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 09:18:33.877 심각 [http-nio-8090-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [76] 행에서 오류가 발생했습니다.
+dbstring cannot be resolved to a variable
+73: 	Class.forName("com.mysql.cj.jdbc.Driver");
+74: 
+75: 	//MySQL�뿉 �젒�냽�븳�떎.
+76: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+77: 
+78: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+79: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [76] 행에서 오류가 발생했습니다.
+user cannot be resolved to a variable
+73: 	Class.forName("com.mysql.cj.jdbc.Driver");
+74: 
+75: 	//MySQL�뿉 �젒�냽�븳�떎.
+76: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+77: 
+78: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+79: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [76] 행에서 오류가 발생했습니다.
+pass cannot be resolved to a variable
+73: 	Class.forName("com.mysql.cj.jdbc.Driver");
+74: 
+75: 	//MySQL�뿉 �젒�냽�븳�떎.
+76: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+77: 
+78: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+79: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [91] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+88: 		String no    =  mResultSet.getString("no");
+89: 		String title  =  mResultSet.getString("title");
+90: 		String type  =  mResultSet.getString("type");
+91: 		String hit    =  mResultSet.getString("hit")
+92: 
+93: 		%>
+94: 		<tr>
+
+
+JSP 파일 [/list.jsp]의 [95] 행에서 오류가 발생했습니다.
+i cannot be resolved to a variable
+92: 
+93: 		%>
+94: 		<tr>
+95: 			<td align="center"><%= i %></td>
+96: 			<td><a href="view.jsp?category=&key=&pageno=&no=">�뀒�뒪�듃瑜� �쐞�븳 寃뚯떆�뙋�엯�땲�떎.</a></td>
+97: 			<td align="center">100</td>
+98: 		</tr>
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [76] 행에서 오류가 발생했습니다.
+dbstring cannot be resolved to a variable
+73: 	Class.forName("com.mysql.cj.jdbc.Driver");
+74: 
+75: 	//MySQL�뿉 �젒�냽�븳�떎.
+76: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+77: 
+78: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+79: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [76] 행에서 오류가 발생했습니다.
+user cannot be resolved to a variable
+73: 	Class.forName("com.mysql.cj.jdbc.Driver");
+74: 
+75: 	//MySQL�뿉 �젒�냽�븳�떎.
+76: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+77: 
+78: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+79: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [76] 행에서 오류가 발생했습니다.
+pass cannot be resolved to a variable
+73: 	Class.forName("com.mysql.cj.jdbc.Driver");
+74: 
+75: 	//MySQL�뿉 �젒�냽�븳�떎.
+76: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+77: 
+78: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+79: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [91] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+88: 		String no    =  mResultSet.getString("no");
+89: 		String title  =  mResultSet.getString("title");
+90: 		String type  =  mResultSet.getString("type");
+91: 		String hit    =  mResultSet.getString("hit")
+92: 
+93: 		%>
+94: 		<tr>
+
+
+JSP 파일 [/list.jsp]의 [95] 행에서 오류가 발생했습니다.
+i cannot be resolved to a variable
+92: 
+93: 		%>
+94: 		<tr>
+95: 			<td align="center"><%= i %></td>
+96: 			<td><a href="view.jsp?category=&key=&pageno=&no=">�뀒�뒪�듃瑜� �쐞�븳 寃뚯떆�뙋�엯�땲�떎.</a></td>
+97: 			<td align="center">100</td>
+98: 		</tr>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 09:18:54.141 심각 [http-nio-8090-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+Connection cannot be resolved to a type
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+DriverManager cannot be resolved
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+dbstring cannot be resolved to a variable
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+user cannot be resolved to a variable
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+pass cannot be resolved to a variable
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [80] 행에서 오류가 발생했습니다.
+PreparedStatement cannot be resolved to a type
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+
+
+JSP 파일 [/list.jsp]의 [80] 행에서 오류가 발생했습니다.
+ResultSet.TYPE_SCROLL_INSENSITIVE cannot be resolved to a type
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+
+
+JSP 파일 [/list.jsp]의 [81] 행에서 오류가 발생했습니다.
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+84: 	//寃��깋�맂 寃곌낵瑜� �뼸�뒗�떎.
+
+
+JSP 파일 [/list.jsp]의 [82] 행에서 오류가 발생했습니다.
+ResultSet cannot be resolved to a type
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+84: 	//寃��깋�맂 寃곌낵瑜� �뼸�뒗�떎.
+85: 	while( mResultSet.next() )
+
+
+JSP 파일 [/list.jsp]의 [90] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+87: 		String no    =  mResultSet.getString("no");
+88: 		String title  =  mResultSet.getString("title");
+89: 		String type  =  mResultSet.getString("type");
+90: 		String hit    =  mResultSet.getString("hit")
+91: 
+92: 		%>
+93: 		<tr>
+
+
+JSP 파일 [/list.jsp]의 [94] 행에서 오류가 발생했습니다.
+i cannot be resolved to a variable
+91: 
+92: 		%>
+93: 		<tr>
+94: 			<td align="center"><%= i %></td>
+95: 			<td><a href="view.jsp?category=&key=&pageno=&no=">�뀒�뒪�듃瑜� �쐞�븳 寃뚯떆�뙋�엯�땲�떎.</a></td>
+96: 			<td align="center">100</td>
+97: 		</tr>
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+Connection cannot be resolved to a type
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+DriverManager cannot be resolved
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+dbstring cannot be resolved to a variable
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+user cannot be resolved to a variable
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [75] 행에서 오류가 발생했습니다.
+pass cannot be resolved to a variable
+72: 	Class.forName("com.mysql.cj.jdbc.Driver");
+73: 
+74: 	//MySQL�뿉 �젒�냽�븳�떎.
+75: 	Connection mConnection = DriverManager.getConnection( dbstring, user ,pass );
+76: 
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+
+
+JSP 파일 [/list.jsp]의 [80] 행에서 오류가 발생했습니다.
+PreparedStatement cannot be resolved to a type
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+
+
+JSP 파일 [/list.jsp]의 [80] 행에서 오류가 발생했습니다.
+ResultSet.TYPE_SCROLL_INSENSITIVE cannot be resolved to a type
+77: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+
+
+JSP 파일 [/list.jsp]의 [81] 행에서 오류가 발생했습니다.
+ResultSet.CONCUR_UPDATABLE cannot be resolved to a type
+78: 	String mSelectSQL = "select no,title,type,hit from board order by no desc";
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+84: 	//寃��깋�맂 寃곌낵瑜� �뼸�뒗�떎.
+
+
+JSP 파일 [/list.jsp]의 [82] 행에서 오류가 발생했습니다.
+ResultSet cannot be resolved to a type
+79: 
+80: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+81: 												ResultSet.CONCUR_UPDATABLE);
+82: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+83: 
+84: 	//寃��깋�맂 寃곌낵瑜� �뼸�뒗�떎.
+85: 	while( mResultSet.next() )
+
+
+JSP 파일 [/list.jsp]의 [90] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+87: 		String no    =  mResultSet.getString("no");
+88: 		String title  =  mResultSet.getString("title");
+89: 		String type  =  mResultSet.getString("type");
+90: 		String hit    =  mResultSet.getString("hit")
+91: 
+92: 		%>
+93: 		<tr>
+
+
+JSP 파일 [/list.jsp]의 [94] 행에서 오류가 발생했습니다.
+i cannot be resolved to a variable
+91: 
+92: 		%>
+93: 		<tr>
+94: 			<td align="center"><%= i %></td>
+95: 			<td><a href="view.jsp?category=&key=&pageno=&no=">�뀒�뒪�듃瑜� �쐞�븳 寃뚯떆�뙋�엯�땲�떎.</a></td>
+96: 			<td align="center">100</td>
+97: 		</tr>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 09:20:46.570 심각 [http-nio-8090-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [92] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+89: 		String no    =  mResultSet.getString("no");
+90: 		String title  =  mResultSet.getString("title");
+91: 		String type  =  mResultSet.getString("type");
+92: 		String hit    =  mResultSet.getString("hit")
+93: 
+94: 		%>
+95: 		<tr>
+
+
+JSP 파일 [/list.jsp]의 [96] 행에서 오류가 발생했습니다.
+i cannot be resolved to a variable
+93: 
+94: 		%>
+95: 		<tr>
+96: 			<td align="center"><%= i %></td>
+97: 			<td><a href="view.jsp?category=&key=&pageno=&no=">�뀒�뒪�듃瑜� �쐞�븳 寃뚯떆�뙋�엯�땲�떎.</a></td>
+98: 			<td align="center">100</td>
+99: 		</tr>
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [92] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+89: 		String no    =  mResultSet.getString("no");
+90: 		String title  =  mResultSet.getString("title");
+91: 		String type  =  mResultSet.getString("type");
+92: 		String hit    =  mResultSet.getString("hit")
+93: 
+94: 		%>
+95: 		<tr>
+
+
+JSP 파일 [/list.jsp]의 [96] 행에서 오류가 발생했습니다.
+i cannot be resolved to a variable
+93: 
+94: 		%>
+95: 		<tr>
+96: 			<td align="center"><%= i %></td>
+97: 			<td><a href="view.jsp?category=&key=&pageno=&no=">�뀒�뒪�듃瑜� �쐞�븳 寃뚯떆�뙋�엯�땲�떎.</a></td>
+98: 			<td align="center">100</td>
+99: 		</tr>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 09:29:32.681 심각 [http-nio-8090-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [92]에서 [/list.jsp]을(를) 처리하는 중 예외 발생
+
+89: 
+90: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+91: 												ResultSet.CONCUR_UPDATABLE);
+92: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+93: 
+94: 	//寃��깋�맂 寃곌낵瑜� �뼸�뒗�떎.
+95: 	while( mResultSet.next() )
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'desclimit 0,5' at line 1
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+		at org.apache.jsp.list_jsp._jspService(list_jsp.java:263)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 09:40:18.991 심각 [http-nio-8090-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [96]에서 [/list.jsp]을(를) 처리하는 중 예외 발생
+
+93: 
+94: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+95: 												ResultSet.CONCUR_UPDATABLE);
+96: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+97: 
+98: 	//寃��깋�맂 寃곌낵瑜� �뼸�뒗�떎.
+99: 	while( mResultSet.next() )
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-5,5' at line 1
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+		at org.apache.jsp.list_jsp._jspService(list_jsp.java:267)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 09:47:13.662 심각 [http-nio-8090-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [90] 행에서 오류가 발생했습니다.
+mSelectSQL cannot be resolved to a variable
+87: 	mTotalSQL  += "select count(no) as totalrow ";
+88: 	mTotalSQL  += "from board ";
+89: 
+90: 	PreparedStatement mTotalStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+91: 												ResultSet.CONCUR_UPDATABLE);
+92: 	ResultSet mTotalSet = mTotalStatment.executeQuery();
+93: 
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [90] 행에서 오류가 발생했습니다.
+mSelectSQL cannot be resolved to a variable
+87: 	mTotalSQL  += "select count(no) as totalrow ";
+88: 	mTotalSQL  += "from board ";
+89: 
+90: 	PreparedStatement mTotalStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+91: 												ResultSet.CONCUR_UPDATABLE);
+92: 	ResultSet mTotalSet = mTotalStatment.executeQuery();
+93: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 09:47:57.201 심각 [http-nio-8090-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [93] 행에서 오류가 발생했습니다.
+mResultSet cannot be resolved
+90: 	PreparedStatement mTotalStatment  = mConnection.prepareStatement(mTotalSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+91: 												ResultSet.CONCUR_UPDATABLE);
+92: 	ResultSet mTotalSet = mTotalStatment.executeQuery();
+93: 	String totalRow    =  mResultSet.getString("totalrow");
+94: 
+95: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+96: 	String mSelectSQL = "";
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [93] 행에서 오류가 발생했습니다.
+mResultSet cannot be resolved
+90: 	PreparedStatement mTotalStatment  = mConnection.prepareStatement(mTotalSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+91: 												ResultSet.CONCUR_UPDATABLE);
+92: 	ResultSet mTotalSet = mTotalStatment.executeQuery();
+93: 	String totalRow    =  mResultSet.getString("totalrow");
+94: 
+95: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+96: 	String mSelectSQL = "";
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 09:48:05.251 심각 [http-nio-8090-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [93]에서 [/list.jsp]을(를) 처리하는 중 예외 발생
+
+90: 	PreparedStatement mTotalStatment  = mConnection.prepareStatement(mTotalSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+91: 												ResultSet.CONCUR_UPDATABLE);
+92: 	ResultSet mTotalSet = mTotalStatment.executeQuery();
+93: 	String totalRow       =  mTotalSet.getString("totalrow");
+94: 
+95: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+96: 	String mSelectSQL = "";
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLException: Before start of result set
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484)
+		at com.mysql.cj.jdbc.result.UpdatableResultSet.checkRowPos(UpdatableResultSet.java:205)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:834)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852)
+		at org.apache.jsp.list_jsp._jspService(list_jsp.java:264)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 09:48:32.921 심각 [http-nio-8090-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [93]에서 [/list.jsp]을(를) 처리하는 중 예외 발생
+
+90: 	PreparedStatement mTotalStatment  = mConnection.prepareStatement(mTotalSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+91: 												ResultSet.CONCUR_UPDATABLE);
+92: 	ResultSet mTotalSet = mTotalStatment.executeQuery();
+93: 	String totalRow       =  mTotalSet.getString("totalrow");
+94: 
+95: 	//�벑濡앸맂 寃뚯떆臾쇱쓽 紐⑸줉�쓣 �뼸�뒗�떎.
+96: 	String mSelectSQL = "";
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLException: Before start of result set
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484)
+		at com.mysql.cj.jdbc.result.UpdatableResultSet.checkRowPos(UpdatableResultSet.java:205)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:834)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852)
+		at org.apache.jsp.list_jsp._jspService(list_jsp.java:264)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:09:52.267 심각 [http-nio-8090-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [93]에서 [/list.jsp]을(를) 처리하는 중 예외 발생
+
+90: 
+91: 	PreparedStatement mTotalStatment  = mConnection.prepareStatement(mTotalSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+92: 												ResultSet.CONCUR_UPDATABLE);
+93: 	ResultSet mTotalSet = mTotalStatment.executeQuery();
+94: 	mTotalSet.next();
+95: 	int  totalRow           =  Integer.parseInt(mTotalSet.getString("totalrow"));
+96: 
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%' at line 1
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+		at org.apache.jsp.list_jsp._jspService(list_jsp.java:263)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:10:59.956 심각 [http-nio-8090-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [127]에서 [/list.jsp]을(를) 처리하는 중 예외 발생
+
+124: 
+125: 	PreparedStatement mSelectStatment  = mConnection.prepareStatement(mSelectSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+126: 												ResultSet.CONCUR_UPDATABLE);
+127: 	ResultSet mResultSet = mSelectStatment.executeQuery();
+128: 
+129: 	//寃��깋�맂 寃곌낵瑜� �뼸�뒗�떎.
+130: 	while( mResultSet.next() )
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'title like '%aaa%'' at line 1
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+		at org.apache.jsp.list_jsp._jspService(list_jsp.java:301)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:12:57.954 심각 [http-nio-8090-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [97]에서 [/list.jsp]을(를) 처리하는 중 예외 발생
+
+94: 
+95: 	PreparedStatement mTotalStatment  = mConnection.prepareStatement(mTotalSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+96: 												ResultSet.CONCUR_UPDATABLE);
+97: 	ResultSet mTotalSet = mTotalStatment.executeQuery();
+98: 	mTotalSet.next();
+99: 	int  totalRow           =  Integer.parseInt(mTotalSet.getString("totalrow"));
+100: 
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where title like '%aa%'' at line 1
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:1003)
+		at org.apache.jsp.list_jsp._jspService(list_jsp.java:267)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:17:54.043 심각 [http-nio-8090-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [29]에서 [/list.jsp]을(를) 처리하는 중 예외 발생
+
+26: }
+27: 
+28: //�쁽�옱 �럹�씠吏� 踰덊샇�뿉 �뵲瑜� �떆�옉 寃곌낵媛� 怨꾩궛
+29: int curpage = Integer.parseInt(pageno);
+30: startPage = (curpage - 1) * perpage;
+31: %>
+32: <script language="javascript">
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.lang.NumberFormatException: For input string: ""
+		at java.lang.NumberFormatException.forInputString(Unknown Source)
+		at java.lang.Integer.parseInt(Unknown Source)
+		at java.lang.Integer.parseInt(Unknown Source)
+		at org.apache.jsp.list_jsp._jspService(list_jsp.java:178)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:40:24.445 심각 [http-nio-8090-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [34]에서 [/view.jsp]을(를) 처리하는 중 예외 발생
+
+31: ResultSet mResultSet = mSelectStatment.executeQuery();
+32: mResultSet.next();
+33: 
+34: String board_no    =  mResultSet.getString("no");
+35: String board_title  =  mResultSet.getString("title");
+36: String board_body =  mResultSet.getString("contents");
+37: String board_type  =  mResultSet.getString("type");
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLException: Illegal operation on empty result set.
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484)
+		at com.mysql.cj.jdbc.result.UpdatableResultSet.checkRowPos(UpdatableResultSet.java:205)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:834)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852)
+		at org.apache.jsp.view_jsp._jspService(view_jsp.java:183)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:45:04.779 심각 [http-nio-8090-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/modify_ok.jsp]의 [36] 행에서 오류가 발생했습니다.
+no cannot be resolved to a variable
+33: mUpdateSQL += "set type = '" + type + "' ";
+34: mUpdateSQL += "set title = '" + title + "' ";
+35: mUpdateSQL += "set contents = '" + contents + "' ";
+36: mUpdateSQL += "where no = '" + no + "' ";
+37: out.print(mUpdateSQL);
+38: PreparedStatement mUpdateStmt  = mConnection.prepareStatement(mUpdateSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+39: 												ResultSet.CONCUR_UPDATABLE);
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/modify_ok.jsp]의 [36] 행에서 오류가 발생했습니다.
+no cannot be resolved to a variable
+33: mUpdateSQL += "set type = '" + type + "' ";
+34: mUpdateSQL += "set title = '" + title + "' ";
+35: mUpdateSQL += "set contents = '" + contents + "' ";
+36: mUpdateSQL += "where no = '" + no + "' ";
+37: out.print(mUpdateSQL);
+38: PreparedStatement mUpdateStmt  = mConnection.prepareStatement(mUpdateSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+39: 												ResultSet.CONCUR_UPDATABLE);
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:45:25.708 심각 [http-nio-8090-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [41]에서 [/modify_ok.jsp]을(를) 처리하는 중 예외 발생
+
+38: out.print(mUpdateSQL);
+39: PreparedStatement mUpdateStmt  = mConnection.prepareStatement(mUpdateSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+40: 												ResultSet.CONCUR_UPDATABLE);
+41: mUpdateStmt.executeUpdate();
+42: //stmt 瑜� �떕�뒗�떎.
+43: mUpdateStmt.close();
+44: 
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'set title = 'null' set contents = 'null' where no = 'null'' at line 1
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+		at org.apache.jsp.modify_005fok_jsp._jspService(modify_005fok_jsp.java:190)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:47:54.266 심각 [http-nio-8090-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [34]에서 [/view.jsp]을(를) 처리하는 중 예외 발생
+
+31: ResultSet mResultSet = mSelectStatment.executeQuery();
+32: mResultSet.next();
+33: 
+34: String board_no    =  mResultSet.getString("no");
+35: String board_title  =  mResultSet.getString("title");
+36: String board_body =  mResultSet.getString("contents");
+37: String board_type  =  mResultSet.getString("type");
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLException: Illegal operation on empty result set.
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484)
+		at com.mysql.cj.jdbc.result.UpdatableResultSet.checkRowPos(UpdatableResultSet.java:205)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:834)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852)
+		at org.apache.jsp.view_jsp._jspService(view_jsp.java:183)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:48:22.164 심각 [http-nio-8090-exec-8] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [42]에서 [/modify_ok.jsp]을(를) 처리하는 중 예외 발생
+
+39: 
+40: PreparedStatement mUpdateStmt  = mConnection.prepareStatement(mUpdateSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+41: 												ResultSet.CONCUR_UPDATABLE);
+42: mUpdateStmt.executeUpdate();
+43: //stmt 瑜� �떕�뒗�떎.
+44: mUpdateStmt.close();
+45: 
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Truncated incorrect DOUBLE value: 'null'
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+		at org.apache.jsp.modify_005fok_jsp._jspService(modify_005fok_jsp.java:191)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:48:56.674 심각 [http-nio-8090-exec-6] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [42]에서 [/modify_ok.jsp]을(를) 처리하는 중 예외 발생
+
+39: 
+40: PreparedStatement mUpdateStmt  = mConnection.prepareStatement(mUpdateSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+41: 												ResultSet.CONCUR_UPDATABLE);
+42: mUpdateStmt.executeUpdate();
+43: //stmt 瑜� �떕�뒗�떎.
+44: mUpdateStmt.close();
+45: 
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Truncated incorrect DOUBLE value: 'null'
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+		at org.apache.jsp.modify_005fok_jsp._jspService(modify_005fok_jsp.java:191)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:49:12.940 심각 [http-nio-8090-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [34]에서 [/view.jsp]을(를) 처리하는 중 예외 발생
+
+31: ResultSet mResultSet = mSelectStatment.executeQuery();
+32: mResultSet.next();
+33: 
+34: String board_no    =  mResultSet.getString("no");
+35: String board_title  =  mResultSet.getString("title");
+36: String board_body =  mResultSet.getString("contents");
+37: String board_type  =  mResultSet.getString("type");
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLException: Illegal operation on empty result set.
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484)
+		at com.mysql.cj.jdbc.result.UpdatableResultSet.checkRowPos(UpdatableResultSet.java:205)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:834)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852)
+		at org.apache.jsp.view_jsp._jspService(view_jsp.java:183)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:49:23.859 심각 [http-nio-8090-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [42]에서 [/modify_ok.jsp]을(를) 처리하는 중 예외 발생
+
+39: 
+40: PreparedStatement mUpdateStmt  = mConnection.prepareStatement(mUpdateSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+41: 												ResultSet.CONCUR_UPDATABLE);
+42: mUpdateStmt.executeUpdate();
+43: //stmt 瑜� �떕�뒗�떎.
+44: mUpdateStmt.close();
+45: 
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Truncated incorrect DOUBLE value: 'null'
+		at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+		at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+		at org.apache.jsp.modify_005fok_jsp._jspService(modify_005fok_jsp.java:191)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:49:57.992 심각 [http-nio-8090-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [34]에서 [/view.jsp]을(를) 처리하는 중 예외 발생
+
+31: ResultSet mResultSet = mSelectStatment.executeQuery();
+32: mResultSet.next();
+33: 
+34: String board_no    =  mResultSet.getString("no");
+35: String board_title  =  mResultSet.getString("title");
+36: String board_body =  mResultSet.getString("contents");
+37: String board_type  =  mResultSet.getString("type");
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLException: Illegal operation on empty result set.
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484)
+		at com.mysql.cj.jdbc.result.UpdatableResultSet.checkRowPos(UpdatableResultSet.java:205)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:834)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852)
+		at org.apache.jsp.view_jsp._jspService(view_jsp.java:183)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 10:50:03.047 심각 [http-nio-8090-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [34]에서 [/view.jsp]을(를) 처리하는 중 예외 발생
+
+31: ResultSet mResultSet = mSelectStatment.executeQuery();
+32: mResultSet.next();
+33: 
+34: String board_no    =  mResultSet.getString("no");
+35: String board_title  =  mResultSet.getString("title");
+36: String board_body =  mResultSet.getString("contents");
+37: String board_type  =  mResultSet.getString("type");
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.sql.SQLException: Illegal operation on empty result set.
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:89)
+		at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:63)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.checkRowPos(ResultSetImpl.java:484)
+		at com.mysql.cj.jdbc.result.UpdatableResultSet.checkRowPos(UpdatableResultSet.java:205)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:834)
+		at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:852)
+		at org.apache.jsp.view_jsp._jspService(view_jsp.java:183)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 16:07:47.150 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+14-Apr-2020 16:07:47.150 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+14-Apr-2020 16:07:47.150 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@4625dc79')
+14-Apr-2020 16:11:08.384 심각 [http-nio-8090-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [107] 행에서 오류가 발생했습니다.
+mConnection cannot be resolved
+104: 	int totalRow = myBoard.getInt("totalrow");
+105: 	myBoard.CloseQuery();
+106: 
+107: 	PreparedStatement mTotalStatment  = mConnection.prepareStatement(mTotalSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+108: 												ResultSet.CONCUR_UPDATABLE);
+109: 	ResultSet mTotalSet = mTotalStatment.executeQuery();
+110: 	mTotalSet.next();
+
+
+JSP 파일 [/list.jsp]의 [111] 행에서 오류가 발생했습니다.
+Duplicate local variable totalRow
+108: 												ResultSet.CONCUR_UPDATABLE);
+109: 	ResultSet mTotalSet = mTotalStatment.executeQuery();
+110: 	mTotalSet.next();
+111: 	int  totalRow           =  Integer.parseInt(mTotalSet.getString("totalrow"));
+112: 
+113: 	//理쒕� �럹�씠吏� 踰덊샇瑜� �뼸�뒗�떎.
+114: 	maxPage = totalRow / perpage;
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/list.jsp]의 [107] 행에서 오류가 발생했습니다.
+mConnection cannot be resolved
+104: 	int totalRow = myBoard.getInt("totalrow");
+105: 	myBoard.CloseQuery();
+106: 
+107: 	PreparedStatement mTotalStatment  = mConnection.prepareStatement(mTotalSQL,ResultSet.TYPE_SCROLL_INSENSITIVE,
+108: 												ResultSet.CONCUR_UPDATABLE);
+109: 	ResultSet mTotalSet = mTotalStatment.executeQuery();
+110: 	mTotalSet.next();
+
+
+JSP 파일 [/list.jsp]의 [111] 행에서 오류가 발생했습니다.
+Duplicate local variable totalRow
+108: 												ResultSet.CONCUR_UPDATABLE);
+109: 	ResultSet mTotalSet = mTotalStatment.executeQuery();
+110: 	mTotalSet.next();
+111: 	int  totalRow           =  Integer.parseInt(mTotalSet.getString("totalrow"));
+112: 
+113: 	//理쒕� �럹�씠吏� 踰덊샇瑜� �뼸�뒗�떎.
+114: 	maxPage = totalRow / perpage;
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 16:13:39.642 심각 [http-nio-8090-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/write_ok.jsp]의 [38] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete Statement
+35: //�벑濡앸맂 寃뚯떆臾쇱쓽 踰덊샇瑜� �뼸�뒗�떎.
+36: String mSelectSQL = "select max(no) as no from board";
+37: myBoard.OpenQuery(mSelectSQL);
+38: myBoard.ResultNext()
+39: String no =  myBoard.getString("no");
+40: myBoard.CloseQuery();
+41: 
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/write_ok.jsp]의 [38] 행에서 오류가 발생했습니다.
+Syntax error, insert ";" to complete Statement
+35: //�벑濡앸맂 寃뚯떆臾쇱쓽 踰덊샇瑜� �뼸�뒗�떎.
+36: String mSelectSQL = "select max(no) as no from board";
+37: myBoard.OpenQuery(mSelectSQL);
+38: myBoard.ResultNext()
+39: String no =  myBoard.getString("no");
+40: myBoard.CloseQuery();
+41: 
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 16:13:53.044 심각 [http-nio-8090-exec-4] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [28]에서 [/list.jsp]을(를) 처리하는 중 예외 발생
+
+25: }
+26: 
+27: //�쁽�옱 �럹�씠吏� 踰덊샇�뿉 �뵲瑜� �떆�옉 寃곌낵媛� 怨꾩궛
+28: int curpage = Integer.parseInt(pageno);
+29: startPage = (curpage - 1) * perpage;
+30: %>
+31: <script language="javascript">
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.lang.NumberFormatException: For input string: "null"
+		at java.lang.NumberFormatException.forInputString(Unknown Source)
+		at java.lang.Integer.parseInt(Unknown Source)
+		at java.lang.Integer.parseInt(Unknown Source)
+		at org.apache.jsp.list_jsp._jspService(list_jsp.java:186)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 16:15:09.343 심각 [http-nio-8090-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [28]에서 [/list.jsp]을(를) 처리하는 중 예외 발생
+
+25: }
+26: 
+27: //�쁽�옱 �럹�씠吏� 踰덊샇�뿉 �뵲瑜� �떆�옉 寃곌낵媛� 怨꾩궛
+28: int curpage = Integer.parseInt(pageno);
+29: startPage = (curpage - 1) * perpage;
+30: %>
+31: <script language="javascript">
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.lang.NumberFormatException: For input string: "null"
+		at java.lang.NumberFormatException.forInputString(Unknown Source)
+		at java.lang.Integer.parseInt(Unknown Source)
+		at java.lang.Integer.parseInt(Unknown Source)
+		at org.apache.jsp.list_jsp._jspService(list_jsp.java:186)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 16:19:23.103 심각 [http-nio-8090-exec-5] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/modify_ok.jsp]의 [24] 행에서 오류가 발생했습니다.
+Syntax error on token ";", this expected after this token
+21: out.print("contents=" + contents + "<br>");
+22: 
+23: //寃뚯떆臾� �젙蹂대�� DBMS�뿉 ���옣�븳�떎.
+24: myBoard.DBOpen();();
+25: 
+26: //寃뚯떆臾� �젙蹂대�� MySQL �뿉 ���옣�븳�떎.
+27: String mUpdateSQL = "";
+
+
+JSP 파일 [/modify_ok.jsp]의 [24] 행에서 오류가 발생했습니다.
+Constructor call must be the first statement in a constructor
+21: out.print("contents=" + contents + "<br>");
+22: 
+23: //寃뚯떆臾� �젙蹂대�� DBMS�뿉 ���옣�븳�떎.
+24: myBoard.DBOpen();();
+25: 
+26: //寃뚯떆臾� �젙蹂대�� MySQL �뿉 ���옣�븳�떎.
+27: String mUpdateSQL = "";
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	org.apache.jasper.JasperException: JSP를 위한 클래스를 컴파일할 수 없습니다.: 
+
+JSP 파일 [/modify_ok.jsp]의 [24] 행에서 오류가 발생했습니다.
+Syntax error on token ";", this expected after this token
+21: out.print("contents=" + contents + "<br>");
+22: 
+23: //寃뚯떆臾� �젙蹂대�� DBMS�뿉 ���옣�븳�떎.
+24: myBoard.DBOpen();();
+25: 
+26: //寃뚯떆臾� �젙蹂대�� MySQL �뿉 ���옣�븳�떎.
+27: String mUpdateSQL = "";
+
+
+JSP 파일 [/modify_ok.jsp]의 [24] 행에서 오류가 발생했습니다.
+Constructor call must be the first statement in a constructor
+21: out.print("contents=" + contents + "<br>");
+22: 
+23: //寃뚯떆臾� �젙蹂대�� DBMS�뿉 ���옣�븳�떎.
+24: myBoard.DBOpen();();
+25: 
+26: //寃뚯떆臾� �젙蹂대�� MySQL �뿉 ���옣�븳�떎.
+27: String mUpdateSQL = "";
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:102)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:212)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:552)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:381)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:351)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:335)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:597)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 16:19:40.358 심각 [http-nio-8090-exec-7] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [65]에서 [/view.jsp]을(를) 처리하는 중 예외 발생
+
+62: 		<td width="120px" align="center">遺꾨쪟</td>
+63: 		<td>
+64: 			<%
+65: 			if(board_type.equals("0"))
+66: 			{
+67: 				%>怨듭�<%
+68: 			}else
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.lang.NullPointerException
+		at org.apache.jsp.view_jsp._jspService(view_jsp.java:232)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)
+14-Apr-2020 16:24:58.425 심각 [http-nio-8090-exec-13] org.apache.catalina.core.StandardWrapperValve.invoke 경로 [/board]의 컨텍스트 내의 서블릿 [jsp]을(를) 위한 Servlet.service() 호출이, 근본 원인(root cause)과 함께, 예외 [행 [64]에서 [/view.jsp]을(를) 처리하는 중 예외 발생
+
+61: 		<td width="120px" align="center">遺꾨쪟</td>
+62: 		<td>
+63: 			<%
+64: 			if(board_type.equals("0"))
+65: 			{
+66: 				%>怨듭�<%
+67: 			}else
+
+
+Stacktrace:]을(를) 발생시켰습니다.
+	java.lang.NullPointerException
+		at org.apache.jsp.view_jsp._jspService(view_jsp.java:230)
+		at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:476)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:386)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:330)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:543)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:688)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:609)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:818)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1623)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Unknown Source)

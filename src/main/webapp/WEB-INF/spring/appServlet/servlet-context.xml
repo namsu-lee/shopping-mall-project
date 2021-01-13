@@ -23,7 +23,9 @@
 	<mvc:resources mapping="/image/**" location="/resources/image/"/>
 	<mvc:resources mapping="/css/**" location="/resources/css/"/>
 	<mvc:resources mapping="/js/**" location="/resources/js/"/>
-	<mvc:resources mapping="/exclude/**" location="/exclude/"/>
+	<mvc:resources mapping="/main/**" location="/resources/main/"/>
+
+	<!-- <mvc:resources mapping="/exclude/**" location="/resources/"/>  -->
 	<!-- 	mapping은 uri이다.		location이 프로젝트 경로 -->
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->

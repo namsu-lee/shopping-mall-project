@@ -30,7 +30,7 @@
   </div>
   <!-- 가입양식 -->
   <div class="centerre" style="width:50%; height: 100%; float: left;">
-    <form action="register" name="form" id="form" method="post">
+    <form action="/signup/registerok" name="form" id="form" method="post">
       <div class="container">
         <h1>회원가입</h1>
         <hr>
@@ -59,7 +59,7 @@
 		<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 이메일 확인 메세지 뿌려주는곳 @@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		</div>
 		<label for="checkbox"><b>마케팅 수신 동의</b></label>
-		<input type="checkbox" name="checkbox" id="checkbox"></br>
+		<input type="checkbox" name="flag" id="flag"></br>
 		</br>
 		<label for="address"><b>주소</b></label><br/>
 		<input type="text" id="sample6_postcode" placeholder="우편번호" style="width:200px;">

@@ -54,16 +54,15 @@
 		var id = document.form.memberid.value;
 		//alert(id);
 		$.ajax({
-			url:"IDCheck",
+			url:"/signup/idcheck",
 			type:"POST", // data: "param1=aaaa&param2=zzzz,
 			data:"id="+id,
 			success:function(result)	{
-				var json = JSON.parse(result);
-				if(json[0]["result"] == true)	{
+				if(result.num == 0)	{
 					IDKimCheck = true;
 					alert("사용 가능한 아이디입니다.");
 				}
-				if(json[0]["result"] == false)	{
+				if(result.num == 1)	{
 					alert("사용중인 아이디입니다.");
 				}
 			}

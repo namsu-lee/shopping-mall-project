@@ -8,7 +8,6 @@
 <title>쇼핑몰 메인</title>
 </head>
 <body>
-<br><br><br><br><br><br>
 	<div>
 	<center>
 		<a href="#">수정</a>

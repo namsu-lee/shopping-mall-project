@@ -34,7 +34,7 @@
         <hr>
 		<!-- 아이디 -->
 		<label for="id"><b>아이디 *</b></label><button type="button" onclick="idcheck()" class="registerbtn" style="width:200px; margin-left:8px;">아이디 중복확인</button>
-        <input type="text" placeholder="아이디를 입력해주세요" name="id" id="id" required>
+        <input type="text" placeholder="아이디를 입력해주세요" name="memberid" id="memberid" required>
 		
 		<!-- 비밀번호 -->
         <label for="password"><b>비밀번호 *</b></label>
@@ -45,8 +45,8 @@
         <input type="password" placeholder="비밀번호를 한번 더 입력해주세요" name="confirmPassword" id="confirmPassword" required>
 		
 		<!-- 닉네임 -->
-		<label for="nick"><b>닉네임 *</b></label><button type="button" onclick="idcheck()" class="registerbtn" style="width:200px; margin-left:8px;">닉네임 중복확인</button>
-        <input type="text" placeholder="닉네임을 입력해주세요" name="nick" id="nick" required>
+		<label for="name"><b>이름 *</b></label>
+        <input type="text" placeholder="이름을 입력해주세요" name="name" id="name" required>
 		
 		<!-- 이메일 -->
 		<label for="email"><b>이메일 *</b></label>

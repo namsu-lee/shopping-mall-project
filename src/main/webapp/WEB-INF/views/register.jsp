@@ -52,7 +52,6 @@
 		
 		<!-- 이메일 -->
 		<label for="email"><b>이메일 *</b></label>
-        <input type="hidden" name="sender" id="sender" value="gudxo1226@naver.com">
         <input type="email" placeholder="이메일을 입력해주세요" name="email" id="email" required style="float:left;">
 		<button type="button" class="registerbtn" onclick="EmailCheck()" style="width:200px;">이메일 인증</button><br/>
 		<div id="div1">

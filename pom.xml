@@ -96,6 +96,12 @@
 			<artifactId>spring-test</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+		<!--  cos -->
+		<!-- <dependency>
+		    <groupId>servlets.com</groupId>
+		    <artifactId>cos</artifactId>
+		    <version>05nov2002</version>
+		</dependency> -->
 		<!-- Common-dbcp -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>

@@ -1,0 +1,13 @@
+CREATE TABLE `faq` (
+  `faqnum` int NOT NULL,
+  `faqcategory` varchar(100) DEFAULT NULL,
+  `faqtitle` varchar(250) DEFAULT NULL,
+  `faqcontent` text,
+  PRIMARY KEY (`faqnum`)
+) ;
+
+CREATE TABLE `faqcate` (
+  `faqcatenum` int NOT NULL,
+  `faqcategory` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`faqcatenum`)
+) ;

@@ -73,11 +73,9 @@
 	var check = false;
 	function EmailCheck()	{
 	var mun = "@";
-	var sender = $("#sender").val();
+	//var sender = $("#sender").val();
 	var email = $("#email").val();
-	if(sender == null || sender == "")	{
-		return false;
-	}
+
 	if(email == null || email == "")	{
 		alert("이메일 형식이 올바르지 않습니다.");
 		return false;
@@ -86,17 +84,18 @@
 		alert("이메일 형식이 올바르지 않습니다.1111111111");
 		return false;
 	}
+	
+	var data = {"email":email}
 	alert("귀하의 메일로 인증번호가 발송되었습니다.");
 		$.ajax({
-			url:"mailSendServlet",			//서블릿페이지로 이동.
+			url:"/signup/emailcheck",			//해당 컨트롤러로 이동
 			type:"POST",
-			data:"email="+email + "&sender="+sender,
+			data:data,
 			success:function(result)	{
-				var json = JSON.parse(result);
 				var data = "";
 				var output = "";
 				output += "<input type='text' id='output' name='output'>";
-				output += "<button type='button' style='width:200px;' class='registerbtn' onclick='Good(" + json[0]["numStr"] + ")'>인증</button>";
+				output += "<button type='button' style='width:200px;' class='registerbtn' onclick='Good(" + result.num + ")'>인증</button>";
 				$("#div1").html(output);
 			}
 		});

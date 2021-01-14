@@ -19,20 +19,18 @@ import com.shoppingmall.service.RegisterService;
 import com.shoppingmall.vo.AddressVO;
 import com.shoppingmall.vo.MembersVO;
 
-
-
 @Controller
 @RequestMapping(value = "/signup")
 public class RegisterController {
 	
 	@Inject
 	RegisterService registerService;
-	 
+	
 	@Inject
 	JavaMailSender mailSender;
 	
 	
-	 
+	
 	//회원가입 페이지로 이동
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String register(Locale locale, Model model) throws Exception {
@@ -94,9 +92,9 @@ public class RegisterController {
 	
 	//회원가입 
 	@RequestMapping(value = "/registerok", method = RequestMethod.POST)
-	public String RegisterOk(MembersVO membersVO, AddressVO addressVO) throws Exception {
-		System.out.println(membersVO.toString());
-		System.out.println(addressVO.toString());
+	public String RegisterOk(MembersVO members, AddressVO address) throws Exception {
+		System.out.println(members.toString());
+		System.out.println(address.toString());
 		//member 테이블에 저장 후 address 테이블 저장
 		
 		return null;

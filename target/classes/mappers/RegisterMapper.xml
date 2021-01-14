@@ -7,7 +7,7 @@
 	<!-- 등록한 게시글의 번호 구함 -->
 	<select id="CheckID" resultType="Integer">
 		<!-- 해킹에 대비하기 위해 count(*)로 비교 -->
-		select count(*) from members where memberid = #{memberid};
+		select count(*) from member where memberid = #{memberid};
 	</select>
 
 	

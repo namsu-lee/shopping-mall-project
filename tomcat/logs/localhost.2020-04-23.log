@@ -1,3 +1,0 @@
-23-Apr-2020 09:41:45.248 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
-23-Apr-2020 09:41:45.248 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
-23-Apr-2020 09:41:45.248 정보 [localhost-startStop-1] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@4a1596c2')

@@ -12,39 +12,64 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
-	                   
+
 	<!-- root-context.xml에는 디비나 로직들을 써주는곳이다. -->
-	
-	<!-- 
-		SqlSessionFactory는 데이터베이스와의 연결과 SQL의 실행에 대한 모든 것을 가진 가장 중요한 객체다.
-		이 객체가 DataSource를 참조하여 MyBatis와 Mysql 서버를 연동시켜준다.
-		SqlSessionFactory를 생성해주는 SqlSessionFactoryBean 객체를 먼저 설정하여야 한다.
-	 -->
-	 
-	 <!-- 데이터베이스 연결해주기 위해 url, username, password 설정하는 부분 -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://127.0.0.1/project03?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC"/>
-		<property name="username" value="root"/>
-		<property name="password" value="mySQL1234"/>
+
+	<!-- SqlSessionFactory는 데이터베이스와의 연결과 SQL의 실행에 대한 모든 것을 가진 가장 중요한 객체다. 이 
+		객체가 DataSource를 참조하여 MyBatis와 Mysql 서버를 연동시켜준다. SqlSessionFactory를 생성해주는 
+		SqlSessionFactoryBean 객체를 먼저 설정하여야 한다. -->
+
+	<!-- 데이터베이스 연결해주기 위해 url, username, password 설정하는 부분 -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://127.0.0.1/project03?useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=UTC" />
+		<property name="username" value="root" />
+		<property name="password" value="mySQL1234" />
 	</bean>
-	
+
 	<!-- mybatis 연동하는 부분 -->
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="dataSource" ref="dataSource"/>
-		<property name="configLocation" value="classpath:mybatis-config.xml"/>
-		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"/>
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation"
+			value="classpath:mybatis-config.xml" />
+		<property name="mapperLocations"
+			value="classpath:mappers/**/*Mapper.xml" />
 	</bean>
-	
+
 	<!-- 세션템플릿을 이용해서 데이터를 주고받고 한다. -->
-	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
-		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate"
+		destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory"
+			ref="sqlSessionFactory" />
 	</bean>
-	
-	
-	<task:annotation-driven/>
-	
-	<context:component-scan base-package="com.shoppingmall.dao"/>
-	<context:component-scan base-package="com.shoppingmall.service"/>
-	<context:component-scan base-package="com.shoppingmall.serviceimpl"/>
+
+	<!-- Gmail -->
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="587" />
+		<property name="username" value="gudxo12261@gmail.com" />
+		<property name="password" value="8905love!!" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+		</property>
+	</bean>
+
+
+	<task:annotation-driven />
+
+	<context:component-scan
+		base-package="com.shoppingmall.dao" />
+	<context:component-scan
+		base-package="com.shoppingmall.service" />
+	<context:component-scan
+		base-package="com.shoppingmall.serviceimpl" />
 </beans>

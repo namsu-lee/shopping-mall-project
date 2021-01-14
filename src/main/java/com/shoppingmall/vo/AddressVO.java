@@ -20,4 +20,9 @@ public class AddressVO {
 		this.address = address;
 	}
 
+	@Override
+	public String toString() {
+		return "AddressVO [memberid=" + memberid + ", address=" + address + "]";
+	}
+
 }

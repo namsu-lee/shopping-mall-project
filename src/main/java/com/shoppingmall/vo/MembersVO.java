@@ -32,8 +32,6 @@ public class MembersVO {
 	    }
 	    return new String(hexChars);
 	}
-	//System.out.println(bytesToHex2(sha256("test11!!")));
-	
 	
 	public String getMemberid() {
 		return memberid;

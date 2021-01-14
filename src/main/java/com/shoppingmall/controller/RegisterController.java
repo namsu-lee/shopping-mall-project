@@ -5,7 +5,10 @@ import java.util.Locale;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.mail.internet.MimeMessage;
 
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shoppingmall.service.RegisterService;
+import com.shoppingmall.vo.AddressVO;
+import com.shoppingmall.vo.MembersVO;
 
 @Controller
 @RequestMapping(value = "/signup")
@@ -20,6 +25,11 @@ public class RegisterController {
 	
 	@Inject
 	RegisterService registerService;
+	
+	@Inject
+	JavaMailSender mailSender;
+	
+	
 	
 	//회원가입 페이지로 이동
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -46,10 +56,45 @@ public class RegisterController {
 	}
 	
 	
+	//이메일 인증
+	@ResponseBody
+	@RequestMapping(value = "/emailcheck", method = RequestMethod.POST)
+	public Map<String, String> CheckEmail(String email, MembersVO membersVO) throws Exception {
+		
+		String num = membersVO.Random_Number();	//난수
+		String setfrom = "gudxo12261@gmail.com";
+		String tomail  = email; 
+		String title   = "회원가입 인증번호 입니다.";
+		String content = "인증번호는 " + num + " 입니다.";
+		
+		try {
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper messageHelper = new MimeMessageHelper(message,
+                    true, "UTF-8");
+
+            messageHelper.setFrom(setfrom); // 보내는사람 생략하면 정상작동을 안함
+            messageHelper.setTo(tomail); // 받는사람 이메일
+            messageHelper.setSubject(title); // 메일제목은 생략이 가능하다
+            messageHelper.setText(content); // 메일 내용
+            
+            mailSender.send(message); //오류
+            
+            Map<String, String> map = new HashMap<String, String>();
+    		map.put("num", num);
+    		return map;
+        } catch (Exception e) {
+        	e.printStackTrace();
+        	System.out.println("CheckEmail() 오류");
+        	return null;
+        }
+	}
+	
+	
 	//회원가입 
 	@RequestMapping(value = "/registerok", method = RequestMethod.POST)
-	public String RegisterOk() throws Exception {
-		
+	public String RegisterOk(MembersVO members, AddressVO address) throws Exception {
+		System.out.println(members.toString());
+		System.out.println(address.toString());
 		//member 테이블에 저장 후 address 테이블 저장
 		
 		return null;

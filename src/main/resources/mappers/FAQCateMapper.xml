@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shoppingmall.mapper.FAQCateMapper">
+	
+	<!-- 카테고리 개수 구하기 -->
+	<select id="FAQCateGetNum" resultType="Integer">
+		select count(*) from FAQCate;
+	</select>
+	
+	<!-- 카테고리 가져오기 -->
+	<select id="FAQCateGet" parameterType="FAQCateVO">
+		select * from FAQCate;
+	</select>
+	
+	<!-- 카테고리 입력 -->
+	<select id="FAQCateInsert">
+		insert into FAQcate #{FAQCategory} where FAQCatenum = #{FAQCatenum};
+	</select>
+	
+	<!-- 카테고리 수정 -->
+	<select id="FAQCateUpdate">
+		update FAQcate set FAQCategory = #{FAQCategory} where FAQCatenum = #{FAQCatenum};
+	</select>
+	
+	<!-- 카테고리 삭제 -->
+	<select id="FAQCateDelete">
+		delete from FAQCate where FAQCatenum = #{FAQCatenum};
+	</select>
+</mapper> 

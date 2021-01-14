@@ -6,6 +6,7 @@
 	<typeAliases>
 		<typeAlias type="com.shoppingmall.vo.MembersVO" alias="MembersVO"/>
 		<typeAlias type="com.shoppingmall.vo.AddressVO" alias="AddressVO"/>
+		<typeAlias type="com.shoppingmall.vo.FAQCateVO" alias="FAQCateVO"/>
 	</typeAliases>
 	
 </configuration>

@@ -77,13 +77,13 @@
 <body>
 
 <div class="tab">
-<button class="tablink" onclick="openCity('London', this, 'gray')" id="defaultOpen">카테고리1</button>
-<button class="tablink" onclick="openCity('Paris', this, 'gray')">카테고리2</button>
-<button class="tablink" onclick="openCity('Tokyo', this, 'gray')">카테고리3</button>
-<button class="tablink" onclick="openCity('Oslo', this, 'gray')">카테고리4</button>
+<button class="tablink" onclick="catechange('cate1', this)" id="defaultOpen">카테고리1</button>
+<button class="tablink" onclick="catechange('cate2', this)">카테고리2</button>
+<button class="tablink" onclick="catechange('cate3', this)">카테고리3</button>
+<button class="tablink" onclick="catechange('cate4', this)">카테고리4</button>
 </div>
 
-<div id="London" class="tabcontent">
+<div id="cate1" class="tabcontent">
   <button class="accordion">질문 1</button>
 	<div class="panel">
   		<p>답변입니다1.</p>
@@ -100,7 +100,7 @@
 
 </div>
 
-<div id="Paris" class="tabcontent">
+<div id="cate2" class="tabcontent">
    <button class="accordion">질문 1</button>
 	<div class="panel">
   		<p>답변입니다1.</p>
@@ -116,7 +116,7 @@
 </div>
 </div>
 
-<div id="Tokyo" class="tabcontent">
+<div id="cate3" class="tabcontent">
    <button class="accordion">질문 1</button>
 	<div class="panel">
   		<p>답변입니다1.</p>
@@ -132,7 +132,7 @@
 </div>
 </div>
 
-<div id="Oslo" class="tabcontent">
+<div id="cate4" class="tabcontent">
    <button class="accordion">질문 1</button>
 	<div class="panel">
   		<p>답변입니다1.</p>
@@ -149,7 +149,7 @@
 </div>
 
 <script>
-function openCity(cityName,elmnt,color) {
+function catechange(cate,elmnt) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -159,8 +159,8 @@ function openCity(cityName,elmnt,color) {
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].style.backgroundColor = "";
   }
-  document.getElementById(cityName).style.display = "block";
-  elmnt.style.backgroundColor = color;
+  document.getElementById(cate).style.display = "block";
+  elmnt.style.backgroundColor = "gray";
 
 }
 // Get the element with id="defaultOpen" and click on it

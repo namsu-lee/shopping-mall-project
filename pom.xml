@@ -211,7 +211,7 @@
 			<version>1</version>
 		</dependency>
 
-		<!-- 메일 전송 -->
+		<!-- 메일 전송 --> 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
 		<dependency>
 			<groupId>org.springframework</groupId>

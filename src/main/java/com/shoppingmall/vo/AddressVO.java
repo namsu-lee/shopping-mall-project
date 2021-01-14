@@ -1,8 +1,8 @@
 package com.shoppingmall.vo;
 
 public class AddressVO {
-	String memberid;
-	String address;
+	private String memberid;
+	private String address;
 
 	public String getMemberid() {
 		return memberid;

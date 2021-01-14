@@ -4,7 +4,8 @@
 <configuration>
 	
 	<typeAliases>
-		
+		<typeAlias type="com.shoppingmall.vo.MembersVO" alias="MembersVO"/>
+		<typeAlias type="com.shoppingmall.vo.AddressVO" alias="AddressVO"/>
 	</typeAliases>
 	
 </configuration>

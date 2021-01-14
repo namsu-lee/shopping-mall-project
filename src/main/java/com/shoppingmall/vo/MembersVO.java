@@ -1,14 +1,15 @@
 package com.shoppingmall.vo;
 
+import java.util.List;
 import java.util.Random;
 
 public class MembersVO {
-	String memberid;
-	String password;
-	String membername;
-	String email;
-	String phone;
-	String flag;
+	private String memberid;
+	private String password;
+	private String membername;
+	private String email;
+	private String phone;
+	private String flag;
 
 	public String getMemberid() {
 		return memberid;
@@ -64,7 +65,7 @@ public class MembersVO {
 				+ email + ", phone=" + phone + ", flag=" + flag + "]";
 	}
 
-	//난수 생성기
+	// 난수 생성기
 	public String Random_Number() {
 		// 인증번호 생성하는 부분
 		int len = 6;

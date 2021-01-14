@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="edu.study.mapper.RegisterMapper">
+<mapper namespace="com.shoppingmall.mapper.RegisterMapper">
 
 	
 	<!-- 등록한 게시글의 번호 구함 -->
@@ -10,5 +10,15 @@
 		select count(*) from members where memberid = #{memberid};
 	</select>
 
+	<!-- 회원가입 -->
+	<insert id="Register" parameterType="MembersVO">
+		insert into members (memberid, password, membername, email, phone, flag)
+			 values (#{memberid}, #{password}, #{membername}, #{email}, #{phone}, #{flag});
+	</insert>
 	
+	
+	<!-- 회원가입 후 주소 -->
+	<insert id="Address" parameterType="AddressVO">
+		insert into address (memberid, address) values (#{memberid}, #{address})
+	</insert>
 </mapper> 

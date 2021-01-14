@@ -1,6 +1,7 @@
 package com.shoppingmall.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -74,12 +75,12 @@ public class RegisterController {
             MimeMessageHelper messageHelper = new MimeMessageHelper(message,
                     true, "UTF-8");
 
-            messageHelper.setFrom(setfrom); // 보내는사람 생략하면 정상작동을 안함
-            messageHelper.setTo(tomail); // 받는사람 이메일
-            messageHelper.setSubject(title); // 메일제목은 생략이 가능하다
-            messageHelper.setText(content); // 메일 내용
+            messageHelper.setFrom(setfrom); 		// 보내는사람 생략하면 정상작동을 안함
+            messageHelper.setTo(tomail);			// 받는사람 이메일
+            messageHelper.setSubject(title); 		// 메일제목은 생략이 가능하다
+            messageHelper.setText(content);			// 메일 내용
             
-            mailSender.send(message); //오류
+            mailSender.send(message); 
             
             Map<String, String> map = new HashMap<String, String>();
     		map.put("num", num);
@@ -89,16 +90,20 @@ public class RegisterController {
         	System.out.println("CheckEmail() 오류");
         	return null;
         }
-	}
+	} 
 	
 	
 	//회원가입 
 	@RequestMapping(value = "/registerok", method = RequestMethod.POST)
 	public String RegisterOk(MembersVO membersVO, AddressVO addressVO) throws Exception {
 		System.out.println(membersVO.toString());
-		System.out.println(addressVO.toString());
-		//member 테이블에 저장 후 address 테이블 저장
 		
-		return null;
+		//member 테이블에 저장 후 address 테이블 저장
+		int result = registerService.Register(membersVO);
+		if(result == 1) {
+			registerService.Address(addressVO);
+		}
+		
+		return "home";
 	}
 }

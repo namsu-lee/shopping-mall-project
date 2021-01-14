@@ -159,9 +159,9 @@
 					return false;
 				}
 			}
-			if($("#id").val() == ""){		
+			if($("#memberid").val() == ""){		
 				alert("아이디를 입력하세요.");
-				$("#id").focus();
+				$("#memberid").focus();
 				return false;
 			}else if($("#password").val() == ""){
 				alert("비밀번호를 입력하세요.");
@@ -175,9 +175,9 @@
 				alert("비밀번호가 일치하지 않습니다.");
 				$("#confirmPassword").focus();
 				return false;
-			} else if($("#name").val() == ""){
+			} else if($("#membername").val() == ""){
 				alert("이름을 입력하세요.");
-				$("#name").focus();
+				$("#membername").focus();
 				return false;
 			}else if($("#email").val() == ""){
 				alert("이메일을 입력하세요.");

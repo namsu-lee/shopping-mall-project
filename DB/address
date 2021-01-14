@@ -1,5 +1,5 @@
 create table address (
+	memberid varchar(20) not null,						--회원 아이디
 	address varchar(100),								--배송지
-    memberid varchar(20) not null,						--회원 아이디
     foreign key (memberid) references member(memberid)
     )DEFAULT CHARSET=utf8 COLLATE utf8_general_ci;

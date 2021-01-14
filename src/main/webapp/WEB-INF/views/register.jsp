@@ -46,9 +46,9 @@
         <label for="confirmPassword"><b>비밀번호 확인 *</b></label>
         <input type="password" placeholder="비밀번호를 한번 더 입력해주세요" name="confirmPassword" id="confirmPassword" required>
 		
-		<!-- 닉네임 -->
+		<!-- 이름 -->
 		<label for="name"><b>이름 *</b></label>
-        <input type="text" placeholder="이름을 입력해주세요" name="name" id="name" required>
+        <input type="text" placeholder="이름을 입력해주세요" name="membername" id="membername" required>
 		
 		<!-- 이메일 -->
 		<label for="email"><b>이메일 *</b></label>
@@ -58,7 +58,7 @@
 		<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 이메일 확인 메세지 뿌려주는곳 @@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		</div>
 		<label for="checkbox"><b>마케팅 수신 동의</b></label>
-		<input type="checkbox" name="flag" id="flag"></br>
+		<input type="checkbox" name="flag" id="flag" value="y"></br>
 		</br>
 		<label for="address"><b>주소</b></label><br/>
 		<input type="text" id="sample6_postcode" placeholder="우편번호" style="width:200px;">

@@ -96,9 +96,12 @@ public class RegisterController {
 	//회원가입 
 	@RequestMapping(value = "/registerok", method = RequestMethod.POST)
 	public String RegisterOk(MembersVO membersVO, AddressVO addressVO) throws Exception {
+		
 		System.out.println(membersVO.toString());
 		
-		//member 테이블에 저장 후 address 테이블 저장
+		//암호화
+		membersVO.setPassword(MembersVO.bytesToHex2(MembersVO.sha256(membersVO.getPassword())));
+		
 		int result = registerService.Register(membersVO);
 		if(result == 1) {
 			registerService.Address(addressVO);

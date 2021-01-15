@@ -5,7 +5,7 @@
 
 	
 	<!-- 로그인 -->
-	<select id="LoginCheck">
+	<select id="LoginCheck" parameterType="LoginVO">
 		select memberid from members where memberid = #{memberid} and password = #{password}
 	</select>
 

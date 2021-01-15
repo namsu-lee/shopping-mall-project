@@ -22,11 +22,11 @@ public class LoginController {
 	LoginService loginService;
 	
 	
-	//·Î±×ÀÎ
+	//ï¿½Î±ï¿½ï¿½ï¿½
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String Login(Locale locale, Model model, LoginVO vo, HttpServletRequest request) throws Exception {
 		
-		//ºñ¹Ð¹øÈ£ ¾ÏÈ£È­
+		//ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½È£È­
 		vo.setPassword(MembersVO.bytesToHex2(MembersVO.sha256(vo.getPassword())));
 		
 		LoginVO result = loginService.Login(vo);
@@ -35,14 +35,14 @@ public class LoginController {
 			session.setAttribute("memberid", result.getMemberid());
 		}
 		
-		return "/home";
+		return "/main";
 	}
 	
 
-	//·Î±×¾Æ¿ô
+	//ï¿½Î±×¾Æ¿ï¿½
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
 	public String Logout(Locale locale, Model model) throws Exception {
 		
-		return "/home";
+		return "/main";
 	}
 }

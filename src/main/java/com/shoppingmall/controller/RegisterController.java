@@ -38,7 +38,7 @@ public class RegisterController {
 	
 	
 	 
-	//È¸¿ø°¡ÀÔ ÆäÀÌÁö·Î ÀÌµ¿
+	//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String register(Locale locale, Model model) throws Exception {
 		
@@ -46,14 +46,14 @@ public class RegisterController {
 	}
 	
 	
-	//¾ÆÀÌµð Áßº¹°Ë»ç
+	//ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ßºï¿½ï¿½Ë»ï¿½
 	@ResponseBody
 	@RequestMapping(value = "/idcheck", method = RequestMethod.POST)
 	public Map<String, Integer> CheckID(Locale locale, Model model, String id) throws Exception {
 		
-		System.out.println("»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ¾ÆÀÌµð :: " + id);
+		System.out.println("ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ :: " + id);
 		
-		int num = registerService.CheckID(id);	//1À» ¹ÝÈ¯ÇÏ¸é »ç¿ëÇÏ°í ÀÖÀ½
+		int num = registerService.CheckID(id);	//1ï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
 		System.out.println(num);
 		
 		Map<String, Integer> map = new HashMap<String, Integer>();
@@ -63,29 +63,29 @@ public class RegisterController {
 	}
 	
 	
-	//ÀÌ¸ÞÀÏ ÀÎÁõ
+	//ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@ResponseBody
 	@RequestMapping(value = "/emailcheck", method = RequestMethod.POST)
 	public Map<String, String> CheckEmail(String email, MembersVO membersVO) throws Exception {
 		
-		String num     = membersVO.Random_Number();	//³­¼ö
+		String num     = membersVO.Random_Number();	//ï¿½ï¿½ï¿½ï¿½
 		String setfrom = "gudxo12261@gmail.com";
 		String tomail  = email; 
-		String title   = "EZEN¼îÇÎ¸ô È¸¿ø°¡ÀÔ ÀÎÁõ¹øÈ£ ÀÔ´Ï´Ù.";
+		String title   = "EZENï¿½ï¿½ï¿½Î¸ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ ï¿½Ô´Ï´ï¿½.";
 		String content = "<img src=\"cid:ezen.jpg\" style='width:300px; height:100px;'>"
-									+ "<br/><h1>EZEN¼îÇÎ¸ôÀ» Ã£¾ÆÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.</h1><br/>"
-										+ "<h2>ÀÎÁõ¹øÈ£´Â <font color='pink'>" + num + "</font> ÀÔ´Ï´Ù.</h2>";
+									+ "<br/><h1>EZENï¿½ï¿½ï¿½Î¸ï¿½ï¿½ï¿½ Ã£ï¿½ï¿½ï¿½Ö¼Å¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.</h1><br/>"
+										+ "<h2>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È£ï¿½ï¿½ <font color='pink'>" + num + "</font> ï¿½Ô´Ï´ï¿½.</h2>";
 		
 		try {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 
-            messageHelper.setFrom(setfrom); 				// º¸³»´Â»ç¶÷ »ý·«ÇÏ¸é Á¤»óÀÛµ¿À» ¾ÈÇÔ
-            messageHelper.setTo(tomail);					// ¹Þ´Â»ç¶÷ ÀÌ¸ÞÀÏ
-            messageHelper.setSubject(title); 				// ¸ÞÀÏÁ¦¸ñÀº »ý·«ÀÌ °¡´ÉÇÏ´Ù
-            messageHelper.setText(content, true);			// ¸ÞÀÏ ³»¿ë
+            messageHelper.setFrom(setfrom); 				// ï¿½ï¿½ï¿½ï¿½ï¿½Â»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            messageHelper.setTo(tomail);					// ï¿½Þ´Â»ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½
+            messageHelper.setSubject(title); 				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½
+            messageHelper.setText(content, true);			// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             
-            //C¿¡ ÇØ´ç ÀÌ¹ÌÁö ÆÄÀÏÀÌ ¾øÀ¸¸é ¿À·ù ¹ß»ý!
+            //Cï¿½ï¿½ ï¿½Ø´ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß»ï¿½!
             FileSystemResource file = new FileSystemResource(new File("C:/ezen.jpg"));
             messageHelper.addInline("ezen.jpg", file);
             mailSender.send(message); 
@@ -95,31 +95,31 @@ public class RegisterController {
     		return map;
         } catch (Exception e) {
         	e.printStackTrace();
-        	System.out.println("CheckEmail() ¿À·ù");
+        	System.out.println("CheckEmail() ï¿½ï¿½ï¿½ï¿½");
         	return null;
         }
 	} 
 	
 	
-	//È¸¿ø°¡ÀÔ 
+	//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 	@RequestMapping(value = "/registerok", method = RequestMethod.POST)
 	public String RegisterOk(MembersVO membersVO, AddressVO addressVO, HttpServletRequest request) throws Exception {
 		
 		System.out.println(membersVO.toString());
 		
-		//¾ÏÈ£È­
+		//ï¿½ï¿½È£È­
 		membersVO.setPassword(MembersVO.bytesToHex2(MembersVO.sha256(membersVO.getPassword())));
 		
 		int result = registerService.Register(membersVO);
 		if(result == 1) {
 			int num = registerService.Address(addressVO);
 			if(num == 1) {
-				//µðºñ¿¡ ÁÖ¼Ò±îÁö ÀúÀåÀÌ µÇ¾úÀ¸¸é ±×¶§ ¼¼¼Ç¿¡ »ç¿ëÀÚ Ãß°¡
+				//ï¿½ï¿½ï¿½ ï¿½Ö¼Ò±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¶ï¿½ ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
 				HttpSession session = request.getSession(true);
 				session.setAttribute("memberid", membersVO.getMemberid());
 			}
 		}
 		
-		return "¸®´ÙÀÌ¿¢Æ®";
+		return "main";
 	}
 }

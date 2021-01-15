@@ -115,11 +115,11 @@ public class RegisterController {
 			int num = registerService.Address(addressVO);
 			if(num == 1) {
 				//디비에 주소까지 저장이 되었으면 그때 세션에 사용자 추가
-				HttpSession session = request.getSession();
+				HttpSession session = request.getSession(true);
 				session.setAttribute("memberid", membersVO.getMemberid());
 			}
 		}
 		
-		return "home";
+		return "리다이엑트";
 	}
 }

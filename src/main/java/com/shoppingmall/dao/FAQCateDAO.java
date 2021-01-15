@@ -18,7 +18,7 @@ public class FAQCateDAO {
 	
 	// 카테고리 개수 구하기
 	public int FAQCateGetNum() {
-		return sqlSession.selectOne(Namespace + ".CheckID");
+		return sqlSession.selectOne(Namespace + ".FAQCateGet");
 	}
 	
 	// 카테고리 가져오기

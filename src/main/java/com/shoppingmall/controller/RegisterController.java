@@ -8,6 +8,8 @@ import java.util.Map;
 
 import javax.inject.Inject;
 import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -83,7 +85,7 @@ public class RegisterController {
             messageHelper.setSubject(title); 				// 메일제목은 생략이 가능하다
             messageHelper.setText(content, true);			// 메일 내용
             
-
+            //C에 해당 이미지 파일이 없으면 오류 발생!
             FileSystemResource file = new FileSystemResource(new File("C:/ezen.jpg"));
             messageHelper.addInline("ezen.jpg", file);
             mailSender.send(message); 
@@ -101,7 +103,7 @@ public class RegisterController {
 	
 	//회원가입 
 	@RequestMapping(value = "/registerok", method = RequestMethod.POST)
-	public String RegisterOk(MembersVO membersVO, AddressVO addressVO) throws Exception {
+	public String RegisterOk(MembersVO membersVO, AddressVO addressVO, HttpServletRequest request) throws Exception {
 		
 		System.out.println(membersVO.toString());
 		
@@ -110,7 +112,12 @@ public class RegisterController {
 		
 		int result = registerService.Register(membersVO);
 		if(result == 1) {
-			registerService.Address(addressVO);
+			int num = registerService.Address(addressVO);
+			if(num == 1) {
+				//디비에 주소까지 저장이 되었으면 그때 세션에 사용자 추가
+				HttpSession session = request.getSession();
+				session.setAttribute("memberid", membersVO.getMemberid());
+			}
 		}
 		
 		return "home";

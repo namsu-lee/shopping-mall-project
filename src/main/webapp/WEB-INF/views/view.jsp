@@ -1,9 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>»ó¼¼º¸±â ¿¬½À</title>
+		<title>ìƒì„¸ë³´ê¸° ì—°ìŠµ</title>
 		<script src="jquery-3.5.1.min.js"></script>
 		<style>
 			/* Slideshow container */
@@ -105,14 +103,14 @@
 		</style>
 	</head>
 	<body>
-		<!-- »ó´Ü ³×ºñ¹Ù ÀÚ¸® -->
+		<!-- ìƒë‹¨ ë„¤ë¹„ë°” ìë¦¬ -->
 		<center>
-			<h1>»ó´Ü ³×ºñ¹Ù ÀÚ¸®</h1>
+			<h1>ìƒë‹¨ ë„¤ë¹„ë°” ìë¦¬</h1>
 			<br/><br/><br/><br/><br/>
 			<br/><br/><br/><br/><br/>
 		</center>
 		
-		<!-- »çÁø -->
+		<!-- ì‚¬ì§„ -->
 		<table style="position:absolute; left:300px;">
 			<tbody>
 				<tr>
@@ -157,28 +155,28 @@
 			</tbody>
 		</table>
 		
-		<!-- »óÇ° Á¤º¸ -->
+		<!-- ìƒí’ˆ ì •ë³´ -->
 		<table  width="556px" style="position:absolute; left:950px; top:265px;">
 			<thead>
 				<tr>
-					<td text-align="center" colspan="2"><strong><h2>sgd365 º½½Å»ó ·ÎÀ§ ½ºÄù¾î ³ª½Ã °¡µğ°Ç¼¼Æ®(G)</h2></strong></td>
+					<td text-align="center" colspan="2"><strong><h2>sgd365 ë´„ì‹ ìƒ ë¡œìœ„ ìŠ¤í€˜ì–´ ë‚˜ì‹œ ê°€ë””ê±´ì„¸íŠ¸(G)</h2></strong></td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td colspan="2"><span><strike>17,000¿ø</strike></span></td>
+					<td colspan="2"><span><strike>17,000ì›</strike></span></td>
 				</tr>
 				<tr>
 					<td colspan="2">
 						<span><font color="pink" size="5px;">22%</font></span>&nbsp;
-						<span><font size="5px;">23,500¿ø</font></span>
+						<span><font size="5px;">23,500ì›</font></span>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2"><hr></td>
 				</tr>
 				<tr>
-					<td colspan="2"><span><strong><br/>»ö»ó</span></strong></td>
+					<td colspan="2"><span><strong><br/>ìƒ‰ìƒ</span></strong></td>
 				</tr>
 				<tr>
 					<td colspan="2">
@@ -212,39 +210,39 @@
 					<td><br/><br/></td>
 				</tr>
 				<tr>
-					<td><span><strong>»çÀÌÁî : free</span></strong></td>
+					<td><span><strong>ì‚¬ì´ì¦ˆ : free</span></strong></td>
 				</tr>
 				<tr>
 					<td colspan="2"><hr></td>
 				</tr>
 				<tr>
 					<td><br/>
-						<strong>¼ö·®</strong>&nbsp;<span><input type="text" value="1" name="count" id="count" size="1px;" readonly></span>
-						 &nbsp;<button type="button" onclick="Count_Plus()">Áõ°¡</button>
-							   <button type="button" onclick="Count_Minus()">°¨¼Ò</button>
+						<strong>ìˆ˜ëŸ‰</strong>&nbsp;<span><input type="text" value="1" name="count" id="count" size="1px;" readonly></span>
+						 &nbsp;<button type="button" onclick="Count_Plus()">ì¦ê°€</button>
+							   <button type="button" onclick="Count_Minus()">ê°ì†Œ</button>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2"><br/><hr></td>
 				</tr>
 				<tr>
-					<td><font size="5px;">ÃÑ °áÁ¦±İ¾× : </font><font size="6px;" color="pink" id="total">23,500</font><font size="6px;" color="pink">¿ø</font></td>
+					<td><font size="5px;">ì´ ê²°ì œê¸ˆì•¡ : </font><font size="6px;" color="pink" id="total">23,500</font><font size="6px;" color="pink">ì›</font></td>
 				</tr>
 				<tr>
-					<td><button type="button" onclick="Shopping_Basket()" style="background-color:#39373A; width:270px; height:80px;"><font size="5px;" color="white">Àå¹Ù±¸´Ï</font></button>&nbsp<button type="button" onclick="#" style="background-color:#FF7D9E; width:270px; height:80px;"><font size="5px" color="white">±¸¸ÅÇÏ±â</font></button></td>                                                        			
+					<td><button type="button" onclick="Shopping_Basket()" style="background-color:#39373A; width:270px; height:80px;"><font size="5px;" color="white">ì¥ë°”êµ¬ë‹ˆ</font></button>&nbsp<button type="button" onclick="#" style="background-color:#FF7D9E; width:270px; height:80px;"><font size="5px" color="white">êµ¬ë§¤í•˜ê¸°</font></button></td>                                                        			
 				</tr><!-- 304x78  270-->
 			</tbody>
 		</table>
 
 		<script>
-			//¼ö·® ¹× °¡°İ Áõ°¡
+			//ìˆ˜ëŸ‰ ë° ê°€ê²© ì¦ê°€
 			function Count_Plus() {
 				var num   = document.getElementById("count").value;
 				var price = document.getElementById("total").innerText;
 				
 				
 				price = Number(price.replace(",", ""));
-				var pri = 23500;	// pri¿¡´Â µğºñ¿¡ ÀúÀåµÇ¾îÀÖ´Â »óÇ°ÀÇ °¡°İÀÌ µé¾î¿Í¾ßÇÑ´Ù. Áö±İÀº ÀÓÀÇ·Î ¾¸
+				var pri = 23500;	// priì—ëŠ” ë””ë¹„ì— ì €ì¥ë˜ì–´ìˆëŠ” ìƒí’ˆì˜ ê°€ê²©ì´ ë“¤ì–´ì™€ì•¼í•œë‹¤. ì§€ê¸ˆì€ ì„ì˜ë¡œ ì”€
 				price = pri + price;
 				
 				var result = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -252,7 +250,7 @@
 				
 				num = Number(num) + 1;
 				if(num == 101) {
-					alert("ÃÖ´ë ¼ö·®À» ÃÊ°úÇÏ¿´½À´Ï´Ù.");
+					alert("ìµœëŒ€ ìˆ˜ëŸ‰ì„ ì´ˆê³¼í•˜ì˜€ìŠµë‹ˆë‹¤.");
 					return;
 				}
 				
@@ -260,14 +258,14 @@
 				document.getElementById("total").innerText = result;
 			}
 			
-			//¼ö·® ¹× °¡°İ °¨¼Ò
+			//ìˆ˜ëŸ‰ ë° ê°€ê²© ê°ì†Œ
 			function Count_Minus() {
-				var num = document.getElementById("count").value;			//¼ö·®
-				var price = document.getElementById("total").innerText;		//°¡°İ
+				var num = document.getElementById("count").value;			//ìˆ˜ëŸ‰
+				var price = document.getElementById("total").innerText;		//ê°€ê²©
 				
 				
 				price = Number(price.replace(",", ""));				
-				var pri = 23500;	// pri¿¡´Â µğºñ¿¡ ÀúÀåµÇ¾îÀÖ´Â »óÇ°ÀÇ °¡°İÀÌ µé¾î¿Í¾ßÇÑ´Ù. Áö±İÀº ÀÓÀÇ·Î ¾¸
+				var pri = 23500;	// priì—ëŠ” ë””ë¹„ì— ì €ì¥ë˜ì–´ìˆëŠ” ìƒí’ˆì˜ ê°€ê²©ì´ ë“¤ì–´ì™€ì•¼í•œë‹¤. ì§€ê¸ˆì€ ì„ì˜ë¡œ ì”€
 				price = price - pri;
 				
 				var result = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -280,30 +278,30 @@
 				document.getElementById("total").innerText = result;
 			}
 			
-			//Àå¹Ù±¸´Ï Ãß°¡
+			//ì¥ë°”êµ¬ë‹ˆ ì¶”ê°€
 			function Shopping_Basket() {
-				var count = document.getElementById("count").value;				//ÃÑ ¼ö·®
-				var price = document.getElementById("total").innerText;			//ÃÑ °áÁ¦ ±İ¾×
+				var count = document.getElementById("count").value;				//ì´ ìˆ˜ëŸ‰
+				var price = document.getElementById("total").innerText;			//ì´ ê²°ì œ ê¸ˆì•¡
 				
 				price = Number(price.replace(",", ""));
 				
-				if(!(confirm("Àå¹Ù±¸´Ï¿¡ Ãß°¡ÇÏ½Ã°Ú½À´Ï±î?"))) {
+				if(!(confirm("ì¥ë°”êµ¬ë‹ˆì— ì¶”ê°€í•˜ì‹œê² ìŠµë‹ˆê¹Œ?"))) {
 					return;
 				}
 					
 				var data = {"count":count, "price":price};
 				
-				//ÄíÅ°¿¡ Àå¹Ù±¸´Ï¿¡ Ãß°¡ ÇÒ »óÇ° Á¤º¸ Ãß°¡
+				//ì¿ í‚¤ì— ì¥ë°”êµ¬ë‹ˆì— ì¶”ê°€ í•  ìƒí’ˆ ì •ë³´ ì¶”ê°€
 				$.ajax({
 					url: "#",
 					data: data,
 					type: "POST",
 					success: function(result, status, xhr) {
 						if(result.flag == true) {
-							alert("Ãß°¡Çß½À´Ï´Ù.");
-							//ajax·Î ÄíÅ°¿¡ ÇØ´ç Á¤º¸ Ãß°¡ ÈÄ ¹°¾îº»´Ù.
-							if(confirm("Àå¹Ù±¸´Ï·Î ÀÌµ¿ÇÏ½Ã°Ú½À´Ï±î?")) {
-								alert("Àå¹Ù±¸´Ï·Î ÀÌµ¿");
+							alert("ì¶”ê°€í–ˆìŠµë‹ˆë‹¤.");
+							//ajaxë¡œ ì¿ í‚¤ì— í•´ë‹¹ ì •ë³´ ì¶”ê°€ í›„ ë¬¼ì–´ë³¸ë‹¤.
+							if(confirm("ì¥ë°”êµ¬ë‹ˆë¡œ ì´ë™í•˜ì‹œê² ìŠµë‹ˆê¹Œ?")) {
+								alert("ì¥ë°”êµ¬ë‹ˆë¡œ ì´ë™");
 								//location.href="#";
 							}
 							else {
@@ -314,10 +312,10 @@
 				});				
 			}
 
-			//½½¶óÀÌµå ÀÌ¹ÌÁö
-			var slideIndex = 0; //½½¶óÀÎµå ÀÎµ¦½º
+			//ìŠ¬ë¼ì´ë“œ ì´ë¯¸ì§€
+			var slideIndex = 0; //ìŠ¬ë¼ì¸ë“œ ì¸ë±ìŠ¤
 
-			// HTML ·Îµå°¡ ³¡³­ ÈÄ µ¿ÀÛ
+			// HTML ë¡œë“œê°€ ëë‚œ í›„ ë™ì‘
 			window.onload=function(){
 				showSlides(slideIndex);
 

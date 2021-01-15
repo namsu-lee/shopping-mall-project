@@ -1,5 +1,6 @@
 package com.shoppingmall.controller;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -8,6 +9,7 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.mail.internet.MimeMessage;
 
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
@@ -64,22 +66,26 @@ public class RegisterController {
 	@RequestMapping(value = "/emailcheck", method = RequestMethod.POST)
 	public Map<String, String> CheckEmail(String email, MembersVO membersVO) throws Exception {
 		
-		String num = membersVO.Random_Number();	//난수
+		String num     = membersVO.Random_Number();	//난수
 		String setfrom = "gudxo12261@gmail.com";
 		String tomail  = email; 
-		String title   = "회원가입 인증번호 입니다.";
-		String content = "인증번호는 " + num + " 입니다.";
+		String title   = "EZEN쇼핑몰 회원가입 인증번호 입니다.";
+		String content = "<img src=\"cid:ezen.jpg\" style='width:300px; height:100px;'>"
+									+ "<br/><h1>EZEN쇼핑몰을 찾아주셔서 감사합니다.</h1><br/>"
+										+ "<h2>인증번호는 <font color='pink'>" + num + "</font> 입니다.</h2>";
 		
 		try {
             MimeMessage message = mailSender.createMimeMessage();
-            MimeMessageHelper messageHelper = new MimeMessageHelper(message,
-                    true, "UTF-8");
+            MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 
-            messageHelper.setFrom(setfrom); 		// 보내는사람 생략하면 정상작동을 안함
-            messageHelper.setTo(tomail);			// 받는사람 이메일
-            messageHelper.setSubject(title); 		// 메일제목은 생략이 가능하다
-            messageHelper.setText(content);			// 메일 내용
+            messageHelper.setFrom(setfrom); 				// 보내는사람 생략하면 정상작동을 안함
+            messageHelper.setTo(tomail);					// 받는사람 이메일
+            messageHelper.setSubject(title); 				// 메일제목은 생략이 가능하다
+            messageHelper.setText(content, true);			// 메일 내용
             
+
+            FileSystemResource file = new FileSystemResource(new File("C:/ezen.jpg"));
+            messageHelper.addInline("ezen.jpg", file);
             mailSender.send(message); 
             
             Map<String, String> map = new HashMap<String, String>();

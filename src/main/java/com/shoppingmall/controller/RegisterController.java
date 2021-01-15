@@ -120,6 +120,6 @@ public class RegisterController {
 			}
 		}
 		
-		return "home";
+		return "main";
 	}
 }

@@ -22,11 +22,11 @@ public class LoginController {
 	LoginService loginService;
 	
 	
-	//�α���
+	//로그인 처리
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String Login(Locale locale, Model model, LoginVO vo, HttpServletRequest request) throws Exception {
 		
-		//��й�ȣ ��ȣȭ
+		//비밀번호 암호화
 		vo.setPassword(MembersVO.bytesToHex2(MembersVO.sha256(vo.getPassword())));
 		
 		LoginVO result = loginService.Login(vo);
@@ -39,7 +39,7 @@ public class LoginController {
 	}
 	
 
-	//�α׾ƿ�
+	//로그아웃
 	@RequestMapping(value = "/logout", method = RequestMethod.POST)
 	public String Logout(Locale locale, Model model) throws Exception {
 		

@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ include file="../../exclude/topnav.jsp" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<title>·Î±×ÀÎ</title>
+	<title>ë¡œê·¸ì¸</title>
 	<style>
 			*{
 				text-align: center;
@@ -82,23 +82,23 @@
 			<article style="margin-top:13%">
 				<h2><a href="login.html"><img src="#" style="width:80px; height:80px;"></a></h2>
 				<form action="#" method="post">
-					<input type="text" name="id" id="id" placeholder="¾ÆÀÌµğ"><br>
-					<input type="password" name="password" id="password" placeholder="ºñ¹Ğ¹øÈ£´Â 6ÀÚ ÀÌ»ó ~ 20ÀÚ ÀÌÇÏ"></br>
-					<button type="submit" id="submitButton">·Î±×ÀÎ</button><br>
-					<input type="checkbox" name="checkbox" id="checkbox">ÀÚµ¿ ·Î±×ÀÎ
+					<input type="text" name="id" id="id" placeholder="ì•„ì´ë””"><br>
+					<input type="password" name="password" id="password" placeholder="ë¹„ë°€ë²ˆí˜¸ëŠ” 6ì ì´ìƒ ~ 20ì ì´í•˜"></br>
+					<button type="submit" id="submitButton">ë¡œê·¸ì¸</button><br>
+					<input type="checkbox" name="checkbox" id="checkbox">ìë™ ë¡œê·¸ì¸
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;
-					<a href="register.html"><small>È¸¿ø°¡ÀÔ</small></a>
+					<a href="register.html"><small>íšŒì›ê°€ì…</small></a>
 					<br>
 					<br>
-					<button type="button" id="naverButton" onclick="#">³×ÀÌ¹ö·Î ½ÃÀÛÇÏ±â</button>
+					<button type="button" id="naverButton" onclick="#">ë„¤ì´ë²„ë¡œ ì‹œì‘í•˜ê¸°</button>
 				</form>
 			</article>
 		</section>
 		<footer>
 			<div>
-				(ÁÖ)¸ÁÇÒÄÚµù 
+				(ì£¼)ë§í• ì½”ë”© 
 			</div>
 		</footer>
 </body>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ include file="../../exclude/topnav.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -82,132 +82,132 @@ body {
 			<table class="table1">
 				<tr>
 					<th><input type="radio" name="all" id="all"></th>
-					<th>ÁÖ¹®»óÇ°Á¤º¸</th>
-					<th>¼ö·®</th>
-					<th>°¡°Ý</th>
+					<th>ì£¼ë¬¸ìƒí’ˆì •ë³´</th>
+					<th>ìˆ˜ëŸ‰</th>
+					<th>ê°€ê²©</th>
 					<th></th>
 				</tr>
 			
 				<tr>
 					<td><input type="radio" name="all" id="all" class="middle"><img src="black.jpg" style="width:60px; height:60px;"></td>
 					<td>
-						<span><font background-color="gray">ÀÏ¹Ý¹è¼Û</font></span><br/>
-						<span><font background-color="gray">º½½Å»ó UCLA ÆÐÄ¡ ·çÁîÇÍ ¸ÇÅõ¸Ç(T)</font></span><br/>
-						<span><font background-color="gray">±×·¹ÀÌ / ONE SIZE</font></span><br/>
+						<span><font background-color="gray">ì¼ë°˜ë°°ì†¡</font></span><br/>
+						<span><font background-color="gray">ë´„ì‹ ìƒ UCLA íŒ¨ì¹˜ ë£¨ì¦ˆí• ë§¨íˆ¬ë§¨(T)</font></span><br/>
+						<span><font background-color="gray">ê·¸ë ˆì´ / ONE SIZE</font></span><br/>
 					</td>
 					<td>
-						<strong>¼ö·®</strong>&nbsp;<span><input type="text" value="1" name="count_1" id="count_1" size="1px;" readonly></span>
-									&nbsp;<button type="button" onclick="Count_Plus(1)">Áõ°¡</button>
-										  <button type="button" onclick="Count_Minus(1)">°¨¼Ò</button>
+						<strong>ìˆ˜ëŸ‰</strong>&nbsp;<span><input type="text" value="1" name="count_1" id="count_1" size="1px;" readonly></span>
+									&nbsp;<button type="button" onclick="Count_Plus(1)">ì¦ê°€</button>
+										  <button type="button" onclick="Count_Minus(1)">ê°ì†Œ</button>
 					</td>
-					<td><font id="price_1">15,000</font><font>¿ø</font></td>
+					<td><font id="price_1">15,000</font><font>ì›</font></td>
 					<td><button>x</button></td>
 				</tr>
 			
 				<tr>
 					<td><input type="radio" name="all" id="all" class="middle"><img src="lightblue.jpg" style="width:60px; height:60px;"></td>
 					<td>
-						<span><font background-color="gray">ÀÏ¹Ý¹è¼Û</font></span><br/>
-						<span><font background-color="gray">º½½Å»ó UCLA ÆÐÄ¡ ·çÁîÇÍ ¸ÇÅõ¸Ç(T)</font></span><br/>
-						<span><font background-color="gray">±×·¹ÀÌ / ONE SIZE</font></span><br/>
+						<span><font background-color="gray">ì¼ë°˜ë°°ì†¡</font></span><br/>
+						<span><font background-color="gray">ë´„ì‹ ìƒ UCLA íŒ¨ì¹˜ ë£¨ì¦ˆí• ë§¨íˆ¬ë§¨(T)</font></span><br/>
+						<span><font background-color="gray">ê·¸ë ˆì´ / ONE SIZE</font></span><br/>
 					</td>
 					<td>
-						<strong>¼ö·®</strong>&nbsp;<span><input type="text" value="1" name="count_2" id="count_2" size="1px;" readonly></span>
-									&nbsp;<button type="button" onclick="Count_Plus(2)">Áõ°¡</button>
-										  <button type="button" onclick="Count_Minus(2)">°¨¼Ò</button>
+						<strong>ìˆ˜ëŸ‰</strong>&nbsp;<span><input type="text" value="1" name="count_2" id="count_2" size="1px;" readonly></span>
+									&nbsp;<button type="button" onclick="Count_Plus(2)">ì¦ê°€</button>
+										  <button type="button" onclick="Count_Minus(2)">ê°ì†Œ</button>
 					</td>
-					<td><font id="price_2">24,000</font><font>¿ø</font></td>
+					<td><font id="price_2">24,000</font><font>ì›</font></td>
 					<td><button>x</button></td>
 				</tr>
 			
 				<tr>
 					<td><input type="radio" name="all" id="all" class="middle"><img src="pink.jpg" style="width:60px; height:60px;"></td>
 					<td>
-						<span><font background-color="gray">ÀÏ¹Ý¹è¼Û</font></span><br/>
-						<span><font background-color="gray">º½½Å»ó UCLA ÆÐÄ¡ ·çÁîÇÍ ¸ÇÅõ¸Ç(T)</font></span><br/>
-						<span><font background-color="gray">±×·¹ÀÌ / ONE SIZE</font></span><br/>
+						<span><font background-color="gray">ì¼ë°˜ë°°ì†¡</font></span><br/>
+						<span><font background-color="gray">ë´„ì‹ ìƒ UCLA íŒ¨ì¹˜ ë£¨ì¦ˆí• ë§¨íˆ¬ë§¨(T)</font></span><br/>
+						<span><font background-color="gray">ê·¸ë ˆì´ / ONE SIZE</font></span><br/>
 					</td>
 					<td>
-						<strong>¼ö·®</strong>&nbsp;<span><input type="text" value="1" name="count_3" id="count_3" size="1px;" readonly></span>
-									&nbsp;<button type="button" onclick="Count_Plus(3)">Áõ°¡</button>
-										  <button type="button" onclick="Count_Minus(3)">°¨¼Ò</button>
+						<strong>ìˆ˜ëŸ‰</strong>&nbsp;<span><input type="text" value="1" name="count_3" id="count_3" size="1px;" readonly></span>
+									&nbsp;<button type="button" onclick="Count_Plus(3)">ì¦ê°€</button>
+										  <button type="button" onclick="Count_Minus(3)">ê°ì†Œ</button>
 					</td>
-					<td><font id="price_3">36,000</font><font>¿ø</font></td>
+					<td><font id="price_3">36,000</font><font>ì›</font></td>
 					<td><button>x</button></td>
 				</tr>
 				<tr>
 					<td><input type="radio" name="all" id="all" class="middle"><img src="pink.jpg" style="width:60px; height:60px;"></td>
 					<td>
-						<span><font background-color="gray">ÀÏ¹Ý¹è¼Û</font></span><br/>
-						<span><font background-color="gray">º½½Å»ó UCLA ÆÐÄ¡ ·çÁîÇÍ ¸ÇÅõ¸Ç(T)</font></span><br/>
-						<span><font background-color="gray">±×·¹ÀÌ / ONE SIZE</font></span><br/>
+						<span><font background-color="gray">ì¼ë°˜ë°°ì†¡</font></span><br/>
+						<span><font background-color="gray">ë´„ì‹ ìƒ UCLA íŒ¨ì¹˜ ë£¨ì¦ˆí• ë§¨íˆ¬ë§¨(T)</font></span><br/>
+						<span><font background-color="gray">ê·¸ë ˆì´ / ONE SIZE</font></span><br/>
 					</td>
 					<td>
-						<strong>¼ö·®</strong>&nbsp;<span><input type="text" value="1" name="count_4" id="count_4" size="1px;" readonly></span>
-									&nbsp;<button type="button" onclick="Count_Plus(4)">Áõ°¡</button>
-										  <button type="button" onclick="Count_Minus(4)">°¨¼Ò</button>
+						<strong>ìˆ˜ëŸ‰</strong>&nbsp;<span><input type="text" value="1" name="count_4" id="count_4" size="1px;" readonly></span>
+									&nbsp;<button type="button" onclick="Count_Plus(4)">ì¦ê°€</button>
+										  <button type="button" onclick="Count_Minus(4)">ê°ì†Œ</button>
 					</td>
-					<td><font id="price_4">17,000</font><font>¿ø</font></td>
+					<td><font id="price_4">17,000</font><font>ì›</font></td>
 					<td><button>x</button></td>
 				</tr>
 				<tr>
 					<td><input type="radio" name="all" id="all" class="middle"><img src="pink.jpg" style="width:60px; height:60px;"></td>
 					<td>
-						<span><font background-color="gray">ÀÏ¹Ý¹è¼Û</font></span><br/>
-						<span><font background-color="gray">º½½Å»ó UCLA ÆÐÄ¡ ·çÁîÇÍ ¸ÇÅõ¸Ç(T)</font></span><br/>
-						<span><font background-color="gray">±×·¹ÀÌ / ONE SIZE</font></span><br/>
+						<span><font background-color="gray">ì¼ë°˜ë°°ì†¡</font></span><br/>
+						<span><font background-color="gray">ë´„ì‹ ìƒ UCLA íŒ¨ì¹˜ ë£¨ì¦ˆí• ë§¨íˆ¬ë§¨(T)</font></span><br/>
+						<span><font background-color="gray">ê·¸ë ˆì´ / ONE SIZE</font></span><br/>
 					</td>
 					<td>
-						<strong>¼ö·®</strong>&nbsp;<span><input type="text" value="1" name="count_4" id="count_4" size="1px;" readonly></span>
-									&nbsp;<button type="button" onclick="Count_Plus(4)">Áõ°¡</button>
-										  <button type="button" onclick="Count_Minus(4)">°¨¼Ò</button>
+						<strong>ìˆ˜ëŸ‰</strong>&nbsp;<span><input type="text" value="1" name="count_4" id="count_4" size="1px;" readonly></span>
+									&nbsp;<button type="button" onclick="Count_Plus(4)">ì¦ê°€</button>
+										  <button type="button" onclick="Count_Minus(4)">ê°ì†Œ</button>
 					</td>
-					<td><font id="price_4">17,000</font><font>¿ø</font></td>
+					<td><font id="price_4">17,000</font><font>ì›</font></td>
 					<td><button>x</button></td>
 				</tr>
 				<tr>
 					<td><input type="radio" name="all" id="all" class="middle"><img src="pink.jpg" style="width:60px; height:60px;"></td>
 					<td>
-						<span><font background-color="gray">ÀÏ¹Ý¹è¼Û</font></span><br/>
-						<span><font background-color="gray">º½½Å»ó UCLA ÆÐÄ¡ ·çÁîÇÍ ¸ÇÅõ¸Ç(T)</font></span><br/>
-						<span><font background-color="gray">±×·¹ÀÌ / ONE SIZE</font></span><br/>
+						<span><font background-color="gray">ì¼ë°˜ë°°ì†¡</font></span><br/>
+						<span><font background-color="gray">ë´„ì‹ ìƒ UCLA íŒ¨ì¹˜ ë£¨ì¦ˆí• ë§¨íˆ¬ë§¨(T)</font></span><br/>
+						<span><font background-color="gray">ê·¸ë ˆì´ / ONE SIZE</font></span><br/>
 					</td>
 					<td>
-						<strong>¼ö·®</strong>&nbsp;<span><input type="text" value="1" name="count_4" id="count_4" size="1px;" readonly></span>
-									&nbsp;<button type="button" onclick="Count_Plus(4)">Áõ°¡</button>
-										  <button type="button" onclick="Count_Minus(4)">°¨¼Ò</button>
+						<strong>ìˆ˜ëŸ‰</strong>&nbsp;<span><input type="text" value="1" name="count_4" id="count_4" size="1px;" readonly></span>
+									&nbsp;<button type="button" onclick="Count_Plus(4)">ì¦ê°€</button>
+										  <button type="button" onclick="Count_Minus(4)">ê°ì†Œ</button>
 					</td>
-					<td><font id="price_4">17,000</font><font>¿ø</font></td>
+					<td><font id="price_4">17,000</font><font>ì›</font></td>
 					<td><button>x</button></td>
 				</tr>
 				<tr>
 					<td><input type="radio" name="all" id="all" class="middle"><img src="pink.jpg" style="width:60px; height:60px;"></td>
 					<td>
-						<span><font background-color="gray">ÀÏ¹Ý¹è¼Û</font></span><br/>
-						<span><font background-color="gray">º½½Å»ó UCLA ÆÐÄ¡ ·çÁîÇÍ ¸ÇÅõ¸Ç(T)</font></span><br/>
-						<span><font background-color="gray">±×·¹ÀÌ / ONE SIZE</font></span><br/>
+						<span><font background-color="gray">ì¼ë°˜ë°°ì†¡</font></span><br/>
+						<span><font background-color="gray">ë´„ì‹ ìƒ UCLA íŒ¨ì¹˜ ë£¨ì¦ˆí• ë§¨íˆ¬ë§¨(T)</font></span><br/>
+						<span><font background-color="gray">ê·¸ë ˆì´ / ONE SIZE</font></span><br/>
 					</td>
 					<td>
-						<strong>¼ö·®</strong>&nbsp;<span><input type="text" value="1" name="count_4" id="count_4" size="1px;" readonly></span>
-									&nbsp;<button type="button" onclick="Count_Plus(4)">Áõ°¡</button>
-										  <button type="button" onclick="Count_Minus(4)">°¨¼Ò</button>
+						<strong>ìˆ˜ëŸ‰</strong>&nbsp;<span><input type="text" value="1" name="count_4" id="count_4" size="1px;" readonly></span>
+									&nbsp;<button type="button" onclick="Count_Plus(4)">ì¦ê°€</button>
+										  <button type="button" onclick="Count_Minus(4)">ê°ì†Œ</button>
 					</td>
-					<td><font id="price_4">17,000</font><font>¿ø</font></td>
+					<td><font id="price_4">17,000</font><font>ì›</font></td>
 					<td><button>x</button></td>
 				</tr>
 				<tr>
 					<td><input type="radio" name="all" id="all" class="middle"><img src="black.jpg" style="width:60px; height:60px;"></td>
 					<td>
-						<span><font background-color="gray">ÀÏ¹Ý¹è¼Û</font></span><br/>
-						<span><font background-color="gray">º½½Å»ó UCLA ÆÐÄ¡ ·çÁîÇÍ ¸ÇÅõ¸Ç(T)</font></span><br/>
-						<span><font background-color="gray">±×·¹ÀÌ / ONE SIZE</font></span><br/>
+						<span><font background-color="gray">ì¼ë°˜ë°°ì†¡</font></span><br/>
+						<span><font background-color="gray">ë´„ì‹ ìƒ UCLA íŒ¨ì¹˜ ë£¨ì¦ˆí• ë§¨íˆ¬ë§¨(T)</font></span><br/>
+						<span><font background-color="gray">ê·¸ë ˆì´ / ONE SIZE</font></span><br/>
 					</td>
 					<td>
-						<strong>¼ö·®</strong>&nbsp;<span><input type="text" value="1" name="count_1" id="count_1" size="1px;" readonly></span>
-									&nbsp;<button type="button" onclick="Count_Plus(1)">Áõ°¡</button>
-										  <button type="button" onclick="Count_Minus(1)">°¨¼Ò</button>
+						<strong>ìˆ˜ëŸ‰</strong>&nbsp;<span><input type="text" value="1" name="count_1" id="count_1" size="1px;" readonly></span>
+									&nbsp;<button type="button" onclick="Count_Plus(1)">ì¦ê°€</button>
+										  <button type="button" onclick="Count_Minus(1)">ê°ì†Œ</button>
 					</td>
-					<td><font id="price_1">15,000</font><font>¿ø</font></td>
+					<td><font id="price_1">15,000</font><font>ì›</font></td>
 					<td><button>x</button></td>
 				</tr>.
 				<tr>
@@ -220,20 +220,20 @@ body {
 				<!--
 				<tr>
 					<td></td>
-					<td><font>01. ÁÖ¹®ÀÚ Á¤º¸</font></td>
+					<td><font>01. ì£¼ë¬¸ìž ì •ë³´</font></td>
 					<td></td>
 					<td></td>
 					<td></td>
 				</tr>
 				<tr>
-					<th>ÀÌ¸§</th>
+					<th>ì´ë¦„</th>
 					<td><input type="text"></td>
 					<td></td>
 					<td></td>
 					<td></td>
 				</tr>
 				<tr>
-					<th>ÁÖ¼Ò</th>
+					<th>ì£¼ì†Œ</th>
 					<td></td>
 					<td></td>
 					<td></td>
@@ -247,27 +247,27 @@ body {
 		<div class="column2">
 			<table class="table2">
 			<tr>
-				<th><font>°áÁ¦±Ý¾×</font></th>
+				<th><font>ê²°ì œê¸ˆì•¡</font></th>
 				<th></th>
 				<th></th>
 			</tr>
 			<tr>
-				<td><font size="2">ÃÑ »óÇ°±Ý¾×</font></td>
-				<td><strong><font color="pink" size="5" id="total">12,000</font></strong><strong><font color="pink" size="5">¿ø</font></strong></td>
+				<td><font size="2">ì´ ìƒí’ˆê¸ˆì•¡</font></td>
+				<td><strong><font color="pink" size="5" id="total">12,000</font></strong><strong><font color="pink" size="5">ì›</font></strong></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><font size="2">¹è¼Ûºñ</font></td>
-				<td><strong><font color="gray" size="2">0</font></strong><strong><font color="gray" size="2">¿ø</font></strong></td>
+				<td><font size="2">ë°°ì†¡ë¹„</font></td>
+				<td><strong><font color="gray" size="2">0</font></strong><strong><font color="gray" size="2">ì›</font></strong></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><font size="2">ÇÒÀÎ±Ý¾×</font></td>
-				<td><strong><font color="gray" size="2">0</font></strong><strong><font color="gray" size="2">¿ø</font></strong></td>
+				<td><font size="2">í• ì¸ê¸ˆì•¡</font></td>
+				<td><strong><font color="gray" size="2">0</font></strong><strong><font color="gray" size="2">ì›</font></strong></td>
 				<td></td>
 			</tr>
 			<tr>
-				<td><button style="background-color:pink; height:40px;">»óÇ° ÁÖ¹®ÇÏ±â</button></td>
+				<td><button style="background-color:pink; height:40px;">ìƒí’ˆ ì£¼ë¬¸í•˜ê¸°</button></td>
 				<td></td>
 				<td></td>
 			</tr>
@@ -280,17 +280,17 @@ body {
 	
 	
 	<script>
-		//¼ö·® ¹× °¡°Ý Áõ°¡
+		//ìˆ˜ëŸ‰ ë° ê°€ê²© ì¦ê°€
 			function Count_Plus(i) {
 				//alert(i);
-				var num   = document.getElementById("count_" + i).value;			//»óÇ°ÀÇ ¼ö·®
-				var price = document.getElementById("price_" + i).innerText;		//»óÇ°ÀÇ °¡°Ý
-				var total = document.getElementById("total").innerText;				//ÃÑ »óÇ°ÀÇ ±Ý¾×
+				var num   = document.getElementById("count_" + i).value;			//ìƒí’ˆì˜ ìˆ˜ëŸ‰
+				var price = document.getElementById("price_" + i).innerText;		//ìƒí’ˆì˜ ê°€ê²©
+				var total = document.getElementById("total").innerText;				//ì´ ìƒí’ˆì˜ ê¸ˆì•¡
 				//alert(price);
 				alert(total);
 				
 				price = Number(price.replace(",", ""));
-				var pri = 23500;	// pri¿¡´Â µðºñ¿¡ ÀúÀåµÇ¾îÀÖ´Â »óÇ°ÀÇ °¡°ÝÀÌ µé¾î¿Í¾ßÇÑ´Ù. Áö±ÝÀº ÀÓÀÇ·Î ¾¸
+				var pri = 23500;	// priì—ëŠ” ë””ë¹„ì— ì €ìž¥ë˜ì–´ìžˆëŠ” ìƒí’ˆì˜ ê°€ê²©ì´ ë“¤ì–´ì™€ì•¼í•œë‹¤. ì§€ê¸ˆì€ ìž„ì˜ë¡œ ì”€
 				price = pri + price;
 				
 				var result = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -298,7 +298,7 @@ body {
 				
 				num = Number(num) + 1;
 				if(num == 101) {
-					alert("ÃÖ´ë ¼ö·®À» ÃÊ°úÇÏ¿´½À´Ï´Ù.");
+					alert("ìµœëŒ€ ìˆ˜ëŸ‰ì„ ì´ˆê³¼í•˜ì˜€ìŠµë‹ˆë‹¤.");
 					return;
 				}
 				
@@ -306,14 +306,14 @@ body {
 				document.getElementById("total").innerText = result;
 			}
 			
-			//¼ö·® ¹× °¡°Ý °¨¼Ò
+			//ìˆ˜ëŸ‰ ë° ê°€ê²© ê°ì†Œ
 			function Count_Minus() {
-				var num = document.getElementById("count").value;			//¼ö·®
-				var price = document.getElementById("total").innerText;		//°¡°Ý
+				var num = document.getElementById("count").value;			//ìˆ˜ëŸ‰
+				var price = document.getElementById("total").innerText;		//ê°€ê²©
 				
 				
 				price = Number(price.replace(",", ""));				
-				var pri = 23500;	// pri¿¡´Â µðºñ¿¡ ÀúÀåµÇ¾îÀÖ´Â »óÇ°ÀÇ °¡°ÝÀÌ µé¾î¿Í¾ßÇÑ´Ù. Áö±ÝÀº ÀÓÀÇ·Î ¾¸
+				var pri = 23500;	// priì—ëŠ” ë””ë¹„ì— ì €ìž¥ë˜ì–´ìžˆëŠ” ìƒí’ˆì˜ ê°€ê²©ì´ ë“¤ì–´ì™€ì•¼í•œë‹¤. ì§€ê¸ˆì€ ìž„ì˜ë¡œ ì”€
 				price = price - pri;
 				
 				var result = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');

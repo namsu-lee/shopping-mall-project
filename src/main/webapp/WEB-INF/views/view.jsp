@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ include file="../../exclude/topnav.jsp" %>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>ìì¸ë³´ê¸° ì°ìµ</title>
+		<title>챙��챙�쨍챘쨀쨈챗쨍째 챙�째챙�쨉</title>
 		<script src="jquery-3.5.1.min.js"></script>
 		<style>
 			/* Slideshow container */
@@ -106,14 +106,14 @@
 		</style>
 	</head>
 	<body>
-		<!-- ìë¨ ë¤ë¹ë° ìë¦¬ -->
+		<!-- 챙��챘�짢 챘�짚챘쨔�챘째� 챙��챘짝짭 -->
 		<center>
-			<h1>ìë¨ ë¤ë¹ë° ìë¦¬</h1>
+			<h1>챙��챘�짢 챘�짚챘쨔�챘째� 챙��챘짝짭</h1>
 			<br/><br/><br/><br/><br/>
 			<br/><br/><br/><br/><br/>
 		</center>
 		
-		<!-- ì¬ì§ -->
+		<!-- 챙�짭챙짠� -->
 		<table style="position:absolute; left:300px;">
 			<tbody>
 				<tr>
@@ -158,28 +158,28 @@
 			</tbody>
 		</table>
 		
-		<!-- ìí ì ë³´ -->
+		<!-- 챙��챠�� 챙��챘쨀쨈 -->
 		<table  width="556px" style="position:absolute; left:950px; top:265px;">
 			<thead>
 				<tr>
-					<td text-align="center" colspan="2"><strong><h2>sgd365 ë´ì ì ë¡ì ì¤íì´ ëì ê°ëê±´ì¸í¸(G)</h2></strong></td>
+					<td text-align="center" colspan="2"><strong><h2>sgd365 챘쨈�챙��챙�� 챘징�챙�� 챙�짚챠��챙�쨈 챘��챙�� 챗째�챘��챗짹쨈챙�쨍챠�쨍(G)</h2></strong></td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td colspan="2"><span><strike>17,000ì</strike></span></td>
+					<td colspan="2"><span><strike>17,000챙��</strike></span></td>
 				</tr>
 				<tr>
 					<td colspan="2">
 						<span><font color="pink" size="5px;">22%</font></span>&nbsp;
-						<span><font size="5px;">23,500ì</font></span>
+						<span><font size="5px;">23,500챙��</font></span>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2"><hr></td>
 				</tr>
 				<tr>
-					<td colspan="2"><span><strong><br/>ìì</span></strong></td>
+					<td colspan="2"><span><strong><br/>챙��챙��</span></strong></td>
 				</tr>
 				<tr>
 					<td colspan="2">
@@ -213,39 +213,39 @@
 					<td><br/><br/></td>
 				</tr>
 				<tr>
-					<td><span><strong>ì¬ì´ì¦ : free</span></strong></td>
+					<td><span><strong>챙�짭챙�쨈챙짝� : free</span></strong></td>
 				</tr>
 				<tr>
 					<td colspan="2"><hr></td>
 				</tr>
 				<tr>
 					<td><br/>
-						<strong>ìë</strong>&nbsp;<span><input type="text" value="1" name="count" id="count" size="1px;" readonly></span>
-						 &nbsp;<button type="button" onclick="Count_Plus()">ì¦ê°</button>
-							   <button type="button" onclick="Count_Minus()">ê°ì</button>
+						<strong>챙��챘��</strong>&nbsp;<span><input type="text" value="1" name="count" id="count" size="1px;" readonly></span>
+						 &nbsp;<button type="button" onclick="Count_Plus()">챙짝�챗째�</button>
+							   <button type="button" onclick="Count_Minus()">챗째�챙��</button>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2"><br/><hr></td>
 				</tr>
 				<tr>
-					<td><font size="5px;">ì´ ê²°ì ê¸ì¡ : </font><font size="6px;" color="pink" id="total">23,500</font><font size="6px;" color="pink">ì</font></td>
+					<td><font size="5px;">챙쨈� 챗짼째챙��챗쨍�챙�징 : </font><font size="6px;" color="pink" id="total">23,500</font><font size="6px;" color="pink">챙��</font></td>
 				</tr>
 				<tr>
-					<td><button type="button" onclick="Shopping_Basket()" style="background-color:#39373A; width:270px; height:80px;"><font size="5px;" color="white">ì¥ë°êµ¬ë</font></button>&nbsp<button type="button" onclick="#" style="background-color:#FF7D9E; width:270px; height:80px;"><font size="5px" color="white">êµ¬ë§¤íê¸°</font></button></td>                                                        			
+					<td><button type="button" onclick="Shopping_Basket()" style="background-color:#39373A; width:270px; height:80px;"><font size="5px;" color="white">챙�짜챘째�챗쨉짭챘��</font></button>&nbsp<button type="button" onclick="#" style="background-color:#FF7D9E; width:270px; height:80px;"><font size="5px" color="white">챗쨉짭챘짠짚챠��챗쨍째</font></button></td>                                                        			
 				</tr><!-- 304x78  270-->
 			</tbody>
 		</table>
 
 		<script>
-			//ìë ë° ê°ê²© ì¦ê°
+			//챙��챘�� 챘째� 챗째�챗짼짤 챙짝�챗째�
 			function Count_Plus() {
 				var num   = document.getElementById("count").value;
 				var price = document.getElementById("total").innerText;
 				
 				
 				price = Number(price.replace(",", ""));
-				var pri = 23500;	// priìë ëë¹ì ì ì¥ëì´ìë ìíì ê°ê²©ì´ ë¤ì´ìì¼íë¤. ì§ê¸ì ììë¡ ì
+				var pri = 23500;	// pri챙��챘�� 챘��챘쨔�챙�� 챙��챙�짜챘��챙�쨈챙��챘�� 챙��챠��챙�� 챗째�챗짼짤챙�쨈 챘�짚챙�쨈챙��챙�쩌챠��챘�짚. 챙짠�챗쨍�챙�� 챙��챙��챘징� 챙��
 				price = pri + price;
 				
 				var result = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -253,7 +253,7 @@
 				
 				num = Number(num) + 1;
 				if(num == 101) {
-					alert("ìµë ìëì ì´ê³¼íììµëë¤.");
+					alert("챙쨉�챘�� 챙��챘��챙�� 챙쨈�챗쨀쩌챠��챙��챙�쨉챘��챘�짚.");
 					return;
 				}
 				
@@ -261,14 +261,14 @@
 				document.getElementById("total").innerText = result;
 			}
 			
-			//ìë ë° ê°ê²© ê°ì
+			//챙��챘�� 챘째� 챗째�챗짼짤 챗째�챙��
 			function Count_Minus() {
-				var num = document.getElementById("count").value;			//ìë
-				var price = document.getElementById("total").innerText;		//ê°ê²©
+				var num = document.getElementById("count").value;			//챙��챘��
+				var price = document.getElementById("total").innerText;		//챗째�챗짼짤
 				
 				
 				price = Number(price.replace(",", ""));				
-				var pri = 23500;	// priìë ëë¹ì ì ì¥ëì´ìë ìíì ê°ê²©ì´ ë¤ì´ìì¼íë¤. ì§ê¸ì ììë¡ ì
+				var pri = 23500;	// pri챙��챘�� 챘��챘쨔�챙�� 챙��챙�짜챘��챙�쨈챙��챘�� 챙��챠��챙�� 챗째�챗짼짤챙�쨈 챘�짚챙�쨈챙��챙�쩌챠��챘�짚. 챙짠�챗쨍�챙�� 챙��챙��챘징� 챙��
 				price = price - pri;
 				
 				var result = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -281,30 +281,30 @@
 				document.getElementById("total").innerText = result;
 			}
 			
-			//ì¥ë°êµ¬ë ì¶ê°
+			//챙�짜챘째�챗쨉짭챘�� 챙쨋�챗째�
 			function Shopping_Basket() {
-				var count = document.getElementById("count").value;				//ì´ ìë
-				var price = document.getElementById("total").innerText;			//ì´ ê²°ì  ê¸ì¡
+				var count = document.getElementById("count").value;				//챙쨈� 챙��챘��
+				var price = document.getElementById("total").innerText;			//챙쨈� 챗짼째챙�� 챗쨍�챙�징
 				
 				price = Number(price.replace(",", ""));
 				
-				if(!(confirm("ì¥ë°êµ¬ëì ì¶ê°íìê² ìµëê¹?"))) {
+				if(!(confirm("챙�짜챘째�챗쨉짭챘��챙�� 챙쨋�챗째�챠��챙��챗짼�챙�쨉챘��챗쨔�?"))) {
 					return;
 				}
 					
 				var data = {"count":count, "price":price};
 				
-				//ì¿ í¤ì ì¥ë°êµ¬ëì ì¶ê° í  ìí ì ë³´ ì¶ê°
+				//챙쩔�챠�짚챙�� 챙�짜챘째�챗쨉짭챘��챙�� 챙쨋�챗째� 챠�� 챙��챠�� 챙��챘쨀쨈 챙쨋�챗째�
 				$.ajax({
 					url: "#",
 					data: data,
 					type: "POST",
 					success: function(result, status, xhr) {
 						if(result.flag == true) {
-							alert("ì¶ê°íìµëë¤.");
-							//ajaxë¡ ì¿ í¤ì í´ë¹ ì ë³´ ì¶ê° í ë¬¼ì´ë³¸ë¤.
-							if(confirm("ì¥ë°êµ¬ëë¡ ì´ëíìê² ìµëê¹?")) {
-								alert("ì¥ë°êµ¬ëë¡ ì´ë");
+							alert("챙쨋�챗째�챠��챙�쨉챘��챘�짚.");
+							//ajax챘징� 챙쩔�챠�짚챙�� 챠�쨈챘�쨔 챙��챘쨀쨈 챙쨋�챗째� 챠�� 챘짭쩌챙�쨈챘쨀쨍챘�짚.
+							if(confirm("챙�짜챘째�챗쨉짭챘��챘징� 챙�쨈챘��챠��챙��챗짼�챙�쨉챘��챗쨔�?")) {
+								alert("챙�짜챘째�챗쨉짭챘��챘징� 챙�쨈챘��");
 								//location.href="#";
 							}
 							else {
@@ -315,10 +315,10 @@
 				});				
 			}
 
-			//ì¬ë¼ì´ë ì´ë¯¸ì§
-			var slideIndex = 0; //ì¬ë¼ì¸ë ì¸ë±ì¤
+			//챙�짭챘�쩌챙�쨈챘�� 챙�쨈챘짱쨍챙짠�
+			var slideIndex = 0; //챙�짭챘�쩌챙�쨍챘�� 챙�쨍챘�짹챙�짚
 
-			// HTML ë¡ëê° ëë í ëì
+			// HTML 챘징�챘��챗째� 챘��챘�� 챠�� 챘��챙��
 			window.onload=function(){
 				showSlides(slideIndex);
 

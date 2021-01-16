@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ include file="../../exclude/topnav.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -105,31 +105,31 @@ div.content {
 <p>Click on the buttons inside the tabed menu:</p>
 
 <div class="tab">
-  <button class="tablinks" onclick="#">º£½ºÆ®</button>
-  <button class="tablinks" onclick="#">ÄíÆù/ÇýÅÃ</button>
-  <button class="tablinks" onclick="#">±âÈ¹Àü</button>
-  <button class="tablinks" onclick="#">¿À´ÃÀåº¸±â</button>
-  <button class="tablinks" onclick="#">T°ø½Ä´ë¸®Á¡</button>
-  <button class="tablinks" onclick="#">½Å»ó</button>
-  <button class="tablinks" onclick="#">¾Æ¿ìÅÍ</button>
-  <button class="tablinks" onclick="#">»óÀÇ</button>
-  <button class="tablinks" onclick="#">¼ÅÃ÷/ºí¶ó¿ì½º</button>
-  <button class="tablinks" onclick="#">Æ®·¹ÀÌ´×</button>
-  <button class="tablinks" onclick="#">º£ÀÌÁ÷</button>
-  <button class="tablinks" onclick="#">¿øÇÇ½º</button>
-  <button class="tablinks" onclick="#">½ºÄ¿Æ®</button>
-  <button class="tablinks" onclick="#">ÆÒÃ÷</button>
-  <button class="tablinks" onclick="#">°¡¹æ</button>
-  <button class="tablinks" onclick="#">½Å¹ß</button>
-  <button class="tablinks" onclick="#">¾Ç¼¼¼­¸®</button>
+  <button class="tablinks" onclick="#">ë² ìŠ¤íŠ¸</button>
+  <button class="tablinks" onclick="#">ì¿ í°/í˜œíƒ</button>
+  <button class="tablinks" onclick="#">ê¸°íšì „</button>
+  <button class="tablinks" onclick="#">ì˜¤ëŠ˜ìž¥ë³´ê¸°</button>
+  <button class="tablinks" onclick="#">Tê³µì‹ëŒ€ë¦¬ì </button>
+  <button class="tablinks" onclick="#">ì‹ ìƒ</button>
+  <button class="tablinks" onclick="#">ì•„ìš°í„°</button>
+  <button class="tablinks" onclick="#">ìƒì˜</button>
+  <button class="tablinks" onclick="#">ì…”ì¸ /ë¸”ë¼ìš°ìŠ¤</button>
+  <button class="tablinks" onclick="#">íŠ¸ë ˆì´ë‹</button>
+  <button class="tablinks" onclick="#">ë² ì´ì§</button>
+  <button class="tablinks" onclick="#">ì›í”¼ìŠ¤</button>
+  <button class="tablinks" onclick="#">ìŠ¤ì»¤íŠ¸</button>
+  <button class="tablinks" onclick="#">íŒ¬ì¸ </button>
+  <button class="tablinks" onclick="#">ê°€ë°©</button>
+  <button class="tablinks" onclick="#">ì‹ ë°œ</button>
+  <button class="tablinks" onclick="#">ì•…ì„¸ì„œë¦¬</button>
 </div>
 
 
 <div class="sidebar">
-  <a href="#news"><strong>È«±æµ¿´Ô</strong></a>
-  <a href="#news"><strong>È¸¿ø Á¤º¸</strong></a>
-  <a href="#contact"> ¤¤ È¸¿øÁ¤º¸ º¯°æ/Å»Åð</a>
-  <a href="#about"> ¤¤ ³ªÀÇ ¹è¼ÛÁö °ü¸®</a>
+  <a href="#news"><strong>í™ê¸¸ë™ë‹˜</strong></a>
+  <a href="#news"><strong>íšŒì› ì •ë³´</strong></a>
+  <a href="#contact"> ã„´ íšŒì›ì •ë³´ ë³€ê²½/íƒˆí‡´</a>
+  <a href="#about"> ã„´ ë‚˜ì˜ ë°°ì†¡ì§€ ê´€ë¦¬</a>
 </div>
 
 <div class="content">

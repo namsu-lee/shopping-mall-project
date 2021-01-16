@@ -1,7 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ include file="../../exclude/topnav.jsp" %>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>상세보기 연습</title>
+		<title>ìì¸ë³´ê¸° ì°ìµ</title>
 		<script src="jquery-3.5.1.min.js"></script>
 		<style>
 			/* Slideshow container */
@@ -103,14 +106,14 @@
 		</style>
 	</head>
 	<body>
-		<!-- 상단 네비바 자리 -->
+		<!-- ìë¨ ë¤ë¹ë° ìë¦¬ -->
 		<center>
-			<h1>상단 네비바 자리</h1>
+			<h1>ìë¨ ë¤ë¹ë° ìë¦¬</h1>
 			<br/><br/><br/><br/><br/>
 			<br/><br/><br/><br/><br/>
 		</center>
 		
-		<!-- 사진 -->
+		<!-- ì¬ì§ -->
 		<table style="position:absolute; left:300px;">
 			<tbody>
 				<tr>
@@ -155,28 +158,28 @@
 			</tbody>
 		</table>
 		
-		<!-- 상품 정보 -->
+		<!-- ìí ì ë³´ -->
 		<table  width="556px" style="position:absolute; left:950px; top:265px;">
 			<thead>
 				<tr>
-					<td text-align="center" colspan="2"><strong><h2>sgd365 봄신상 로위 스퀘어 나시 가디건세트(G)</h2></strong></td>
+					<td text-align="center" colspan="2"><strong><h2>sgd365 ë´ì ì ë¡ì ì¤íì´ ëì ê°ëê±´ì¸í¸(G)</h2></strong></td>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td colspan="2"><span><strike>17,000원</strike></span></td>
+					<td colspan="2"><span><strike>17,000ì</strike></span></td>
 				</tr>
 				<tr>
 					<td colspan="2">
 						<span><font color="pink" size="5px;">22%</font></span>&nbsp;
-						<span><font size="5px;">23,500원</font></span>
+						<span><font size="5px;">23,500ì</font></span>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2"><hr></td>
 				</tr>
 				<tr>
-					<td colspan="2"><span><strong><br/>색상</span></strong></td>
+					<td colspan="2"><span><strong><br/>ìì</span></strong></td>
 				</tr>
 				<tr>
 					<td colspan="2">
@@ -210,39 +213,39 @@
 					<td><br/><br/></td>
 				</tr>
 				<tr>
-					<td><span><strong>사이즈 : free</span></strong></td>
+					<td><span><strong>ì¬ì´ì¦ : free</span></strong></td>
 				</tr>
 				<tr>
 					<td colspan="2"><hr></td>
 				</tr>
 				<tr>
 					<td><br/>
-						<strong>수량</strong>&nbsp;<span><input type="text" value="1" name="count" id="count" size="1px;" readonly></span>
-						 &nbsp;<button type="button" onclick="Count_Plus()">증가</button>
-							   <button type="button" onclick="Count_Minus()">감소</button>
+						<strong>ìë</strong>&nbsp;<span><input type="text" value="1" name="count" id="count" size="1px;" readonly></span>
+						 &nbsp;<button type="button" onclick="Count_Plus()">ì¦ê°</button>
+							   <button type="button" onclick="Count_Minus()">ê°ì</button>
 					</td>
 				</tr>
 				<tr>
 					<td colspan="2"><br/><hr></td>
 				</tr>
 				<tr>
-					<td><font size="5px;">총 결제금액 : </font><font size="6px;" color="pink" id="total">23,500</font><font size="6px;" color="pink">원</font></td>
+					<td><font size="5px;">ì´ ê²°ì ê¸ì¡ : </font><font size="6px;" color="pink" id="total">23,500</font><font size="6px;" color="pink">ì</font></td>
 				</tr>
 				<tr>
-					<td><button type="button" onclick="Shopping_Basket()" style="background-color:#39373A; width:270px; height:80px;"><font size="5px;" color="white">장바구니</font></button>&nbsp<button type="button" onclick="#" style="background-color:#FF7D9E; width:270px; height:80px;"><font size="5px" color="white">구매하기</font></button></td>                                                        			
+					<td><button type="button" onclick="Shopping_Basket()" style="background-color:#39373A; width:270px; height:80px;"><font size="5px;" color="white">ì¥ë°êµ¬ë</font></button>&nbsp<button type="button" onclick="#" style="background-color:#FF7D9E; width:270px; height:80px;"><font size="5px" color="white">êµ¬ë§¤íê¸°</font></button></td>                                                        			
 				</tr><!-- 304x78  270-->
 			</tbody>
 		</table>
 
 		<script>
-			//수량 및 가격 증가
+			//ìë ë° ê°ê²© ì¦ê°
 			function Count_Plus() {
 				var num   = document.getElementById("count").value;
 				var price = document.getElementById("total").innerText;
 				
 				
 				price = Number(price.replace(",", ""));
-				var pri = 23500;	// pri에는 디비에 저장되어있는 상품의 가격이 들어와야한다. 지금은 임의로 씀
+				var pri = 23500;	// priìë ëë¹ì ì ì¥ëì´ìë ìíì ê°ê²©ì´ ë¤ì´ìì¼íë¤. ì§ê¸ì ììë¡ ì
 				price = pri + price;
 				
 				var result = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -250,7 +253,7 @@
 				
 				num = Number(num) + 1;
 				if(num == 101) {
-					alert("최대 수량을 초과하였습니다.");
+					alert("ìµë ìëì ì´ê³¼íììµëë¤.");
 					return;
 				}
 				
@@ -258,14 +261,14 @@
 				document.getElementById("total").innerText = result;
 			}
 			
-			//수량 및 가격 감소
+			//ìë ë° ê°ê²© ê°ì
 			function Count_Minus() {
-				var num = document.getElementById("count").value;			//수량
-				var price = document.getElementById("total").innerText;		//가격
+				var num = document.getElementById("count").value;			//ìë
+				var price = document.getElementById("total").innerText;		//ê°ê²©
 				
 				
 				price = Number(price.replace(",", ""));				
-				var pri = 23500;	// pri에는 디비에 저장되어있는 상품의 가격이 들어와야한다. 지금은 임의로 씀
+				var pri = 23500;	// priìë ëë¹ì ì ì¥ëì´ìë ìíì ê°ê²©ì´ ë¤ì´ìì¼íë¤. ì§ê¸ì ììë¡ ì
 				price = price - pri;
 				
 				var result = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -278,30 +281,30 @@
 				document.getElementById("total").innerText = result;
 			}
 			
-			//장바구니 추가
+			//ì¥ë°êµ¬ë ì¶ê°
 			function Shopping_Basket() {
-				var count = document.getElementById("count").value;				//총 수량
-				var price = document.getElementById("total").innerText;			//총 결제 금액
+				var count = document.getElementById("count").value;				//ì´ ìë
+				var price = document.getElementById("total").innerText;			//ì´ ê²°ì  ê¸ì¡
 				
 				price = Number(price.replace(",", ""));
 				
-				if(!(confirm("장바구니에 추가하시겠습니까?"))) {
+				if(!(confirm("ì¥ë°êµ¬ëì ì¶ê°íìê² ìµëê¹?"))) {
 					return;
 				}
 					
 				var data = {"count":count, "price":price};
 				
-				//쿠키에 장바구니에 추가 할 상품 정보 추가
+				//ì¿ í¤ì ì¥ë°êµ¬ëì ì¶ê° í  ìí ì ë³´ ì¶ê°
 				$.ajax({
 					url: "#",
 					data: data,
 					type: "POST",
 					success: function(result, status, xhr) {
 						if(result.flag == true) {
-							alert("추가했습니다.");
-							//ajax로 쿠키에 해당 정보 추가 후 물어본다.
-							if(confirm("장바구니로 이동하시겠습니까?")) {
-								alert("장바구니로 이동");
+							alert("ì¶ê°íìµëë¤.");
+							//ajaxë¡ ì¿ í¤ì í´ë¹ ì ë³´ ì¶ê° í ë¬¼ì´ë³¸ë¤.
+							if(confirm("ì¥ë°êµ¬ëë¡ ì´ëíìê² ìµëê¹?")) {
+								alert("ì¥ë°êµ¬ëë¡ ì´ë");
 								//location.href="#";
 							}
 							else {
@@ -312,10 +315,10 @@
 				});				
 			}
 
-			//슬라이드 이미지
-			var slideIndex = 0; //슬라인드 인덱스
+			//ì¬ë¼ì´ë ì´ë¯¸ì§
+			var slideIndex = 0; //ì¬ë¼ì¸ë ì¸ë±ì¤
 
-			// HTML 로드가 끝난 후 동작
+			// HTML ë¡ëê° ëë í ëì
 			window.onload=function(){
 				showSlides(slideIndex);
 

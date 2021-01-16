@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
+encoding//src/main/java/com/shoppingmall/controller/LoginController.java=UTF-8
 encoding//src/main/java/com/shoppingmall/controller/RegisterController.java=EUC-KR
 encoding//src/main/java/com/shoppingmall/dao/RegisterDAO.java=EUC-KR
 encoding//src/main/java/com/shoppingmall/service/RegisterService.java=EUC-KR
@@ -6,3 +7,4 @@ encoding//src/main/java/com/shoppingmall/serviceimpl/RegisterServiceImpl.java=EU
 encoding//src/main/java/com/shoppingmall/vo/AddressVO.java=ISO-8859-1
 encoding//src/main/webapp/WEB-INF/views=EUC-KR
 encoding//src/main/webapp/WEB-INF/views/home.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/view.jsp=EUC-KR

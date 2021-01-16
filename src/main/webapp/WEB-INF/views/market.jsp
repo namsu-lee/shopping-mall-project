@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+    <%@ include file="../../exclude/topnav.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>

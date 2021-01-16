@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shoppingmall.mapper.CategoryMapper">
+	
+	<select id="getCategoryList" resultType="CategoryVO">
+		select * from category
+	</select>
+	
+	<select id="getCategoryNum" resultType="CategoryVO">
+		select catenum from category
+	</select>
+		
+	<insert id="insertCategory" parameterType="CategoryVO">
+		insert into category(sortnum, cateadd, catename) 
+		values(#{sortnum}, #{cateadd}, #{catename});
+	</insert>	
+	
+	<update id="updateCategory" parameterType="CategoryVO">
+		UPDATE category SET sortnum=#{sortnum}, catename=#{catemane} 
+		WHERE catenum=#{catenum};	
+	</update>
+
+
+	<delete id="deleteCategory" parameterType="int">
+		DELETE FROM category WHERE catenum = #{catenum}
+	</delete>
+
+</mapper>

@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.shoppingmall.vo.AddressVO;
+
 import com.shoppingmall.vo.MembersVO;
 
 @Repository
@@ -30,10 +30,5 @@ public class RegisterDAO {
 	}
 
 
-	//аж╪р
-	public int Address(AddressVO vo) {
-		return sqlSession.insert(Namespace + ".Address", vo);
-	}
-	
 	
 }

@@ -3,7 +3,7 @@ create table member (
     password text not null,					--비밀번호
     membername varchar(30) not null,				--회원이름
     email varchar(30) not null,						--이메일
+    address varchar(100) not null,					--이메일
     phone varchar(13) not null,						--폰번호
-    flag varchar(2) default 'n',					--마케팅수신여부
     primary key (memberid)
     )DEFAULT CHARSET=utf8 COLLATE utf8_general_ci; 

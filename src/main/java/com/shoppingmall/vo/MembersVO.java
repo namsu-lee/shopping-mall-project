@@ -10,29 +10,28 @@ public class MembersVO {
 	private String password;
 	private String membername;
 	private String email;
+	private String address;
 	private String phone;
-	private String flag;
 
 	final static char[] hexArray = "0123456789abcdef".toCharArray();
 
-
 	public static byte[] sha256(String msg) throws NoSuchAlgorithmException {
-	    MessageDigest md = MessageDigest.getInstance("SHA-256");
-	    md.update(msg.getBytes());
-	    
-	    return md.digest();
+		MessageDigest md = MessageDigest.getInstance("SHA-256");
+		md.update(msg.getBytes());
+
+		return md.digest();
 	}
-	
+
 	public static String bytesToHex2(byte[] bytes) {
-	    char[] hexChars = new char[bytes.length * 2];
-	    for ( int j = 0; j < bytes.length; j++ ) {
-	        int v = bytes[j] & 0xFF;
-	        hexChars[j * 2] = hexArray[v >>> 4];
-	        hexChars[j * 2 + 1] = hexArray[v & 0x0F];
-	    }
-	    return new String(hexChars);
+		char[] hexChars = new char[bytes.length * 2];
+		for (int j = 0; j < bytes.length; j++) {
+			int v = bytes[j] & 0xFF;
+			hexChars[j * 2] = hexArray[v >>> 4];
+			hexChars[j * 2 + 1] = hexArray[v & 0x0F];
+		}
+		return new String(hexChars);
 	}
-	
+
 	public String getMemberid() {
 		return memberid;
 	}
@@ -73,18 +72,18 @@ public class MembersVO {
 		this.phone = phone;
 	}
 
-	public String getFlag() {
-		return flag;
+	public String getAddress() {
+		return address;
 	}
 
-	public void setFlag(String flag) {
-		this.flag = flag;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	@Override
 	public String toString() {
 		return "MembersVO [memberid=" + memberid + ", password=" + password + ", membername=" + membername + ", email="
-				+ email + ", phone=" + phone + ", flag=" + flag + "]";
+				+ email + ", address=" + address + ", phone=" + phone + "]";
 	}
 
 	// 난수 생성기

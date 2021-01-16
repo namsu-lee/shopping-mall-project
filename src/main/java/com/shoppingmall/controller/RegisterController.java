@@ -1,4 +1,5 @@
 package com.shoppingmall.controller;
+
 //한글 실험
 import java.io.File;
 import java.util.HashMap;
@@ -21,105 +22,90 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shoppingmall.service.RegisterService;
-import com.shoppingmall.vo.AddressVO;
 import com.shoppingmall.vo.MembersVO;
-
-
 
 @Controller
 @RequestMapping(value = "/signup")
 public class RegisterController {
-	
+
 	@Inject
 	RegisterService registerService;
-	 
+
 	@Inject
 	JavaMailSender mailSender;
-	
-	
-	 
-	//ȸ������ �������� �̵�
+
+	//회원가입 페이지로 이동
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String register(Locale locale, Model model) throws Exception {
-		
+
 		return "/register";
 	}
-	
-	
-	//���̵� �ߺ��˻�
+
+
+	//아이디 중복확인
 	@ResponseBody
 	@RequestMapping(value = "/idcheck", method = RequestMethod.POST)
 	public Map<String, Integer> CheckID(Locale locale, Model model, String id) throws Exception {
 		
-		System.out.println("����ڰ� �Է��� ���̵� :: " + id);
-		
-		int num = registerService.CheckID(id);	//1�� ��ȯ�ϸ� ����ϰ� ����
+		int num = registerService.CheckID(id);
 		System.out.println(num);
-		
+
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("num", num);
-		
+
 		return map;
 	}
-	
-	
-	//�̸��� ����
+
+	// 이메일 인증
 	@ResponseBody
 	@RequestMapping(value = "/emailcheck", method = RequestMethod.POST)
 	public Map<String, String> CheckEmail(String email, MembersVO membersVO) throws Exception {
-		
-		String num     = membersVO.Random_Number();	//����
-		String setfrom = "gudxo12261@gmail.com";
-		String tomail  = email; 
-		String title   = "EZEN���θ� ȸ������ ������ȣ �Դϴ�.";
-		String content = "<img src=\"cid:ezen.jpg\" style='width:300px; height:100px;'>"
-									+ "<br/><h1>EZEN���θ��� ã���ּż� �����մϴ�.</h1><br/>"
-										+ "<h2>������ȣ�� <font color='pink'>" + num + "</font> �Դϴ�.</h2>";
-		
-		try {
-            MimeMessage message = mailSender.createMimeMessage();
-            MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
 
-            messageHelper.setFrom(setfrom); 				// �����»�� �����ϸ� �����۵��� ����
-            messageHelper.setTo(tomail);					// �޴»�� �̸���
-            messageHelper.setSubject(title); 				// ���������� ������ �����ϴ�
-            messageHelper.setText(content, true);			// ���� ����
-            
-            //C�� �ش� �̹��� ������ ������ ���� �߻�!
-            FileSystemResource file = new FileSystemResource(new File("C:/ezen.jpg"));
-            messageHelper.addInline("ezen.jpg", file);
-            mailSender.send(message); 
-            
-            Map<String, String> map = new HashMap<String, String>();
-    		map.put("num", num);
-    		return map;
-        } catch (Exception e) {
-        	e.printStackTrace();
-        	System.out.println("CheckEmail() ����");
-        	return null;
-        }
-	} 
-	
-	
-	//ȸ������ 
-	@RequestMapping(value = "/registerok", method = RequestMethod.POST)
-	public String RegisterOk(MembersVO membersVO, AddressVO addressVO, HttpServletRequest request) throws Exception {
-		
-		System.out.println(membersVO.toString());
-		
-		//��ȣȭ
-		membersVO.setPassword(MembersVO.bytesToHex2(MembersVO.sha256(membersVO.getPassword())));
-		
-		int result = registerService.Register(membersVO);
-		if(result == 1) {
-			int num = registerService.Address(addressVO);
-			if(num == 1) {
-				//��� �ּұ��� ������ �Ǿ����� �׶� ���ǿ� ����� �߰�
-				HttpSession session = request.getSession(true);
-				session.setAttribute("memberid", membersVO.getMemberid());
-			}
+		String num = membersVO.Random_Number(); //
+		String setfrom = "gudxo12261@gmail.com";
+		String tomail = email;
+		String title = "EZEN게시판 이메일 인증번호가 왔어요~";
+		String content = "<img src=\"cid:ezen.jpg\" style='width:300px; height:100px;'>"
+				+ "<br/><h1>EZEN쇼핑몰을 찾아주셔서 감사합니다.</h1><br/>" + "<h2>인증번호는 <font color='pink'>" + num
+				+ "</font>니다.</h2>";
+
+		try {
+			MimeMessage message = mailSender.createMimeMessage();
+			MimeMessageHelper messageHelper = new MimeMessageHelper(message, true, "UTF-8");
+
+			messageHelper.setFrom(setfrom); 
+			messageHelper.setTo(tomail); 
+			messageHelper.setSubject(title); 
+			messageHelper.setText(content, true); 
+
+			FileSystemResource file = new FileSystemResource(new File("C:/ezen.jpg"));
+			messageHelper.addInline("ezen.jpg", file);
+			mailSender.send(message);
+
+			Map<String, String> map = new HashMap<String, String>();
+			map.put("num", num);
+			return map;
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("CheckEmail() 오류");
+			return null;
 		}
-		
-		return "main";
+	}
+
+	//회원가입
+	@RequestMapping(value = "/registerok", method = RequestMethod.POST)
+	public String RegisterOk(MembersVO membersVO, HttpServletRequest request) throws Exception {
+
+		System.out.println(membersVO.toString());
+
+		//비밀번호 암호화
+		membersVO.setPassword(MembersVO.bytesToHex2(MembersVO.sha256(membersVO.getPassword())));
+
+		int result = registerService.Register(membersVO);
+		if (result == 1) {
+			HttpSession session = request.getSession(true);
+			session.setAttribute("memberid", membersVO.getMemberid());
+		}
+		return "redirect:/main";
 	}
 }

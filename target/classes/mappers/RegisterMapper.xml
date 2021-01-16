@@ -12,13 +12,8 @@
 
 	<!-- 회원가입 -->
 	<insert id="Register" parameterType="MembersVO">
-		insert into members (memberid, password, membername, email, phone, flag)
-			 values (#{memberid}, #{password}, #{membername}, #{email}, #{phone}, #{flag});
+		insert into members (memberid, password, membername, email, address, phone, flag)
+			 values (#{memberid}, #{password}, #{membername}, #{email}, #{address}, #{phone}, #{flag});
 	</insert>
 	
-	
-	<!-- 회원가입 후 주소 -->
-	<insert id="Address" parameterType="AddressVO">
-		insert into address (memberid, address) values (#{memberid}, #{address})
-	</insert>
 </mapper> 

@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.shoppingmall.dao.RegisterDAO;
 import com.shoppingmall.service.RegisterService;
-import com.shoppingmall.vo.AddressVO;
 import com.shoppingmall.vo.MembersVO;
 @Service
 public class RegisterServiceImpl implements RegisterService{
@@ -29,11 +28,4 @@ public class RegisterServiceImpl implements RegisterService{
 		return registerDAO.Register(vo);
 	}
 
-
-	//аж╪р
-	@Override
-	public int Address(AddressVO vo) throws Exception {
-		return registerDAO.Address(vo);
-	}
-		
 }

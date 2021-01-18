@@ -4,10 +4,15 @@
 <mapper namespace="com.shoppingmall.mapper.RegisterMapper">
 
 	
-	<!-- 등록한 게시글의 번호 구함 -->
+	<!-- 아이디 중복 검사 -->
 	<select id="CheckID" resultType="Integer">
 		<!-- 해킹에 대비하기 위해 count(*)로 비교 -->
 		select count(*) from members where memberid = #{memberid};
+	</select>
+	
+
+	<select id="CheckNickName" resultType="Integer">
+		select count(*) from members where nickname = #{nickname};
 	</select>
 
 	<!-- 회원가입 -->
@@ -15,5 +20,6 @@
 		insert into members (memberid, nickname, password, membername, email, address, phone, flag)
 			 values (#{memberid}, #{nickname}, #{password}, #{membername}, #{email}, #{address}, #{phone}, #{flag});
 	</insert>
+	
 	
 </mapper> 

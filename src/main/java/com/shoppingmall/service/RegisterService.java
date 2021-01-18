@@ -10,4 +10,7 @@ public interface RegisterService {
 	//회원가입
 	public int Register(MembersVO vo) throws Exception;
 
+	//닉네임 중복 검사
+	public int CheckNickName(String nickname) throws Exception;
+
 }

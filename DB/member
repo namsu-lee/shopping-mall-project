@@ -1,9 +1,11 @@
 create table member (
 	memberid varchar(20) not null,					--회원 아이디
-    password text not null,					--비밀번호
+	nickname varchar(20) not null,					--닉네임
+    password text not null,							--비밀번호
     membername varchar(30) not null,				--회원이름
     email varchar(30) not null,						--이메일
     address varchar(100) not null,					--이메일
     phone varchar(13) not null,						--폰번호
+    flag  char(2)     not null,						--회원 등급 
     primary key (memberid)
     )DEFAULT CHARSET=utf8 COLLATE utf8_general_ci; 

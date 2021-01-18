@@ -52,7 +52,7 @@
         <input type="text" placeholder="이름을 입력해주세요" name="membername" id="membername" required>
 		
 		<!-- 닉네임 -->
-		<label for="nickname"><b>닉네임 *</b></label>
+		<label for="nickname"><b>닉네임 *</b></label><button type="button" onclick="nickcheck()" class="registerbtn" style="width:200px; margin-left:8px;">닉네임 중복확인</button>
         <input type="text" placeholder="닉네임을 입력해주세요" name="nickname" id="nickname" required>
         
 		<!-- 이메일 -->
@@ -62,8 +62,6 @@
 		<div id="div1">
 		<!--@@@@@@@@@@@@@@@@@@@@@@@@@@@@ 이메일 확인 메세지 뿌려주는곳 @@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 		</div>
-		<label for="checkbox"><b>마케팅 수신 동의</b></label>
-		<input type="checkbox" name="flag" id="flag" value="y"></br>
 		</br>
 		<label for="address"><b>주소</b></label><br/>
 		<input type="text" id="sample6_postcode" placeholder="우편번호" style="width:200px;">

@@ -30,5 +30,11 @@ public class RegisterDAO {
 	}
 
 
+	//닉네임 중복 검사
+	public int CheckNickName(String nickname) {
+		return sqlSession.selectOne(Namespace + ".CheckNickName", nickname);
+	}
+
+
 	
 }

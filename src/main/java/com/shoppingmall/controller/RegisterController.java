@@ -55,6 +55,23 @@ public class RegisterController {
 
 		return map;
 	}
+	
+	//닉네임 중복확인
+	@ResponseBody
+	@RequestMapping(value = "/nicknamecheck", method = RequestMethod.POST)
+	public Map<String, Integer> CheckNickName(String nickname) throws Exception {
+		
+		System.out.println("nickname == " + nickname);
+		
+		int num = registerService.CheckNickName(nickname);
+		System.out.println(num);
+
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("num", num);
+
+		return map;
+		
+	}
 
 	// 이메일 인증
 	@ResponseBody

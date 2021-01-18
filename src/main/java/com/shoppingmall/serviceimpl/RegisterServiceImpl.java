@@ -28,4 +28,11 @@ public class RegisterServiceImpl implements RegisterService{
 		return registerDAO.Register(vo);
 	}
 
+
+	//닉네임 중복 검사
+	@Override
+	public int CheckNickName(String nickname) throws Exception {
+		return registerDAO.CheckNickName(nickname);
+	}
+
 }

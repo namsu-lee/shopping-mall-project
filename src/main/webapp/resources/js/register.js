@@ -69,6 +69,27 @@
 		});
 	}
 	
+	//닉네임 중복 검사
+	var NickKimCheck = false;
+	function nickcheck() {
+		var nickname = document.form.nickname.value;
+		//alert(nickname);
+		$.ajax({
+			url:"/signup/nicknamecheck",
+			type:"POST", 
+			data:"nickname="+nickname,
+			success:function(result)	{
+				if(result.num == 0)	{
+					NickKimCheck = true;
+					alert("사용 가능한 닉네임입니다.");
+				}
+				if(result.num == 1)	{
+					alert("사용중인 닉네임입니다.");
+				}
+			}
+		});
+	}
+	
 	//이메일 인증 버튼을 누르면 실행되는 함수
 	var check = false;
 	function EmailCheck()	{
@@ -148,6 +169,10 @@
 			IDKimCheck = false;
 		});
 		
+		$("#nickname").click(function()	{
+			NickKimCheck = false;
+		});
+		
 		$("#email").click(function()	{
 			check = false;
 		});
@@ -190,6 +215,10 @@
 			}
 			else if(IDKimCheck == false)	{
 				alert("아이디 중복확인을 해주세요.");
+				return false;	
+			}
+			else if(NickKimCheck == false)	{
+				alert("닉네임 확인을 해주세요.");
 				return false;	
 			}
 			else if(check == false)	{

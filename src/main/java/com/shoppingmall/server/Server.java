@@ -23,6 +23,7 @@ public class Server {
 		try {
 			this.serverSocket = new ServerSocket();					//ServerSocket 객체를 생성
 			this.serverSocket.bind(new InetSocketAddress(IP, port));//서버 컴퓨터 역할을 수행하는 그 컴퓨터가 자신의 IP주소 그리고 포트번호로 특정한 클라이언트의 접속을 기다림
+			System.out.println("소켓이 잘 열렸다.");
 		} catch (Exception e) {
 			e.printStackTrace();
 			//오류가 발생하면 서버소켓이 만약에 닫혀있는 상태가 아니라면 stopServer()메소드를 호출해 서버를 닫아준다.

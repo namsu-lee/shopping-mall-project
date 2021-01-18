@@ -38,25 +38,29 @@ public class HomeController {
 	 * @throws Exception 
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model, HttpServletRequest request) {
-		
-		//���� �����ϸ� ä�� ������ ���� �������ش�.@@@@@@@@@@@@
-		
-		String check = request.getHeader("cookie");
-		Cookie cookies[] = null;
-		if(check != null)	{
-			cookies =request.getCookies();
-		}
+	public String home(Locale locale, Model model, HttpServletRequest request) throws Exception {
 				
 		List<CategoryVO> selectList = service.CategoryGet();
 		model.addAttribute("selectList", selectList);
 		
-		// for(int i = 0; i < cookies.length; i++) {
-		// 	if(cookies[i].getName().equals("Auto_Login")) {
-		// 		HttpSession session = request.getSession(true);
-		// 		session.setAttribute("memberid", cookies[i].getValue());
-		// 	}
-		// }
+		
+		String check = request.getHeader("cookie");
+		Cookie cookies[] = null;
+		
+		if(check != null)	{
+			cookies =request.getCookies();
+		}
+		
+		if(cookies == null) {
+			return "/main";
+		}
+		
+		for (int i = 0; i < cookies.length; i++) {
+			if (cookies[i].getName().equals("Auto_Login")) {
+				HttpSession session = request.getSession(true);
+				session.setAttribute("memberid", cookies[i].getValue());
+			}
+		}
 
 		return "/main";
 	}

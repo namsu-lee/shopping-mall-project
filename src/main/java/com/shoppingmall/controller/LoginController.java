@@ -70,7 +70,7 @@ public class LoginController {
 			session.setMaxInactiveInterval(60*60);
 			
 			Cookie cookie1 = new Cookie("memberid", vo.getMemberid());	//아이디 저장
-			Cookie cookie2 = new Cookie("Auto_Login", vo.getAuto_Login()); //자동로그인
+			Cookie cookie2 = new Cookie("Auto_Login", vo.getMemberid()); //자동로그인
 			
 			
 			//아이디 저장
@@ -95,7 +95,7 @@ public class LoginController {
 				response.addCookie(cookie2);
 			}
 		}
-		//return "redirect:/main";
+		//return "redirect:/main"; 리다이엑트는 uri를 탄다.
 		return "redirect:/";
 	}
 	

@@ -11,54 +11,54 @@ import java.util.concurrent.Executors;
 
 public class Server {
 
-	// static À¸·Î ¼±¾ğ½Ã ´ÙÁß / static ¼±¾ğÀ» ¾ÈÇÏ¸é 1´ë1???
-	public static ExecutorService executorService; // ½º·¹µåÇ®ÀÎ ExecutorService ÇÊµå°¡ ¼±¾ğµÇ¾î ÀÖ´Ù.
-	public static Vector<Client> vector = new Vector<Client>(); // Á¢¼ÓÇÑ Å¬¶óÀÌ¾ğÆ®µéÀ» °ü¸®ÇÒ ¼ö ÀÖµµ·Ï ÇÔ.
-	ServerSocket serverSocket; // ¼­¹ö ¼ÒÄÏ
+	// static ìœ¼ë¡œ ì„ ì–¸ì‹œ ë‹¤ì¤‘ / static ì„ ì–¸ì„ ì•ˆí•˜ë©´ 1ëŒ€1???
+	public static ExecutorService executorService; // ìŠ¤ë ˆë“œí’€ì¸ ExecutorService í•„ë“œê°€ ì„ ì–¸ë˜ì–´ ìˆë‹¤.
+	public static Vector<Client> vector = new Vector<Client>(); // ì ‘ì†í•œ í´ë¼ì´ì–¸íŠ¸ë“¤ì„ ê´€ë¦¬í•  ìˆ˜ ìˆë„ë¡ í•¨.
+	ServerSocket serverSocket; // ì„œë²„ ì†Œì¼“
 	
 	
-	// ¼­¹ö¸¦ ±¸µ¿½ÃÄÑ¼­ Å¬¶óÀÌ¾ğÆ®ÀÇ ¿¬°áÀ» ±â´Ù¸®´Â ¸Ş¼­µå
+	// ì„œë²„ë¥¼ êµ¬ë™ì‹œì¼œì„œ í´ë¼ì´ì–¸íŠ¸ì˜ ì—°ê²°ì„ ê¸°ë‹¤ë¦¬ëŠ” ë©”ì„œë“œ
 	public void startServer(String IP, int port) {
-		//¼­¹ö°¡ ½ÇÇàÀÌµÇ¸é ServerSocketºÎÅÍ ÀÛ¾÷À» ÇØÁØ´Ù.
+		//ì„œë²„ê°€ ì‹¤í–‰ì´ë˜ë©´ ServerSocketë¶€í„° ì‘ì—…ì„ í•´ì¤€ë‹¤.
 		try {
-			this.serverSocket = new ServerSocket();					//ServerSocket °´Ã¼¸¦ »ı¼º
-			this.serverSocket.bind(new InetSocketAddress(IP, port));//¼­¹ö ÄÄÇ»ÅÍ ¿ªÇÒÀ» ¼öÇàÇÏ´Â ±× ÄÄÇ»ÅÍ°¡ ÀÚ½ÅÀÇ IPÁÖ¼Ò ±×¸®°í Æ÷Æ®¹øÈ£·Î Æ¯Á¤ÇÑ Å¬¶óÀÌ¾ğÆ®ÀÇ Á¢¼ÓÀ» ±â´Ù¸²
+			this.serverSocket = new ServerSocket();					//ServerSocket ê°ì²´ë¥¼ ìƒì„±
+			this.serverSocket.bind(new InetSocketAddress(IP, port));//ì„œë²„ ì»´í“¨í„° ì—­í• ì„ ìˆ˜í–‰í•˜ëŠ” ê·¸ ì»´í“¨í„°ê°€ ìì‹ ì˜ IPì£¼ì†Œ ê·¸ë¦¬ê³  í¬íŠ¸ë²ˆí˜¸ë¡œ íŠ¹ì •í•œ í´ë¼ì´ì–¸íŠ¸ì˜ ì ‘ì†ì„ ê¸°ë‹¤ë¦¼
 		} catch (Exception e) {
 			e.printStackTrace();
-			//¿À·ù°¡ ¹ß»ıÇÏ¸é ¼­¹ö¼ÒÄÏÀÌ ¸¸¾à¿¡ ´İÇôÀÖ´Â »óÅÂ°¡ ¾Æ´Ï¶ó¸é stopServer()¸Ş¼Òµå¸¦ È£ÃâÇØ ¼­¹ö¸¦ ´İ¾ÆÁØ´Ù.
+			//ì˜¤ë¥˜ê°€ ë°œìƒí•˜ë©´ ì„œë²„ì†Œì¼“ì´ ë§Œì•½ì— ë‹«í˜€ìˆëŠ” ìƒíƒœê°€ ì•„ë‹ˆë¼ë©´ stopServer()ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•´ ì„œë²„ë¥¼ ë‹«ì•„ì¤€ë‹¤.
 			if (!serverSocket.isClosed()) {
 				stopServer();
 			}
 			return;
 		}
 
-		// Å¬¶óÀÌ¾ğÆ®°¡ Á¢¼ÓÇÒ ¶§±îÁö °è¼Ó ±â´Ù¸®´Â ¾²·¹µåÀÔ´Ï´Ù.(¿¬°áÀ» ¼ö¶ôÇÏ´Â ÄÚµå)
+		// í´ë¼ì´ì–¸íŠ¸ê°€ ì ‘ì†í•  ë•Œê¹Œì§€ ê³„ì† ê¸°ë‹¤ë¦¬ëŠ” ì“°ë ˆë“œì…ë‹ˆë‹¤.(ì—°ê²°ì„ ìˆ˜ë½í•˜ëŠ” ì½”ë“œ)
 		Runnable runnable = new Runnable() {
-			// ¿¬°á ¼ö¶ô ÀÛ¾÷À» Runnable·Î Á¤ÀÇ
+			// ì—°ê²° ìˆ˜ë½ ì‘ì—…ì„ Runnableë¡œ ì •ì˜
 			@Override
 			public void run() {
-				//¹«ÇÑ·çÇÁ¸¦ µ¹·Á °è¼ÓÇØ¼­ »õ·Î¿î Å¬¶óÀÌ¾ğÆ®µéÀÇ ¿¬°á ¼ö¶ôÀ» ¹«ÇÑÈ÷ ¹İº¹ÇÏµµ·Ï ÇÑ´Ù.
+				//ë¬´í•œë£¨í”„ë¥¼ ëŒë ¤ ê³„ì†í•´ì„œ ìƒˆë¡œìš´ í´ë¼ì´ì–¸íŠ¸ë“¤ì˜ ì—°ê²° ìˆ˜ë½ì„ ë¬´í•œíˆ ë°˜ë³µí•˜ë„ë¡ í•œë‹¤.
 				while (true) {
 					try {
-						Socket socket = serverSocket.accept(); //Å¬¶óÀÌ¾ğÆ®ÀÇ ¿¬°á ¿äÃ»À» ±â´Ù¸®°í, ¿¬°á ¼ö¶ôÇÏ´Â accept()¸Ş¼Òµå¸¦ È£ÃâÇÑ´Ù.
-						vector.add(new Client(socket));		//Å¬¶óÀÌ¾ğÆ® ¹éÅÍ¿¡ »õ·Ó°Ô Á¢¼ÓÇÑ Å¬¶óÀÌ¾ğÆ®¸¦ Ãß°¡ÇÔ. 
-						System.out.println("[Å¬¶óÀÌ¾ğÆ® Á¢¼Ó]" + socket.getRemoteSocketAddress() + ": " + Thread.currentThread().getName());//ÇöÀç Á¢¼ÓÀ» ÇÑ Å¬¶óÀÌ¾ğÆ®ÀÇ IPÁÖ¼Ò¿Í °°Àº ÁÖ¼Ò Á¤º¸¸¦ Ãâ·ÂÇÏ°í ½º·¹µåÀÇ °íÀ¯Á¤º¸(ÀÌ¸§) Ãâ·Â
+						Socket socket = serverSocket.accept(); //í´ë¼ì´ì–¸íŠ¸ì˜ ì—°ê²° ìš”ì²­ì„ ê¸°ë‹¤ë¦¬ê³ , ì—°ê²° ìˆ˜ë½í•˜ëŠ” accept()ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•œë‹¤.
+						vector.add(new Client(socket));		//í´ë¼ì´ì–¸íŠ¸ ë°±í„°ì— ìƒˆë¡­ê²Œ ì ‘ì†í•œ í´ë¼ì´ì–¸íŠ¸ë¥¼ ì¶”ê°€í•¨. 
+						System.out.println("[í´ë¼ì´ì–¸íŠ¸ ì ‘ì†]" + socket.getRemoteSocketAddress() + ": " + Thread.currentThread().getName());//í˜„ì¬ ì ‘ì†ì„ í•œ í´ë¼ì´ì–¸íŠ¸ì˜ IPì£¼ì†Œì™€ ê°™ì€ ì£¼ì†Œ ì •ë³´ë¥¼ ì¶œë ¥í•˜ê³  ìŠ¤ë ˆë“œì˜ ê³ ìœ ì •ë³´(ì´ë¦„) ì¶œë ¥
 					} catch (Exception e) {
-						if(!serverSocket.isClosed()) { //¿À·ù°¡ ¹ß»ıÇß´Ù¸é ¼­¹ö¸¦ ´İÀ½
+						if(!serverSocket.isClosed()) { //ì˜¤ë¥˜ê°€ ë°œìƒí–ˆë‹¤ë©´ ì„œë²„ë¥¼ ë‹«ìŒ
 							stopServer();
 						}
 					}
 				}
 			}
 		};
-		executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()); // ½º·¹µåÇ®À» ÃÊ±âÈ­ÇÏ°í
-		executorService.submit(runnable);	//½º·¹µå Ç®¿¡ ÇöÀç Å¬¶óÀÌ¾ğÆ®¸¦ ±â´Ù¸®´Â runnable°´Ã¼¸¦ ´ãÀ» ¼ö ÀÖµµ·Ï Ã³¸®¸¦ ÇØ¼­ ½º·¹µå Ç®À» ¸ÕÀú ÃÊ±âÈ­¸¦ ÇØÁÖ°í ½º·¹µå Ç®¾È¿¡ Ã¹¹øÂ° ½º·¹µå·Î½á Å¬¶óÀÌ¾ğÆ®¿¡ Á¢¼ÓÀ» ±â´Ù¸®´Â ½º·¹µå¸¦ ³Ö¾îÁØ°Í
+		executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()); // ìŠ¤ë ˆë“œí’€ì„ ì´ˆê¸°í™”í•˜ê³ 
+		executorService.submit(runnable);	//ìŠ¤ë ˆë“œ í’€ì— í˜„ì¬ í´ë¼ì´ì–¸íŠ¸ë¥¼ ê¸°ë‹¤ë¦¬ëŠ” runnableê°ì²´ë¥¼ ë‹´ì„ ìˆ˜ ìˆë„ë¡ ì²˜ë¦¬ë¥¼ í•´ì„œ ìŠ¤ë ˆë“œ í’€ì„ ë¨¼ì € ì´ˆê¸°í™”ë¥¼ í•´ì£¼ê³  ìŠ¤ë ˆë“œ í’€ì•ˆì— ì²«ë²ˆì§¸ ìŠ¤ë ˆë“œë¡œì¨ í´ë¼ì´ì–¸íŠ¸ì— ì ‘ì†ì„ ê¸°ë‹¤ë¦¬ëŠ” ìŠ¤ë ˆë“œë¥¼ ë„£ì–´ì¤€ê²ƒ
 	}
 	
-	//¼­¹öÀÇ ÀÛµ¿À» ÁßÁö½ÃÅ°´Â ¸Ş¼­µå
+	//ì„œë²„ì˜ ì‘ë™ì„ ì¤‘ì§€ì‹œí‚¤ëŠ” ë©”ì„œë“œ
 	public void stopServer() {
 		try {
-			//ÇöÀç ÀÛµ¿ÁßÀÎ ¸ğµç ¼ÒÄÏ ´İ±â
+			//í˜„ì¬ ì‘ë™ì¤‘ì¸ ëª¨ë“  ì†Œì¼“ ë‹«ê¸°
 			Iterator<Client> iterator = vector.iterator();
 			while(iterator.hasNext()) {
 				Client vo = iterator.next();
@@ -66,11 +66,11 @@ public class Server {
 				iterator.remove();
 			}
 			
-			//¼­¹ö ¼ÒÄÏ °´Ã¼ ´İ±â
+			//ì„œë²„ ì†Œì¼“ ê°ì²´ ë‹«ê¸°
 			if(serverSocket != null && !serverSocket.isClosed()) {
 				serverSocket.close();
 			}
-			//¾²·¹µå Ç® Á¾·áÇÏ±â
+			//ì“°ë ˆë“œ í’€ ì¢…ë£Œí•˜ê¸°
 			if(executorService !=null && executorService.isShutdown()) {
 				executorService.shutdown();
 			}

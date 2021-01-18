@@ -1,16 +1,16 @@
 create table category(
-	catenum int auto_increment primary key,
-	sortnum int,
-    cateadd varchar(100),
-    catename varchar(100)
+	cateid int auto_increment primary key,
+    catesort int,
+    catename text(100),
+    cateauth int
 );
 
 select * from category;
 
-insert into category(sortnum, cateadd, catename) 
+insert into category(sortnum, catename, cateauth) 
 values(?, ?, ?);
 
-UPDATE category SET sortnum=?, catename=? 
-WHERE catenum=?;
+UPDATE category SET sortnum=?, catename=?, cateauth=?  
+WHERE cateid=?;
 
-DELETE FROM category WHERE catenum=?;
+DELETE FROM category WHERE cateid=?;

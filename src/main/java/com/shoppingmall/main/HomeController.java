@@ -1,13 +1,9 @@
 package com.shoppingmall.main;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
-import java.util.Locale;
-
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -19,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.shoppingmall.server.Server;
 import com.shoppingmall.service.CategoryService;
 import com.shoppingmall.vo.CategoryVO;
 
@@ -30,6 +27,10 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	//서버 주소
+	private final static String IP = "192.168.0.54";	
+	private final static int port = 5599;
+	
 	@Inject
 	private CategoryService service;
 	
@@ -39,6 +40,11 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpServletRequest request) throws Exception {
+		
+		Server server = new Server();
+		//열렸으면 조건을 준다..
+		server.startServer(IP, port);
+		
 		
 		//게시판 목록 불러오기
 		List<CategoryVO> selectList = service.CategoryGet();
@@ -67,4 +73,10 @@ public class HomeController {
 		return "/main";
 	}
 	
+	
+	@RequestMapping(value = "/chat", method = RequestMethod.GET)
+	public String Chat() {
+		
+		return "/chat";
+	}
 }

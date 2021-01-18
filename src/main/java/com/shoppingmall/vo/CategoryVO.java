@@ -4,7 +4,7 @@ public class CategoryVO {
 	private int cateid;
 	private int catesort;
 	private String catename;
-	private int cateauth;
+	private String cateauth;
 	private String categroup; 
 
 	public int getCateid() {
@@ -25,10 +25,10 @@ public class CategoryVO {
 	public void setCatename(String catename) {
 		this.catename = catename;
 	}
-	public int getCateauth() {
+	public String getCateauth() {
 		return cateauth;
 	}
-	public void setCateauth(int cateauth) {
+	public void setCateauth(String cateauth) {
 		this.cateauth = cateauth;
 	}
 	public String getCategroup() {

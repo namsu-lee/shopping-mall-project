@@ -20,4 +20,17 @@ public class CategoryServiceImpl implements CategoryService{
 	public List<CategoryVO> CategoryGet() throws Exception{
 		return CategoryDAO.CategoryGet();
 	}
+	
+	@Override
+	public void CategoryInsert(CategoryVO vo) throws Exception{
+		CategoryDAO.InsertCategory(vo);
+	}
+//	@Override
+//	public void CategoryUpdate() throws Exception{
+//		
+//	}
+//	@Override
+//	public void CategoryDelete() throws Exception{
+//		
+//	}
 }

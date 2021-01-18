@@ -27,23 +27,22 @@ public class CategoryDAO {
 //		public int CategoryNumGet() {
 //			return sqlSession.selectOne(Namespace+".getCategoryNum");
 //		}
-//		
-//		// 카테고리 입력
-//		public void CategoryInsert(CategoryVO vo) {
-//			sqlSession.update(Namespace+"insertCategory", vo);
-//			sqlSession.commit();
-//		}
-//		
-//		
-//		// 카테고리 수정
-//		public void CategoryUpdate(CategoryVO vo) {
-//			sqlSession.update(Namespace+"updateCategory", vo);
-//			sqlSession.commit();
-//		}
-//		
-//		// 카테고리 삭제
-//		public void CategoryDelete(int CateNum){
-//			sqlSession.delete(Namespace+"deleteCategory", CateNum);
-//			sqlSession.commit();
-//		}
+		
+		// 카테고리 입력
+		public void InsertCategory(CategoryVO vo) {
+			sqlSession.update(Namespace+".insertCategory", vo);
+		}
+		
+		
+		// 카테고리 수정
+		public void UpdateCategory(CategoryVO vo) {
+			sqlSession.update(Namespace+"updateCategory", vo);
+			sqlSession.commit();
+		}
+		
+		// 카테고리 삭제
+		public void DeleteCategory(int CateNum){
+			sqlSession.delete(Namespace+"deleteCategory", CateNum);
+			sqlSession.commit();
+		}
 }

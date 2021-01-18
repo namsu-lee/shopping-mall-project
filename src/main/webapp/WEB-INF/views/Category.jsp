@@ -36,7 +36,7 @@
     .submit:hover {background: #eee;}
     </style>
 
-<form method="POST">
+<form id="frm1" class="frm1" method="POST" action="/category">
         <div style="display: inline-block;">
             <div style="float: left; margin:10px;">
                 카테고리 순서<br>
@@ -48,15 +48,13 @@
             </div>
             <div style="float: left; margin:10px;">
                 글쓰기 권한<br>
-                <form>
-                    <input type="checkbox" name="cateauth" value="M" checked disabled> 관리자 <br>
-                    <input type="checkbox" name="cateauth" value="A"> A <br>
-                    <input type="checkbox" name="cateauth" value="B"> B <br>
-                    <input type="checkbox" name="cateauth" value="C"> C <br>
-                    <input type="checkbox" name="cateauth" value="D"> D <br>
-                    <input type="checkbox" name="cateauth" value="F"> F <br>
-                </form>
-            </div>
+         <input type="checkbox" name="cateauth" value="M" checked> 관리자 <br>
+             <input type="checkbox" name="cateauth" value="A"> A <br>
+             <input type="checkbox" name="cateauth" value="B"> B <br>
+             <input type="checkbox" name="cateauth" value="C"> C <br>
+             <input type="checkbox" name="cateauth" value="D"> D <br>
+             <input type="checkbox" name="cateauth" value="F"> F <br>
+         </div>
             <div style="float: left; margin:10px;">
                 카테고리 그룹여부<br>
                 <select name="categroup">
@@ -68,9 +66,9 @@
         
         </div>
         <br><br>
-        <button class="submit" name="insert" >추가</button>
-        <button class="submit" name="update" >수정</button>
-        <button class="submit" name="delete" >삭제</button>
+        <button type="submit" class="submit" onclick='btn_click("insert");'>추가</button>
+        <button type="submit" class="submit" onclick='btn_click("update");'>수정</button>
+        <button type="submit" class="submit" onclick='btn_click("delete");'>삭제</button>
     </form>
     <br><br>
 <table id="myTable">
@@ -91,3 +89,15 @@
 </c:forEach>
     
  </table>
+ 
+ <script>
+    function btn_click(str){                             
+        if(str=="update"){                                 
+            frm1.action="/category/update";      
+        } else if(str=="delete"){      
+            frm1.action="/category/delete";      
+        }  else if(str=="insert"){
+        	frm1.action="/category/insert"; 
+        }
+    }
+</script>

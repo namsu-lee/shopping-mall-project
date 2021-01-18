@@ -1,6 +1,0 @@
-create table mainimage(
-	num int auto_increment primary key,
-    filename varchar(100),
-    filerealname varchar(100),
-    time datetime
-	);

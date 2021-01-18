@@ -3,6 +3,7 @@ encoding//src/main/java/com/shoppingmall/client/Client.java=UTF-8
 encoding//src/main/java/com/shoppingmall/controller/LoginController.java=UTF-8
 encoding//src/main/java/com/shoppingmall/controller/RegisterController.java=UTF-8
 encoding//src/main/java/com/shoppingmall/dao/RegisterDAO.java=EUC-KR
+encoding//src/main/java/com/shoppingmall/server/Server.java=UTF-8
 encoding//src/main/java/com/shoppingmall/service/RegisterService.java=EUC-KR
 encoding//src/main/java/com/shoppingmall/serviceimpl/RegisterServiceImpl.java=EUC-KR
 encoding//src/main/webapp/WEB-INF/views=EUC-KR

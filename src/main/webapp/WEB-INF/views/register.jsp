@@ -48,9 +48,13 @@
         <input type="password" placeholder="비밀번호를 한번 더 입력해주세요" name="confirmPassword" id="confirmPassword" required>
 		
 		<!-- 이름 -->
-		<label for="name"><b>이름 *</b></label>
+		<label for="membername"><b>이름 *</b></label>
         <input type="text" placeholder="이름을 입력해주세요" name="membername" id="membername" required>
 		
+		<!-- 닉네임 -->
+		<label for="nickname"><b>닉네임 *</b></label>
+        <input type="text" placeholder="닉네임을 입력해주세요" name="nickname" id="nickname" required>
+        
 		<!-- 이메일 -->
 		<label for="email"><b>이메일 *</b></label>
         <input type="email" placeholder="이메일을 입력해주세요" name="email" id="email" required style="float:left;">

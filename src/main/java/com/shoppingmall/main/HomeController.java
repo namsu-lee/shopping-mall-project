@@ -30,6 +30,10 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	//서버 주소
+	private final static String IP = "192.168.0.99";	
+	private final static int port = 5599;
+	
 	@Inject
 	private CategoryService service;
 	
@@ -39,6 +43,8 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpServletRequest request) throws Exception {
+		
+		
 		
 		//게시판 목록 불러오기
 		List<CategoryVO> selectList = service.CategoryGet();

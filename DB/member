@@ -1,11 +1,11 @@
-create table member (
-	memberid varchar(20) not null,					--È¸¿ø ¾ÆÀÌµð
-	nickname varchar(20) not null,					--´Ð³×ÀÓ
-    password text not null,							--ºñ¹Ð¹øÈ£
-    membername varchar(30) not null,				--È¸¿øÀÌ¸§
-    email varchar(30) not null,						--ÀÌ¸ÞÀÏ
-    address varchar(100) not null,					--ÀÌ¸ÞÀÏ
-    phone varchar(13) not null,						--Æù¹øÈ£
-    flag  char(2)     not null,						--È¸¿ø µî±Þ 
+create table members (
+	memberid varchar(20) not null,					-- È¸ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½
+	nickname varchar(20) not null,					-- ï¿½Ð³ï¿½ï¿½ï¿½
+    password text not null,							-- ï¿½ï¿½Ð¹ï¿½È£
+    membername varchar(30) not null,				-- È¸ï¿½ï¿½ï¿½Ì¸ï¿½
+    email varchar(30) not null,						-- ï¿½Ì¸ï¿½ï¿½ï¿½
+    address varchar(100) not null,					-- ï¿½Ì¸ï¿½ï¿½ï¿½
+    phone varchar(13) not null,						-- ï¿½ï¿½ï¿½ï¿½È£
+    flag  char(2)     not null,						-- È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ 
     primary key (memberid)
     )DEFAULT CHARSET=utf8 COLLATE utf8_general_ci; 

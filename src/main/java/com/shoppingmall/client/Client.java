@@ -11,7 +11,15 @@ import java.net.Socket;
 //동시 다발적으로 생겨나는경우가 없기 때문에 굳이 쓰레드풀을 사용할 필요가 없음
 //그래서 스레드풀 없이 기본적인 스레드를 이용함
 public class Client {
-	Socket socket;
+	private Socket socket;
+
+	public Socket getSocket() {
+		return socket;
+	}
+
+	public void setSocket(Socket socket) {
+		this.socket = socket;
+	}
 
 	// 클라이언트가 서버에 요청하는 메서드
 	public void startClient(final String IP, final int port) {
@@ -19,7 +27,7 @@ public class Client {
 			public void run() {
 				try {
 					socket = new Socket(IP, port);
-					receive();						//IP(192.168.0.3)번호와 port(9876)번호로 연결 요청을 한다.
+					receive(); // IP(192.168.0.3)번호와 port(9876)번호로 연결 요청을 한다.
 				} catch (Exception e) {
 					if (!socket.isClosed()) { // 오류가 발생한경우 소켓이 그대로 열려있다면
 						stopClient(); // 클라이언트를 종료시킨다.
@@ -29,6 +37,7 @@ public class Client {
 			}
 		};
 		thread.start();
+		System.out.println("서버와 연결에 성공!!");
 	}
 
 	// 클라이언트 종료 메서드
@@ -62,7 +71,6 @@ public class Client {
 		}
 	}
 
-	
 	// 서버로 메세지를 전송하는 메서드입니다.
 	public void send(final String message) {
 		Thread thread = new Thread() {

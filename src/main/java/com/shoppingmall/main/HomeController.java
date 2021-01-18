@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.shoppingmall.server.Server;
 import com.shoppingmall.service.CategoryService;
+import com.shoppingmall.task.TransmissionControlProtocol;
 import com.shoppingmall.vo.CategoryVO;
 
 /**
@@ -27,10 +28,6 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	//서버 주소
-	private final static String IP = "192.168.0.54";	
-	private final static int port = 5599;
-	
 	@Inject
 	private CategoryService service;
 	
@@ -40,11 +37,18 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpServletRequest request) throws Exception {
+		// 1. 서버를 시작하면 채팅 서버도 동시에 열어준다.
+		//boolean portCheck = availablePort("192.168.2.100",6000);
 		
 		Server server = new Server();
-		//열렸으면 조건을 준다..
-		server.startServer(IP, port);
 		
+		// 서버가 한번 더 열리기 때문에 조건을 걸어준다.
+		if(server.getServerSocket() == null) {
+			server.startServer(TransmissionControlProtocol.getIp(), TransmissionControlProtocol.getPort());
+		}
+		else {
+			System.out.println("이미 서버소켓이 열려있다.");
+		}
 		
 		//게시판 목록 불러오기
 		List<CategoryVO> selectList = service.CategoryGet();
@@ -79,4 +83,7 @@ public class HomeController {
 		
 		return "/chat";
 	}
+	
+	
+	
 }

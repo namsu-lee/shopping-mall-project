@@ -1,9 +1,10 @@
-//채팅방에 들어가자마자 소켓 생성
+//채팅방에 들어가자마자 "클라이언트단 소켓" 생성
 	$.ajax({
-		url:"#",
+		url:"/chat/ClientSocketOpen",
 		type:"POST",
-		success:function() {
-			alert("good!");
+		success:function(result) {
+			alert(result);
+			
 		}
 	});
 	

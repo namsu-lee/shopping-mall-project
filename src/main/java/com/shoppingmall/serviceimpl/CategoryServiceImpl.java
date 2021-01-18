@@ -17,7 +17,7 @@ public class CategoryServiceImpl implements CategoryService{
 	CategoryDAO CategoryDAO;
 	
 	@Override
-	public List<CategoryVO> getCategoryList() throws Exception{
+	public List<CategoryVO> CategoryGet() throws Exception{
 		return CategoryDAO.CategoryGet();
 	}
 }

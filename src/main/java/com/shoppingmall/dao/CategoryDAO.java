@@ -21,27 +21,29 @@ public class CategoryDAO {
 		public List<CategoryVO> CategoryGet() throws Exception{
 			return sqlSession.selectList(Namespace+".getCategoryList");
 		}
-		// 카테고리 번호 가져오기
-		public int CategoryNumGet() {
-			return sqlSession.selectOne(Namespace+".getCategoryNum");
-		}
-		
-		// 카테고리 입력
-		public void CategoryInsert(CategoryVO vo) {
-			sqlSession.update(Namespace+"insertCategory", vo);
-			sqlSession.commit();
-		}
 		
 		
-		// 카테고리 수정
-		public void CategoryUpdate(CategoryVO vo) {
-			sqlSession.update(Namespace+"updateCategory", vo);
-			sqlSession.commit();
-		}
-		
-		// 카테고리 삭제
-		public void CategoryDelete(int CateNum){
-			sqlSession.delete(Namespace+"deleteCategory", CateNum);
-			sqlSession.commit();
-		}
+//		// 카테고리 번호 가져오기
+//		public int CategoryNumGet() {
+//			return sqlSession.selectOne(Namespace+".getCategoryNum");
+//		}
+//		
+//		// 카테고리 입력
+//		public void CategoryInsert(CategoryVO vo) {
+//			sqlSession.update(Namespace+"insertCategory", vo);
+//			sqlSession.commit();
+//		}
+//		
+//		
+//		// 카테고리 수정
+//		public void CategoryUpdate(CategoryVO vo) {
+//			sqlSession.update(Namespace+"updateCategory", vo);
+//			sqlSession.commit();
+//		}
+//		
+//		// 카테고리 삭제
+//		public void CategoryDelete(int CateNum){
+//			sqlSession.delete(Namespace+"deleteCategory", CateNum);
+//			sqlSession.commit();
+//		}
 }

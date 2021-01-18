@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <style>
 	
     
@@ -17,15 +18,19 @@
 </style>
 
 <div style="width:15%; float:left;">
-        <hr>
-            카테고리 메뉴
-        <hr>
-            <button class="default">카테고리 세부</button>
-            <br>
-            <hr>
-            카테고리 메뉴
-        <hr>
-        <button class="default">카테고리 세부</button>
-        <br>
-        <button class="default">카테고리 세부</button>
+<c:forEach items="${selectList}" var="cate">
+
+	<c:choose>
+	    <c:when test="${cate.categroup eq 'Y'}">
+	        <hr>
+	            ${cate.catename}
+	        <hr>
+	    </c:when>
+	    <c:when test="${cate.categroup eq 'n'}">
+	         <button class="default">${cate.catename}</button>
+	    </c:when>
+	</c:choose>
+</c:forEach>
+
+       
     </div> 

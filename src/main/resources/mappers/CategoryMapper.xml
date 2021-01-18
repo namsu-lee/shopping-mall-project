@@ -3,28 +3,22 @@
     PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shoppingmall.mapper.CategoryMapper">
-	
 	<select id="getCategoryList" resultType="CategoryVO">
-		select * from category order by catenum, catename
-	</select>
-	
-	<select id="getCategoryNum" resultType="CategoryVO">
-		select catenum from category
+		select * from category order by catesort
 	</select>
 		
-	<insert id="insertCategory" parameterType="CategoryVO">
-		insert into category(sortnum, cateadd, catename) 
-		values(#{sortnum}, #{cateadd}, #{catename});
+<!-- 	<insert id="insertCategory" parameterType="CategoryVO">
+		insert into category(catesort, catename, cateauth) 
+		values(#{catesort}, #{catename}, #{cateauth});
 	</insert>	
 	
 	<update id="updateCategory" parameterType="CategoryVO">
-		UPDATE category SET sortnum=#{sortnum}, catename=#{catemane} 
-		WHERE catenum=#{catenum};	
+		UPDATE category SET catesort=#{catesort}, catename=#{catename}, cateauth=#{cateauth} 
+		WHERE cateid=#{catenum};	
 	</update>
 
-
 	<delete id="deleteCategory" parameterType="int">
-		DELETE FROM category WHERE catenum = #{catenum}
+		DELETE FROM category WHERE cateid = #{cateid}
 	</delete>
-
+	 -->
 </mapper>

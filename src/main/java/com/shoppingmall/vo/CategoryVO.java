@@ -1,28 +1,23 @@
 package com.shoppingmall.vo;
 
 public class CategoryVO {
-	private int catenum;
-	private int sortnum;
-	private String cateadd;
+	private int cateid;
+	private int catesort;
 	private String catename;
-	
-	public int getCatenum() {
-		return catenum;
+	private int cateauth;
+	private String categroup; 
+
+	public int getCateid() {
+		return cateid;
 	}
-	public void setCatenum(int catenum) {
-		this.catenum = catenum;
+	public void setCateid(int cateid) {
+		this.cateid = cateid;
 	}
-	public int getSortnum() {
-		return sortnum;
+	public int getCatesort() {
+		return catesort;
 	}
-	public void setSortnum(int sortnum) {
-		this.sortnum = sortnum;
-	}
-	public String getCateadd() {
-		return cateadd;
-	}
-	public void setCateadd(String cateadd) {
-		this.cateadd = cateadd;
+	public void setCatesort(int catesort) {
+		this.catesort = catesort;
 	}
 	public String getCatename() {
 		return catename;
@@ -30,10 +25,22 @@ public class CategoryVO {
 	public void setCatename(String catename) {
 		this.catename = catename;
 	}
+	public int getCateauth() {
+		return cateauth;
+	}
+	public void setCateauth(int cateauth) {
+		this.cateauth = cateauth;
+	}
+	public String getCategroup() {
+		return categroup;
+	}
+	public void setCategroup(String categroup) {
+		this.categroup = categroup;
+	}
 	@Override
 	public String toString() {
-		return "CategoryVO [catenum=" + catenum + ", sortnum=" + sortnum + ", cateadd=" + cateadd + ", catename="
-				+ catename + "]";
+		return "CategoryVO [cateid=" + cateid + ", catesort=" + catesort + ", catename=" + catename + ", cateauth="
+				+ cateauth + ", categroup=" + categroup + "]";
 	}
 	
 	

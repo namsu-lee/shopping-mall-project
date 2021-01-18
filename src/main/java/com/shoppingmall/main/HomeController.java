@@ -67,4 +67,10 @@ public class HomeController {
 		return "/main";
 	}
 	
+	
+	@RequestMapping(value = "/chat", method = RequestMethod.GET)
+	public String Chat() {
+		
+		return "/chat";
+	}
 }

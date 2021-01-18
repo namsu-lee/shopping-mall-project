@@ -48,9 +48,13 @@
         <input type="password" placeholder="비밀번호를 한번 더 입력해주세요" name="confirmPassword" id="confirmPassword" required>
 		
 		<!-- 이름 -->
-		<label for="name"><b>이름 *</b></label>
+		<label for="membername"><b>이름 *</b></label>
         <input type="text" placeholder="이름을 입력해주세요" name="membername" id="membername" required>
 		
+		<!-- 닉네임 -->
+		<label for="nickname"><b>닉네임 *</b></label>
+        <input type="text" placeholder="닉네임을 입력해주세요" name="nickname" id="nickname" required>
+        
 		<!-- 이메일 -->
 		<label for="email"><b>이메일 *</b></label>
         <input type="email" placeholder="이메일을 입력해주세요" name="email" id="email" required style="float:left;">
@@ -84,6 +88,7 @@
 		</select> 
 		<input type="text" style="width:100px; margin-right:5px;" name="phone2" id="phone2" size="5" maxlength="4" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"><strong>-</strong><input type="text" style="width:100px; margin-left:5px;" name="phone3" id="phone3" size="5" maxlength="4" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"></h3>
 		<input type="hidden" id="phone" name="phone" value="">
+		<input type="hidden" id="flag" name="flag" value="f">
         <hr>
 
         <button type="submit" class="registerbtn">회원가입</button>

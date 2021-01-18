@@ -7,11 +7,13 @@ import java.util.Random;
 
 public class MembersVO {
 	private String memberid;
+	private String nickname;
 	private String password;
 	private String membername;
 	private String email;
 	private String address;
 	private String phone;
+	private String flag;
 
 	final static char[] hexArray = "0123456789abcdef".toCharArray();
 
@@ -30,6 +32,22 @@ public class MembersVO {
 			hexChars[j * 2 + 1] = hexArray[v & 0x0F];
 		}
 		return new String(hexChars);
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public String getFlag() {
+		return flag;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag;
 	}
 
 	public String getMemberid() {

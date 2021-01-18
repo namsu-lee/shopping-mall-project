@@ -39,11 +39,12 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpServletRequest request) throws Exception {
-				
+		
+		//게시판 목록 불러오기
 		List<CategoryVO> selectList = service.CategoryGet();
 		model.addAttribute("selectList", selectList);
 		
-		
+		//쿠키 가져오기
 		String check = request.getHeader("cookie");
 		Cookie cookies[] = null;
 		
@@ -55,6 +56,7 @@ public class HomeController {
 			return "/main";
 		}
 		
+		//로그인 정보 가져오기
 		for (int i = 0; i < cookies.length; i++) {
 			if (cookies[i].getName().equals("Auto_Login")) {
 				HttpSession session = request.getSession(true);

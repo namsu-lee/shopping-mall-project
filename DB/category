@@ -2,7 +2,7 @@ create table category(
 	cateid int auto_increment primary key,
     catesort int,
     catename varchar(100),
-    cateauth int,
+    cateauth varchar(50),
     categroup varchar(2)
 );
 

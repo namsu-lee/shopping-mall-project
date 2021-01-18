@@ -22,10 +22,15 @@ public class LoginController {
 	LoginService loginService;
 	
 	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String Login() {
+		return "/login";
+	}
+	
 	//로그인 처리
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String Login(Locale locale, Model model, LoginVO vo, HttpServletRequest request) throws Exception {
-		
+	@RequestMapping(value = "/loginok", method = RequestMethod.POST)
+	public String LoginOk(Locale locale, Model model, LoginVO vo, HttpServletRequest request) throws Exception {
+		System.out.println("여기 탄다");
 		//비밀번호 암호화
 		vo.setPassword(MembersVO.bytesToHex2(MembersVO.sha256(vo.getPassword())));
 		

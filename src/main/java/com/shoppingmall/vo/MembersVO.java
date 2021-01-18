@@ -33,7 +33,8 @@ public class MembersVO {
 		}
 		return new String(hexChars);
 	}
-
+	
+	
 	public String getNickname() {
 		return nickname;
 	}

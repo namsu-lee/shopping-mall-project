@@ -42,7 +42,11 @@
 				background-color:white;
 			}
 			
-			#checkbox {
+			#Auto_Login {
+				margin-bottom:9px;
+			}
+			
+			#Auto_ID {
 				margin-bottom:9px;
 			}
 			
@@ -54,8 +58,8 @@
 			
 			#submitButton {
 				color:#fff;
-				background:#f43142;
-				border-color:#f43412;
+				background:#9E9D99;
+				border-color:#9E9D99;
 				height:40px;
 				width: 305px;
 				border: none;
@@ -80,16 +84,15 @@
 <body>
 	<section>
 			<article style="margin-top:13%">
-				<h2><a href="login.html"><img src="#" style="width:80px; height:80px;"></a></h2>
-				<form action="#" method="post">
-					<input type="text" name="id" id="id" placeholder="아이디"><br>
+				<h2><a href="/login"><img src="ezen.jpg" style="width:80px; height:80px;"></a></h2>
+				<form action="/loginok" method="post">
+					<input type="text" name="memberid" id="id" placeholder="아이디"><br>
 					<input type="password" name="password" id="password" placeholder="비밀번호는 6자 이상 ~ 20자 이하"></br>
 					<button type="submit" id="submitButton">로그인</button><br>
-					<input type="checkbox" name="checkbox" id="checkbox">자동 로그인
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;
-					<a href="register.html"><small>회원가입</small></a>
+					<input type="checkbox" name="Auto_Login" id="Auto_Login">자동 로그인
+					<input type="checkbox" name="Auto_ID" id="Auto_ID">아이디 저장
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/signup/register"><small>회원가입</small></a>
 					<br>
 					<br>
 					<button type="button" id="naverButton" onclick="#">네이버로 시작하기</button>

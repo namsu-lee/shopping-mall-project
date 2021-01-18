@@ -11,6 +11,7 @@
 	</select>
 	
 
+	<!-- 닉네임 중복 검사 -->
 	<select id="CheckNickName" resultType="Integer">
 		select count(*) from members where nickname = #{nickname};
 	</select>

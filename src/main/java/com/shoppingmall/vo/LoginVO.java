@@ -6,8 +6,8 @@ import java.security.NoSuchAlgorithmException;
 public class LoginVO {
 	private String memberid;
 	private String password;
-	private String Auto_Login;
-	private String Auto_ID;
+	private String Auto_Login;		//자동 로그인 체크
+	private String Auto_ID;			//아이디 저장 체크
 
 	final static char[] hexArray = "0123456789abcdef".toCharArray();
 
@@ -62,7 +62,8 @@ public class LoginVO {
 
 	@Override
 	public String toString() {
-		return "LoginVO [memberid=" + memberid + ", password=" + password + "]";
+		return "LoginVO [memberid=" + memberid + ", password=" + password + ", Auto_Login=" + Auto_Login + ", Auto_ID="
+				+ Auto_ID + "]";
 	}
 
 }

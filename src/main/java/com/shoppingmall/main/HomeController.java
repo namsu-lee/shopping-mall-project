@@ -1,8 +1,10 @@
 package com.shoppingmall.main;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,16 +25,28 @@ public class HomeController {
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	public String home(Locale locale, Model model, HttpServletRequest request) {
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		//서버 시작하면 채팅 서버도 같이 시작해준다.@@@@@@@@@@@@
 		
-		String formattedDate = dateFormat.format(date);
+		String check = request.getHeader("cookie");
+		Cookie cookies[] = null;
+		if(check != null)	{
+			cookies =request.getCookies();
+		}
 		
-		model.addAttribute("serverTime", formattedDate );
+		//지울꺼임.
+		if(cookies == null) {
+			return "redirect:/main";
+		}
 		
+		for(int i = 0; i < cookies.length; i++) {
+			if(cookies[i].getName().equals("Auto_Login")) {
+				HttpSession session = request.getSession(true);
+				session.setAttribute("memberid", cookies[i].getValue());
+			}
+		}
+
 		return "/main";
 	}
 	

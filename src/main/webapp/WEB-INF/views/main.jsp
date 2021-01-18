@@ -43,6 +43,10 @@
         <button class="btn info">메인화면 수정</button>
         <br>
 		뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?
+		<%
+			String id = (String)session.getAttribute("memberid");
+			out.println("asdasdasdasdsdadsadasasdasdsda" + id);
+		%>
     </div>    
 </div>
 </body>

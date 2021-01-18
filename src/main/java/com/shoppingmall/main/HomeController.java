@@ -6,6 +6,11 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
+import java.util.Locale;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,19 +38,26 @@ public class HomeController {
 	 * @throws Exception 
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) throws Exception {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	public String home(Locale locale, Model model, HttpServletRequest request) {
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
+		//���� �����ϸ� ä�� ������ ���� �������ش�.@@@@@@@@@@@@
 		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
+		String check = request.getHeader("cookie");
+		Cookie cookies[] = null;
+		if(check != null)	{
+			cookies =request.getCookies();
+		}
+				
 		List<CategoryVO> selectList = service.CategoryGet();
 		model.addAttribute("selectList", selectList);
 		
+		// for(int i = 0; i < cookies.length; i++) {
+		// 	if(cookies[i].getName().equals("Auto_Login")) {
+		// 		HttpSession session = request.getSession(true);
+		// 		session.setAttribute("memberid", cookies[i].getValue());
+		// 	}
+		// }
+
 		return "/main";
 	}
 	

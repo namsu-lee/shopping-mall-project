@@ -7,13 +7,13 @@ public class CategoryVO {
 	private String cateauth;
 	private String categroup; 
 
-	public int getCateid() {
+	public Integer getCateid() {
 		return cateid;
 	}
 	public void setCateid(int cateid) {
 		this.cateid = cateid;
 	}
-	public int getCatesort() {
+	public Integer getCatesort() {
 		return catesort;
 	}
 	public void setCatesort(int catesort) {

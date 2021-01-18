@@ -36,13 +36,11 @@ public class CategoryDAO {
 		
 		// 카테고리 수정
 		public void UpdateCategory(CategoryVO vo) {
-			sqlSession.update(Namespace+"updateCategory", vo);
-			sqlSession.commit();
+			sqlSession.update(Namespace+".updateCategory", vo);
 		}
 		
 		// 카테고리 삭제
 		public void DeleteCategory(int CateNum){
-			sqlSession.delete(Namespace+"deleteCategory", CateNum);
-			sqlSession.commit();
+			sqlSession.delete(Namespace+".deleteCategory", CateNum);
 		}
 }

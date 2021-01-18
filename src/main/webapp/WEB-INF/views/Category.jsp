@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="../../exclude/topnav.jsp" %>
  <title>게시판 목록 수정</title>
     <style>
         
@@ -34,13 +35,20 @@
         color:blue;
     }
     .submit:hover {background: #eee;}
+    .category{
+	     display:inline-block; 
+	     width:75%;
+	     position:fixed; 
+	     left:50%; 
+	     transform:translateX(-50%); 
+     }
     </style>
-
+<div class="category">
 <form id="frm1" class="frm1" method="POST" action="/category">
         <div style="display: inline-block;">
             <div style="float: left; margin:10px;">
                 카테고리 순서<br>
-                <input type="number" name="catesort">
+            <input type="number" name="catesort">
             </div>
             <div style="float: left; margin:10px;">
                 카테고리 이름<br>
@@ -89,7 +97,7 @@
 </c:forEach>
     
  </table>
- 
+ </div>
  <script>
     function btn_click(str){                             
         if(str=="update"){                                 

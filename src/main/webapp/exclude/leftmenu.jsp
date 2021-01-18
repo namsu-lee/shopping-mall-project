@@ -18,6 +18,8 @@
 </style>
 
 <div style="width:15%; float:left;">
+<button class="btn info" onclick="location.href='/category'">메인화면 수정</button>
+        <br>
 <c:forEach items="${selectList}" var="cate">
 
 	<c:choose>
@@ -26,11 +28,9 @@
 	            ${cate.catename}
 	        <hr>
 	    </c:when>
-	    <c:when test="${cate.categroup eq 'n'}">
-	         <button class="default">${cate.catename}</button>
+	    <c:when test="${cate.categroup eq 'N'}">
+	         <button class="default">${cate.catename}</button><br>
 	    </c:when>
 	</c:choose>
 </c:forEach>
-
-       
-    </div> 
+</div> 

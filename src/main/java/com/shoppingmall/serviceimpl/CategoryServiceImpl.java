@@ -25,12 +25,12 @@ public class CategoryServiceImpl implements CategoryService{
 	public void CategoryInsert(CategoryVO vo) throws Exception{
 		CategoryDAO.InsertCategory(vo);
 	}
-//	@Override
-//	public void CategoryUpdate() throws Exception{
-//		
-//	}
-//	@Override
-//	public void CategoryDelete() throws Exception{
-//		
-//	}
+	@Override
+	public void CategoryUpdate(CategoryVO vo) throws Exception{
+		CategoryDAO.UpdateCategory(vo);
+	}
+	@Override
+	public void CategoryDelete(int CateNum) throws Exception{
+		CategoryDAO.DeleteCategory(CateNum);
+	}
 }

@@ -88,6 +88,7 @@
 		</select> 
 		<input type="text" style="width:100px; margin-right:5px;" name="phone2" id="phone2" size="5" maxlength="4" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"><strong>-</strong><input type="text" style="width:100px; margin-left:5px;" name="phone3" id="phone3" size="5" maxlength="4" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"></h3>
 		<input type="hidden" id="phone" name="phone" value="">
+		<input type="hidden" id="flag" name="flag" value="f">
         <hr>
 
         <button type="submit" class="registerbtn">회원가입</button>

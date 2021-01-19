@@ -7,18 +7,25 @@
 		select * from category order by catesort
 	</select>
 		
+	<select id="getCategoryOne" resultType="CategoryVO">
+		select * from category order by catesort where cateid=#{cateid}
+	</select>
+	
+	<select id="getCategorySort" resultType="CategoryVO">
+		select catesort from category
+	</select>
+	
+	<select id="getCategoryName" resultType="CategoryVO">
+		select catename from category 
+	</select>
+	
  	<insert id="insertCategory" parameterType="CategoryVO">
 		insert into category(catesort, catename, cateauth, categroup) 
 		values(#{catesort}, #{catename}, #{cateauth}, #{categroup});
 	</insert>	
-	
-	<!--<update id="updateCategory" parameterType="CategoryVO">
-		UPDATE category SET catesort=#{catesort}, catename=#{catename}, cateauth=#{cateauth} 
-		WHERE cateid=#{catenum};	
-	</update>
 
 	<delete id="deleteCategory" parameterType="int">
 		DELETE FROM category WHERE cateid = #{cateid}
 	</delete>
-	 -->
+	
 </mapper>

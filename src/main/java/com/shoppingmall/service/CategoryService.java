@@ -8,6 +8,7 @@ public interface CategoryService {
 	public List<CategoryVO> CategoryGet() throws Exception;
 	
 	public void CategoryInsert(CategoryVO vo) throws Exception;
-	public void CategoryUpdate(CategoryVO vo) throws Exception;
 	public void CategoryDelete(int CateNum) throws Exception;
+	public List<CategoryVO> CategorySortGet() throws Exception;
+	public List<CategoryVO> CategoryNameGet() throws Exception;
 }

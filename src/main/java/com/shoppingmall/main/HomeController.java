@@ -42,6 +42,8 @@ public class HomeController {
 		
 		Server server = new Server();
 		
+		
+		
 		// 서버가 한번 더 열리기 때문에 조건을 걸어준다.
 		if(server.getServerSocket() == null) {
 			server.startServer(TransmissionControlProtocol.getIp(), TransmissionControlProtocol.getPort());

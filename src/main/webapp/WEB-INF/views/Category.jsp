@@ -4,8 +4,10 @@
 <%@ include file="../../exclude/topnav.jsp" %>
  <title>게시판 목록 수정</title>
     <style>
-        
-
+	body{
+		overflow-y:auto;
+	    height:100%;
+	}
     #myTable {
     border-collapse: collapse;
     width: 100%;
@@ -36,55 +38,50 @@
     }
     .submit:hover {background: #eee;}
     .category{
-	     display:inline-block; 
 	     width:75%;
-	     position:fixed; 
-	     left:50%; 
-	     transform:translateX(-50%); 
+	    margin:0px auto;
      }
     </style>
 <div class="category">
-<form id="frm1" class="frm1" method="POST" action="/category">
-        <div style="display: inline-block;">
-            <div style="float: left; margin:10px;">
-                카테고리 순서<br>
-            <input type="number" name="catesort">
-            </div>
-            <div style="float: left; margin:10px;">
-                카테고리 이름<br>
-                <input type="text" name="catename">
-            </div>
-            <div style="float: left; margin:10px;">
-                글쓰기 권한<br>
-         <input type="checkbox" name="cateauth" value="M" checked> 관리자 <br>
-             <input type="checkbox" name="cateauth" value="A"> A <br>
-             <input type="checkbox" name="cateauth" value="B"> B <br>
-             <input type="checkbox" name="cateauth" value="C"> C <br>
-             <input type="checkbox" name="cateauth" value="D"> D <br>
-             <input type="checkbox" name="cateauth" value="F"> F <br>
-         </div>
-            <div style="float: left; margin:10px;">
-                카테고리 그룹여부<br>
-                <select name="categroup">
-                    <option value="Y"> 예
-                    <option value="N" selected> 아니오
-                </select>
-            </div>
-            <br>
-        
-        </div>
-        <br><br>
-        <button type="submit" class="submit" onclick='btn_click("insert");'>추가</button>
-        <button type="submit" class="submit" onclick='btn_click("update");'>수정</button>
-        <button type="submit" class="submit" onclick='btn_click("delete");'>삭제</button>
-    </form>
-    <br><br>
+	<form id="frm1" class="frm1" method="POST" action="/category">
+		<div style="display: inline-block;">
+			
+			<div style="float: left; margin: 10px;">
+				카테고리 순서<br> <input type="number" name="catesort">
+			</div>
+			<div style="float: left; margin: 10px;">
+				카테고리 이름<br> <input type="text" name="catename">
+			</div>
+			<div style="float: left; margin: 10px;">
+				글쓰기 권한<br> 
+			<input type="checkbox" name="cateauth" value="M" checked> 관리자 <br> 
+			<input type="checkbox" name="cateauth" value="A"> A <br> 
+			<input type="checkbox" name="cateauth" value="B"> B <br> 
+			<input type="checkbox" name="cateauth" value="C"> C <br> 
+			<input type="checkbox" name="cateauth" value="D"> D <br> 
+			<input type="checkbox" name="cateauth" value="F"> F <br>
+			</div>
+			<div style="float: left; margin: 10px;">
+				그룹여부<br> 
+			<select name="categroup">
+				<option value="Y">예
+				<option value="N" selected>아니오
+			</select>
+			</div>
+			<br>
+		</div>
+		<br>
+		<br>
+		<button type="submit" class="submit" onclick='btn_click("insert");'>추가</button>
+	</form>
+	<br><br>
 <table id="myTable">
     <tr class="header">
-      <th style="width:25%;">카테고리 순서</th>
+      <th style="width:8%;">카테고리 순서</th>
       <th style="width:25%;">카테고리 이름</th>
-      <th style="width:25%;">글쓰기 권한</th>
-      <th style="width:25%;">카테고리 그룹여부</th>
+      <th style="width:15%;">글쓰기 권한</th>
+      <th style="width:5%;">그룹여부</th>
+      <th style="width:7%;"> </th>
     </tr>
     
 <c:forEach items="${selectList}" var="cate">
@@ -93,6 +90,9 @@
       <td>${cate.catename}</td>
       <td>${cate.cateauth}</td>
       <td>${cate.categroup}</td>
+      <td>
+      	<button type="button" class="submit" onclick='del("${cate.cateid}");'>삭제</button>
+      </td>
     </tr>
 </c:forEach>
     
@@ -100,12 +100,14 @@
  </div>
  <script>
     function btn_click(str){                             
-        if(str=="update"){                                 
-            frm1.action="/category/update";      
-        } else if(str=="delete"){      
-            frm1.action="/category/delete";      
-        }  else if(str=="insert"){
+        ifif(str=="insert"){
         	frm1.action="/category/insert"; 
         }
     }
+    
+    function del(i) {
+    	var a = "/category/delete?i="+i ;
+    	location.href=a;
+    }
+    
 </script>

@@ -17,8 +17,8 @@
     .default:hover {background: #eee;}
 </style>
 
-<div style="width:15%; float:left;">
-<button class="btn info" onclick="location.href='/category'">메인화면 수정</button>
+<div style="width:15%; float:left; min-width:157px;">
+<button  class="btn info" onclick="location.href='/category'">카테고리 수정</button>
         <br>
 <c:forEach items="${selectList}" var="cate">
 

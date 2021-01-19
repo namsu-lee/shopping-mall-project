@@ -2,12 +2,12 @@ package com.shoppingmall.vo;
 
 public class CategoryVO {
 	private int cateid;
-	private int catesort;
+	private Integer catesort;
 	private String catename;
 	private String cateauth;
 	private String categroup; 
 
-	public Integer getCateid() {
+	public int getCateid() {
 		return cateid;
 	}
 	public void setCateid(int cateid) {
@@ -16,7 +16,7 @@ public class CategoryVO {
 	public Integer getCatesort() {
 		return catesort;
 	}
-	public void setCatesort(int catesort) {
+	public void setCatesort(Integer catesort) {
 		this.catesort = catesort;
 	}
 	public String getCatename() {

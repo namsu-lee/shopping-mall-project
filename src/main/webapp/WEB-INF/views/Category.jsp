@@ -100,7 +100,7 @@
  </div>
  <script>
     function btn_click(str){                             
-        ifif(str=="insert"){
+        if(str=="insert"){
         	frm1.action="/category/insert"; 
         }
     }

@@ -47,10 +47,10 @@ public class CategoryDAO {
 		}
 		
 		
-		// 카테고리 수정
-		public void UpdateCategory(CategoryVO vo) {
-			sqlSession.update(Namespace+".updateCategory", vo);
-		}
+//		// 카테고리 수정
+//		public void UpdateCategory(CategoryVO vo) {
+//			sqlSession.update(Namespace+".updateCategory", vo);
+//		}
 		
 		// 카테고리 삭제
 		public void DeleteCategory(int CateNum){

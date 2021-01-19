@@ -41,9 +41,13 @@ public class CategoryController {
 		List<CategoryVO> selectNameList = service.CategoryNameGet();
 
 		if(vo.getCatename().equals("") || vo.getCatesort() == 0) {
+			PrintWriter pw = response.getWriter();
+			pw.println("<script>alert('이름과 순서를 입력해주세요.'); location.href='/category'</script>");
+			pw.flush();
+			
 			
 			model.addAttribute("selectList", selectList);
-			return "redirect:/category";
+			return "/category";
 		}
 		
 		//순서 중복이면 리턴
@@ -78,6 +82,7 @@ public class CategoryController {
 	@RequestMapping(value = "/category/delete", method = RequestMethod.GET)
 	public String DeleteCategory(Locale locale, Model model, @RequestParam("i") int i) throws Exception {
 		
+		//id 입력값이 없으면 리턴
 		if(i==0) {
 			List<CategoryVO> selectList = service.CategoryGet();
 			model.addAttribute("selectList", selectList);
@@ -88,4 +93,6 @@ public class CategoryController {
 		
 		return "redirect:/category";
 	}
+	
+	
 }

@@ -29,7 +29,7 @@
 	        <hr>
 	    </c:when>
 	    <c:when test="${cate.categroup eq 'N'}">
-	         <button class="default">${cate.catename}</button><br>
+	         <button class="default" onclick="location.href='/board/${cate.cateid}'">${cate.catename}</button><br>
 	    </c:when>
 	</c:choose>
 </c:forEach>

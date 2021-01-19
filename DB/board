@@ -1,0 +1,25 @@
+//테이블 생성
+create table board(
+	b_num int auto_increment primary key,
+    memberid varchar(20),
+    nickname varchar(20),
+    cateid int,
+    b_title varchar(100),
+    b_content text,
+    b_wdate datetime,
+    b_hit int
+);
+
+//게시글 목록 조회
+select b_num, memberid, nickname, b_title, 
+b_wdate, b_hit 
+from board where cateid=?;
+
+//게시글 조회
+select * from board where b_num=?;
+
+//게시글 작성
+
+//게시글 수정
+
+//게시글 삭제

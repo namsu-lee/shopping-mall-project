@@ -6,7 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="https://cdn.ckeditor.com/4.15.1/standard/ckeditor.js"></script>
+<script src="/resources/ckeditor/ckeditor.js"></script>
+
 <title>글쓰기 화면</title>
 
 <style>
@@ -24,10 +25,6 @@
 	}
 	#cke_b_content{
 	margin-top:30px;
-	config.height : 500;
-	}
-	#ck-editor__editable{
-	min-height : 500px;
 	}
 </style>
 </head>
@@ -46,7 +43,10 @@
     </div>
 </div>
 <script>
-CKEDITOR.replace('b_content');
+CKEDITOR.replace('b_content',{
+	height:400,
+	autoGrow_minHeight : 400
+});
 </script>
 </body>
 </html>

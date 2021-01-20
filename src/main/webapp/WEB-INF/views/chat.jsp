@@ -14,30 +14,36 @@
 				this._initSocket();
 			},
 			sendChat: function() {
-				this._sendMessage('${param.bang_id}', 'CMD_MSG_SEND', $('#message').val());
+				this._sendMessage('${sessionScope.memberid}', '${param.bang_id}', 'CMD_MSG_SEND', $('#message').val());
 				$('#message').val('');
 			},
 			sendEnter: function() {
-				this._sendMessage('${param.bang_id}', 'CMD_ENTER', $('#message').val());
+				this._sendMessage('${sessionScope.memberid}', '${param.bang_id}', 'CMD_ENTER', $('#message').val());
 				$('#message').val('');
 			},
 			receiveMessage: function(msgData) {
-				//아이디 말고 닉네임을 뿌려주고
+				//아이디 말고 닉네임을 뿌려주고 && db연동 해야한다.
 				//ChatView로 들어갈때 즉 컨트롤러를 탈때 model에다 닉네임 추가시켜준다.
-				var SessionID = "${sessionScope.memberid}";
-				if(SessionID == "") {
-					SessionID = "익명사용자";
-				}
-				alert(SessionID);
+				
 				// 정의된 CMD 코드에 따라서 분기 처리
 				if(msgData.cmd == 'CMD_MSG_SEND') {
 					var output = "";
-					output += "<div class='container'>";
-					output += 	"<img src='/resources/image/man.jpg' style='width:100%;''>";
-					output += 	"<p>" + msgData.msg + "</p>";
-					output +=	"<p style='clear:both;'>" + SessionID + "</p>";
-					output += 	"<span class='time-right'>" + msgData.msgdate + "</span>";
-					output += "</div>";
+					if(msgData.msgname == '${sessionScope.memberid}') {//로그인
+						output += "<div class='container darker'>";
+						output += 	"<img src='/resources/image/man.jpg' alt='x' class='right' style='width:100%;'>";
+						output += 	"<p>" + msgData.msg + "</p>";
+						output +=	"<p style='clear:both; text-align:right; width:96%; margin:0px auto;'>" + msgData.msgname + "</p>";
+						output += 	"<span class='time-left'>" + msgData.msgdate + "</span>";
+						output += "</div>";
+					}
+					else{
+						output += "<div class='container'>";
+						output += 	"<img src='/resources/image/man.jpg' alt='x' style='width:100%;'>";
+						output += 	"<p>" + msgData.msg + "</p>";
+						output +=	"<p style='clear:both;'>" + msgData.msgname + "</p>";
+						output += 	"<span class='time-right'>" + msgData.msgdate + "</span>";
+						output += "</div>";
+					}
 
 					$('#divChatData').append(output);
 				}
@@ -68,8 +74,9 @@
 					webSocket.closeMessage(JSON.parse(evt.data));
 				}
 			},
-			_sendMessage: function(bang_id, cmd, msg) {
+			_sendMessage: function(SessionID, bang_id, cmd, msg) {
 				var msgData = {
+						SessionID : SessionID,
 						bang_id : bang_id,
 						cmd : cmd,
 						msg : msg

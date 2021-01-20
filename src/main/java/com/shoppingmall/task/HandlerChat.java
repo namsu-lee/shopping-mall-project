@@ -6,8 +6,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.servlet.http.HttpSession;
+import java.util.UUID;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
@@ -32,8 +31,11 @@ public class HandlerChat extends TextWebSocketHandler {
 		// JSON --> Map으로 변환
 		ObjectMapper objectMapper = new ObjectMapper();
 		Map<String, String> mapReceive = objectMapper.readValue(message.getPayload(), Map.class);
-		//HttpSession hs = request.getSession();
-		//.getAttribute("id");
+		String SessionID = (String)mapReceive.get("SessionID");
+		/*
+		 * if(mapReceive.get("SessionID").equals("")) { SessionID = session.getId() +
+		 * "_익명사용자"; } System.out.println(session.getId());
+		 */
 		switch (mapReceive.get("cmd")) {
 		
 		// CLIENT 입장
@@ -47,14 +49,13 @@ public class HandlerChat extends TextWebSocketHandler {
 			// 같은 채팅방에 입장 메세지 전송
 			for (int i = 0; i < sessionList.size(); i++) {
 				Map<String, Object> mapSessionList = sessionList.get(i);
-				String bang_id = (String) mapSessionList.get("bang_id");
+				String bang_id = (String)mapSessionList.get("bang_id");
 				WebSocketSession sess = (WebSocketSession) mapSessionList.get("session");
-
 				if (bang_id.equals(mapReceive.get("bang_id"))) {
 					Map<String, String> mapToSend = new HashMap<String, String>();
 					mapToSend.put("bang_id", bang_id);
 					mapToSend.put("cmd", "CMD_ENTER");
-					mapToSend.put("msg", session.getId() + "님이 입장 했습니다.");
+					mapToSend.put("msg", SessionID + "님이 입장 했습니다.");
 
 					String jsonStr = objectMapper.writeValueAsString(mapToSend);
 					sess.sendMessage(new TextMessage(jsonStr));
@@ -74,7 +75,7 @@ public class HandlerChat extends TextWebSocketHandler {
 					Map<String, String> mapToSend = new HashMap<String, String>();
 					mapToSend.put("bang_id", bang_id);
 					mapToSend.put("cmd", "CMD_MSG_SEND");
-					mapToSend.put("msgname", session.getId());
+					mapToSend.put("msgname", SessionID);
 					mapToSend.put("msg", mapReceive.get("msg"));
 					mapToSend.put("msgdate", Chatting_Date());
 					String jsonStr = objectMapper.writeValueAsString(mapToSend);

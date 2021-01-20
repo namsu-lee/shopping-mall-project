@@ -15,12 +15,10 @@ public class BoardServiceImpl implements BoardService{
 	@Inject
 	BoardDAO BoardDAO;
 	
-	BoardVO boardvo = new BoardVO();
 	
 	@Override
-	public List<BoardVO> GetBoardList(int cateid) throws Exception{
-		System.out.println(cateid+"serviceimpl");
-		System.out.println(boardvo.toString());
+	public List<BoardVO> GetBoardList(Integer cateid) throws Exception{
+		
 		return BoardDAO.GetBoardList(cateid);
 	}
 }

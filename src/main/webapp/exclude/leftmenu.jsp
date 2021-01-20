@@ -2,8 +2,20 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <style>
-	
-    
+	.info {
+        color: dodgerblue;
+        border: none;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        display: inline-block;
+        background-color:white;
+    }
+
+    .info:hover {
+        background: #2196F3;
+        color: white;
+    }
     .default{
           border: none;
           background-color: inherit;

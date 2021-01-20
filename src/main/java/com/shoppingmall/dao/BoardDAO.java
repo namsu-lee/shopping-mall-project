@@ -14,13 +14,10 @@ public class BoardDAO {
 	@Inject
 	private SqlSession sqlSession;
 	
-	BoardVO boardvo = new BoardVO();
 	
 	private static final String Namespace = "com.shoppingmall.mapper.BoardMapper";
 	
-	public List<BoardVO> GetBoardList(int cateid) throws Exception{
-		System.out.println(cateid+",DAO");
-		System.out.println(boardvo.toString());
-		return sqlSession.selectList(Namespace + ".GetBoardList");
+	public List<BoardVO> GetBoardList(Integer cateid) throws Exception{
+		return sqlSession.selectList(Namespace + ".GetBoardList", cateid);
 	}
 }

@@ -81,13 +81,4 @@ public class HomeController {
 		return "/main";
 	}
 	
-	
-	@RequestMapping(value = "/chat", method = RequestMethod.GET)
-	public String Chat(HttpServletRequest request, HttpServletResponse response) {
-		
-		return "/chat";
-	}
-	
-	
-	
 }

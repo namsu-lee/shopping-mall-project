@@ -88,6 +88,7 @@
 	<div style="width: 100%; height: 10%; padding: 10px;">
 		<input type="text" id="message" size="110" onkeypress="if(event.keyCode==13){webSocket.sendChat();}" />
 		<input type="button" id="btnSend" value="채팅 전송" onclick="webSocket.sendChat()" />
+		<button type="button" onclick="history.back()">채팅목록으로</button>
 	</div>
 </body>
 </html>

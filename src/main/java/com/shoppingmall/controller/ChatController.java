@@ -3,6 +3,9 @@ package com.shoppingmall.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,18 +16,17 @@ import com.shoppingmall.task.TransmissionControlProtocol;
 
 
 @Controller
-@RequestMapping(value = "/chat")
 public class ChatController {
 
-	//해당 클라이언트 소켓
-	@ResponseBody
-	@RequestMapping(value = "/ClientSocketOpen", method = RequestMethod.POST)
-	public Map<String, Client> Client_Socket_Open() {
-		Client client = new Client();
-		client.startClient(TransmissionControlProtocol.getIp(), TransmissionControlProtocol.getPort());
+	@RequestMapping(value = "/ChattingBangList", method = RequestMethod.GET)
+	public String ChattingBangList(HttpServletRequest request, HttpServletResponse response) {
 		
-		Map<String, Client> map = new HashMap<String, Client>();
-		map.put("Socket", client);
-		return map;
+		return "/ChattingBangList";
+	}
+	
+	@RequestMapping(value = "/chat", method = RequestMethod.GET)
+	public String Chat(HttpServletRequest request, HttpServletResponse response) {
+		
+		return "/chat";
 	}
 }

@@ -6,8 +6,8 @@ import java.security.NoSuchAlgorithmException;
 public class LoginVO {
 	private String memberid;
 	private String password;
-	private String Auto_Login;		//ÀÚµ¿ ·Î±×ÀÎ Ã¼Å©
-	private String Auto_ID;			//¾ÆÀÌµð ÀúÀå Ã¼Å©
+	private String Auto_Login;		//ï¿½Úµï¿½ ï¿½Î±ï¿½ï¿½ï¿½ Ã¼Å©
+	private String Auto_ID;			//ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 
 	final static char[] hexArray = "0123456789abcdef".toCharArray();
 

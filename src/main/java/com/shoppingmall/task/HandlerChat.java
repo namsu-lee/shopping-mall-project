@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -27,7 +29,7 @@ public class HandlerChat extends TextWebSocketHandler {
 			// JSON --> Map으로 변환
 			ObjectMapper objectMapper = new ObjectMapper();
 			Map<String, String> mapReceive = objectMapper.readValue(message.getPayload(), Map.class);
-
+			
 			switch (mapReceive.get("cmd")) {
 			
 			// CLIENT 입장
@@ -48,7 +50,7 @@ public class HandlerChat extends TextWebSocketHandler {
 						Map<String, String> mapToSend = new HashMap<String, String>();
 						mapToSend.put("bang_id", bang_id);
 						mapToSend.put("cmd", "CMD_ENTER");
-						mapToSend.put("msg", session.getId() +  "님이 입장 했습니다.");
+						mapToSend.put("msg", session.getAttributes() +  "님이 입장 했습니다.");
 						
 						String jsonStr = objectMapper.writeValueAsString(mapToSend);
 						sess.sendMessage(new TextMessage(jsonStr));

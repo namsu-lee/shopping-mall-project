@@ -74,15 +74,15 @@ public class LoginController {
 			
 			
 			//아이디 저장
-			if(vo.getAuto_ID().equals("on")) {
+			if(vo.getAuto_ID() == null) {
+				System.out.println("쿠키 취소한다.,11111111111111111");
+				cookie1.setMaxAge(0);		
+				response.addCookie(cookie1);
+			}
+			else {
 				cookie1.setMaxAge(60*60*24);
 				response.addCookie(cookie1);
 				System.out.println("쿠키 설정한다.,");
-			}
-			else {
-				System.out.println("쿠키 설정한다.,11111111111111111");
-				cookie1.setMaxAge(0);		
-				response.addCookie(cookie1);
 			}
 			
 			//자동 로그인
@@ -101,7 +101,7 @@ public class LoginController {
 	
 
 	//로그아웃
-	@RequestMapping(value = "/logout", method = RequestMethod.POST)
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String Logout(Locale locale, Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		String check = request.getHeader("cookie");
@@ -124,6 +124,7 @@ public class LoginController {
 		}
 		session.invalidate();
 		//return "redirect:/main";
+		System.out.println("로그아웃.........");
 		return "redirect:/";
 	}
 	

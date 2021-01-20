@@ -97,7 +97,7 @@ form.example::after {
     <c:forEach items="${GetBoardList}" var="list">
 		<tr>
 			<td style="text-align: center;">${list.b_num}</td>
-			<td > ${list.b_title}</td>
+			<td ><a href="/board/${cateid}/${list.b_num}"> ${list.b_title}</a></td>
 			<td style="text-align: center;">${list.nickname}</td>
 			<td style="text-align: center;">${list.b_wdate}</td>
 			<td style="text-align: center;">${list.b_hit}</td>

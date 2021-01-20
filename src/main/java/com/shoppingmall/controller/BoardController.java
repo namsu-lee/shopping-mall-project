@@ -32,10 +32,22 @@ public class BoardController {
 		List<CategoryVO> selectList = cate.CategoryGet();
 		model.addAttribute("selectList", selectList);
 		
-		
 		List<BoardVO> GetBoardList = service.GetBoardList(cateid);
 		model.addAttribute("GetBoardList", GetBoardList);
 		
 		return "/board";
+	}
+	
+	//게시글 조회
+	@RequestMapping(value = "/board/{cateid}/{b_num}", method = RequestMethod.GET)
+	public String ViewBoard(@PathVariable Integer b_num, Locale locale, Model model) throws Exception {
+		
+		List<CategoryVO> selectList = cate.CategoryGet();
+		model.addAttribute("selectList", selectList);
+		
+		List<BoardVO> ViewBoard = service.ViewBoard(b_num);
+		model.addAttribute("ViewBoard", ViewBoard);
+		
+		return "/viewboard";
 	}
 }

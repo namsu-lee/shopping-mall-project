@@ -21,4 +21,10 @@ public class BoardServiceImpl implements BoardService{
 		
 		return BoardDAO.GetBoardList(cateid);
 	}
+	
+	@Override
+	public List<BoardVO> ViewBoard(Integer b_num) throws Exception{
+		
+		return BoardDAO.ViewBoard(b_num);
+	}
 }

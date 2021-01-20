@@ -29,10 +29,10 @@ public class BoardVO {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public int getCateid() {
+	public Integer getCateid() {
 		return cateid;
 	}
-	public void setCateid(int cateid) {
+	public void setCateid(Integer cateid) {
 		this.cateid = cateid;
 	}
 	public String getB_title() {

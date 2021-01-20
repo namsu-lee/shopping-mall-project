@@ -12,29 +12,9 @@
 <style>
 
 .main{
-     display:inline-block; 
      width:75%;
-     position:fixed; 
-     left:50%; 
-     transform:translateX(-50%); 
+     margin:0px auto;
 }
-
-.info {
-        color: dodgerblue;
-    }
-
-    .info:hover {
-        background: #2196F3;
-        color: white;
-    }
-    .btn {
-        border: none;
-        background-color: inherit;
-        padding: 14px 28px;
-        font-size: 16px;
-        cursor: pointer;
-        display: inline-block;
-    }
 </style>
 
 <div class="main">

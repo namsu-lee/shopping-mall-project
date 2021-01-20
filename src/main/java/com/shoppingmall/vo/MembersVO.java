@@ -2,7 +2,6 @@ package com.shoppingmall.vo;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
 import java.util.Random;
 
 public class MembersVO {
@@ -13,8 +12,12 @@ public class MembersVO {
 	private String email;
 	private String address;
 	private String phone;
-	private String flag;
+	private String mem_fileorigin = "man.jpg";
+	private String mem_filename = "man.jpg";
+	private String mem_filedir = "C:\\upload";
 
+	//íšŒì›ê°€ì…ì‹œ ê¸°ë³¸ì´ë¯¸ì§€ë¡œ ì €ì¥í•´ì¤€ë‹¤.
+	
 	final static char[] hexArray = "0123456789abcdef".toCharArray();
 
 	public static byte[] sha256(String msg) throws NoSuchAlgorithmException {
@@ -33,22 +36,13 @@ public class MembersVO {
 		}
 		return new String(hexChars);
 	}
-	
-	
+
 	public String getNickname() {
 		return nickname;
 	}
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
-	}
-
-	public String getFlag() {
-		return flag;
-	}
-
-	public void setFlag(String flag) {
-		this.flag = flag;
 	}
 
 	public String getMemberid() {
@@ -99,19 +93,44 @@ public class MembersVO {
 		this.address = address;
 	}
 
-	@Override
-	public String toString() {
-		return "MembersVO [memberid=" + memberid + ", password=" + password + ", membername=" + membername + ", email="
-				+ email + ", address=" + address + ", phone=" + phone + "]";
+	public String getMem_fileorigin() {
+		return mem_fileorigin;
 	}
 
-	// ³­¼ö »ı¼º±â
+	public void setMem_fileorigin(String mem_fileorigin) {
+		this.mem_fileorigin = mem_fileorigin;
+	}
+
+	public String getMem_filename() {
+		return mem_filename;
+	}
+
+	public void setMem_filename(String mem_filename) {
+		this.mem_filename = mem_filename;
+	}
+
+	public String getMem_filedir() {
+		return mem_filedir;
+	}
+
+	public void setMem_filedir(String mem_filedir) {
+		this.mem_filedir = mem_filedir;
+	}
+
+	@Override
+	public String toString() {
+		return "MembersVO [memberid=" + memberid + ", nickname=" + nickname + ", password=" + password + ", membername="
+				+ membername + ", email=" + email + ", address=" + address + ", phone=" + phone + ", mem_fileorigin="
+				+ mem_fileorigin + ", mem_filename=" + mem_filename + ", mem_filedir=" + mem_filedir + "]";
+	}
+
+	// ë‚œìˆ˜ ìƒì„±
 	public String Random_Number() {
-		// ÀÎÁõ¹øÈ£ »ı¼ºÇÏ´Â ºÎºĞ
+		
 		int len = 6;
-		int dupCd = 1; // 1 Áßº¹Çã¿ë , 2 Áßº¹Á¦°Å
+		int dupCd = 1; 
 		Random rand = new Random();
-		String numStr = ""; // ³­¼ö°¡ ÀúÀåµÉ º¯¼ö
+		String numStr = ""; //ì´ë©”ì¼ ì¸ì¦ ë²ˆí˜¸
 
 		for (int i = 0; i < len; i++) {
 			String ran = Integer.toString(rand.nextInt(10));

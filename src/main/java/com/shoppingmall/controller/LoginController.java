@@ -1,6 +1,7 @@
 package com.shoppingmall.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Locale;
 
 import javax.inject.Inject;
@@ -58,11 +59,23 @@ public class LoginController {
 	//로그인 처리
 	@RequestMapping(value = "/loginok", method = RequestMethod.POST)
 	public String LoginOk(Locale locale, Model model, LoginVO vo, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
 		System.out.println(vo.toString());
+		PrintWriter out = response.getWriter();
+		
+		
 		//비밀번호 암호화
 		vo.setPassword(MembersVO.bytesToHex2(MembersVO.sha256(vo.getPassword())));
 		
 		LoginVO result = loginService.Login(vo);
+		if(result == null) {
+			out.print("<script>");
+			out.println("	alert('아이디 또는 비밀번호가 틀립니다.');");
+			out.println("	history.back();");
+			out.print("</script>");
+			return "/login";
+		}
+		
 		if(vo.getMemberid().equals(result.getMemberid())) {
 			
 			HttpSession session = request.getSession();

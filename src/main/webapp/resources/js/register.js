@@ -70,7 +70,7 @@
 	}
 	
 	//닉네임 중복 검사 여기 false로 바꿔준다 내일
-	var NickKimCheck = true; 
+	var NickKimCheck = false; 
 	function nickcheck() {
 		var nickname = document.form.nickname.value;
 		//alert(nickname);

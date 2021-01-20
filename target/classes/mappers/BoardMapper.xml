@@ -21,6 +21,9 @@
 	</insert>
 	
 	<!-- 게시글 수정 -->
-	
+	<update id="UpdateBoard" parameterType="BoardVO">
+		update into board (cateid, b_title, b_content, b_wdate) 
+		values(#{cateid}, #{b_title}, #{b_content}, now()); 
+	</update>
 	<!-- 게시글 삭제 -->
 </mapper>

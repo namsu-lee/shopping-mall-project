@@ -42,18 +42,6 @@ public class HomeController {
 		// 1. 서버를 시작하면 채팅 서버도 동시에 열어준다.
 		//boolean portCheck = availablePort("192.168.2.100",6000);
 		
-		Server server = new Server();
-		
-		
-		
-		// 서버가 한번 더 열리기 때문에 조건을 걸어준다.
-		if(server.getServerSocket() == null) {
-			server.startServer(TransmissionControlProtocol.getIp(), TransmissionControlProtocol.getPort());
-		}
-		else {
-			System.out.println("이미 서버소켓이 열려있다.");
-		}
-		
 		//게시판 목록 불러오기
 		List<CategoryVO> selectList = service.CategoryGet();
 		model.addAttribute("selectList", selectList);

@@ -34,20 +34,18 @@ public class BoardController {
 		
 		List<BoardVO> GetBoardList = service.GetBoardList(cateid);
 		model.addAttribute("GetBoardList", GetBoardList);
-		
 		return "/board";
 	}
 	
 	//게시글 조회
 	@RequestMapping(value = "/board/{cateid}/{b_num}", method = RequestMethod.GET)
-	public String ViewBoard(@PathVariable Integer b_num, Locale locale, Model model) throws Exception {
+	public String ViewBoard(@PathVariable Integer cateid, @PathVariable Integer b_num, Locale locale, Model model) throws Exception {
 		
 		List<CategoryVO> selectList = cate.CategoryGet();
 		model.addAttribute("selectList", selectList);
 		
 		List<BoardVO> ViewBoard = service.ViewBoard(b_num);
 		model.addAttribute("ViewBoard", ViewBoard);
-		
 		return "/viewboard";
 	}
 	
@@ -63,10 +61,11 @@ public class BoardController {
 	}
 	
 	//게시글 작성 로직
-	@RequestMapping(value = "/board/{cateid}/writeboard")
-	public String WriteBoardOK(@PathVariable Integer cateid, Locale locale, Model model) throws Exception {
+	@RequestMapping(value = "/board/{cateid}/wroteboard")
+	public String WroteBoard(@PathVariable Integer cateid, BoardVO vo, Locale locale, Model model) throws Exception {
+
+		service.WroteBoard(vo);
 		
-		
-		return "/writeboard";
+		return "redirect:/board/{cateid}";
 	}
 }

@@ -105,7 +105,10 @@ form.example::after {
 	</c:forEach>
     
  </table>
-	</div>
+ <div style="float:right;">
+ 	<button  class="btn info" onclick="location.href='/board/${cateid}/writeboard'">글쓰기</button>
+ </div>
+ 	</div>
 </div>
 </body>
 </html>

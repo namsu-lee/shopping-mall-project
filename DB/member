@@ -7,5 +7,8 @@ create table members (
     address varchar(100) not null,					-- �̸���
     phone varchar(13) not null,						-- ����ȣ
     flag  char(2)     not null,						-- ȸ�� ��� 
+    mem_filename varchar(50),
+    mem_fileorigin varchar(50),
+    mem_filedir varchar(50),
     primary key (memberid)
     )DEFAULT CHARSET=utf8 COLLATE utf8_general_ci; 

@@ -45,7 +45,14 @@
 		<div class="content">${board.b_content}</div>
 		<hr>
 	</c:forEach>
+	<div style="float:left;">
+		<button  class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
 	</div>
+	<div style="float:right;">
+ 	<button  class="btn info" onclick="location.href='/board/${cateid}/writeboard'">글쓰기</button>
+ </div>
+	</div>
+	
 </div>
 </body>
 </html>

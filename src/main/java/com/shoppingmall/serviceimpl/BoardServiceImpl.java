@@ -27,4 +27,9 @@ public class BoardServiceImpl implements BoardService{
 		
 		return BoardDAO.ViewBoard(b_num);
 	}
+	
+	@Override
+	public void WroteBoard(BoardVO vo) throws Exception{
+		BoardDAO.WroteBoard(vo);
+	}
 }

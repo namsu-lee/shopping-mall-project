@@ -70,8 +70,6 @@ public class CategoryController {
 			}
 		}
 		
-		System.out.println(vo.toString());
-		
 		service.CategoryInsert(vo);
 		
 		return "redirect:/category";

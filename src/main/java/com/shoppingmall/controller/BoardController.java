@@ -26,7 +26,7 @@ public class BoardController {
 	@RequestMapping(value = "/board/{cateid}", method = RequestMethod.GET)
 	public String MoveBoard(@PathVariable int cateid, Locale locale, Model model) throws Exception {
 		
-		System.out.println(cateid+"controller");
+		System.out.println(cateid+",controller");
 		
 		System.out.println(boardvo.toString());
 		

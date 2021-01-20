@@ -19,7 +19,7 @@ public class BoardDAO {
 	private static final String Namespace = "com.shoppingmall.mapper.BoardMapper";
 	
 	public List<BoardVO> GetBoardList(int cateid) throws Exception{
-		System.out.println(cateid+"DAO");
+		System.out.println(cateid+",DAO");
 		System.out.println(boardvo.toString());
 		return sqlSession.selectList(Namespace + ".GetBoardList");
 	}

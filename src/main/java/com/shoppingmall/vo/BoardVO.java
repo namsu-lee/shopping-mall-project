@@ -6,7 +6,7 @@ public class BoardVO {
 	private Integer b_num;
     private String memberid;
     private String nickname;
-    private int cateid;
+    private Integer cateid;
     private String b_title;
     private String b_content;
     private Date b_wdate;

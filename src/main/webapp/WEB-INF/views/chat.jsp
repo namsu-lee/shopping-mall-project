@@ -22,14 +22,20 @@
 				$('#message').val('');
 			},
 			receiveMessage: function(msgData) {
-
+				//아이디 말고 닉네임을 뿌려주고
+				//ChatView로 들어갈때 즉 컨트롤러를 탈때 model에다 닉네임 추가시켜준다.
+				var SessionID = "${sessionScope.memberid}";
+				if(SessionID == "") {
+					SessionID = "익명사용자";
+				}
+				alert(SessionID);
 				// 정의된 CMD 코드에 따라서 분기 처리
 				if(msgData.cmd == 'CMD_MSG_SEND') {
 					var output = "";
 					output += "<div class='container'>";
 					output += 	"<img src='/resources/image/man.jpg' style='width:100%;''>";
 					output += 	"<p>" + msgData.msg + "</p>";
-					output +=	"<p style='clear:both;'>" + msgData.msgname + "</p>";
+					output +=	"<p style='clear:both;'>" + SessionID + "</p>";
 					output += 	"<span class='time-right'>" + msgData.msgdate + "</span>";
 					output += "</div>";
 

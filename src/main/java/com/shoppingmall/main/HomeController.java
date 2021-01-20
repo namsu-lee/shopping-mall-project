@@ -6,6 +6,7 @@ import java.util.Locale;
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -81,7 +82,7 @@ public class HomeController {
 	
 	
 	@RequestMapping(value = "/chat", method = RequestMethod.GET)
-	public String Chat() {
+	public String Chat(HttpServletRequest request, HttpServletResponse response) {
 		
 		return "/chat";
 	}

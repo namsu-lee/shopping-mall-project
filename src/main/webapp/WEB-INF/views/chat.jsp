@@ -1,93 +1,93 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="/resources/js/jquery-3.5.1.min.js"></script>
-<script src="/resources/js/chat.js"></script>
-<style>
-body {
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 0 20px;
-}
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>웹소켓 채팅</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.js"></script>
+	<script type="text/javascript">
+		var webSocket = {
+			init: function(param) {
+				this._url = param.url;
+				this._initSocket();
+			},
+			sendChat: function() {
+				this._sendMessage('${param.bang_id}', 'CMD_MSG_SEND', $('#message').val());
+				$('#message').val('');
+			},
+			sendEnter: function() {
+				this._sendMessage('${param.bang_id}', 'CMD_ENTER', $('#message').val());
+				$('#message').val('');
+			},
+			receiveMessage: function(msgData) {
 
-.container {
-  border: 2px solid #dedede;
-  background-color: #f1f1f1;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-}
+				// 정의된 CMD 코드에 따라서 분기 처리
+				if(msgData.cmd == 'CMD_MSG_SEND') {
+					var output = "";
+					output += "<div class='container'>";
+					output += 	"<img src='/w3images/bandmember.jpg' style='width:100%;''>";
+					output += 	"<p>" + msgData.msg + "</p>";
+					output += 	"<span class='time-right'>11:00</span>";
+					output += "</div>";
 
-.darker {
-  border-color: #ccc;
-  background-color: #ddd;
-}
-
-.container::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.container img {
-  float: left;
-  max-width: 60px;
-  width: 100%;
-  margin-right: 20px;
-  border-radius: 50%;
-}
-
-.container img.right {
-  float: right;
-  margin-left: 20px;
-  margin-right:0;
-}
-
-.time-right {
-  float: right;
-  color: #aaa;
-}
-
-.time-left {
-  float: left;
-  color: #999;
-}
-</style>
+					$('#divChatData').append(output);
+				}
+				// 입장
+				else if(msgData.cmd == 'CMD_ENTER') {
+					$('#divChatData').append('<div>' + msgData.msg + '</div>');
+				}
+				// 퇴장
+				else if(msgData.cmd == 'CMD_EXIT') {					
+					$('#divChatData').append('<div>' + msgData.msg + '</div>');
+				}
+			},
+			closeMessage: function(str) {
+				$('#divChatData').append('<div>' + '연결 끊김 : ' + str + '</div>');
+			},
+			disconnect: function() {
+				this._socket.close();
+			},
+			_initSocket: function() {
+				this._socket = new SockJS(this._url);
+				this._socket.onopen = function(evt) {
+					webSocket.sendEnter();
+				};
+				this._socket.onmessage = function(evt) {
+					webSocket.receiveMessage(JSON.parse(evt.data));
+				};
+				this._socket.onclose = function(evt) {
+					webSocket.closeMessage(JSON.parse(evt.data));
+				}
+			},
+			_sendMessage: function(bang_id, cmd, msg) {
+				var msgData = {
+						bang_id : bang_id,
+						cmd : cmd,
+						msg : msg
+				};
+				var jsonData = JSON.stringify(msgData);
+				this._socket.send(jsonData);
+			}
+		};
+	</script>	
+	<script type="text/javascript">
+        $(window).on('load', function () {
+			webSocket.init({ url: '<c:url value="/chat" />' });	
+		});
+	</script>
+	<link href="/resources/css/chat.css" rel="stylesheet">
 </head>
 <body>
-
-<h2>관리자에게 메세지 보내기</h2>
-
-<div class="container">
-  <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
-  <p>Hello. How are you today?</p>
-  <span class="time-right">11:00</span>
-</div>
-
-<div class="container darker">
-  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right" style="width:100%;">
-  <p>Hey! I'm fine. Thanks for asking!</p>
-  <span class="time-left">11:01</span>
-</div>
-
-<div class="container">
-  <img src="/w3images/bandmember.jpg" alt="Avatar" style="width:100%;">
-  <p>Sweet! So, what do you wanna do today?</p>
-  <span class="time-right">11:02</span>
-</div>
-
-<div class="container darker">
-  <img src="/w3images/avatar_g2.jpg" alt="Avatar" class="right" style="width:100%;">
-  <p>Nah, I dunno. Play soccer.. or learn more coding perhaps?</p>
-  <span class="time-left">11:05</span>
-</div>
-
-
-<div>
-	<input type="text" id="text" name="text"><button type="button" onclick="#">전송</button>
-</div>
+	<div style="width: 800px; height: 700px; padding: 10px; border: solid 1px #e1e3e9;">
+		<div id="divChatData">
+			
+		</div>
+	</div>
+	<div style="width: 100%; height: 10%; padding: 10px;">
+		<input type="text" id="message" size="110" onkeypress="if(event.keyCode==13){webSocket.sendChat();}" />
+		<input type="button" id="btnSend" value="채팅 전송" onclick="webSocket.sendChat()" />
+	</div>
 </body>
 </html>

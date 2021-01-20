@@ -76,7 +76,7 @@
     <script>
         function winOpen()
         {
-        window.open("/chat","new","width=500,height=800,top=100,left=100");
+        window.open("/ChattingBangList","new","width=500,height=800,top=100,left=100");
         }
         
     </script>

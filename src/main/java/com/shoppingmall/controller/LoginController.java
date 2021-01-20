@@ -63,7 +63,6 @@ public class LoginController {
 		System.out.println(vo.toString());
 		PrintWriter out = response.getWriter();
 		
-		
 		//비밀번호 암호화
 		vo.setPassword(MembersVO.bytesToHex2(MembersVO.sha256(vo.getPassword())));
 		

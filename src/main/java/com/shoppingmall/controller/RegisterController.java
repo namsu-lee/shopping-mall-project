@@ -3,7 +3,6 @@ package com.shoppingmall.controller;
 //한글 실험
 import java.io.File;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -52,7 +51,7 @@ public class RegisterController {
 
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("num", num);
-
+		System.out.println("여기 탄다.");
 		return map;
 	}
 	
@@ -81,9 +80,9 @@ public class RegisterController {
 		String num = membersVO.Random_Number(); //
 		String setfrom = "gudxo12261@gmail.com";
 		String tomail = email;
-		String title = "EZEN게시판 이메일 인증번호가 왔어요~";
-		String content = "<img src=\"cid:ezen.jpg\" style='width:300px; height:100px;'>"
-				+ "<br/><h1>EZEN쇼핑몰을 찾아주셔서 감사합니다.</h1><br/>" + "<h2>인증번호는 <font color='pink'>" + num
+		String title = "man게시판 이메일 인증번호가 왔어요~";
+		String content = "<img src=\"cid:man.jpg\" style='width:300px; height:100px;'>"
+				+ "<br/><h1>man쇼핑몰을 찾아주셔서 감사합니다.</h1><br/>" + "<h2>인증번호는 <font color='pink'>" + num
 				+ "</font>니다.</h2>";
 
 		try {
@@ -95,8 +94,8 @@ public class RegisterController {
 			messageHelper.setSubject(title); 
 			messageHelper.setText(content, true); 
 
-			FileSystemResource file = new FileSystemResource(new File("C:/ezen.jpg"));
-			messageHelper.addInline("ezen.jpg", file);
+			FileSystemResource file = new FileSystemResource(new File("C:/man.jpg"));
+			messageHelper.addInline("man.jpg", file);
 			mailSender.send(message);
 
 			Map<String, String> map = new HashMap<String, String>();

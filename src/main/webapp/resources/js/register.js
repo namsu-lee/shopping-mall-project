@@ -55,7 +55,7 @@
 		//alert(id);
 		$.ajax({
 			url:"/signup/idcheck",
-			type:"POST", // data: "param1=aaaa&param2=zzzz,
+			type:"POST", 
 			data:"id="+id,
 			success:function(result)	{
 				if(result.num == 0)	{
@@ -69,8 +69,8 @@
 		});
 	}
 	
-	//닉네임 중복 검사
-	var NickKimCheck = false;
+	//닉네임 중복 검사 여기 false로 바꿔준다 내일
+	var NickKimCheck = true; 
 	function nickcheck() {
 		var nickname = document.form.nickname.value;
 		//alert(nickname);
@@ -79,6 +79,7 @@
 			type:"POST", 
 			data:"nickname="+nickname,
 			success:function(result)	{
+				alert(result.num);
 				if(result.num == 0)	{
 					NickKimCheck = true;
 					alert("사용 가능한 닉네임입니다.");

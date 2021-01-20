@@ -124,9 +124,6 @@ if((cookies != null) && (cookies.length > 0))	{
 					<a href="/signup/register"><small>회원가입</small></a>
 					<br>
 					<br>
-					///
-					${url}
-					///
 					<a href="${url}" id="naverButton">네이버로 시작하기</a>
 				</form>
 			</article>

@@ -61,4 +61,12 @@ public class BoardController {
 		
 		return "/writeboard";
 	}
+	
+	//게시글 작성 로직
+	@RequestMapping(value = "/board/{cateid}/writeboard")
+	public String WriteBoardOK(@PathVariable Integer cateid, Locale locale, Model model) throws Exception {
+		
+		
+		return "/writeboard";
+	}
 }

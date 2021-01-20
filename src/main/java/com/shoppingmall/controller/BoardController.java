@@ -50,4 +50,15 @@ public class BoardController {
 		
 		return "/viewboard";
 	}
+	
+	//게시글 작성페이지로 이동
+	@RequestMapping(value = "/board/{cateid}/writeboard", method = RequestMethod.GET)
+	public String WriteBoard(@PathVariable Integer cateid, Locale locale, Model model) throws Exception {
+		
+		List<CategoryVO> selectList = cate.CategoryGet();
+		model.addAttribute("selectList", selectList);
+		
+		
+		return "/writeboard";
+	}
 }

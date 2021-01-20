@@ -68,4 +68,17 @@ public class BoardController {
 		
 		return "redirect:/board/{cateid}";
 	}
+	
+	//게시글 수정페이지로 이동
+	@RequestMapping(value = "/board/{cateid}/{b_num}/updateboard", method = RequestMethod.GET)
+	public String UpdateBoard(@PathVariable Integer b_num, @PathVariable Integer cateid, Locale locale, Model model) throws Exception {
+		
+		List<CategoryVO> selectList = cate.CategoryGet();
+		model.addAttribute("selectList", selectList);
+		//글내용 불러오기
+		List<BoardVO> UpdateGetBoard = service.UpdateGetBoard(b_num);
+		model.addAttribute("UpdateGetBoard", UpdateGetBoard);
+		
+		return "/updateboard";
+	}
 }

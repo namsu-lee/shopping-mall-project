@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <script src="/resources/ckeditor/ckeditor.js"></script>
 
-<title>글쓰기 화면</title>
+<title>글수정 화면</title>
 
 <style>
 	.write{
@@ -34,7 +34,7 @@
 	<div class="writecon">
 		<form method="post" action="/board/${cateid}/wroteboard">
 		
-		<input type="text" name="b_title" id="b_title" size="40"placeholder="제목을 입력해주세요">
+		<input type="text" name="b_title" id="b_title" size="40"placeholder="제목을 입력해주세요" value="${UpdateGetBoard.b_title} ">
 		<textarea name="b_content" ></textarea>
 		<br>
 		<button class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
@@ -47,6 +47,9 @@ CKEDITOR.replace('b_content',{
 	height:400,
 	autoGrow_minHeight : 400
 });
+
+CKEDITOR.instances.b_content.setData('${UpdateGetBoard.b_content}')
+
 </script>
 </body>
 </html>

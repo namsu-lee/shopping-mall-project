@@ -17,13 +17,19 @@
 	<!-- 게시글 작성 -->
 	<insert id="WroteBoard" parameterType="BoardVO">
 		insert into board (cateid, b_title, b_content, b_wdate) 
-		values(#{cateid}, #{b_title}, #{b_content}, now()); 
+		values(#{cateid}, #{b_title}, #{b_content}, now()) 
 	</insert>
+	
+	<!-- 게시글 수정하기 위해 불러오기 -->
+	<select id="UpdateGetBoard" resultType="BoardVO" parameterType="Integer">
+		select b_num, b_title, b_content from board where b_num=#{b_num}; 
+	</select>
 	
 	<!-- 게시글 수정 -->
 	<update id="UpdateBoard" parameterType="BoardVO">
-		update into board (cateid, b_title, b_content, b_wdate) 
-		values(#{cateid}, #{b_title}, #{b_content}, now()); 
+		UPDATE board SET b_title=#{b_title}, b_content=#{b_content} 
+	    WHERE b_num=#{b_num}
 	</update>
+	
 	<!-- 게시글 삭제 -->
 </mapper>

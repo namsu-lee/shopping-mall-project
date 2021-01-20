@@ -29,6 +29,12 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	@Override
+	public List<BoardVO> UpdateGetBoard(Integer b_num) throws Exception{
+		
+		return BoardDAO.UpdateGetBoard(b_num);
+	}
+	
+	@Override
 	public void WroteBoard(BoardVO vo) throws Exception{
 		BoardDAO.WroteBoard(vo);
 	}

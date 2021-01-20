@@ -27,9 +27,10 @@
 				if(msgData.cmd == 'CMD_MSG_SEND') {
 					var output = "";
 					output += "<div class='container'>";
-					output += 	"<img src='/w3images/bandmember.jpg' style='width:100%;''>";
+					output += 	"<img src='/resources/image/man.jpg' style='width:100%;''>";
 					output += 	"<p>" + msgData.msg + "</p>";
-					output += 	"<span class='time-right'>11:00</span>";
+					output +=	"<p style='clear:both;'>" + msgData.msgname + "</p>";
+					output += 	"<span class='time-right'>" + msgData.msgdate + "</span>";
 					output += "</div>";
 
 					$('#divChatData').append(output);
@@ -76,6 +77,8 @@
         $(window).on('load', function () {
 			webSocket.init({ url: '<c:url value="/chat" />' });	
 		});
+        
+        
 	</script>
 	<link href="/resources/css/chat.css" rel="stylesheet">
 </head>

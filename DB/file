@@ -1,0 +1,9 @@
+    create table file (
+	no int not null,								-- 게시글 번호
+    uuid varchar(100) not null,						-- uuid가 합쳐진 파일 고유 이름
+    uploadPath varchar(200) not null,				-- 실제 파일이 업로드된 경로
+    fileName varchar(100) not null,					-- 파일 이름
+    filetype char(1) default 'I',					-- 이미지 파일 여부
+    primary key(uuid),
+  FOREIGN KEY (no) REFERENCES board(no)
+)DEFAULT CHARSET=utf8 COLLATE utf8_general_ci;

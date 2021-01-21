@@ -6,8 +6,9 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -15,6 +16,7 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.shoppingmall.vo.MembersVO;
 
 @Component
 public class HandlerChat extends TextWebSocketHandler {
@@ -22,6 +24,13 @@ public class HandlerChat extends TextWebSocketHandler {
 	// (<"bang_id", 방ID>, <"session", 세션>) 형태
 	private List<Map<String, Object>> sessionList = new ArrayList<Map<String, Object>>();
 
+	@Autowired
+	private SqlSession sqlSession;
+	private String nickname      = "";
+	private String TotalFileName = "";
+	
+	private static final String Namespace = "com.shoppingmall.mapper.ChatMapper";
+	
 	// 클라이언트가 서버로 메세지 전송 처리
 	@Override
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
@@ -31,11 +40,20 @@ public class HandlerChat extends TextWebSocketHandler {
 		// JSON --> Map으로 변환
 		ObjectMapper objectMapper = new ObjectMapper();
 		Map<String, String> mapReceive = objectMapper.readValue(message.getPayload(), Map.class);
+		
 		String SessionID = (String)mapReceive.get("SessionID");
-		/*
-		 * if(mapReceive.get("SessionID").equals("")) { SessionID = session.getId() +
-		 * "_익명사용자"; } System.out.println(session.getId());
-		 */
+		MembersVO vo = Image_NickName(SessionID);
+		
+		this.nickname   = vo.getNickname();
+		if(vo.getUuid().equals("") && vo.getUploadPath().equals("")) {
+			//집에서 하려면 경로 바꿔주어야 합니다 ~~~~~~~~~~~~~~~
+			this.TotalFileName = "/resources/upload/temp/"+ vo.getUploadPath() + vo.getUuid() + vo.getFileName();
+		}
+		else { 		//기본 이미지 아닐 때
+			//집에서 하려면 경로 바꿔주어야 합니다 ~~~~~~~~~~~~~~~
+			this.TotalFileName = "/resources/upload/temp/"+ vo.getUploadPath() + "/" + vo.getUuid() + "_" + vo.getFileName();
+		}
+
 		switch (mapReceive.get("cmd")) {
 		
 		// CLIENT 입장
@@ -55,7 +73,7 @@ public class HandlerChat extends TextWebSocketHandler {
 					Map<String, String> mapToSend = new HashMap<String, String>();
 					mapToSend.put("bang_id", bang_id);
 					mapToSend.put("cmd", "CMD_ENTER");
-					mapToSend.put("msg", SessionID + "님이 입장 했습니다.");
+					mapToSend.put("msg", this.nickname + "님이 입장 했습니다.");
 
 					String jsonStr = objectMapper.writeValueAsString(mapToSend);
 					sess.sendMessage(new TextMessage(jsonStr));
@@ -75,7 +93,8 @@ public class HandlerChat extends TextWebSocketHandler {
 					Map<String, String> mapToSend = new HashMap<String, String>();
 					mapToSend.put("bang_id", bang_id);
 					mapToSend.put("cmd", "CMD_MSG_SEND");
-					mapToSend.put("msgname", SessionID);
+					mapToSend.put("msgname", this.nickname);
+					mapToSend.put("msgimage", this.TotalFileName);
 					mapToSend.put("msg", mapReceive.get("msg"));
 					mapToSend.put("msgdate", Chatting_Date());
 					String jsonStr = objectMapper.writeValueAsString(mapToSend);
@@ -118,7 +137,7 @@ public class HandlerChat extends TextWebSocketHandler {
 				Map<String, String> mapToSend = new HashMap<String, String>();
 				mapToSend.put("bang_id", bang_id);
 				mapToSend.put("cmd", "CMD_EXIT");
-				mapToSend.put("msg", session.getId() + "님이 퇴장 했습니다.");
+				mapToSend.put("msg", this.nickname + "님이 퇴장 했습니다.");
 
 				String jsonStr = objectMapper.writeValueAsString(mapToSend);
 				sess.sendMessage(new TextMessage(jsonStr));
@@ -133,4 +152,12 @@ public class HandlerChat extends TextWebSocketHandler {
 		String format_time1 = format1.format(time.getTime());
 		return format_time1;
 	}
+	
+	
+	//로그인 한 사람의 이미지 및 닉네임 가져옴
+	
+	private MembersVO Image_NickName(String memberid) {
+		return sqlSession.selectOne(Namespace + ".GetMemberInfo", memberid);
+	}
+	
 }

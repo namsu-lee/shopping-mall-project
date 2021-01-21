@@ -6,10 +6,9 @@ create table members (
     email varchar(30) not null,						-- �̸���
     address varchar(100) not null,					-- �̸���
     phone varchar(13) not null,						-- ����ȣ
-    flag  char(2)     not null,						-- ȸ�� ���
-    mem_fileorigin varchar(50),						--  
-    mem_filename varchar(50),						-- 서버저장이름
-    mem_filedir varchar(50),						-- 경로
+    uuid varchar(50),						-- 원본이름
+    uploadPath varchar(50),						-- 서버저장이름
+    fileName varchar(50),						-- 경로
     primary key (memberid)
     )DEFAULT CHARSET=utf8 COLLATE utf8_general_ci; 
     

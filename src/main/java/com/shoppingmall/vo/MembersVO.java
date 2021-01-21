@@ -2,7 +2,6 @@ package com.shoppingmall.vo;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.List;
 import java.util.Random;
 
 public class MembersVO {
@@ -13,7 +12,11 @@ public class MembersVO {
 	private String email;
 	private String address;
 	private String phone;
-	private String flag;
+	private String uuid = "";
+	private String uploadPath = "";
+	private String fileName = "man.jpg";
+
+	// íšŒì›ê°€ì…ì‹œ ê¸°ë³¸ì´ë¯¸ì§€ë¡œ ì €ì¥í•´ì¤€ë‹¤.
 
 	final static char[] hexArray = "0123456789abcdef".toCharArray();
 
@@ -33,22 +36,13 @@ public class MembersVO {
 		}
 		return new String(hexChars);
 	}
-	
-	
+
 	public String getNickname() {
 		return nickname;
 	}
 
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
-	}
-
-	public String getFlag() {
-		return flag;
-	}
-
-	public void setFlag(String flag) {
-		this.flag = flag;
 	}
 
 	public String getMemberid() {
@@ -99,19 +93,44 @@ public class MembersVO {
 		this.address = address;
 	}
 
-	@Override
-	public String toString() {
-		return "MembersVO [memberid=" + memberid + ", password=" + password + ", membername=" + membername + ", email="
-				+ email + ", address=" + address + ", phone=" + phone + "]";
+	public String getUuid() {
+		return uuid;
 	}
 
-	// ³­¼ö »ı¼º±â
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
+	}
+
+	public String getUploadPath() {
+		return uploadPath;
+	}
+
+	public void setUploadPath(String uploadPath) {
+		this.uploadPath = uploadPath;
+	}
+
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+
+	@Override
+	public String toString() {
+		return "MembersVO [memberid=" + memberid + ", nickname=" + nickname + ", password=" + password + ", membername="
+				+ membername + ", email=" + email + ", address=" + address + ", phone=" + phone + ", uuid=" + uuid
+				+ ", uploadPath=" + uploadPath + ", fileName=" + fileName + "]";
+	}
+
+	// ë‚œìˆ˜ ìƒì„±
 	public String Random_Number() {
-		// ÀÎÁõ¹øÈ£ »ı¼ºÇÏ´Â ºÎºĞ
+
 		int len = 6;
-		int dupCd = 1; // 1 Áßº¹Çã¿ë , 2 Áßº¹Á¦°Å
+		int dupCd = 1;
 		Random rand = new Random();
-		String numStr = ""; // ³­¼ö°¡ ÀúÀåµÉ º¯¼ö
+		String numStr = ""; // ì´ë©”ì¼ ì¸ì¦ ë²ˆí˜¸
 
 		for (int i = 0; i < len; i++) {
 			String ran = Integer.toString(rand.nextInt(10));

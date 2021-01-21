@@ -18,8 +18,8 @@
 
 	<!-- 회원가입 -->
 	<insert id="Register" parameterType="MembersVO">
-		insert into members (memberid, nickname, password, membername, email, address, phone, flag)
-			 values (#{memberid}, #{nickname}, #{password}, #{membername}, #{email}, #{address}, #{phone}, #{flag});
+		insert into members (memberid, nickname, password, membername, email, address, phone, uuid, uploadPath, fileName)
+			 values (#{memberid}, #{nickname}, #{password}, #{membername}, #{email}, #{address}, #{phone}, #{uuid}, #{uploadPath}, #{fileName});
 	</insert>
 	
 	

@@ -4,8 +4,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,6 +43,53 @@ public class HandlerChat extends TextWebSocketHandler {
 		ObjectMapper objectMapper = new ObjectMapper();
 		Map<String, String> mapReceive = objectMapper.readValue(message.getPayload(), Map.class);
 		
+		/*	입장했을때 들어오는 데이터
+			message.getPayload() == {"SessionID":"test1","bang_id":"ChatView1","cmd":"CMD_ENTER","msg":""}
+		*/
+		/*	채팅 쳤을때 들어오는 데이터
+			message.getPayload() == {"SessionID":"test1","bang_id":"ChatView1","cmd":"CMD_MSG_SEND","msg":"ㅎㅇ"}
+		*/
+		System.out.println("message.getPayload() == " + message.getPayload());
+		
+		
+		Set<Map.Entry<String, String>> entrySet = mapReceive.entrySet();
+		Iterator<Map.Entry<String, String>> entryIterator = entrySet.iterator();
+		while(entryIterator.hasNext()) {
+			Map.Entry<String, String> entry = entryIterator.next();
+			System.out.println("entry.getKey() == " + entry.getKey());
+			System.out.println("entry.getValue() == " + entry.getValue());
+			/* ************************************
+			    입장했을때 들어오는 데이터
+			    
+				entry.getKey()   == SessionID
+				entry.getValue() == test1
+				-----------------------------
+				entry.getKey()   == bang_id
+				entry.getValue() == ChatView1
+				-----------------------------
+				entry.getKey()   == cmd
+				entry.getValue() == CMD_ENTER
+				-----------------------------
+				entry.getKey()   == msg
+				entry.getValue() == 
+				************************************
+				채팅 쳤을때 들어오는 데이터
+				
+				entry.getKey() == SessionID
+				entry.getValue() == test1
+				-----------------------------
+				entry.getKey() == bang_id
+				entry.getValue() == ChatView1
+				-----------------------------
+				entry.getKey() == cmd
+				entry.getValue() == CMD_MSG_SEND
+				-----------------------------
+				entry.getKey() == msg
+				entry.getValue() == ㅎㅇ
+				************************************
+			*/
+		}
+				
 		String SessionID = (String)mapReceive.get("SessionID");
 		MembersVO vo = Image_NickName(SessionID);
 		

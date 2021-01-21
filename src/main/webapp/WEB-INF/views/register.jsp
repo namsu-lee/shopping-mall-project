@@ -81,7 +81,7 @@
 			<option value="015">015</option>
 			<option value="016">016</option>
 			<option value="017">017</option>
-			<option value="018">018</option> 
+			<option value="018">018</option>
 			<option value="019">019</option>
 		</select> 
 		<input type="text" style="width:100px; margin-right:5px;" name="phone2" id="phone2" size="5" maxlength="4" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"><strong>-</strong><input type="text" style="width:100px; margin-left:5px;" name="phone3" id="phone3" size="5" maxlength="4" onKeyup="this.value=this.value.replace(/[^0-9]/g,'');"></h3>

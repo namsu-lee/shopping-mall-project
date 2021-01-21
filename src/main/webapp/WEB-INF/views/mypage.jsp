@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTPYE html lang="ko">
 <html>
 	<head>
@@ -20,7 +21,7 @@
 	<div class="container">
 		<form id="form" name="form" action="/mypage/uploadAjaxAction" method="post" enctype="multipart/form-data">
 			<div id="imgfile">
-				<img src="black.jpg">
+				<img src='<c:out value="${ filePath }"/>'>
 			</div>
 			<div class="filebox">											<!-- 여기부터 go -->
 				<label for="file">사진 변경</label> <input type="file" id="file" name="uploadFile" accept=".gif, .jpg, .png" onchange="readInputFile(event.target)">

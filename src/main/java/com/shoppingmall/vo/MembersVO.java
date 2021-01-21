@@ -12,12 +12,12 @@ public class MembersVO {
 	private String email;
 	private String address;
 	private String phone;
-	private String mem_fileorigin = "man.jpg";
-	private String mem_filename = "man.jpg";
-	private String mem_filedir = "C:\\upload";
+	private String uuid = "";
+	private String uploadPath = "";
+	private String fileName = "man.jpg";
 
-	//회원가입시 기본이미지로 저장해준다.
-	
+	// 회원가입시 기본이미지로 저장해준다.
+
 	final static char[] hexArray = "0123456789abcdef".toCharArray();
 
 	public static byte[] sha256(String msg) throws NoSuchAlgorithmException {
@@ -93,44 +93,44 @@ public class MembersVO {
 		this.address = address;
 	}
 
-	public String getMem_fileorigin() {
-		return mem_fileorigin;
+	public String getUuid() {
+		return uuid;
 	}
 
-	public void setMem_fileorigin(String mem_fileorigin) {
-		this.mem_fileorigin = mem_fileorigin;
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 
-	public String getMem_filename() {
-		return mem_filename;
+	public String getUploadPath() {
+		return uploadPath;
 	}
 
-	public void setMem_filename(String mem_filename) {
-		this.mem_filename = mem_filename;
+	public void setUploadPath(String uploadPath) {
+		this.uploadPath = uploadPath;
 	}
 
-	public String getMem_filedir() {
-		return mem_filedir;
+	public String getFileName() {
+		return fileName;
 	}
 
-	public void setMem_filedir(String mem_filedir) {
-		this.mem_filedir = mem_filedir;
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
 	}
 
 	@Override
 	public String toString() {
 		return "MembersVO [memberid=" + memberid + ", nickname=" + nickname + ", password=" + password + ", membername="
-				+ membername + ", email=" + email + ", address=" + address + ", phone=" + phone + ", mem_fileorigin="
-				+ mem_fileorigin + ", mem_filename=" + mem_filename + ", mem_filedir=" + mem_filedir + "]";
+				+ membername + ", email=" + email + ", address=" + address + ", phone=" + phone + ", uuid=" + uuid
+				+ ", uploadPath=" + uploadPath + ", fileName=" + fileName + "]";
 	}
 
 	// 난수 생성
 	public String Random_Number() {
-		
+
 		int len = 6;
-		int dupCd = 1; 
+		int dupCd = 1;
 		Random rand = new Random();
-		String numStr = ""; //이메일 인증 번호
+		String numStr = ""; // 이메일 인증 번호
 
 		for (int i = 0; i < len; i++) {
 			String ran = Integer.toString(rand.nextInt(10));

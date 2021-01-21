@@ -1,12 +1,12 @@
 create table members (
-	memberid varchar(20) not null,					-- ȸ�� ���̵�
-	nickname varchar(20) not null,					-- �г���
-    password text not null,							-- ��й�ȣ
-    membername varchar(30) not null,				-- ȸ���̸�
-    email varchar(30) not null,						-- �̸���
-    address varchar(100) not null,					-- �̸���
-    phone varchar(13) not null,						-- ����ȣ
-    uuid varchar(50),						-- 원본이름
+	memberid varchar(20) not null,				-- ȸ�� ���̵�
+	nickname varchar(20) not null,				-- �г���
+    password text not null,						-- ��й�ȣ
+    membername varchar(30) not null,			-- ȸ���̸�
+    email varchar(30) not null,					-- �̸���
+    address varchar(100) not null,				-- �̸���
+    phone varchar(13) not null,				    -- ����ȣ
+    uuid varchar(50),							-- 원본이름
     uploadPath varchar(50),						-- 서버저장이름
     fileName varchar(50),						-- 경로
     primary key (memberid)

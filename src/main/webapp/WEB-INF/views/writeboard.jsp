@@ -45,7 +45,8 @@
 <script>
 CKEDITOR.replace('b_content',{
 	height:400,
-	autoGrow_minHeight : 400
+	autoGrow_minHeight : 400,
+	filebrowserUploadUrl:'/imageupload.do'
 });
 </script>
 </body>

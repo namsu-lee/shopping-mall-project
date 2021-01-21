@@ -37,9 +37,10 @@
 		<input type="text" name="b_title" id="b_title" size="40"placeholder="제목을 입력해주세요">
 		<textarea name="b_content" ></textarea>
 		<br>
-		<button class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
+		
     	<button class="btn info" style="float:right" type="submit">완료</button>
     	</form>
+    	<button class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
     </div>
 </div>
 <script>

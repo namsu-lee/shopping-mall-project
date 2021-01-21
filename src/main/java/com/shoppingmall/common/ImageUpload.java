@@ -1,4 +1,4 @@
-package com.shoppingmall.controller;
+package com.shoppingmall.common;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -52,9 +52,9 @@ public class ImageUpload {
                         resp.setContentType("text/html");
                         String fileUrl = req.getContextPath() + "/resources/img/" + fileName;
                         
-                        // json 데이터로 등록
-                        // {"uploaded" : 1, "fileName" : "test.jpg", "url" : "/img/test.jpg"}
-                        // 이런 형태로 리턴이 나가야함.
+//                      json 데이터로 등록
+//                      {"uploaded" : 1, "fileName" : "test.jpg", "url" : "/img/test.jpg"}
+//                      이런 형태로 리턴이 나가야함.
                         json.addProperty("uploaded", 1);
                         json.addProperty("fileName", fileName);
                         json.addProperty("url", fileUrl);

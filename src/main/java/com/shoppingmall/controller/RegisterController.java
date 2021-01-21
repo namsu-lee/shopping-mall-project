@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shoppingmall.service.RegisterService;
+import com.shoppingmall.vo.AccessorVO;
 import com.shoppingmall.vo.MembersVO;
 
 @Controller
@@ -121,6 +122,9 @@ public class RegisterController {
 		if (result == 1) {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("memberid", membersVO.getMemberid());
+			//접속자의 session을 리스트에 추가
+			AccessorVO.getHttpSession().add(session);
+			System.out.println("현재 접속자 수 :: " + AccessorVO.getHttpSession().size());
 		}
 		return "redirect:/";
 	}

@@ -44,7 +44,7 @@ public class HandlerChat extends TextWebSocketHandler {
 		String SessionID = (String)mapReceive.get("SessionID");
 		MembersVO vo = Image_NickName(SessionID);
 		
-		this.nickname   = vo.getNickname();
+		this.nickname = vo.getNickname();
 		if(vo.getUuid().equals("") && vo.getUploadPath().equals("")) {
 			//집에서 하려면 경로 바꿔주어야 합니다 ~~~~~~~~~~~~~~~
 			this.TotalFileName = "/resources/upload/temp/"+ vo.getUploadPath() + vo.getUuid() + vo.getFileName();

@@ -1,5 +1,8 @@
 package com.shoppingmall.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -33,6 +36,12 @@ public class RegisterDAO {
 	//닉네임 중복 검사
 	public int CheckNickName(String nickname) {
 		return sqlSession.selectOne(Namespace + ".CheckNickName", nickname);
+	}
+
+
+	//로그인한 사람의 닉네임 전체를 가져옴
+	public List<Map<String,String>> ListNameAccessor(String memberid) {
+		return sqlSession.selectList(Namespace + ".ListNickName", memberid);
 	}
 
 

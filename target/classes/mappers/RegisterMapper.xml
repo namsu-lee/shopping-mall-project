@@ -22,5 +22,8 @@
 			 values (#{memberid}, #{nickname}, #{password}, #{membername}, #{email}, #{address}, #{phone}, #{uuid}, #{uploadPath}, #{fileName});
 	</insert>
 	
-	
+	<!-- 로그인 한 사람의 닉네임 가져옴 -->
+	<select id="ListNickName" resultType="hashmap">
+		select nickname from members where memberid = #{memberid};
+	</select>
 </mapper> 

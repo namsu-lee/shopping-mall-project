@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.shoppingmall.service.LoginService;
+import com.shoppingmall.vo.AccessorVO;
 import com.shoppingmall.vo.LoginVO;
 import com.shoppingmall.vo.MembersVO;
 import com.shoppingmall.vo.NaverLoginVO;
@@ -31,6 +32,7 @@ public class LoginController {
 	
 	@Inject
 	LoginService loginService;
+	
 	
 	//NAVER 연동
 	/* naverLoginVO */
@@ -81,6 +83,10 @@ public class LoginController {
 			session.setAttribute("memberid", result.getMemberid());
 			session.setMaxInactiveInterval(60*60);
 			
+			//접속자의 session을 리스트에 추가
+			AccessorVO.getHttpSession().add(session);
+			System.out.println("현재 접속자 수 :: " + AccessorVO.getHttpSession().size());
+
 			Cookie cookie1 = new Cookie("memberid", vo.getMemberid());	//아이디 저장
 			Cookie cookie2 = new Cookie("Auto_Login", vo.getMemberid()); //자동로그인
 			
@@ -134,6 +140,10 @@ public class LoginController {
 				}
 			}
 		}
+		
+		//접속자 session 삭제
+		AccessorVO.getHttpSession().remove(session);
+		
 		session.invalidate();
 		//return "redirect:/main";
 		System.out.println("로그아웃.........");

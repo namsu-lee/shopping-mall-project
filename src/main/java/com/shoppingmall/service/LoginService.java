@@ -4,7 +4,8 @@ import com.shoppingmall.vo.LoginVO;
 
 public interface LoginService {
 	
-	//∑Œ±◊¿Œ
+	//Î°úÍ∑∏Ïù∏
 	public LoginVO Login(LoginVO vo) throws Exception;
+	
 	
 }

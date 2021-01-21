@@ -14,10 +14,9 @@ public class LoginServiceImpl implements LoginService{
 	@Inject
 	LoginDAO loginDAO;
 	
-	//·Î±×ÀÎ
+	//ï¿½Î±ï¿½ï¿½ï¿½
 	@Override
 	public LoginVO Login(LoginVO vo) throws Exception {
 		return loginDAO.Login(vo); 
 	}
-
 }

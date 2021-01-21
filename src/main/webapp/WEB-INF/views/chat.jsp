@@ -30,7 +30,7 @@
 					var output = "";
 					if(msgData.msgname == '${sessionScope.memberid}') {//로그인
 						output += "<div class='container darker'>";
-						output += 	"<img src='/resources/image/man.jpg' alt='x' class='right' style='width:100%;'>";
+						output += 	"<img src='" + msgData.msgimage + "' alt='x' class='right' style='width:100%;'>";
 						output += 	"<p>" + msgData.msg + "</p>";
 						output +=	"<p style='clear:both; text-align:right; width:96%; margin:0px auto;'>" + msgData.msgname + "</p>";
 						output += 	"<span class='time-left'>" + msgData.msgdate + "</span>";
@@ -38,7 +38,7 @@
 					}
 					else{
 						output += "<div class='container'>";
-						output += 	"<img src='/resources/image/man.jpg' alt='x' style='width:100%;'>";
+						output += 	"<img src='" + msgData.msgimage + "' alt='x' style='width:100%;'>";
 						output += 	"<p>" + msgData.msg + "</p>";
 						output +=	"<p style='clear:both;'>" + msgData.msgname + "</p>";
 						output += 	"<span class='time-right'>" + msgData.msgdate + "</span>";

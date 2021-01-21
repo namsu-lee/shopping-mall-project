@@ -17,7 +17,6 @@
 		<title>마이 페이지</title>
 	</head>
 <body>
-<%@ include file="../../exclude/topnav.jsp" %>
 	<!-- 마이페이지 -->
 	<div class="container">
 		<form id="form" name="form" action="Mypage" method="post" enctype="multipart/form-data">
@@ -50,7 +49,14 @@
 		<br/>
 		<br/>
 		<br/>
-		
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
 	</div>
 	
 </body>

@@ -58,16 +58,20 @@
 			type:"POST", 
 			data:"id="+id,
 			success:function(result)	{
-				if(result.num == 0)	{
+				$(result).find("HashMap").each(function () {
+					if($(this).find("num").text() == 0)	{
 					IDKimCheck = true;
 					alert("사용 가능한 아이디입니다.");
 				}
-				if(result.num == 1)	{
+				if($(this).find("num").text() == 1)	{
 					alert("사용중인 아이디입니다.");
 				}
+				});
+				
 			}
 		});
 	}
+	
 	
 	//닉네임 중복 검사 여기 false로 바꿔준다 내일
 	var NickKimCheck = false; 
@@ -79,14 +83,15 @@
 			type:"POST", 
 			data:"nickname="+nickname,
 			success:function(result)	{
-				alert(result.num);
-				if(result.num == 0)	{
-					NickKimCheck = true;
-					alert("사용 가능한 닉네임입니다.");
-				}
-				if(result.num == 1)	{
-					alert("사용중인 닉네임입니다.");
-				}
+				$(result).find("HashMap").each(function() {
+					if($(this).find("num").text() == 0)	{
+						NickKimCheck = true;
+						alert("사용 가능한 닉네임입니다.");
+					}
+					if($(this).find("num").text() == 1)	{
+						alert("사용중인 닉네임입니다.");
+					}
+				});
 			}
 		});
 	}
@@ -114,10 +119,13 @@
 			type:"POST",
 			data:data,
 			success:function(result)	{
-				var data = "";
+				var num = "";
+				$(result).find("HashMap").each(function() {
+					num = $(this).find("num").text();
+				});
 				var output = "";
 				output += "<input type='text' id='output' name='output'>";
-				output += "<button type='button' style='width:200px;' class='registerbtn' onclick='Good(" + result.num + ")'>인증</button>";
+				output += "<button type='button' style='width:200px;' class='registerbtn' onclick='Good(" + num + ")'>인증</button>";
 				$("#div1").html(output);
 			}
 		});

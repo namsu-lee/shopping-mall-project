@@ -122,6 +122,6 @@ public class RegisterController {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("memberid", membersVO.getMemberid());
 		}
-		return "redirect:/main";
+		return "redirect:/";
 	}
 }

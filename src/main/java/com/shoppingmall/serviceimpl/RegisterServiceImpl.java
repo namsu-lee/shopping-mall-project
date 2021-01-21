@@ -1,8 +1,5 @@
 package com.shoppingmall.serviceimpl;
 
-import java.util.List;
-import java.util.Map;
-
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -41,7 +38,7 @@ public class RegisterServiceImpl implements RegisterService{
 
 	//로그인 한 사람의 닉네임 가져옴
 	@Override
-	public List<Map<String,String>> ListNameAccessor(String memberid) throws Exception {
+	public MembersVO ListNameAccessor(String memberid) throws Exception {
 		return registerDAO.ListNameAccessor(memberid);
 	}  
  

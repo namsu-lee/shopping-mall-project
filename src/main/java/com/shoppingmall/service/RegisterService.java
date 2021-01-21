@@ -1,8 +1,5 @@
 package com.shoppingmall.service;
 
-import java.util.List;
-import java.util.Map;
-
 import com.shoppingmall.vo.MembersVO;
 
 public interface RegisterService {
@@ -17,6 +14,6 @@ public interface RegisterService {
 	public int CheckNickName(String nickname) throws Exception;
 
 	//로그인 한 사람의 닉네임 가져옴
-	public List<Map<String,String>> ListNameAccessor(String name) throws Exception;
+	public MembersVO ListNameAccessor(String name) throws Exception;
 
 }

@@ -1,13 +1,9 @@
 package com.shoppingmall.dao;
 
-import java.util.List;
-import java.util.Map;
-
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
-
 
 import com.shoppingmall.vo.MembersVO;
 
@@ -40,8 +36,8 @@ public class RegisterDAO {
 
 
 	//로그인한 사람의 닉네임 전체를 가져옴
-	public List<Map<String,String>> ListNameAccessor(String memberid) {
-		return sqlSession.selectList(Namespace + ".ListNickName", memberid);
+	public MembersVO ListNameAccessor(String memberid) {
+		return sqlSession.selectOne(Namespace + ".ListNickName", memberid);
 	}
 
 

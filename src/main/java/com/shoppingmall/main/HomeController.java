@@ -1,11 +1,8 @@
 package com.shoppingmall.main;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
 
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
@@ -23,6 +20,7 @@ import com.shoppingmall.service.CategoryService;
 import com.shoppingmall.service.RegisterService;
 import com.shoppingmall.vo.AccessorVO;
 import com.shoppingmall.vo.CategoryVO;
+import com.shoppingmall.vo.MembersVO;
 
 
 /**
@@ -39,7 +37,7 @@ public class HomeController {
 	@Inject
 	private RegisterService registerService;
 	
-	private static List<Map<String, String>> list = new ArrayList<Map<String, String>>();
+	private static List<String> list = new ArrayList<String>();
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 * @throws Exception 
@@ -49,32 +47,20 @@ public class HomeController {
 		
 		//접속자 수, 접속자 아이디 가져온다.
 		int num = AccessorVO.getHttpSession().size();
-		List<String> NickList = new ArrayList<String>();
 		for(int i = 0; i < AccessorVO.getHttpSession().size(); i++) {
 			String memberid = (String) AccessorVO.getHttpSession().get(i).getAttribute("memberid");
-			//list.add(registerService.ListNameAccessor(memberid).get(i));
-			
-			
-			Map<String, String> map = registerService.ListNameAccessor(memberid).get(i);
-			
-			Set<Map.Entry<String, String>> entrySet = map.entrySet();
-			
-			Iterator<Map.Entry<String, String>> entryIterator = entrySet.iterator();
-			
-			while(entryIterator.hasNext()) {
-				Map.Entry<String, String> entry = entryIterator.next();
-				NickList.add(entry.getValue());
-			}
+			MembersVO vo = registerService.ListNameAccessor(memberid);
+			list.add(vo.getNickname());
 		}
-		//ListNickName
+		
 		
 		System.out.println("현재 접속자 수 :: " + AccessorVO.getHttpSession().size());
-		for(int i = 0; i < NickList.size(); i++) {
-			System.out.println(NickList.get(i));
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
 		}
 		
 		model.addAttribute("size", AccessorVO.getHttpSession().size());
-		model.addAttribute("list", NickList);
+		model.addAttribute("list", list);
 		
 		//게시판 목록 불러오기
 		List<CategoryVO> selectList = service.CategoryGet();

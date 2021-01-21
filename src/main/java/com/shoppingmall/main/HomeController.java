@@ -55,7 +55,7 @@ public class HomeController {
 		for(int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
 		}
-		
+		model.addAttribute("size", list.size());
 		model.addAttribute("list", list);
 		
 		//게시판 목록 불러오기

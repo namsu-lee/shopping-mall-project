@@ -32,24 +32,25 @@
 <div class="write">
 <%@ include file="../../exclude/leftmenu.jsp" %>
 	<div class="writecon">
-		<form method="post" action="/board/${cateid}/wroteboard">
+		<form method="post" action="/board/${cateid}/${b_num}/updatedboard">
 		
-		<input type="text" name="b_title" id="b_title" size="40"placeholder="제목을 입력해주세요" value="${UpdateGetBoard.b_title} ">
+		<input type="text" name="b_title" id="b_title" size="40"placeholder="제목을 입력해주세요" value="${ UpdateGetBoard.b_title}">
 		<textarea name="b_content" ></textarea>
 		<br>
-		<button class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
+		
     	<button class="btn info" style="float:right" type="submit">완료</button>
     	</form>
+    	<button class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
     </div>
 </div>
+<input type="hidden" id="test" value="${ UpdateGetBoard.b_content}">
 <script>
 CKEDITOR.replace('b_content',{
 	height:400,
 	autoGrow_minHeight : 400
 });
-
-CKEDITOR.instances.b_content.setData('${UpdateGetBoard.b_content}')
-
+var test = document.getElementById("test").value;
+CKEDITOR.instances.b_content.setData(test);
 </script>
 </body>
 </html>

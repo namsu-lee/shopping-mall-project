@@ -49,12 +49,27 @@
 		<button  class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
 	</div>
 	<div style="float:right;">
+	<button  class="btn info" onclick="deleteconfirm()">글삭제</button>
 	<button  class="btn info" onclick="location.href='/board/${cateid}/${board.b_num}/updateboard'">수정</button>
  	<button  class="btn info" onclick="location.href='/board/${cateid}/writeboard'">글쓰기</button>
- 	</c:forEach>
+ 	
+ 	
  </div>
 	</div>
 	
 </div>
+<script>
+function deleteconfirm(){ 
+		confirm("삭제 하시겠습니까?"){
+		if(deleteconfirm==true){
+			document.location.href = "/board/${cateid}/${b_num}/deleteboard";
+		}else if(deleteconfirm==false){
+			return false;
+		}
+		}
+	}
+	
+</script>
+</c:forEach>
 </body>
 </html>

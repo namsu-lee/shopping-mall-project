@@ -28,7 +28,19 @@ public class BoardDAO {
 		sqlSession.insert(Namespace+".WroteBoard", vo);
 	}
 	
-	public List<BoardVO> UpdateGetBoard(Integer b_num) throws Exception{
-		return sqlSession.selectList(Namespace + ".UpdateGetBoard", b_num);
+	public BoardVO UpdateGetBoard(Integer b_num) throws Exception{
+		
+		BoardVO str = sqlSession.selectOne(Namespace + ".UpdateGetBoard", b_num);
+		return str;
+	}
+	
+	public void UpdateBoard(BoardVO vo) throws Exception{
+		
+		sqlSession.insert(Namespace + ".UpdateBoard", vo);
+	}
+	
+	public void DeleteBoard(Integer b_num) throws Exception{
+		
+		sqlSession.delete(Namespace + ".DeleteBoard", b_num);
 	}
 }

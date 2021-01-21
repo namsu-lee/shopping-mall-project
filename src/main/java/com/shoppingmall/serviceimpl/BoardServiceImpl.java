@@ -29,7 +29,7 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	@Override
-	public List<BoardVO> UpdateGetBoard(Integer b_num) throws Exception{
+	public BoardVO UpdateGetBoard(Integer b_num) throws Exception{
 		
 		return BoardDAO.UpdateGetBoard(b_num);
 	}
@@ -37,5 +37,15 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public void WroteBoard(BoardVO vo) throws Exception{
 		BoardDAO.WroteBoard(vo);
+	}
+	
+	@Override
+	public void UpdateBoard(BoardVO vo) throws Exception{
+		BoardDAO.UpdateBoard(vo);
+	}
+	
+	@Override
+	public void DeleteBoard(Integer b_num) throws Exception{
+		BoardDAO.DeleteBoard(b_num);
 	}
 }

@@ -16,6 +16,7 @@ import com.shoppingmall.vo.BoardVO;
 import com.shoppingmall.vo.CategoryVO;
 import com.shoppingmall.service.CategoryService;
 
+
 @Controller
 public class BoardController {
 	
@@ -25,8 +26,8 @@ public class BoardController {
 	private CategoryService cate;
 	
 	
-	//게시판 조회
-	@RequestMapping(value = "/board/{cateid}", method = RequestMethod.GET)
+	//게시판 목록 조회
+	@RequestMapping(value = "/board/{cateid}")
 	public String MoveBoard(@PathVariable Integer cateid, Locale locale, Model model) throws Exception {
 		
 		List<CategoryVO> selectList = cate.CategoryGet();
@@ -38,7 +39,7 @@ public class BoardController {
 	}
 	
 	//게시글 조회
-	@RequestMapping(value = "/board/{cateid}/{b_num}", method = RequestMethod.GET)
+	@RequestMapping(value = "/board/{cateid}/{b_num}")
 	public String ViewBoard(@PathVariable Integer cateid, @PathVariable Integer b_num, Locale locale, Model model) throws Exception {
 		
 		List<CategoryVO> selectList = cate.CategoryGet();
@@ -50,7 +51,7 @@ public class BoardController {
 	}
 	
 	//게시글 작성페이지로 이동
-	@RequestMapping(value = "/board/{cateid}/writeboard", method = RequestMethod.GET)
+	@RequestMapping(value = "/board/{cateid}/writeboard")
 	public String WriteBoard(@PathVariable Integer cateid, Locale locale, Model model) throws Exception {
 		
 		List<CategoryVO> selectList = cate.CategoryGet();
@@ -70,15 +71,35 @@ public class BoardController {
 	}
 	
 	//게시글 수정페이지로 이동
-	@RequestMapping(value = "/board/{cateid}/{b_num}/updateboard", method = RequestMethod.GET)
+	@RequestMapping(value = "/board/{cateid}/{b_num}/updateboard")
 	public String UpdateBoard(@PathVariable Integer b_num, @PathVariable Integer cateid, Locale locale, Model model) throws Exception {
 		
 		List<CategoryVO> selectList = cate.CategoryGet();
 		model.addAttribute("selectList", selectList);
+		
 		//글내용 불러오기
-		List<BoardVO> UpdateGetBoard = service.UpdateGetBoard(b_num);
+		BoardVO UpdateGetBoard = service.UpdateGetBoard(b_num);
+		
 		model.addAttribute("UpdateGetBoard", UpdateGetBoard);
 		
 		return "/updateboard";
+	}
+	
+	//게시글 수정 로직
+	@RequestMapping(value = "/board/{cateid}/{b_num}/updatedboard")
+	public String UpdatedBoard(@PathVariable Integer b_num, @PathVariable Integer cateid, BoardVO vo, Locale locale, Model model) throws Exception {
+		
+		service.UpdateBoard(vo);
+		
+		return "redirect:/board/{cateid}";
+	}
+	
+	//게시글 삭제
+	@RequestMapping(value = "/board/{cateid}/{b_num}/deleteboard")
+	public String DeleteBoard(@PathVariable Integer b_num, @PathVariable Integer cateid, Locale locale, Model model) throws Exception {
+		
+		service.DeleteBoard(b_num);
+		
+		return "redirect:/board/{cateid}";
 	}
 }

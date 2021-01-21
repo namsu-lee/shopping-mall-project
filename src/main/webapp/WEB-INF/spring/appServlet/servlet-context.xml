@@ -45,15 +45,14 @@
 	</beans:bean>
 
 
-
-
 	<context:component-scan
 		base-package="com.shoppingmall.main" />
 	<context:component-scan
 		base-package="com.shoppingmall.controller" />
 		<context:component-scan
 		base-package="com.shoppingmall.task" />
-
+	<context:component-scan
+		base-package="com.shoppingmall.common" />
 	<beans:bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 		<!-- max upload size in bytes -->

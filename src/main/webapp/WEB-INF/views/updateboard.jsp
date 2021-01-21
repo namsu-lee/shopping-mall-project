@@ -43,7 +43,7 @@
     	<button class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
     </div>
 </div>
-<input type="hidden" id="test" value="${ UpdateGetBoard.b_content}">
+<input type="hidden" id="test" value="<c:out value='${ UpdateGetBoard.b_content}' />">
 <script>
 CKEDITOR.replace('b_content',{
 	height:400,

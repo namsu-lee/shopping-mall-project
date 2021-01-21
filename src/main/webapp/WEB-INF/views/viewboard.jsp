@@ -60,12 +60,13 @@
 </div>
 <script>
 function deleteconfirm(){ 
-		confirm("삭제 하시겠습니까?"){
-		if(deleteconfirm==true){
+		var deletecon = confirm("삭제 하시겠습니까?")
+		
+		if(deletecon==true){
 			document.location.href = "/board/${cateid}/${b_num}/deleteboard";
-		}else if(deleteconfirm==false){
+		}else if(deletecon==false){
 			return false;
-		}
+		
 		}
 	}
 	

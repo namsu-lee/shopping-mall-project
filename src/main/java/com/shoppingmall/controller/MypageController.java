@@ -54,7 +54,7 @@ public class MypageController {
 	
 	@RequestMapping(value = "/mypage/uploadAjaxAction", method = RequestMethod.POST)
 	public String uploadAjaxAction(MultipartHttpServletRequest multipartHttpServletRequest, HttpServletRequest request) {
-		//집에서 하려면 경로 바꿔주어야 합니다 ~~~~~~~~~~~~~~~@@#@131232131321321312
+		//집에서 하려면 경로 바꿔주어야 합니다
 		String uploadFolder = "D:\\KHT\\shopping_mall_project\\src\\main\\webapp\\resources\\upload\\temp";
 		List<MultipartFile> uploadFile = multipartHttpServletRequest.getFiles("uploadFile");
 		

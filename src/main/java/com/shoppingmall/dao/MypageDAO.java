@@ -1,5 +1,7 @@
 package com.shoppingmall.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -28,6 +30,13 @@ public class MypageDAO {
 	//마이페이지 리스트
 	public MembersVO MypageList(String memberid) {
 		return sqlSession.selectOne(Namespace + ".mypageList", memberid);
+	}
+
+
+
+	//오늘 기준 어제 파일 정보
+	public List<MembersVO> getOldFiles() {
+		return sqlSession.selectList(Namespace + ".FileList");
 	}
 
 }

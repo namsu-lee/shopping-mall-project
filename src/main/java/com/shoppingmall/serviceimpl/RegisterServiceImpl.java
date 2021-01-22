@@ -40,6 +40,13 @@ public class RegisterServiceImpl implements RegisterService{
 	@Override
 	public MembersVO ListNameAccessor(String memberid) throws Exception {
 		return registerDAO.ListNameAccessor(memberid);
+	}
+
+
+	//네이버 회원가입
+	@Override
+	public int NaverRegister(MembersVO vo) throws Exception {
+		return registerDAO.NaverRegister(vo);
 	}  
  
 	

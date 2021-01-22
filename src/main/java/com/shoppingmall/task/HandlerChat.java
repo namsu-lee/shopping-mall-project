@@ -142,6 +142,7 @@ public class HandlerChat extends TextWebSocketHandler {
 					Map<String, String> mapToSend = new HashMap<String, String>();
 					mapToSend.put("bang_id", bang_id);
 					mapToSend.put("cmd", "CMD_MSG_SEND");
+					mapToSend.put("msgsessionid", SessionID);
 					mapToSend.put("msgname", this.nickname);
 					mapToSend.put("msgimage", this.TotalFileName);
 					mapToSend.put("msg", mapReceive.get("msg"));

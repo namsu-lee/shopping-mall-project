@@ -28,7 +28,7 @@
 				// 정의된 CMD 코드에 따라서 분기 처리
 				if(msgData.cmd == 'CMD_MSG_SEND') {
 					var output = "";
-					if(msgData.msgname == '${sessionScope.memberid}') {//로그인
+					if(msgData.msgsessionid == '${sessionScope.memberid}') {//로그인
 						output += "<div class='container darker'>";
 						output += 	"<img src='" + msgData.msgimage + "' alt='x' class='right' style='width:100%;'>";
 						output += 	"<p>" + msgData.msg + "</p>";

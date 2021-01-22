@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+
 <%@ include file="../../exclude/topnav.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -97,18 +99,37 @@ form.example::after {
     <c:forEach items="${GetBoardList}" var="list">
 		<tr>
 			<td style="text-align: center;">${list.b_num}</td>
-			<td ><a href="/board/${cateid}/${list.b_num}"> ${list.b_title}</a></td>
+			<td ><a href="/board/${cateid}/${list.b_num}"> 
+
+<c:choose>
+<c:when test="${param.keyword == null}">
+${list.b_title} 
+</c:when>
+<c:when test="${param.keyword != null}">
+	 <c:set var="highlight" value="<label style='background-color:yellow'> 
+	 ${param.keyword}
+	 </label>" />
+	${fn:replace(list.b_title, param.keyword , highlight )} 
+</c:when>
+</c:choose>
+			</a></td>
 			<td style="text-align: center;">${list.nickname}</td>
 			<td style="text-align: center;">${list.b_wdate}</td>
 			<td style="text-align: center;">${list.b_hit}</td>
 		</tr>
 	</c:forEach>
-    
  </table>
+ 
  <div style="float:right;">
  	<button  class="btn info" onclick="location.href='/board/${cateid}/writeboard'">글쓰기</button>
+	
  </div>
+<div style="margin-left:50%; margin-top:30px;">
+ 		여기는?
+</div> 	
+ 
  	</div>
+ 	
 </div>
 </body>
 </html>

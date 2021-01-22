@@ -12,7 +12,10 @@
 			or b_title like CONCAT('%',#{keyword},'%')
 			or b_content like CONCAT('%',#{keyword},'%'))
 		  </if>
-		 order by b_num desc
+		 order by b_num desc 
+		 <if test="page == null">
+		 limit 0, 10
+		 </if>
 	</select>
 	
 	<!-- 게시글 불러오기 -->

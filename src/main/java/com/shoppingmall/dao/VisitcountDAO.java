@@ -5,6 +5,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.shoppingmall.vo.VisitCountVO;
+
 @Repository
 public class VisitcountDAO {
 
@@ -24,7 +26,7 @@ public class VisitcountDAO {
 	}
 
 	//총 방문자 수
-	public int getTotalCount() {
+	public VisitCountVO getTotalCount() {
 		return sqlSession.selectOne(Namespace + ".getTotalCount");
 	}
 

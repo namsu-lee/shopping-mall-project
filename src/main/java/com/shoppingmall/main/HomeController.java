@@ -63,9 +63,9 @@ public class HomeController {
 			System.out.println(list.get(i));
 		}
 		
-		model.addAttribute("size", AccessorVO.getHttpSession().size());
-		model.addAttribute("list", list);
-		model.addAttribute("TotalCount", visitcountService.getTotalCount());//총 방문자 수
+		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
+		model.addAttribute("list", list);								//접속자 아이디
+		model.addAttribute("TotalCount", visitcountService.getTotalCount().getTotalcount());//총 방문자 수
 		model.addAttribute("TodayCount", visitcountService.getTodayCount());//오늘 방문자 수
 		
 		//게시판 목록 불러오기

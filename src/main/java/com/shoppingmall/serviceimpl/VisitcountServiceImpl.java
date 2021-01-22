@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.shoppingmall.dao.VisitcountDAO;
 import com.shoppingmall.service.VisitcountService;
+import com.shoppingmall.vo.VisitCountVO;
 
 @Service
 public class VisitcountServiceImpl implements VisitcountService{
@@ -29,7 +30,7 @@ public class VisitcountServiceImpl implements VisitcountService{
 	
 	//총 방문자 수
 	@Override
-	public int getTotalCount() throws Exception {
+	public VisitCountVO getTotalCount() throws Exception {
 		return visitcountDAO.getTotalCount();
 	}
 

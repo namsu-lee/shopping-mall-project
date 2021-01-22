@@ -1,5 +1,7 @@
 package com.shoppingmall.service;
 
+import com.shoppingmall.vo.VisitCountVO;
+
 public interface VisitcountService {
 
 	//총 방문자 수 +1
@@ -9,7 +11,7 @@ public interface VisitcountService {
 	public int UpdateTodayCount(String memberid) throws Exception;
 
 	//총 방문자 수
-	public int getTotalCount() throws Exception;
+	public VisitCountVO getTotalCount() throws Exception;
 	
 	//오늘 방문자 수
 	public int getTodayCount() throws Exception;

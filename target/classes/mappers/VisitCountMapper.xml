@@ -18,12 +18,12 @@
 	
 	
 	<!-- 전제 방문자 수 구함 -->
-	<select id="getTotalCount">
-		select count(*) from totalcount 
+	<select id="getTotalCount" resultType="VisitCountVO">
+		select totalcount from totalcount 
 	</select>
 	
 	<!-- 오늘 방문한 사람의 카운트 -->
-	<select id="getTodayCount">
+	<select id="getTodayCount" resultType="Integer">
 		select count(*) from todaycount where today = curdate()
 	</select>
 </mapper>

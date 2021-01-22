@@ -8,6 +8,7 @@
 		<typeAlias type="com.shoppingmall.vo.LoginVO" alias="LoginVO"/>
 		<typeAlias type="com.shoppingmall.vo.CategoryVO" alias="CategoryVO"/>
 		<typeAlias type="com.shoppingmall.vo.BoardVO" alias="BoardVO"/>
+		<typeAlias type="com.shoppingmall.vo.VisitCountVO" alias="VisitCountVO"/>
 	</typeAliases>
 	
 </configuration>

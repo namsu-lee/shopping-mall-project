@@ -104,7 +104,7 @@ public class HandlerChat extends TextWebSocketHandler {
 		}
 
 		switch (mapReceive.get("cmd")) {
-		
+
 		// CLIENT 입장
 		case "CMD_ENTER":
 			// 세션 리스트에 저장
@@ -116,7 +116,7 @@ public class HandlerChat extends TextWebSocketHandler {
 			// 같은 채팅방에 입장 메세지 전송
 			for (int i = 0; i < sessionList.size(); i++) {
 				Map<String, Object> mapSessionList = sessionList.get(i);
-				String bang_id = (String)mapSessionList.get("bang_id");
+				String bang_id = (String) mapSessionList.get("bang_id");
 				WebSocketSession sess = (WebSocketSession) mapSessionList.get("session");
 				if (bang_id.equals(mapReceive.get("bang_id"))) {
 					Map<String, String> mapToSend = new HashMap<String, String>();

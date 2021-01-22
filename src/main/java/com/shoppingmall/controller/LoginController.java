@@ -1,6 +1,5 @@
 package com.shoppingmall.controller;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Locale;
 
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.shoppingmall.service.LoginService;
 import com.shoppingmall.service.RegisterService;
+import com.shoppingmall.service.VisitcountService;
 import com.shoppingmall.vo.AccessorVO;
 import com.shoppingmall.vo.LoginVO;
 import com.shoppingmall.vo.MembersVO;
@@ -36,6 +35,9 @@ public class LoginController {
 	
 	@Inject
 	RegisterService registerService;
+	
+	@Inject
+	VisitcountService visitcountService;
 	
 	//NAVER 연동
 	/* naverLoginVO */
@@ -135,6 +137,11 @@ public class LoginController {
 				response.addCookie(cookie2);
 			}
 		}
+		
+		//총 방문자 수 +1 , 오늘 방문자 수 +1
+		visitcountService.PlusTotalCount();
+		visitcountService.PlusTodayCount();
+		
 		//return "redirect:/main"; 리다이엑트는 uri를 탄다.
 		return "redirect:/";
 	}

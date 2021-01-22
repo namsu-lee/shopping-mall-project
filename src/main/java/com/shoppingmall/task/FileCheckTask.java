@@ -37,6 +37,7 @@ public class FileCheckTask {
 	
 	
 	//파일 주기적으로 삭제
+	//@Scheduled(cron = "0 * * * * *")
 	@Scheduled(cron = "0 0 2 * * *")
 	public void checkFiles() throws Exception {
 
@@ -118,7 +119,7 @@ public class FileCheckTask {
 			//C:\\upload\\temp\\2021\\01\\11\\
 			//		cba56894-9811-4a6f-bab6-4b532399995f_Penguins.jpg
 			System.out.println("서버에 저장되어있는 파일 삭제중..... ===  " + removeFiles.get(i).getAbsolutePath());
-			//removeFiles.get(i).delete();     <== 주석 풀어줘야함 지금은 일시적으로 막아놓음.
+			removeFiles.get(i).delete();    // <== 주석 풀어줘야함 지금은 일시적으로 막아놓음.
 		}
 	} 
 }

@@ -11,6 +11,8 @@
 		var webSocket = {
 			init: function(param) {
 				this._url = param.url;
+				// alert("param.url = " + param.url); ==> /chat
+				//alert("this._url = " + this._url);		 ==> /chat
 				this._initSocket();
 			},
 			sendChat: function() {

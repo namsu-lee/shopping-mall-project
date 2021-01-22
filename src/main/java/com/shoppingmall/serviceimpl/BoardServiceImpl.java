@@ -17,9 +17,9 @@ public class BoardServiceImpl implements BoardService{
 	
 	
 	@Override
-	public List<BoardVO> GetBoardList(Integer cateid) throws Exception{
+	public List<BoardVO> GetBoardList(Integer cateid, Integer page, String keyword) throws Exception{
 		
-		return BoardDAO.GetBoardList(cateid);
+		return BoardDAO.GetBoardList(cateid, page, keyword);
 	}
 	
 	@Override

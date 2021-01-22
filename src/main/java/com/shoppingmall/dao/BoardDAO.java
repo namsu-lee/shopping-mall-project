@@ -1,5 +1,6 @@
 package com.shoppingmall.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -17,9 +18,17 @@ public class BoardDAO {
 	
 	private static final String Namespace = "com.shoppingmall.mapper.BoardMapper";
 	
-	public List<BoardVO> GetBoardList(Integer cateid) throws Exception{
-		return sqlSession.selectList(Namespace + ".GetBoardList", cateid);
+	public List<BoardVO> GetBoardList(Integer cateid, Integer page, String keyword) throws Exception{
+		
+		HashMap<String, Object> data = new HashMap<String, Object>();
+		 
+		data.put("cateid", cateid);
+		data.put("keyword", keyword);
+		data.put("page", page);
+		
+		return sqlSession.selectList(Namespace + ".GetBoardList", data);
 	}
+	
 	public List<BoardVO> ViewBoard(Integer b_num) throws Exception{
 		return sqlSession.selectList(Namespace + ".ViewBoard", b_num);
 	}

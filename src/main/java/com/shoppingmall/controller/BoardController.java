@@ -28,12 +28,12 @@ public class BoardController {
 	
 	//게시판 목록 조회
 	@RequestMapping(value = "/board/{cateid}")
-	public String MoveBoard(@PathVariable Integer cateid, Locale locale, Model model) throws Exception {
+	public String MoveBoard(@PathVariable Integer cateid, Integer page, String keyword, Locale locale, Model model) throws Exception {
 		
 		List<CategoryVO> selectList = cate.CategoryGet();
 		model.addAttribute("selectList", selectList);
 		
-		List<BoardVO> GetBoardList = service.GetBoardList(cateid);
+		List<BoardVO> GetBoardList = service.GetBoardList(cateid, page, keyword);
 		model.addAttribute("GetBoardList", GetBoardList);
 		return "/board";
 	}

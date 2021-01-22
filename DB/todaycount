@@ -1,4 +1,4 @@
-
 create table todaycount (
- 	todaycount int not null default 0		-- 오늘 방문자 수
+ 	today date,
+    memberid varchar(20)
 );

@@ -1,4 +1,4 @@
 create table todaycount (
- 	today date,
-    memberid varchar(20)
+ 	today date,					-- 날짜
+    memberid varchar(20)		-- 로그인한 사람의 아이디
 );

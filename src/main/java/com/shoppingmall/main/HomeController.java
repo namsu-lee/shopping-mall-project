@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.shoppingmall.service.CategoryService;
 import com.shoppingmall.service.RegisterService;
+import com.shoppingmall.service.VisitcountService;
 import com.shoppingmall.vo.AccessorVO;
 import com.shoppingmall.vo.CategoryVO;
 import com.shoppingmall.vo.MembersVO;
@@ -36,6 +37,9 @@ public class HomeController {
 	
 	@Inject
 	private RegisterService registerService;
+	
+	@Inject
+	VisitcountService visitcountService;
 	
 	private static List<String> list = new ArrayList<String>();
 	/**
@@ -61,6 +65,8 @@ public class HomeController {
 		
 		model.addAttribute("size", AccessorVO.getHttpSession().size());
 		model.addAttribute("list", list);
+		model.addAttribute("TotalCount", visitcountService.getTotalCount());//총 방문자 수
+		model.addAttribute("TodayCount", visitcountService.getTodayCount());//오늘 방문자 수
 		
 		//게시판 목록 불러오기
 		List<CategoryVO> selectList = service.CategoryGet();

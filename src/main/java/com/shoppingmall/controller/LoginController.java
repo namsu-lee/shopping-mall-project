@@ -139,8 +139,9 @@ public class LoginController {
 		}
 		
 		//총 방문자 수 +1 , 오늘 방문자 수 +1
-		visitcountService.PlusTotalCount();
-		visitcountService.PlusTodayCount();
+		visitcountService.UpdateTodayCount(vo.getMemberid()); 
+		visitcountService.UpdateTotalCount();
+		
 		
 		//return "redirect:/main"; 리다이엑트는 uri를 탄다.
 		return "redirect:/";
@@ -220,8 +221,13 @@ public class LoginController {
 		
 		int result = registerService.NaverRegister(vo);
 		if(result == 1) {
+			
 			//AccessorVO.list에 해당 사용자의 세션 추가
 			session.setAttribute("memberid", (String)response.get("id")); //세션 생성
+			
+			//총 방문자 수 +1 , 오늘 방문자 수 +1
+			visitcountService.UpdateTodayCount(vo.getMemberid()); 
+			visitcountService.UpdateTotalCount();
 		}
 		//model.addAttribute("result", apiResult);
 		

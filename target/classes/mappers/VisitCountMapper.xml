@@ -4,11 +4,26 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shoppingmall.mapper.VisitCountMapper">
 	
-	<update id="TotalCount">
-		
+	<!-- 전체 방문자 수 select * from totalcount 로 먼저 초기화 해줘야 한다.*** -->
+	<update id="UpdateTotalCount">
+		update totalcount set totalcount = totalcount + 1
 	</update>
 	
-	<update id="TodayCount">
-		
+	
+	
+	<!-- 로그인 한 사람 추가 ***-->
+	<update id="UpdateTodayCount">
+		insert into todaycount (today, memberid) values (now(), #{memberid}) 
 	</update>
+	
+	
+	<!-- 전제 방문자 수 구함 -->
+	<select id="getTotalCount">
+		select count(*) from totalcount 
+	</select>
+	
+	<!-- 오늘 방문한 사람의 카운트 -->
+	<select id="getTodayCount">
+		select count(*) from todaycount where today = curdate()
+	</select>
 </mapper>

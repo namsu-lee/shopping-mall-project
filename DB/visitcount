@@ -1,4 +1,0 @@
-create table visitcount (
-	totalcount int not null default 0,		-- 총 방문자 수
-    todaycount int not null default 0		-- 오늘 방문자 수
-    );

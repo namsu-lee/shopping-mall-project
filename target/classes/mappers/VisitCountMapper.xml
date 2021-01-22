@@ -2,43 +2,13 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.shoppingmall.mapper.BoardMapper">
-	<!-- 게시판 리스트 불러오기 -->
-	<select id="GetBoardList" resultType="BoardVO" parameterType="hashMap">
-		select b_num, memberid, nickname, b_title, b_wdate, b_hit, cateid
-		 from board where cateid = #{cateid} 
-		  <if test="keyword != null ">
-		    AND  (nickname LIKE CONCAT('%',#{keyword},'%')
-			or b_title like CONCAT('%',#{keyword},'%')
-			or b_content like CONCAT('%',#{keyword},'%'))
-		  </if>
-		 order by b_num desc
-	</select>
+<mapper namespace="com.shoppingmall.mapper.VisitCountMapper">
 	
-	<!-- 게시글 불러오기 -->
-	<select id="ViewBoard" resultType="BoardVO" parameterType="Integer">
-		select * from board where b_num = #{b_num} 
-	</select>
-	
-	<!-- 게시글 작성 -->
-	<insert id="WroteBoard" parameterType="BoardVO">
-		insert into board (cateid, b_title, b_content, b_wdate) 
-		values(#{cateid}, #{b_title}, #{b_content}, now()) 
-	</insert>
-	
-	<!-- 게시글 수정하기 위해 불러오기 -->
-	<select id="UpdateGetBoard" resultType="BoardVO" parameterType="Integer">
-		select b_num, b_title, b_content from board where b_num=#{b_num}; 
-	</select>
-	
-	<!-- 게시글 수정 -->
-	<update id="UpdateBoard" parameterType="BoardVO">
-		UPDATE board SET b_title=#{b_title}, b_content=#{b_content} 
-	    WHERE b_num=#{b_num}
+	<update id="TotalCount">
+		
 	</update>
 	
-	<!-- 게시글 삭제 -->
-	<delete id="DeleteBoard" parameterType="Integer">
-		DELETE FROM board WHERE b_num=#{b_num};
-	</delete>
+	<update id="TodayCount">
+		
+	</update>
 </mapper>

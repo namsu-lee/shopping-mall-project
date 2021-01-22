@@ -1,0 +1,3 @@
+create table totalcount (
+	totalcount int not null default 0,		-- 총 방문자 수
+);

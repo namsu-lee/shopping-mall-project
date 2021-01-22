@@ -15,4 +15,10 @@
 	<select id="mypageList" resultType="MembersVO">
 		select uuid, uploadPath, fileName from members where memberid  = #{memberid};
 	</select>
+	
+	
+	<!-- 오늘 기준 어제 파일 정보 가져옴 -->
+	<select id="FileList" resultType="MembersVO">
+		select uploadPath, uuid, fileName from members where uploadPath = curdate() - interval 1 day;
+	</select>
 </mapper>

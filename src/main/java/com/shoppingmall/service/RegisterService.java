@@ -16,4 +16,7 @@ public interface RegisterService {
 	//로그인 한 사람의 닉네임 가져옴
 	public MembersVO ListNameAccessor(String name) throws Exception;
 
+	//네이버 회원가입
+	public int NaverRegister(MembersVO vo) throws Exception;
+
 }

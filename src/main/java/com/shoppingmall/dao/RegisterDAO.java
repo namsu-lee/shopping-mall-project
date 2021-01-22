@@ -41,5 +41,11 @@ public class RegisterDAO {
 	}
 
 
+	//네이버 회원가입
+	public int NaverRegister(MembersVO vo) {
+		return sqlSession.insert(Namespace + ".NaverRegister", vo);
+	}
+
+
 	
 }

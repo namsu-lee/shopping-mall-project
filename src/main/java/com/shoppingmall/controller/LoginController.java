@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.shoppingmall.service.LoginService;
+import com.shoppingmall.service.RegisterService;
 import com.shoppingmall.vo.AccessorVO;
 import com.shoppingmall.vo.LoginVO;
 import com.shoppingmall.vo.MembersVO;
@@ -33,6 +34,8 @@ public class LoginController {
 	@Inject
 	LoginService loginService;
 	
+	@Inject
+	RegisterService registerService;
 	
 	//NAVER 연동
 	/* naverLoginVO */
@@ -46,15 +49,34 @@ public class LoginController {
 		
 	//로그인 페이지로 이동
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String Login(Locale locale, Model model, HttpSession session) throws Exception {
+	public String Login(Locale locale, Model model, HttpServletRequest request) throws Exception {
 		
+		HttpSession session = request.getSession();
 		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginVO클래스의 getAuthorizationUrl메소드 호출 */
 		String naverAuthUrl = naverLoginVO.getAuthorizationUrl(session);
 		System.out.println("naverAuthUrl : " + naverAuthUrl);
-		
-		
 		model.addAttribute("url", naverAuthUrl);
 		
+		
+		String cookie = "";
+		String check = request.getHeader("cookie");
+		
+		Cookie cookies[] = null;
+		if(check != null) {
+			cookies = request.getCookies();
+		}
+		
+		if((cookies != null) && (cookies.length > 0)) {
+			for(int i = 0; i < cookies.length; i++) {
+				if(cookies[i].getName().equals("memberid")) {
+					cookie = cookies[i].getValue();
+				}
+			}
+		}
+		else {
+			cookie = "";
+		}
+		model.addAttribute("Auto_ID", cookie);
 		return "/login";
 	}
 	
@@ -154,45 +176,47 @@ public class LoginController {
 	//NAVER 연동
 	//네이버 로그인 성공시 callback 호출
 	@RequestMapping(value = "/callback/test", method = { RequestMethod.GET, RequestMethod.POST })
-	public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpServletRequest request) throws IOException, ParseException {
+	public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpServletRequest request) throws Exception {
 		
-		System.out.print("aaaaaaaaaaaaaaa");
 		
 		HttpSession session = request.getSession(true);
 		OAuth2AccessToken oauthToken;
 		oauthToken = naverLoginVO.getAccessToken(session, code, state);
-		System.out.print("bbbbbbbbbbbbbbbbbb");
 		
 		//1. 로그인 사용자 정보를 읽어온다.
 		apiResult = naverLoginVO.getUserProfile(oauthToken); //String형식의 json데이터
 		
-		
 		/** apiResult json 구조
-		{"resultcode":"00",
-		"message":"success",
-		"response":{"id":"33666449","nickname":"shinn****","age":"20-29","gender":"M","email":"sh@naver.com","name":"\uc2e0\ubc94\ud638"}}
+		{"resultcode":"00","message":"success","response":{"id":"89942918","nickname":"\ub0a8\ub290","email":"surplus92@naver.com",
+			"mobile":"010-2544-1091","mobile_e164":"+821025441091","name":"\uc774\ub0a8\uc218"}
+			
+			가져올거 ==> id, nickname, email, mobile, name
 		**/
-		
 		
 		//2. String형식인 apiResult를 json형태로 바꿈
 		JSONParser parser = new JSONParser();
 		Object obj = parser.parse(apiResult);
 		JSONObject jsonObj = (JSONObject) obj;
 		
-		
 		//3. 데이터 파싱
 		//Top레벨 단계 _response 파싱
-		JSONObject response_obj = (JSONObject)jsonObj.get("response");
+		JSONObject response = (JSONObject)jsonObj.get("response");
 		
-		
+		// 가져와서 db에 naver 로그인 사용자 저장 
 		//response의 nickname값 파싱
-		String id = (String)response_obj.get("id");
-		System.out.println(" aaaaaaaaaaaaaaaaaaaaaaaaaaaa    "+ id);
+		MembersVO vo = new MembersVO();
+		vo.setMemberid((String)response.get("id"));
+		vo.setNickname((String)response.get("nickname"));
+		vo.setEmail((String)response.get("email"));
+		vo.setPhone((String)response.get("mobile"));
+		vo.setMemberid((String)response.get("name"));
 		
-		
-		//4.파싱 닉네임 세션으로 저장
-		session.setAttribute("memberid", id); //세션 생성
-		model.addAttribute("result", apiResult);
+		int result = registerService.NaverRegister(vo);
+		if(result == 1) {
+			//AccessorVO.list에 해당 사용자의 세션 추가
+			session.setAttribute("memberid", (String)response.get("id")); //세션 생성
+		}
+		//model.addAttribute("result", apiResult);
 		
 		return "redirect:/";
 	}

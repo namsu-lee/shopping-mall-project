@@ -7,23 +7,30 @@
 	<!-- 아이디 중복 검사 -->
 	<select id="CheckID" resultType="Integer">
 		<!-- 해킹에 대비하기 위해 count(*)로 비교 -->
-		select count(*) from members where memberid = #{memberid};
+		select count(*) from members where memberid = #{memberid}
 	</select>
 	
 
 	<!-- 닉네임 중복 검사 -->
 	<select id="CheckNickName" resultType="Integer">
-		select count(*) from members where nickname = #{nickname};
+		select count(*) from members where nickname = #{nickname}
 	</select>
 
 	<!-- 회원가입 -->
 	<insert id="Register" parameterType="MembersVO">
 		insert into members (memberid, nickname, password, membername, email, address, phone, uuid, uploadPath, fileName)
-			 values (#{memberid}, #{nickname}, #{password}, #{membername}, #{email}, #{address}, #{phone}, #{uuid}, #{uploadPath}, #{fileName});
+			 values (#{memberid}, #{nickname}, #{password}, #{membername}, #{email}, #{address}, #{phone}, #{uuid}, #{uploadPath}, #{fileName})
+	</insert>
+	
+	<!-- 네이버 회원가입 -->
+	<insert id="NaverRegister" parameterType="MembersVO">
+		<!-- memberid, nickname, membername, email, phone, uuid, uploadPath, fileName 추가 -->
+		insert into members (memberid, nickname, membername, email, phone, uuid, uploadPath, fileName) 
+			values (#{memberid}, #{nickname}, #{membername}, #{email}, #{phone}, #{uuid}, #{uploadPath}, #{fileName})
 	</insert>
 	
 	<!-- 로그인 한 사람의 닉네임 가져옴 -->
 	<select id="ListNickName" resultType="MembersVO">
-		select nickname from members where memberid = #{memberid};
+		select nickname from members where memberid = #{memberid}
 	</select>
 </mapper> 

@@ -1,31 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ include file="../../exclude/topnav.jsp" %>
-<%
-//*************** 쿠키값 가져오기 **********************************************************************************
-String sessionID = (String)session.getAttribute("id");
-if(sessionID != null){
-	%> <script>alert("잘못된 접근입니다."); location.href="/main"; </script> <%
-}
-String cookie = "";
-String check = request.getHeader("cookie"); 
-
-Cookie[] cookies = null;
-if(check != null){	
-	// getCookies() 메서드를 사용해서 쿠키 정보를 배열에 저장한다.(HTTP 요청 메세지의 헤더에 포함된 쿠키를 javax.servlet.http.Cookie 배열로 리턴)
-	cookies = request.getCookies();
-}
-
-if((cookies != null) && (cookies.length > 0))	{		
-	for(int i = 0; i < cookies.length; i++)		{
-		if(cookies[i].getName().equals("memberid"))	{	
-			cookie = cookies[i].getValue();
-		}
-	}
-}
-
-%>
+<c:if test="${ sessionScope.memberid != null }">
+	<script>alert("잘못된 접근입니다."); location.href="/"; </script>
+</c:if>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -110,10 +88,10 @@ if((cookies != null) && (cookies.length > 0))	{
 <body>
 	<section>
 			<article style="margin-top:13%">
-				<h2><a href="/login"><img src="ezen.jpg" style="width:80px; height:80px;"></a></h2>
+				<h2><a href="/login"><img src="/resources/image/ezen.jpg" style="width:80px; height:80px;"></a></h2>
 				<form action="/loginok" method="post">
 							<!-- 여기서부터 시작 -->
-							<input type="text" name="memberid" id="id" placeholder="아이디" value="<%= cookie %>"><br>
+							<input type="text" name="memberid" id="id" placeholder="아이디" value="${ Auto_ID }"><br>
 
 				
 					<input type="password" name="password" id="password" placeholder="비밀번호는 6자 이상 ~ 20자 이하"></br>
@@ -130,7 +108,7 @@ if((cookies != null) && (cookies.length > 0))	{
 		</section>
 		<footer>
 			<div>
-				(주)망할코딩 
+				(주)ezen 
 			</div>
 		</footer>
 </body>

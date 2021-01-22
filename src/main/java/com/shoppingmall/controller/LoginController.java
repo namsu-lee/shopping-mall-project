@@ -49,15 +49,34 @@ public class LoginController {
 		
 	//로그인 페이지로 이동
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String Login(Locale locale, Model model, HttpSession session) throws Exception {
+	public String Login(Locale locale, Model model, HttpServletRequest request) throws Exception {
 		
+		HttpSession session = request.getSession();
 		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginVO클래스의 getAuthorizationUrl메소드 호출 */
 		String naverAuthUrl = naverLoginVO.getAuthorizationUrl(session);
 		System.out.println("naverAuthUrl : " + naverAuthUrl);
-		
-		
 		model.addAttribute("url", naverAuthUrl);
 		
+		
+		String cookie = "";
+		String check = request.getHeader("cookie");
+		
+		Cookie cookies[] = null;
+		if(check != null) {
+			cookies = request.getCookies();
+		}
+		
+		if((cookies != null) && (cookies.length > 0)) {
+			for(int i = 0; i < cookies.length; i++) {
+				if(cookies[i].getName().equals("memberid")) {
+					cookie = cookies[i].getValue();
+				}
+			}
+		}
+		else {
+			cookie = "";
+		}
+		model.addAttribute("Auto_ID", cookie);
 		return "/login";
 	}
 	

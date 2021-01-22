@@ -113,7 +113,20 @@ ${list.b_title}
 </c:when>
 </c:choose>
 			</a></td>
-			<td style="text-align: center;">${list.nickname}</td>
+			<td style="text-align: center;">
+			<c:choose>
+<c:when test="${param.keyword == null}">
+${list.nickname} 
+</c:when>
+<c:when test="${param.keyword != null}">
+	 <c:set var="highlight" value="<label style='background-color:yellow'> 
+	 ${param.keyword}
+	 </label>" />
+	${fn:replace(list.nickname, param.keyword , highlight )} 
+</c:when>
+</c:choose>
+			
+			${list.nickname}</td>
 			<td style="text-align: center;">${list.b_wdate}</td>
 			<td style="text-align: center;">${list.b_hit}</td>
 		</tr>

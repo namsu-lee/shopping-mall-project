@@ -28,6 +28,6 @@ public class ReplyDAO {
 	}
 	
 	public void UpdateReply(ReplyVO vo) throws Exception{
-		sqlSession.insert(Namespace + ".UpdateReply", vo);
+		sqlSession.update(Namespace + ".UpdateReply", vo);
 	}
 }

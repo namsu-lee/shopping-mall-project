@@ -1,0 +1,9 @@
+create table reply(
+	replynum int auto_increment primary key,
+    b_num int,
+	memberid varchar(20),
+    nickname varchar(20),
+    replycontent text,
+    replydate datetime,
+    replydepth int
+);

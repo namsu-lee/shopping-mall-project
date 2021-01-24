@@ -9,12 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.shoppingmall.service.BoardService;
+import com.shoppingmall.service.CategoryService;
+import com.shoppingmall.service.ReplyService;
 import com.shoppingmall.vo.BoardVO;
 import com.shoppingmall.vo.CategoryVO;
-import com.shoppingmall.service.CategoryService;
+import com.shoppingmall.vo.ReplyVO;
 
 
 @Controller
@@ -24,6 +25,8 @@ public class BoardController {
 	private BoardService service;
 	@Inject
 	private CategoryService cate;
+	@Inject
+	private ReplyService reply;
 	
 	
 	//게시판 목록 조회
@@ -47,6 +50,10 @@ public class BoardController {
 		
 		List<BoardVO> ViewBoard = service.ViewBoard(b_num);
 		model.addAttribute("ViewBoard", ViewBoard);
+		
+		List<ReplyVO> GetReply = reply.GetReply(b_num);
+		model.addAttribute("GetReply", GetReply);
+		
 		return "/viewboard";
 	}
 	

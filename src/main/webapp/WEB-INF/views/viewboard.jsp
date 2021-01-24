@@ -31,6 +31,20 @@
 	.content{
 	 	padding:10px;
 	}
+	.replybtn {
+        color: dodgerblue;
+        border: none;
+        padding: 10px 10px;
+        marin : 0;
+        font-size: 16px;
+        cursor: pointer;
+        background-color:white;
+    }
+
+    .replybtn:hover {
+        background: #2196F3;
+        color: white;
+    }
 </style>
 </head>
 <body>
@@ -44,21 +58,36 @@
 		<hr>
 		<div class="content">${board.b_content}</div>
 		<hr>
-	<div class="reply" style="width:80%">
+	<div class="reply" style="width:100%;display: inline-block;">
+	<table>
 	<c:forEach items="${GetReply}" var="GetReply">
-		<div class="rnick">${GetReply.nickname}</div>
-		<div class="rcontent">${GetReply.replycontent}</div>
-		<div class="rcontent">${GetReply.replydate}</div>
-	
+		<tr>
+			<td style="width:10%;">${GetReply.nickname}</td>
+			<td style="width:55%;">${GetReply.replycontent}</td>
+			<td style="width:15%;">${GetReply.replydate}</td>
+			<td style="width:5%;">
+				<button  class="replybtn" onclick="location.href='/board/${cateid}/${b_num}/${GetReply.replynum}/updatedreply'">
+				수정</button>
+			</td>
+			<td style="width:5%;">
+				<button  class="replybtn" onclick="location.href='/board/${cateid}/${b_num}/${GetReply.replynum}/deletereply'">
+				삭제</button>
+			</td>
+		</tr>
 	</c:forEach>
-	
-		<div class="replywrite">
+	</table>
+		
+	</div>
+	<div class="replywrite" style="width:100%;">
 		<form action="/board/${cateid}/${board.b_num}/wrotereply" method="post">
-			<textarea name="replycontent"></textarea>
-			<button type="submit">댓글입력</button>
+			<table>
+				<tr>
+					<td><textarea name="replycontent" style="resize: none; font-size:20px; padding:10px;"cols="130" rows="1"></textarea></td>
+					<td><button class="replybtn" type="submit">댓글입력</button></td>
+				</tr>
+			</table>
 		</form>
 		</div>
-	</div>
 	<div style="float:left;">
 		<button  class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
 	</div>

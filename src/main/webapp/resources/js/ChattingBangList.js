@@ -30,9 +30,10 @@ function Make_ChattingBang() {
 				if($(this).find("num").text() == 0) {
 					var output = "";
 					output += "<button>"+ data.title +"</button>";
-					$("#title").val("");
-					$("#chtting_list_box").html(output);
+					/*$("#title").val("");
+					$("#chtting_list_box").html(output);*/
 					alert("채팅방을 게설하였습니다.");
+					window.location.reload();
 				}
 			});
 		}

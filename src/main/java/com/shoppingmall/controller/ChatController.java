@@ -53,21 +53,18 @@ public class ChatController {
 	@ResponseBody
 	@RequestMapping(value = "/MakeChattingBang", method = RequestMethod.POST)
 	public Map<String, Integer> MakeChattingBang(String title) throws Exception {
-		System.out.println("title == " + title);
+		
 		Map<String, Integer> map = new HashMap<String, Integer>();
 
 		//0이면 채팅방 생성가능 1이면 불가능
 		int num = chatService.CheckChattingBang(title);
 		if(num == 1) {
-			System.out.println(":::1");
 			map.put("num", 1);
 		}
 		else if(num == 0) {
 			chatService.MakeChattingBang(title);
-			System.out.println(":::2");
 			map.put("num", 0);
 		}
-		System.out.println(":::3");
 		return map;
 	}
 	

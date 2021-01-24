@@ -3,9 +3,26 @@
     PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.shoppingmall.mapper.ChatMapper">
+	
 	<!-- 게시판 리스트 불러오기 -->
 	<select id="GetMemberInfo" resultType="MembersVO">
 		select nickname, uuid, uploadPath, fileName from members where memberid = #{memberid}
 	</select>
 
+	<!-- 중복된 채팅방이 있는지 검사 -->
+	<select id="CheckChattingBang" resultType="Integer">
+		select count(*) from chattingbang where title = #{title}
+	</select>
+	
+	
+	<!-- 채팅방 생성 -->
+	<select id="MakeChattingBang" resultType="Integer">
+		insert into chattingbang (title) values (#{title})
+	</select>
+	
+	
+	<!-- 채팅방 목록 -->
+	<select id="getChattingBang" resultType="HashMap">
+		select * from chattingbang;
+	</select>
 </mapper>

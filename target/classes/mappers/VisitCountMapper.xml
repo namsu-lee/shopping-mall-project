@@ -26,4 +26,11 @@
 	<select id="getTodayCount" resultType="Integer">
 		select count(*) from todaycount where today = curdate()
 	</select>
+	
+	<!-- 오늘 방문 했는지 안했는지 검사 -->
+	<select id="getTodayUser" resultType="Integer">
+		select count(*) from todaycount where today = curdate() and memberid = #{memberid}
+	</select>
+	
+	
 </mapper>

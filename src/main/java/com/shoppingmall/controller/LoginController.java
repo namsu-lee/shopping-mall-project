@@ -139,7 +139,9 @@ public class LoginController {
 		}
 		
 		//총 방문자 수 +1 , 오늘 방문자 수 +1
-		visitcountService.UpdateTodayCount(vo.getMemberid()); 
+		if(visitcountService.getTodayUser(vo.getMemberid()) == 0) {
+			visitcountService.UpdateTodayCount(vo.getMemberid());
+		}
 		visitcountService.UpdateTotalCount();
 		
 		
@@ -226,11 +228,12 @@ public class LoginController {
 			session.setAttribute("memberid", (String)response.get("id")); //세션 생성
 			
 			//총 방문자 수 +1 , 오늘 방문자 수 +1
-			visitcountService.UpdateTodayCount(vo.getMemberid()); 
+			if(visitcountService.getTodayUser(vo.getMemberid()) == 0) {
+				visitcountService.UpdateTodayCount(vo.getMemberid());
+			}
 			visitcountService.UpdateTotalCount();
 		}
 		//model.addAttribute("result", apiResult);
-		
 		return "redirect:/";
 	}
 }

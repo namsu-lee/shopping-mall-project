@@ -15,4 +15,7 @@ public interface VisitcountService {
 	
 	//오늘 방문자 수
 	public int getTodayCount() throws Exception;
+
+	//오늘 방문 했는지 안했는지 검사
+	public int getTodayUser(String memberid) throws Exception;
 }

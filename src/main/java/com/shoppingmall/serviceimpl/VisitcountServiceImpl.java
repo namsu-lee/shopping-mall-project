@@ -41,4 +41,11 @@ public class VisitcountServiceImpl implements VisitcountService{
 		return visitcountDAO.getTodayCount();
 	}
 
+
+	//오늘 방문 했는지 안했는지 검사
+	@Override
+	public int getTodayUser(String memberid) throws Exception {
+		return visitcountDAO.getTodayUser(memberid);
+	}
+
 }

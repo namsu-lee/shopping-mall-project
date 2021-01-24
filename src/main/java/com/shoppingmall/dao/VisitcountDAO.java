@@ -35,4 +35,9 @@ public class VisitcountDAO {
 		return sqlSession.selectOne(Namespace + ".getTodayCount");
 	}
 
+	//오늘 방문 했는지 안했는지 검사
+	public int getTodayUser(String memberid) {
+		return sqlSession.selectOne(Namespace + ".getTodayUser", memberid);
+	}
+
 }

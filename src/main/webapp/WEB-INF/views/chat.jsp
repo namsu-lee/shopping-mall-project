@@ -65,18 +65,18 @@
 				this._socket.close();
 			},
 			_initSocket: function() {
-				this._socket = new SockJS(this._url);
+				this._socket = new SockJS(this._url);	 //websocket을 지정한 URL로 연결
 				this._socket.onopen = function(evt) {
 					webSocket.sendEnter();
 				};
-				this._socket.onmessage = function(evt) {
+				this._socket.onmessage = function(evt) { 	 //websocket 서버에서 메시지를 보내면 자동으로 실행된다.
 					webSocket.receiveMessage(JSON.parse(evt.data));
 				};
-				this._socket.onclose = function(evt) {
+				this._socket.onclose = function(evt) {		//websocket 과 연결을 끊고 싶을때 실행하는 메소드
 					webSocket.closeMessage(JSON.parse(evt.data));
 				}
 			},
-			_sendMessage: function(SessionID, bang_id, cmd, msg) {
+			_sendMessage: function(SessionID, bang_id, cmd, msg) {	//websocket으로 메시지를 보내겠다.
 				var msgData = {
 						SessionID : SessionID,
 						bang_id : bang_id,

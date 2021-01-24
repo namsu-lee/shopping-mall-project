@@ -81,7 +81,7 @@
     <br><br><br><br><br><br>
     <script>
         function winOpen() {
-        	window.open("/ChattingBangList","new","width=500,height=800,top=100,left=100");
+        	window.open("/ChattingBangList","new","width=1027,height=859,top=100,left=100");
         }
         
         

@@ -15,7 +15,7 @@
 	function winOpen(no) {
 		var text = $("#btn_" + no).text();
 		window.open("/chat?bang_id=" + text, "new",
-				"width=500,height=800,top=100,left=100");
+				"width=1027,height=859,top=100,left=100");
 	}
 </script>
 </head>
@@ -29,7 +29,7 @@
 	<h2>
 		<strong>채팅방 목록</strong>
 	</h2>
-	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="검색어를 입력하세요.." title="Type in a name">
 	<table id="myTable">
 		<tr class="header">
 			<th style="width: 60%;">채팅 방</th>
@@ -38,8 +38,7 @@
 		<c:forEach items="${list}" var="list" varStatus="status">
 			<tr>
 				<td><a href="javascript:winOpen(<c:out value="${list.no}" />);" id="btn_<c:out value="${list.no}" />"><c:out value="${list.title}" /></a></td>
-				<td>
-					<button type="button" id="chat_modify_<c:out value="${list.no}" />" onclick="chat_modify(<c:out value="${list.no}" />)">수정</button>
+				<td style="text-align:right;">
 					<button type="button" id="chat_remove_<c:out value="${list.no}" />" onclick="chat_remove(<c:out value="${list.no}" />)">삭제</button>
 				</td>
 			</tr>

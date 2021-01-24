@@ -5,20 +5,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="/resources/js/jquery-3.5.1.min.js"></script>
+<script src="/resources/js/ChattingBangList.js"></script>
 <title>Insert title here</title>
 </head>
 	<body>
+		<div>
+			<label id="title">채팅방 제목 : </label>
+			<input type="text" id="titlechat" name="title">
+			<button type="button" id="Make_ChattingBang" onclick="Make_ChattingBang()">방 만들기</button>
+		</div>
 		<hr>
-		<c:forEach var="i" begin="1" end="10" step="1">
-			<button type="button" onclick="winOpen(${i})">${i}채팅방</button>
+		<c:forEach items="${list}" var="list" varStatus="status">
+		
+			<button type="button" id="btn_${status.count}" onclick="winOpen(${status.count})"><c:out value="${list}"/></button>
 			<hr>
 		</c:forEach>
+		<div id="chtting_list_box">
+			
+		</div>
 	</body>	
-	<script>
-		//bang_id=bbbbbbbb
-		function winOpen(i) {
-			var text = "ChatView"+i;
-			window.open("/chat?bang_id="+text,"new","width=500,height=800,top=100,left=100");
-		}
-	</script>
 </html>

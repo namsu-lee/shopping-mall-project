@@ -1,0 +1,5 @@
+채팅방
+
+create table chattingbang (
+	title varchar(50)
+);

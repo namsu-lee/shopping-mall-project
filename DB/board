@@ -10,6 +10,13 @@ create table board(
     b_hit int
 );
 
+//조회수 default 값 0으로 수정
+ALTER TABLE board
+CHANGE COLUMN `b_hit` `b_hit` INT NULL DEFAULT 0 ;
+
+//조회수 상승
+update board set b_hit = b_hit + 1 where b_num = #{b_num};
+
 //게시글 목록 조회
 select b_num, memberid, nickname, b_title, 
 b_wdate, b_hit 

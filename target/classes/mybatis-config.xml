@@ -10,6 +10,7 @@
 		<typeAlias type="com.shoppingmall.vo.BoardVO" alias="BoardVO"/>
 		<typeAlias type="com.shoppingmall.vo.VisitCountVO" alias="VisitCountVO"/>
 		<typeAlias type="com.shoppingmall.vo.ReplyVO" alias="ReplyVO"/>
+		<typeAlias type="com.shoppingmall.vo.ChattingBangVO" alias="ChattingBangVO"/>
 	</typeAliases>
 	
 </configuration>

@@ -1,6 +1,5 @@
 package com.shoppingmall.controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shoppingmall.service.ChatService;
+import com.shoppingmall.vo.ChattingBangVO;
 
 
 @Controller
@@ -29,13 +29,10 @@ public class ChatController {
 	public String ChattingBangList(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		//채팅방 목록 뿌려준다
-		List<Map<String, String>> listChat = chatService.getChattingBang();
-		List<String> list = new ArrayList<String>();
+		List<ChattingBangVO> list = chatService.getChattingBang();
 		
-		if(listChat != null) {
-			for(int i = 0; i < listChat.size(); i++) {
-				list.add(listChat.get(i).get("title"));
-			}
+		if(list.size() == 0) {
+			System.out.println("listChat가 null 입니다......");
 		}
 		
 		model.addAttribute("list", list);

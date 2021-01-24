@@ -1,7 +1,8 @@
 package com.shoppingmall.service;
 
 import java.util.List;
-import java.util.Map;
+
+import com.shoppingmall.vo.ChattingBangVO;
 
 public interface ChatService {
 
@@ -13,7 +14,9 @@ public interface ChatService {
 
 	
 	//채팅방 목록
-	public List<Map<String, String>> getChattingBang() throws Exception;
+	public List<ChattingBangVO> getChattingBang() throws Exception;
 
 	
 }
+
+ 

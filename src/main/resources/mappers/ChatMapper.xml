@@ -21,8 +21,8 @@
 	</select>
 	
 	
-	<!-- 채팅방 목록 -->
-	<select id="getChattingBang" resultType="HashMap">
+	<!-- 채팅방 목록 가져오기 -->
+	<select id="getChattingBang" resultType="ChattingBangVO">
 		select * from chattingbang;
 	</select>
 </mapper>

@@ -1,7 +1,6 @@
 package com.shoppingmall.serviceimpl;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -9,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.shoppingmall.dao.ChatDAO;
 import com.shoppingmall.service.ChatService;
+import com.shoppingmall.vo.ChattingBangVO;
 
 @Service
 public class ChatServiceImpl implements ChatService{
@@ -33,7 +33,7 @@ public class ChatServiceImpl implements ChatService{
 
 	//채팅방 목록
 	@Override
-	public List<Map<String, String>> getChattingBang() throws Exception {
+	public List<ChattingBangVO> getChattingBang() throws Exception {
 		return chatDAO.getChattingBang();
 	}
 	

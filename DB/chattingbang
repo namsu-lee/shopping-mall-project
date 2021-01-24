@@ -1,5 +1,5 @@
-채팅방
-
 create table chattingbang (
-	title varchar(50)
+	no int auto_increment not null,
+	title varchar(50),
+	primary key(no)
 );

@@ -1,12 +1,13 @@
 package com.shoppingmall.dao;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+
+import com.shoppingmall.vo.ChattingBangVO;
 @Repository
 public class ChatDAO {
 
@@ -26,7 +27,7 @@ public class ChatDAO {
 	}
 
 	//채팅방 목록
-	public List<Map<String, String>> getChattingBang() {
+	public List<ChattingBangVO> getChattingBang() {
 		return sqlSession.selectList(Namespace + ".getChattingBang");
 	}
 	

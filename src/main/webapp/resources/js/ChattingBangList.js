@@ -1,10 +1,3 @@
-//bang_id=bbbbbbbb
-//채팅방 입장
-function winOpen(i) {
-	var text = $("#btn_" + i).text();
-	window.open("/chat?bang_id=" + text, "new", "width=500,height=800,top=100,left=100");
-}
-
 
 //채팅방 만들기
 function Make_ChattingBang() {
@@ -38,4 +31,53 @@ function Make_ChattingBang() {
 			});
 		}
 	});
+}
+
+
+//채팅방 제목 수정
+function chat_modify(no) {
+	alert("modify" + no);
+}
+
+
+
+
+
+
+
+//채팅방 삭제
+function chat_remove(no) {
+	alert("remove" + no);	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
 }

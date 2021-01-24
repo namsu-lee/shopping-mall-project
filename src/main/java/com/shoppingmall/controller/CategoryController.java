@@ -86,7 +86,7 @@ public class CategoryController {
 			model.addAttribute("selectList", selectList);
 			return "/category";
 		}
-
+		
 		service.CategoryDelete(i);
 		
 		return "redirect:/category";

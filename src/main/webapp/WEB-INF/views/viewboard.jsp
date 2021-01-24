@@ -44,7 +44,21 @@
 		<hr>
 		<div class="content">${board.b_content}</div>
 		<hr>
+	<div class="reply" style="width:80%">
+	<c:forEach items="${GetReply}" var="GetReply">
+		<div class="rnick">${GetReply.nickname}</div>
+		<div class="rcontent">${GetReply.replycontent}</div>
+		<div class="rcontent">${GetReply.replydate}</div>
 	
+	</c:forEach>
+	
+		<div class="replywrite">
+		<form action="/board/${cateid}/${board.b_num}/wrotereply" method="post">
+			<textarea name="replycontent"></textarea>
+			<button type="submit">댓글입력</button>
+		</form>
+		</div>
+	</div>
 	<div style="float:left;">
 		<button  class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
 	</div>

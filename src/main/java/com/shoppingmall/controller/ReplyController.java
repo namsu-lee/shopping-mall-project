@@ -17,6 +17,9 @@ public class ReplyController {
 	@Inject
 	private ReplyService reply;
 	
+	//댓글 불러오기
+	
+	
 	//댓글 작성
 	@RequestMapping(value = "/board/{cateid}/{b_num}/wrotereply")
 	public String WroteReply(@PathVariable Integer cateid, @PathVariable Integer b_num, ReplyVO vo, Locale locale, Model model) throws Exception {

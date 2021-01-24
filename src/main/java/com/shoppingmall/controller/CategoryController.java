@@ -29,7 +29,7 @@ public class CategoryController {
 		List<CategoryVO> selectList = service.CategoryGet();
 		model.addAttribute("selectList", selectList);
 		
-		return "/category";
+		return "/Category";
 	}
 	
 	//입력하기

@@ -9,13 +9,12 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.shoppingmall.vo.BoardVO;
-import com.shoppingmall.vo.Pagination;
 
 @Repository
 public class BoardDAO {
 	@Inject
 	private SqlSession sqlSession;
-	
+	 
 	
 	private static final String Namespace = "com.shoppingmall.mapper.BoardMapper";
 

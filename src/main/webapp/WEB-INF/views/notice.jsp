@@ -39,7 +39,7 @@ div .paginator {
 				</tr>
 			</thead>
 				<tbody>
-					<c:if test="${list == null}">	
+					<c:if test="${list.isEmpty()}">	
 						<tr>
 							<td colspan="2">새로운 알림이 없습니다.</td>
 						</tr>

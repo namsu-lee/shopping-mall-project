@@ -12,6 +12,7 @@
 		<typeAlias type="com.shoppingmall.vo.ReplyVO" alias="ReplyVO"/>
 		<typeAlias type="com.shoppingmall.vo.ChattingBangVO" alias="ChattingBangVO"/>
 		<typeAlias type="com.shoppingmall.vo.MainVO" alias="MainVO"/>
+		<typeAlias type="com.shoppingmall.vo.NoticeVO" alias="NoticeVO"/>
 	</typeAliases>
 	
 </configuration>

@@ -45,6 +45,11 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	@Override
+	public void UpdateBoardHit(Integer b_num) throws Exception{
+		BoardDAO.UpdateBoardHit(b_num);
+	}
+	
+	@Override
 	public void DeleteBoard(Integer b_num) throws Exception{
 		BoardDAO.DeleteBoard(b_num);
 	}

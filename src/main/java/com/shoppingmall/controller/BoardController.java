@@ -45,6 +45,8 @@ public class BoardController {
 	@RequestMapping(value = "/board/{cateid}/{b_num}")
 	public String ViewBoard(@PathVariable Integer cateid, @PathVariable Integer b_num, Locale locale, Model model) throws Exception {
 		
+		service.UpdateBoardHit(b_num);
+		
 		List<CategoryVO> selectList = cate.CategoryGet();
 		model.addAttribute("selectList", selectList);
 		

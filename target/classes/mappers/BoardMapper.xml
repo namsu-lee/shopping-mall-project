@@ -49,6 +49,4 @@
 		update board set b_hit = b_hit + 1 where b_num = #{b_num}
 	</update>
 	
-	
-	
 </mapper>

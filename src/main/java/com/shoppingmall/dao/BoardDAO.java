@@ -52,4 +52,8 @@ public class BoardDAO {
 		
 		sqlSession.delete(Namespace + ".DeleteBoard", b_num);
 	}
+	
+	public void UpdateBoardHit(Integer b_num) throws Exception{
+		sqlSession.update(Namespace + ".UpdateBoardHit", b_num);
+	}
 }

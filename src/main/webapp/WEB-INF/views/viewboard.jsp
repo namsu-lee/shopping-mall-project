@@ -74,7 +74,7 @@
 	
 		<div class="title">${ViewBoard.b_title}</div>
 		<div class="nick">${ViewBoard.nickname}</div>
-		<div class="wdate">${ViewBoard.b_wdate}</div>
+		<div class="wdate">${ViewBoard.b_wdate}&nbsp;&nbsp;조회수 ${ViewBoard.b_hit}</div>
 		<hr>
 		<div class="content">${ViewBoard.b_content}</div>
 		<hr>

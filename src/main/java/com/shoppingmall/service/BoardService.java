@@ -10,6 +10,7 @@ public interface BoardService {
 	public BoardVO UpdateGetBoard(Integer b_num) throws Exception;
 	public void WroteBoard(BoardVO vo) throws Exception;
 	public void UpdateBoard(BoardVO vo) throws Exception;
+	public void UpdateBoardHit(Integer b_num) throws Exception;
 	public void DeleteBoard(Integer b_num) throws Exception;
 	
 }

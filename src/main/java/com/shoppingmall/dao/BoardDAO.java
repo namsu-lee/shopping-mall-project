@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.shoppingmall.vo.BoardVO;
+import com.shoppingmall.vo.Pagination;
 
 @Repository
 public class BoardDAO {
@@ -17,14 +18,19 @@ public class BoardDAO {
 	
 	
 	private static final String Namespace = "com.shoppingmall.mapper.BoardMapper";
-	
-	public List<BoardVO> GetBoardList(Integer cateid, Integer page, String keyword) throws Exception{
+
+	public int getBoardListCnt(Integer cateid) throws Exception {
+		return sqlSession.selectOne(Namespace + ".getBoardListCnt", cateid);
+	}
+
+	public List<BoardVO> GetBoardList(Integer cateid, Integer page, String keyword, int startList, int listSize) throws Exception{
 		
 		HashMap<String, Object> data = new HashMap<String, Object>();
 		 
 		data.put("cateid", cateid);
 		data.put("keyword", keyword);
-		data.put("page", page);
+		data.put("startList", startList);
+		data.put("listSize", listSize);
 		
 		return sqlSession.selectList(Namespace + ".GetBoardList", data);
 	}

@@ -9,12 +9,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shoppingmall.service.BoardService;
 import com.shoppingmall.service.CategoryService;
 import com.shoppingmall.service.ReplyService;
 import com.shoppingmall.vo.BoardVO;
 import com.shoppingmall.vo.CategoryVO;
+import com.shoppingmall.vo.Pagination;
 import com.shoppingmall.vo.ReplyVO;
 
 
@@ -31,12 +33,23 @@ public class BoardController {
 	
 	//게시판 목록 조회
 	@RequestMapping(value = "/board/{cateid}")
-	public String MoveBoard(@PathVariable Integer cateid, Integer page, String keyword, Locale locale, Model model) throws Exception {
+	public String MoveBoard(@RequestParam(required = false, defaultValue = "1") int page
+			, @RequestParam(required = false, defaultValue = "1") int range, 
+			@PathVariable Integer cateid, String keyword, Locale locale, Model model) throws Exception {
 		
 		List<CategoryVO> selectList = cate.CategoryGet();
 		model.addAttribute("selectList", selectList);
 		
-		List<BoardVO> GetBoardList = service.GetBoardList(cateid, page, keyword);
+		int listCnt = service.getBoardListCnt(cateid);
+
+		Pagination pagination = new Pagination();
+		pagination.pageInfo(page, range, listCnt);
+		
+		int startList = pagination.getStartList();
+		int listSize = pagination.getListSize();
+		
+		List<BoardVO> GetBoardList = service.GetBoardList(cateid, page, keyword, startList, listSize);
+		model.addAttribute("pagination", pagination);
 		model.addAttribute("GetBoardList", GetBoardList);
 		return "/board";
 	}

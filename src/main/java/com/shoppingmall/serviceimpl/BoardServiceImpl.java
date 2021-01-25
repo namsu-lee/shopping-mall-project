@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.shoppingmall.dao.BoardDAO;
 import com.shoppingmall.service.BoardService;
 import com.shoppingmall.vo.BoardVO;
+import com.shoppingmall.vo.Pagination;
 @Service
 public class BoardServiceImpl implements BoardService{
 	
@@ -17,9 +18,8 @@ public class BoardServiceImpl implements BoardService{
 	
 	
 	@Override
-	public List<BoardVO> GetBoardList(Integer cateid, Integer page, String keyword) throws Exception{
-		
-		return BoardDAO.GetBoardList(cateid, page, keyword);
+	public List<BoardVO> GetBoardList(Integer cateid, Integer page, String keyword, int startList, int listSize) throws Exception{
+		return BoardDAO.GetBoardList(cateid, page, keyword, startList, listSize);
 	}
 	
 	@Override
@@ -53,4 +53,10 @@ public class BoardServiceImpl implements BoardService{
 	public void DeleteBoard(Integer b_num) throws Exception{
 		BoardDAO.DeleteBoard(b_num);
 	}
+	
+	@Override
+	public int getBoardListCnt(Integer cateid) throws Exception {
+		return BoardDAO.getBoardListCnt(cateid);
+	}
+
 }

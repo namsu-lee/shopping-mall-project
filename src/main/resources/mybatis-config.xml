@@ -13,6 +13,7 @@
 		<typeAlias type="com.shoppingmall.vo.ChattingBangVO" alias="ChattingBangVO"/>
 		<typeAlias type="com.shoppingmall.vo.MainVO" alias="MainVO"/>
 		<typeAlias type="com.shoppingmall.vo.NoticeVO" alias="NoticeVO"/>
+		<typeAlias type="com.shoppingmall.vo.Pagination" alias="Pagination"/>
 	</typeAliases>
 	
 </configuration>

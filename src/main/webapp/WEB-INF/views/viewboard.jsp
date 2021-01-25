@@ -34,7 +34,7 @@
 	.replybtn {
         color: dodgerblue;
         border: none;
-        padding: 10px 10px;
+        padding: 3px 3px;
         marin : 0;
         font-size: 16px;
         cursor: pointer;
@@ -45,6 +45,15 @@
         background: #2196F3;
         color: white;
     }
+    .dropdown-content {
+	  display: none;
+	  position: absolute;
+	  background-color: #f1f1f1;
+	  width:100%;
+	  top: 0px;
+	  right:0px;
+	  z-index: 1;
+	}
 </style>
 </head>
 <body>
@@ -61,13 +70,16 @@
 	<div class="reply" style="width:100%;display: inline-block;">
 	<table>
 	<c:forEach items="${GetReply}" var="GetReply">
-		<tr>
+		<tr id="reply${GetReply.replynum }" >
 			<td style="width:10%;">${GetReply.nickname}</td>
 			<td style="width:55%;">${GetReply.replycontent}</td>
 			<td style="width:15%;">${GetReply.replydate}</td>
-			<td style="width:5%;">
-				<button  class="replybtn" onclick="location.href='/board/${cateid}/${b_num}/${GetReply.replynum}/updatedreply'">
-				수정</button>
+			<td style="width:5%; position: relative; z-index: 0;">
+				<button onclick="myFunction()" class="replybtn">수정</button>
+				<div id="myDropdown" class="dropdown-content">
+					<button  class="replybtn" onclick="location.href='/board/${cateid}/${b_num}/${GetReply.replynum}/updatedreply'">
+					수정완료</button>
+				</div>
 			</td>
 			<td style="width:5%;">
 				<button  class="replybtn" onclick="location.href='/board/${cateid}/${b_num}/${GetReply.replynum}/deletereply'">
@@ -80,10 +92,10 @@
 	</div>
 	<div class="replywrite" style="width:100%;">
 		<form action="/board/${cateid}/${board.b_num}/wrotereply" method="post">
-			<table>
+			<table style="width:100%;">
 				<tr>
-					<td><textarea name="replycontent" style="resize: none; font-size:20px; padding:10px;"cols="130" rows="1"></textarea></td>
-					<td><button class="replybtn" type="submit">댓글입력</button></td>
+					<td style="width:80%; "><textarea name="replycontent" style="resize: none; width:95%; font-size:20px; padding:10px; " rows="1"></textarea></td>
+					<td style="width:10%;"><button class="replybtn" type="submit" >댓글입력</button></td>
 				</tr>
 			</table>
 		</form>
@@ -112,7 +124,9 @@ function deleteconfirm(){
 		
 		}
 	}
-	
+function myFunction() {
+	  document.getElementById("myDropdown").classList.toggle("show");
+	}
 </script>
 </c:forEach>
 </body>

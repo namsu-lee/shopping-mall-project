@@ -31,10 +31,15 @@ public class NoticeController {
 		List<NoticeVO> list = noticeService.getListNotice(memberid);
 		
 		//확인차 찍어봅니다.......
-		for(int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i).toString());
+		if(list != null) {
+			for(int i = 0; i < list.size(); i++) {
+				System.out.println(list.get(i).toString());
+			}
 		}
-		
+		if(list.isEmpty()){
+			System.out.println("게시물에 답글이 하나도 안달렸데");
+		}
+		System.out.println("list == " + list);
 		model.addAttribute("list", list);
 		return "/notice";
 	}

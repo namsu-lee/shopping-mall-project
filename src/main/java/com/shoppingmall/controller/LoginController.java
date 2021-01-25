@@ -105,6 +105,7 @@ public class LoginController {
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("memberid", result.getMemberid());
+			session.setAttribute("nickname", result.getNickname());
 			session.setMaxInactiveInterval(60*60);
 			
 			//접속자의 session을 리스트에 추가

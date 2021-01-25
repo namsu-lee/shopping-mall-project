@@ -105,6 +105,8 @@
 	</table>
 		
 	</div>
+	<c:choose>
+ 	<c:when test="${sessionScope.memberid != null }">
 	<div class="replywrite" style="width:100%;">
 		<form action="/board/${cateid}/${board.b_num}/wrotereply" method="post">
 			<table style="width:100%;">
@@ -115,16 +117,20 @@
 			</table>
 		</form>
 		</div>
+		</c:when> 
+ </c:choose>
 	<div style="float:left;">
 		<button  class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
 	</div>
+	<c:choose>
+ 	<c:when test="${sessionScope.memberid != null }">
 	<div style="float:right;">
 	<button  class="btn info" onclick="deleteconfirm()">글삭제</button>
 	<button  class="btn info" onclick="location.href='/board/${cateid}/${board.b_num}/updateboard'">수정</button>
  	<button  class="btn info" onclick="location.href='/board/${cateid}/writeboard'">글쓰기</button>
- 	
- 	
- </div>
+	</div>
+	</c:when> 
+ </c:choose>
 	</div>
 	
 </div>

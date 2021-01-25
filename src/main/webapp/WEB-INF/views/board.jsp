@@ -131,11 +131,13 @@ form.example::after {
 		</tr>
 	</c:forEach>
  </table>
- 
- <div style="float:right;">
- 	<button  class="btn info" onclick="location.href='/board/${cateid}/writeboard'">글쓰기</button>
-	
- </div>
+ <c:choose>
+ <c:when test="${sessionScope.memberid != null }">
+	 <div style="float:right;">
+	 	<button  class="btn info" onclick="location.href='/board/${cateid}/writeboard'">글쓰기</button>
+	 </div>
+ </c:when> 
+ </c:choose>
 <!-- 검색어 변수로 받아오기 -->
 <c:if test='${param.keyword != null}'>
 	<c:set var="pagekeyword" value="&keyword=${param.keyword}" />

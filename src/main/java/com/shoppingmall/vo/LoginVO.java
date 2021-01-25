@@ -8,6 +8,9 @@ public class LoginVO {
 	private String password;
 	private String Auto_Login;		//�ڵ� �α��� üũ
 	private String Auto_ID;			//���̵� ���� üũ
+	private String nickname;
+
+	
 
 	final static char[] hexArray = "0123456789abcdef".toCharArray();
 
@@ -59,11 +62,18 @@ public class LoginVO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 
 	@Override
 	public String toString() {
-		return "LoginVO [memberid=" + memberid + ", password=" + password + ", Auto_Login=" + Auto_Login + ", Auto_ID="
-				+ Auto_ID + "]";
+		return "LoginVO [memberid=" + memberid + ", password=" + password + ", Auto_Login=" + Auto_Login + ", Auto_ID=" + Auto_ID + ", nickname=" + nickname + "]";
 	}
+
 
 }

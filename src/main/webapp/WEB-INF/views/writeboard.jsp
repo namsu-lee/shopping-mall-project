@@ -33,7 +33,8 @@
 <%@ include file="../../exclude/leftmenu.jsp" %>
 	<div class="writecon">
 		<form method="post" action="/board/${cateid}/wroteboard">
-		
+		<input type="hidden" name="memberid" value="${sessionScope.memberid}">
+		<input type="hidden" name="nickname" value="${sessionScope.nickname}">
 		<input type="text" name="b_title" id="b_title" size="40"placeholder="제목을 입력해주세요">
 		<textarea name="b_content" ></textarea>
 		<br>

@@ -86,7 +86,7 @@
 			<td style="width:55%;">${GetReply.replycontent}</td>
 			<td style="width:15%;">${GetReply.replydate}</td>
 			<c:choose>
-			<c:when test="${ViewBoard.memberid == sessionScope.memberid}">
+			<c:when test="${GetReply.memberid == sessionScope.memberid}">
 			<td style="width:5%; ">
 			<div class="dropdown">
 				<button onclick="myFunction()" class="replybtn">수정</button>
@@ -129,21 +129,25 @@
 	<div style="float:left;">
 		<button  class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
 	</div>
-	<c:choose>
- 	
 	<div style="float:right;">
-	<c:when test="${ViewBoard.memberid == sessionScope.memberid }">
-	<button  class="btn info" onclick="deleteconfirm()">글삭제</button>
-	<button  class="btn info" onclick="location.href='/board/${cateid}/${ViewBoard.b_num}/updateboard'">수정</button>
-	</c:when>
-	<c:when test="${sessionScope.memberid != null }">
- 	<button  class="btn info" onclick="location.href='/board/${cateid}/writeboard'">글쓰기</button>
-	</div>
-	</c:when> 
- </c:choose>
-	</div>
+	<c:choose>
 	
+	<c:when test="${ViewBoard.memberid == sessionScope.memberid }">
+		
+			<button class="btn info" onclick="deleteconfirm()">글삭제</button>
+			<button class="btn info" onclick="location.href='/board/${cateid}/${ViewBoard.b_num}/updateboard'">수정</button>
+			<button class="btn info" onclick="location.href='/board/${cateid}/writeboard'">글쓰기</button>
+		</c:when>
+		<c:when test="${sessionScope.memberid != null }">
+			<button class="btn info" onclick="location.href='/board/${cateid}/writeboard'">글쓰기</button>
+			
+		</c:when>
+	</c:choose>
+	</div>
 </div>
+</div>	
+
+	
 <script>
 function deleteconfirm(){ 
 		var deletecon = confirm("삭제 하시겠습니까?")

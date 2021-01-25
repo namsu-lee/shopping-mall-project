@@ -29,8 +29,8 @@ public class BoardDAO {
 		return sqlSession.selectList(Namespace + ".GetBoardList", data);
 	}
 	
-	public List<BoardVO> ViewBoard(Integer b_num) throws Exception{
-		return sqlSession.selectList(Namespace + ".ViewBoard", b_num);
+	public BoardVO ViewBoard(Integer b_num) throws Exception{
+		return sqlSession.selectOne(Namespace + ".ViewBoard", b_num);
 	}
 	
 	public void WroteBoard(BoardVO vo) throws Exception{

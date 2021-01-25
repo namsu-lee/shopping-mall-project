@@ -23,7 +23,7 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	@Override
-	public List<BoardVO> ViewBoard(Integer b_num) throws Exception{
+	public BoardVO ViewBoard(Integer b_num) throws Exception{
 		
 		return BoardDAO.ViewBoard(b_num);
 	}

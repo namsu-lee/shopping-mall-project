@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@ include file="../../exclude/topnav.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -70,12 +71,12 @@
 <div class="view">
 <%@ include file="../../exclude/leftmenu.jsp" %>
 	<div class="viewcon" style="float:right; width:80%">
-	<c:forEach items="${ViewBoard}" var="board">
-		<div class="title">${board.b_title}</div>
-		<div class="nick">${board.nickname}</div>
-		<div class="wdate">${board.b_wdate}</div>
+	
+		<div class="title">${ViewBoard.b_title}</div>
+		<div class="nick">${ViewBoard.nickname}</div>
+		<div class="wdate">${ViewBoard.b_wdate}</div>
 		<hr>
-		<div class="content">${board.b_content}</div>
+		<div class="content">${ViewBoard.b_content}</div>
 		<hr>
 	<div class="reply" style="width:100%;display: inline-block;">
 	<table>
@@ -84,6 +85,8 @@
 			<td style="width:10%;">${GetReply.nickname}</td>
 			<td style="width:55%;">${GetReply.replycontent}</td>
 			<td style="width:15%;">${GetReply.replydate}</td>
+			<c:choose>
+			<c:when test="${ViewBoard.memberid == sessionScope.memberid}">
 			<td style="width:5%; ">
 			<div class="dropdown">
 				<button onclick="myFunction()" class="replybtn">수정</button>
@@ -100,6 +103,8 @@
 				<button  class="replybtn" onclick="location.href='/board/${cateid}/${b_num}/${GetReply.replynum}/deletereply'">
 				삭제</button>
 			</td>
+			</c:when>
+			</c:choose>
 		</tr>
 	</c:forEach>
 	</table>
@@ -108,7 +113,9 @@
 	<c:choose>
  	<c:when test="${sessionScope.memberid != null }">
 	<div class="replywrite" style="width:100%;">
-		<form action="/board/${cateid}/${board.b_num}/wrotereply" method="post">
+		<form action="/board/${cateid}/${ViewBoard.b_num}/wrotereply" method="post">
+			<input type="hidden" name="memberid" value="${sessionScope.memberid}">
+			<input type="hidden" name="nickname" value="${sessionScope.nickname}">
 			<table style="width:100%;">
 				<tr>
 					<td style="width:80%; "><textarea name="replycontent" style="resize: none; width:95%; font-size:20px; padding:10px; " rows="1"></textarea></td>
@@ -123,10 +130,13 @@
 		<button  class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
 	</div>
 	<c:choose>
- 	<c:when test="${sessionScope.memberid != null }">
+ 	
 	<div style="float:right;">
+	<c:when test="${ViewBoard.memberid == sessionScope.memberid }">
 	<button  class="btn info" onclick="deleteconfirm()">글삭제</button>
-	<button  class="btn info" onclick="location.href='/board/${cateid}/${board.b_num}/updateboard'">수정</button>
+	<button  class="btn info" onclick="location.href='/board/${cateid}/${ViewBoard.b_num}/updateboard'">수정</button>
+	</c:when>
+	<c:when test="${sessionScope.memberid != null }">
  	<button  class="btn info" onclick="location.href='/board/${cateid}/writeboard'">글쓰기</button>
 	</div>
 	</c:when> 
@@ -149,6 +159,6 @@ function myFunction() {
 	  document.getElementById("myDropdown").classList.toggle("show");
 	}
 </script>
-</c:forEach>
+
 </body>
 </html>

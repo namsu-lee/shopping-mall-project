@@ -48,7 +48,7 @@ public class BoardController {
 		List<CategoryVO> selectList = cate.CategoryGet();
 		model.addAttribute("selectList", selectList);
 		
-		List<BoardVO> ViewBoard = service.ViewBoard(b_num);
+		BoardVO ViewBoard = service.ViewBoard(b_num);
 		model.addAttribute("ViewBoard", ViewBoard);
 		
 		List<ReplyVO> GetReply = reply.GetReply(b_num);

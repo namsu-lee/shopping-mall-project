@@ -1,13 +1,15 @@
 package com.shoppingmall.vo;
 
 public class NoticeVO {
-	private int board_no; //게시글 번호
-	private int reply_no; //댓글  번호
-	private int notice_no;//알람  번호
-	private String memberid;// 게시글을 쓴 사람의 id	
-	private String another_memberid;//댓글을 쓴 사람의 id
-	private String read_check = "n"; //		c / n   ==>   c가 읽은거 n이 안읽은거
-	private String regdate; //알람/댓글 작성일?
+	private int board_no; // 게시글 번호
+	private int reply_no; // 댓글 번호
+	private int notice_no;// 알람 번호
+	private String memberid;// 게시글을 쓴 사람의 id
+	private String another_memberid;// 댓글을 쓴 사람의 id
+	private String read_check = "n"; // c / n ==> c가 읽은거 n이 안읽은거
+	private String regdate; // 알람/댓글 작성일?
+	private String nickname; // 댓글을 쓴 사람의 닉네임
+	private String b_title; // 게시글의 제목
 
 	public int getBoard_no() {
 		return board_no;
@@ -65,11 +67,27 @@ public class NoticeVO {
 		this.regdate = regdate;
 	}
 
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
+	public String getB_title() {
+		return b_title;
+	}
+
+	public void setB_title(String b_title) {
+		this.b_title = b_title;
+	}
+
 	@Override
 	public String toString() {
 		return "NoticeVO [board_no=" + board_no + ", reply_no=" + reply_no + ", notice_no=" + notice_no + ", memberid="
 				+ memberid + ", another_memberid=" + another_memberid + ", read_check=" + read_check + ", regdate="
-				+ regdate + "]";
+				+ regdate + ", nickname=" + nickname + ", b_title=" + b_title + "]";
 	}
 
 }

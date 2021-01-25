@@ -22,4 +22,13 @@
 		insert into notice (board_no, reply_no, memberid, another_memberid, read_check, regdate) 
 			values (#{board_no}, #{reply_no}, #{memberid}, #{another_memberid}, #{read_check}, now());	
 	</insert>
+	
+	<!-- 알람 리스트 가져오기 -->
+	<select id="getListNotice" resultType="NoticeVO">
+		    select notice.*, reply.nickname, board.b_title from notice 
+		    			inner join reply on notice.reply_no = reply.replynum 
+							inner join board on notice.board_no = board.b_num
+									where notice.read_check = 'n' and notice.memberid = #{memberid}
+										and notice.another_memberid not in (#{memberid}) order by notice_no desc;
+	</select>
 </mapper>

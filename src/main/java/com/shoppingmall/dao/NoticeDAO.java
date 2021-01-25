@@ -1,5 +1,6 @@
 package com.shoppingmall.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -35,5 +36,11 @@ public class NoticeDAO {
 	//notice 테이블에 저장
 	public int NoticeList(NoticeVO noticeVO) {
 		return sqlSession.insert(Namespace + ".NoticeList", noticeVO);
+	}
+
+
+	//알람 리스트 가져오기
+	public List<NoticeVO> getListNotice(String memberid) {
+		return sqlSession.selectList(Namespace + ".getListNotice", memberid);
 	}
 }

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,10 +26,7 @@ div .paginator {
 	margin-bottom: 20px;
 }
 </style>
-<body>
-		<!-- header -->
-<%-- 		<%@ include file="/view/header.jsp" %> --%>
-		
+<body>	
 		<section>
 		<h3>알림</h3>
 		<!-- board list -->
@@ -40,49 +38,26 @@ div .paginator {
 					<th>내용</th>
 				</tr>
 			</thead>
-			<!-- @@@@@@ -->
-				<tr>
-					<td colspan="2">새로운 알림이 없습니다.</td>
-				</tr>
 				<tbody>
-					<tr class="active">
-						<td width="10%" nowrap><p>3</p></td>
-						<td><p><a href="/user.do?user=${noti.anotherMemberId }">홍길동</a> 님이 
-							<a href="/board/read.do?no=${noti.articleNo }" onclick="readNoti(${noti.number});" >
-							5번째 글</a>에 
-							<strong>댓글</strong>을 남겼습니다.</p> 
-							<small><i>하루전</i></small> 
-							<small style="float: right; margin-left: 10px">
-							<a href="noti.do" onclick="deleteNoti(${noti.number});">삭제</a></small>
-							<small style="float: right;">읽음</small>
-						</td>
-					</tr>
-					
-					<tr class="active">
-						<td width="10%" nowrap><p>2</p></td>
-						<td><p><a href="/user.do?user=${noti.anotherMemberId }">홍길동</a> 님이 
-							<a href="/board/read.do?no=${noti.articleNo }" onclick="readNoti(${noti.number});" >
-							3번째 글</a>에 
-							<strong>댓글</strong>을 남겼습니다.</p> 
-							<small><i>하루전</i></small> 
-							<small style="float: right; margin-left: 10px">
-							<a href="noti.do" onclick="deleteNoti(${noti.number});">삭제</a></small>
-							<small style="float: right;">안읽음</small>
-						</td>
-					</tr>
-					
-					<tr class="active">
-						<td width="10%" nowrap><p>1</p></td>
-						<td><p><a href="/user.do?user=${noti.anotherMemberId }">홍길동</a> 님이 
-							<a href="/board/read.do?no=${noti.articleNo }" onclick="readNoti(${noti.number});" >
-							3번째 글</a>에 
-							<strong>댓글</strong>을 남겼습니다.</p> 
-							<small><i>하루전전</i></small> 
-							<small style="float: right; margin-left: 10px">
-							<a href="noti.do" onclick="deleteNoti(${noti.number});">삭제</a></small>
-							<small style="float: right;">안읽음</small>
-						</td>
-					</tr>
+					<c:if test="${list == null}">	
+						<tr>
+							<td colspan="2">새로운 알림이 없습니다.</td>
+						</tr>
+					</c:if>
+					<c:forEach items="${list}" var="list" varStatus="status">
+							<tr class="active">		<!-- @@@여기 고쳐야함....@@@@ -->
+								<td width="10%" nowrap><p>${list.notice_no}"</p></td>
+								<td><p> 님이 
+									<a href="#" onclick="readNoti(${list.notice_no});" >
+									${list.b_title}</a>에
+									<strong>댓글</strong>을 남겼습니다.</p>
+									<small><i>${list.regdate}</i></small> 
+									<small style="float: right; margin-left: 10px">
+									<a href="#" onclick="deleteNoti(${list.notice_no});">삭제</a></small>
+									<small style="float: right;">안읽음</small>
+								</td>
+							</tr>
+					</c:forEach>
 				</tbody>
 		</table>
 		

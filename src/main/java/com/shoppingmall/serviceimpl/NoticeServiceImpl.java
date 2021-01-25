@@ -1,5 +1,6 @@
 package com.shoppingmall.serviceimpl;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
@@ -33,6 +34,12 @@ public class NoticeServiceImpl implements NoticeService{
 	@Override
 	public int NoticeList(NoticeVO noticeVO) throws Exception {
 		return noticeDAO.NoticeList(noticeVO);
+	}
+
+	//알람 리스트 가져오기
+	@Override
+	public List<NoticeVO> getListNotice(String memberid) throws Exception {
+		return noticeDAO.getListNotice(memberid);
 	}
 	
 }

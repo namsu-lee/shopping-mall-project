@@ -1,5 +1,6 @@
 package com.shoppingmall.service;
 
+import java.util.List;
 import java.util.Map;
 
 import com.shoppingmall.vo.BoardVO;
@@ -15,5 +16,8 @@ public interface NoticeService {
 
 	//notice 테이블에 저장
 	public int NoticeList(NoticeVO noticeVO) throws Exception;
+
+	//알람 리스트 가져오기
+	public List<NoticeVO> getListNotice(String memberid) throws Exception;
 
 }

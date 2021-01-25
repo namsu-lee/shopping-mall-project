@@ -17,9 +17,14 @@
 	</select>
 	
 	<!-- 게시글 갯수 가져오기 -->
-	<select id="getBoardListCnt" resultType="int" parameterType="Integer">
+	<select id="getBoardListCnt" resultType="int" parameterType="hashMap">
 		SELECT count(*) as listCnt
 		FROM board where cateid = #{cateid} 
+		<if test="keyword != null ">
+		    AND  (nickname LIKE CONCAT('%',#{keyword},'%')
+			or b_title like CONCAT('%',#{keyword},'%')
+			or b_content like CONCAT('%',#{keyword},'%'))
+		  </if>
 	</select>
 
 

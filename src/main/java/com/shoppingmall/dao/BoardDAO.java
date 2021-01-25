@@ -19,7 +19,11 @@ public class BoardDAO {
 	private static final String Namespace = "com.shoppingmall.mapper.BoardMapper";
 
 	public int getBoardListCnt(Integer cateid, String keyword) throws Exception {
-		return sqlSession.selectOne(Namespace + ".getBoardListCnt", cateid, keyword);
+		HashMap<String, Object> data = new HashMap<String, Object>();
+		data.put("cateid", cateid);
+		data.put("keyword", keyword);
+		
+		return sqlSession.selectOne(Namespace + ".getBoardListCnt", data);
 	}
 
 	public List<BoardVO> GetBoardList(Integer cateid, Integer page, String keyword, int startList, int listSize) throws Exception{

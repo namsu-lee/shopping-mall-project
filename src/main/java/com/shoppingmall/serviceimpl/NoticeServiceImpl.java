@@ -41,5 +41,23 @@ public class NoticeServiceImpl implements NoticeService{
 	public List<NoticeVO> getListNotice(String memberid) throws Exception {
 		return noticeDAO.getListNotice(memberid);
 	}
+
+	//알람 읽음처리
+	@Override
+	public int ReadCheck_Change(int notice_no) throws Exception {
+		return noticeDAO.ReadCheck_Change(notice_no);
+	}
+
+	//알람 삭제처리
+	@Override
+	public int ReadCheck_Delete(int notice_no) throws Exception {
+		return noticeDAO.ReadCheck_Delete(notice_no);
+	}
+
+	//읽지 않은 알람의 개수를 구해옴
+	@Override
+	public int getReadCount(String memberid) throws Exception {
+		return noticeDAO.getReadCount(memberid);
+	}
 	
 }

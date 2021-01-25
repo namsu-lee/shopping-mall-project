@@ -19,8 +19,8 @@
 	
 	<!-- 댓글을 쓰면 notice 테이블에 저장 -->
 	<insert id="NoticeList">
-		insert into notice (board_no, reply_no, memberid, another_memberid, read_check, regdate) 
-			values (#{board_no}, #{reply_no}, #{memberid}, #{another_memberid}, #{read_check}, now());	
+		insert into notice (board_no, reply_no, memberid, another_memberid, read_check, regdate, cateid) 
+			values (#{board_no}, #{reply_no}, #{memberid}, #{another_memberid}, #{read_check}, now(), #{cateid});	
 	</insert>
 	
 	<!-- 알람 리스트 가져오기 -->
@@ -28,7 +28,23 @@
 		    select notice.*, reply.nickname, board.b_title from notice 
 		    			inner join reply on notice.reply_no = reply.replynum 
 							inner join board on notice.board_no = board.b_num
-									where notice.read_check = 'n' and notice.memberid = #{memberid}
+									where notice.memberid = #{memberid}
 										and notice.another_memberid not in (#{memberid}) order by notice_no desc;
+	</select>
+	
+	
+	<!-- 알람 읽음처리 -->
+	<update id="ReadCheck_Change">
+		update notice set read_check = 'c' where notice_no = #{notice_no}
+	</update>
+	
+	<!-- 알람 삭제처리 -->
+	<delete id="ReadCheck_Delete">
+		delete from notice where notice_no = #{notice_no}
+	</delete>
+	
+	<!-- 종이 채워지냐 안채워지냐를 따지는 쿼리문 -->
+	<select id="getReadCount" resultType="Integer">
+		select count(*) from notice where memberid = #{memberid} and read_check = 'n' and another_memberid not in (#{memberid});
 	</select>
 </mapper>

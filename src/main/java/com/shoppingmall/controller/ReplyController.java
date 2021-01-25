@@ -46,6 +46,7 @@ public class ReplyController {
 		//알람 로직
 		//가지고 올것 -> b_num : 게시글 번호, 댓글 번호
 		NoticeVO noticeVO = new NoticeVO();
+		noticeVO.setCateid(cateid); 			//카테고리 아이디
 		noticeVO.setBoard_no(b_num);			//게시글 번호
 		noticeVO.setReply_no(noticeService.getReplyNo());//댓글 번호
 		noticeVO.setMemberid(map.get("memberid"));		//게시글을 쓴 사람의 id(알람 받을 사람)

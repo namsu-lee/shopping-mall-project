@@ -13,16 +13,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.shoppingmall.service.CategoryService;
 import com.shoppingmall.service.MainService;
+import com.shoppingmall.service.NoticeService;
 import com.shoppingmall.service.RegisterService;
 import com.shoppingmall.service.VisitcountService;
 import com.shoppingmall.vo.AccessorVO;
-import com.shoppingmall.vo.BoardVO;
 import com.shoppingmall.vo.CategoryVO;
 import com.shoppingmall.vo.MainVO;
 import com.shoppingmall.vo.MembersVO;
@@ -48,6 +47,9 @@ public class HomeController {
 	@Inject
 	private MainService mainService;
 	
+	@Inject
+	private NoticeService noticeService;
+	 
 	private static List<String> list = new ArrayList<String>();
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -55,6 +57,13 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpServletRequest request) throws Exception {
+		
+		HttpSession session = request.getSession(true);
+		String SessionID = (String)session.getAttribute("memberid");
+		
+		//읽지 않은 알람의 개수를 구해옴
+		int read_count = noticeService.getReadCount(SessionID);
+		System.out.println("read_count == " + read_count);
 		
 		//접속자 수, 접속자 아이디 가져온다.
 		int num = AccessorVO.getHttpSession().size();
@@ -70,8 +79,9 @@ public class HomeController {
 			System.out.println(list.get(i));
 		}
 		
-		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
 		model.addAttribute("list", list);								//접속자 아이디
+		model.addAttribute("read_count", read_count);
+		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
 		model.addAttribute("TotalCount", visitcountService.getTotalCount());//총 방문자 수
 		model.addAttribute("TodayCount", visitcountService.getTodayCount());//오늘 방문자 수
 		
@@ -94,7 +104,6 @@ public class HomeController {
 		//로그인 정보 가져오기
 		for (int i = 0; i < cookies.length; i++) {
 			if (cookies[i].getName().equals("Auto_Login")) {
-				HttpSession session = request.getSession(true);
 				session.setAttribute("memberid", cookies[i].getValue());
 			}
 		}

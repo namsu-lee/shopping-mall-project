@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shoppingmall.service.BoardService;
 import com.shoppingmall.service.CategoryService;
+import com.shoppingmall.service.NoticeService;
 import com.shoppingmall.service.ReplyService;
 import com.shoppingmall.vo.BoardVO;
 import com.shoppingmall.vo.CategoryVO;
@@ -29,7 +30,8 @@ public class BoardController {
 	private CategoryService cate;
 	@Inject
 	private ReplyService reply;
-	
+	@Inject
+	private NoticeService noticeService;
 	
 	//게시판 목록 조회
 	@RequestMapping(value = "/board/{cateid}")
@@ -58,6 +60,8 @@ public class BoardController {
 	@RequestMapping(value = "/board/{cateid}/{b_num}")
 	public String ViewBoard(@PathVariable Integer cateid, @PathVariable Integer b_num, Locale locale, Model model) throws Exception {
 		
+		//noticeService.ReadCheck_Change(notice_no);
+		
 		service.UpdateBoardHit(b_num);
 		
 		List<CategoryVO> selectList = cate.CategoryGet();
@@ -68,7 +72,7 @@ public class BoardController {
 		
 		List<ReplyVO> GetReply = reply.GetReply(b_num);
 		model.addAttribute("GetReply", GetReply);
-		
+
 		return "/viewboard";
 	}
 	

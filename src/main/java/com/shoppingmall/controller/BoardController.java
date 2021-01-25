@@ -40,7 +40,7 @@ public class BoardController {
 		List<CategoryVO> selectList = cate.CategoryGet();
 		model.addAttribute("selectList", selectList);
 		
-		int listCnt = service.getBoardListCnt(cateid);
+		int listCnt = service.getBoardListCnt(cateid, keyword);
 
 		Pagination pagination = new Pagination();
 		pagination.pageInfo(page, range, listCnt);

@@ -13,5 +13,5 @@ public interface BoardService {
 	public void UpdateBoard(BoardVO vo) throws Exception;
 	public void UpdateBoardHit(Integer b_num) throws Exception;
 	public void DeleteBoard(Integer b_num) throws Exception;
-	public int getBoardListCnt(Integer cateid) throws Exception;
+	public int getBoardListCnt(Integer cateid, String keyword) throws Exception;
 }

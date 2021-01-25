@@ -55,8 +55,8 @@ public class BoardServiceImpl implements BoardService{
 	}
 	
 	@Override
-	public int getBoardListCnt(Integer cateid) throws Exception {
-		return BoardDAO.getBoardListCnt(cateid);
+	public int getBoardListCnt(Integer cateid, String keyword) throws Exception {
+		return BoardDAO.getBoardListCnt(cateid, keyword);
 	}
 
 }

@@ -101,6 +101,9 @@
         	window.open("/mypage","new","width=500,height=800,top=100,left=100");
         }
         
+        function noticeOpen() {
+        	window.open("/notice","new","width=500,height=800,top=100,left=100");
+        }
     </script>
 </body>
 </html>

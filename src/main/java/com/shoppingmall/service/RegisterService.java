@@ -19,4 +19,7 @@ public interface RegisterService {
 	//네이버 회원가입
 	public int NaverRegister(MembersVO vo) throws Exception;
 
+	//이미 디비에 저장되어있나 검사 해주는 로직
+	public int NaverCheck(String string) throws Exception;
+
 }

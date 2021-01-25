@@ -40,79 +40,54 @@ div .paginator {
 					<th>내용</th>
 				</tr>
 			</thead>
-			<c:if test="${!notiData.hasNotiList() }">
+			<!-- @@@@@@ -->
 				<tr>
 					<td colspan="2">새로운 알림이 없습니다.</td>
 				</tr>
-			</c:if>
 				<tbody>
-				<c:forEach var="noti" items="${notiData.notiList }">
-				
-				<c:if test="${!noti.readCheck }">
 					<tr class="active">
-						<td width="10%" nowrap><p>${noti.number}</p></td>
-
-						<c:if test="${noti.type == 'like'}">
-						<td><p><a href="/user.do?user=${noti.anotherMemberId }">${noti.anotherUserNickname }</a> 님이 
-									<a href="/board/read.do?no=${noti.articleNo }" onclick="readNoti(${noti.number});" >
-									${noti.articleNo }번째 글</a>에 
-									<strong>좋아요</strong> 하였습니다.</p> 
-									<small><i>${noti.getTransferRegDate() }전</i></small> 
-									<small style="float: right; margin-left: 10px">
-									<a href="noti.do" onclick="deleteNoti(${noti.number});">삭제</a></small>
-									<small style="float: right;">안읽음</small>
-									</td>
-						</c:if>
-						
-						<c:if test="${noti.type == 'reply'}">
-						<td><p><a href="/user.do?user=${noti.anotherMemberId }">${noti.anotherUserNickname }</a> 님이 
-									<a href="/board/read.do?no=${noti.articleNo }" onclick="readNoti(${noti.number});">
-									${noti.articleNo }번째 글</a>에 
-									<strong>댓글</strong>을 작성하였습니다.</p> 
-									<small><i>${noti.getTransferRegDate() }전</i></small>
-									<small style="float: right; margin-left: 10px">
-									<a href="noti.do" onclick="deleteNoti(${noti.number});">삭제</a></small>
-									<small style="float: right;">안읽음</small>
-									</td>
-						</c:if>
+						<td width="10%" nowrap><p>3</p></td>
+						<td><p><a href="/user.do?user=${noti.anotherMemberId }">홍길동</a> 님이 
+							<a href="/board/read.do?no=${noti.articleNo }" onclick="readNoti(${noti.number});" >
+							5번째 글</a>에 
+							<strong>댓글</strong>을 남겼습니다.</p> 
+							<small><i>하루전</i></small> 
+							<small style="float: right; margin-left: 10px">
+							<a href="noti.do" onclick="deleteNoti(${noti.number});">삭제</a></small>
+							<small style="float: right;">읽음</small>
+						</td>
 					</tr>
-					</c:if>
 					
-					
-					<c:if test="${noti.readCheck }">
-					<tr>
-						<td width="10%" nowrap><p>${noti.number}</p></td>
-
-						<c:if test="${noti.type == 'like'}">
-						<td><p><a href="/user.do?user=${noti.anotherMemberId }">${noti.anotherUserNickname }</a> 님이 
-									<a href="/board/read.do?no=${noti.articleNo }">
-									${noti.articleNo }번째 글</a>에 <strong>좋아요</strong> 하였습니다.</p> 
-									<small><i>${noti.getTransferRegDate() }전</i></small> 
-									<small style="float: right; margin-left: 10px">
-									<a href="noti.do" onclick="deleteNoti(${noti.number});">삭제</a></small>
-									<small style="float: right;">읽음</small>
-									</td>
-						</c:if>
-						
-						<c:if test="${noti.type == 'reply'}">
-						<td><p><a href="/user.do?user=${noti.anotherMemberId }">${noti.anotherUserNickname }</a> 님이 
-									<a href="/board/read.do?no=${noti.articleNo }">
-									${noti.articleNo }번째 글</a>에 <strong>댓글</strong>을 작성하였습니다.</p> 
-									<small><i>${noti.getTransferRegDate() }전</i></small>
-									<small style="float: right; margin-left: 10px">
-									<a href="noti.do" onclick="deleteNoti(${noti.number});">삭제</a></small>
-									<small style="float: right;">읽음</small>
-									</td>
-						</c:if>
+					<tr class="active">
+						<td width="10%" nowrap><p>2</p></td>
+						<td><p><a href="/user.do?user=${noti.anotherMemberId }">홍길동</a> 님이 
+							<a href="/board/read.do?no=${noti.articleNo }" onclick="readNoti(${noti.number});" >
+							3번째 글</a>에 
+							<strong>댓글</strong>을 남겼습니다.</p> 
+							<small><i>하루전</i></small> 
+							<small style="float: right; margin-left: 10px">
+							<a href="noti.do" onclick="deleteNoti(${noti.number});">삭제</a></small>
+							<small style="float: right;">안읽음</small>
+						</td>
 					</tr>
-					</c:if>
 					
-				</c:forEach>
+					<tr class="active">
+						<td width="10%" nowrap><p>1</p></td>
+						<td><p><a href="/user.do?user=${noti.anotherMemberId }">홍길동</a> 님이 
+							<a href="/board/read.do?no=${noti.articleNo }" onclick="readNoti(${noti.number});" >
+							3번째 글</a>에 
+							<strong>댓글</strong>을 남겼습니다.</p> 
+							<small><i>하루전전</i></small> 
+							<small style="float: right; margin-left: 10px">
+							<a href="noti.do" onclick="deleteNoti(${noti.number});">삭제</a></small>
+							<small style="float: right;">안읽음</small>
+						</td>
+					</tr>
 				</tbody>
 		</table>
 		
 		</section>
 	</div>
-	<script src="/js/myNoti.js?version=1"></script>
+
 </body>
 </html>

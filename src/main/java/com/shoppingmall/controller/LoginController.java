@@ -216,10 +216,12 @@ public class LoginController {
 		//response의 nickname값 파싱
 		MembersVO vo = new MembersVO();
 		vo.setMemberid((String)response.get("id"));
+		vo.setPassword((String)response.get("id") + (String)response.get("id"));
 		vo.setNickname((String)response.get("nickname"));
 		vo.setEmail((String)response.get("email"));
+		vo.setAddress("##########-##########");
 		vo.setPhone((String)response.get("mobile"));
-		vo.setMemberid((String)response.get("name"));
+		vo.setMembername((String)response.get("name"));
 		
 		int result = registerService.NaverRegister(vo);
 		if(result == 1) {

@@ -47,6 +47,13 @@ public class RegisterServiceImpl implements RegisterService{
 	@Override
 	public int NaverRegister(MembersVO vo) throws Exception {
 		return registerDAO.NaverRegister(vo);
+	}
+
+
+	//이미 디비에 저장되어있나 검사 해주는 로직
+	@Override
+	public int NaverCheck(String memberid) throws Exception {
+		return registerDAO.NaverCheck(memberid);
 	}  
  
 	

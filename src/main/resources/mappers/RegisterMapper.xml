@@ -22,6 +22,10 @@
 			 values (#{memberid}, #{nickname}, #{password}, #{membername}, #{email}, #{address}, #{phone}, #{uuid}, #{uploadPath}, #{fileName})
 	</insert>
 	
+	<select id="NaverCheck" resultType="Integer">
+		select count(*) from members where memberid = #{memberid}
+	</select>
+	
 	<!-- 네이버 회원가입 -->
 	<insert id="NaverRegister" parameterType="MembersVO">
 		<!-- memberid, nickname, membername, email, phone, uuid, uploadPath, fileName 추가 -->

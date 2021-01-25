@@ -223,17 +223,31 @@ public class LoginController {
 		vo.setPhone((String)response.get("mobile"));
 		vo.setMembername((String)response.get("name"));
 		
-		int result = registerService.NaverRegister(vo);
-		if(result == 1) {
+		//이미 디비에 저장되어있나 검사 해주는 로직 짜야한다.
+		if(registerService.NaverCheck((String)response.get("id")) == 0) {
 			
+			int result = registerService.NaverRegister(vo);
+			if(result == 1) {
+				
+				//AccessorVO.list에 해당 사용자의 세션 추가
+				session.setAttribute("memberid", (String)response.get("id")); //세션 생성
+				
+				//총 방문자 수 +1 , 오늘 방문자 수 +1
+				if(visitcountService.getTodayUser(vo.getMemberid()) == 0) {
+					visitcountService.UpdateTodayCount(vo.getMemberid());
+				}
+				visitcountService.UpdateTotalCount();
+			}
+		}
+		else {
 			//AccessorVO.list에 해당 사용자의 세션 추가
 			session.setAttribute("memberid", (String)response.get("id")); //세션 생성
 			
 			//총 방문자 수 +1 , 오늘 방문자 수 +1
 			if(visitcountService.getTodayUser(vo.getMemberid()) == 0) {
 				visitcountService.UpdateTodayCount(vo.getMemberid());
+				visitcountService.UpdateTotalCount();
 			}
-			visitcountService.UpdateTotalCount();
 		}
 		//model.addAttribute("result", apiResult);
 		return "redirect:/";

@@ -47,5 +47,11 @@ public class RegisterDAO {
 	}
 
 
+	//이미 디비에 저장되어있나 검사 해주는 로직
+	public int NaverCheck(String memberid) {
+		return sqlSession.selectOne(Namespace + ".NaverCheck", memberid);
+	}
+
+
 	
 }

@@ -48,12 +48,22 @@
     .dropdown-content {
 	  display: none;
 	  position: absolute;
-	  background-color: #f1f1f1;
-	  width:100%;
-	  top: 0px;
-	  right:0px;
+	  background-color: white;
+	  min-width: 160px;
 	  z-index: 1;
+	  right:100%;
+	  top:0px;
+	  padding:5px;
+	  width:1500%;
 	}
+	.dropdown{
+	position: relative; 
+	display: inline-block;
+	z-index: 0;
+	margin:0;
+	padding:0;
+	}
+	.show {display: block;}
 </style>
 </head>
 <body>
@@ -74,12 +84,17 @@
 			<td style="width:10%;">${GetReply.nickname}</td>
 			<td style="width:55%;">${GetReply.replycontent}</td>
 			<td style="width:15%;">${GetReply.replydate}</td>
-			<td style="width:5%; position: relative; z-index: 0;">
+			<td style="width:5%; ">
+			<div class="dropdown">
 				<button onclick="myFunction()" class="replybtn">수정</button>
 				<div id="myDropdown" class="dropdown-content">
-					<button  class="replybtn" onclick="location.href='/board/${cateid}/${b_num}/${GetReply.replynum}/updatedreply'">
+					<form action="/board/${cateid}/${b_num}/${GetReply.replynum}/updatedreply">
+					<textarea rows="1" style="width:100%;resize:none;" name="replycontent"></textarea>
+					<button type="submit"  class="replybtn" >
 					수정완료</button>
+					</form>
 				</div>
+			</div>
 			</td>
 			<td style="width:5%;">
 				<button  class="replybtn" onclick="location.href='/board/${cateid}/${b_num}/${GetReply.replynum}/deletereply'">

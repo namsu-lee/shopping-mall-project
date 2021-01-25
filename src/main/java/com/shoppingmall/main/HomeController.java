@@ -13,14 +13,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.shoppingmall.service.CategoryService;
+import com.shoppingmall.service.MainService;
 import com.shoppingmall.service.RegisterService;
 import com.shoppingmall.service.VisitcountService;
 import com.shoppingmall.vo.AccessorVO;
+import com.shoppingmall.vo.BoardVO;
 import com.shoppingmall.vo.CategoryVO;
+import com.shoppingmall.vo.MainVO;
 import com.shoppingmall.vo.MembersVO;
 
 
@@ -40,6 +44,9 @@ public class HomeController {
 	
 	@Inject
 	VisitcountService visitcountService;
+	
+	@Inject
+	private MainService mainService;
 	
 	private static List<String> list = new ArrayList<String>();
 	/**
@@ -91,8 +98,35 @@ public class HomeController {
 				session.setAttribute("memberid", cookies[i].getValue());
 			}
 		}
-
+		
+		//메인 불러오기
+		MainVO UpdateGetMain = mainService.UpdateGetMain();
+		model.addAttribute("UpdateGetMain", UpdateGetMain);
+		
+		
 		return "/main";
 	}
 	
+	//메인 수정 페이지
+	@RequestMapping(value = "/mainupdate")
+	public String UpdateGetMain(Locale locale, Model model) throws Exception {
+		//게시판 목록 불러오기
+		List<CategoryVO> selectList = service.CategoryGet();
+		model.addAttribute("selectList", selectList);
+		
+		//메인 불러오기
+		MainVO UpdateGetMain = mainService.UpdateGetMain();
+		model.addAttribute("UpdateGetMain", UpdateGetMain);
+		
+		return "/mainupdate";
+	}
+	
+	//메인 수정 로직
+	@RequestMapping(value = "/mainupdated")
+	public String UpdatedMain(MainVO vo, Locale locale, Model model) throws Exception {
+		
+		mainService.UpdateMain(vo);
+		
+		return "redirect:/";
+	}
 }

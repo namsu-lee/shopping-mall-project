@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shoppingmall.mapper.MainMapper">
+	<!-- 메인 불러오기 -->
+	<select id="UpdateGetMain" resultType="MainVO">
+		select * from main 
+	</select>
+	
+	<!-- 메인 수정 -->
+	<update id="UpdateMain" parameterType="MainVO">
+		UPDATE main SET m_content=#{m_content}
+	</update>
+</mapper>

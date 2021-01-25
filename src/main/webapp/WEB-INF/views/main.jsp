@@ -20,9 +20,9 @@
 <div class="main">
 	<%@ include file="../../exclude/leftmenu.jsp" %>
 	<div style="width: 80%; float:right;">
-        <button class="btn info">메인화면 수정</button>
+        <button class="btn info" onclick="location.href='/mainupdate'">메인화면 수정</button>
         <br>
-		뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?뭐야 어떻게 되는거임?
+		${UpdateGetMain.m_content }
     </div>    
 </div>
 <!--Start of Tawk.to Script-->

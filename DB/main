@@ -1,0 +1,3 @@
+create table main(
+	m_content text
+);

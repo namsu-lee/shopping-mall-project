@@ -29,7 +29,7 @@ public class ReplyController {
 	public String WroteReply(@PathVariable Integer cateid, @PathVariable Integer b_num, ReplyVO vo, Locale locale, Model model) throws Exception {
 
 		reply.WroteReply(vo);
-		
+		System.out.println(vo.getReplynum());
 		
 		BoardVO boardVO = new BoardVO();
 		boardVO.setCateid(cateid);

@@ -163,6 +163,7 @@ form.example::after {
 </div>
 </div> 	
 </div>
+<%@ include file="../../exclude/footer.jsp" %> 
 </div>
 <script>
 //이전 버튼 이벤트

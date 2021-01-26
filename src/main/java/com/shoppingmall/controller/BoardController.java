@@ -1,6 +1,7 @@
 package com.shoppingmall.controller;
 
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -17,9 +18,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.shoppingmall.service.BoardService;
 import com.shoppingmall.service.CategoryService;
 import com.shoppingmall.service.NoticeService;
+import com.shoppingmall.service.RegisterService;
 import com.shoppingmall.service.ReplyService;
+import com.shoppingmall.service.VisitcountService;
+import com.shoppingmall.vo.AccessorVO;
 import com.shoppingmall.vo.BoardVO;
 import com.shoppingmall.vo.CategoryVO;
+import com.shoppingmall.vo.MembersVO;
 import com.shoppingmall.vo.Pagination;
 import com.shoppingmall.vo.ReplyVO;
 
@@ -35,6 +40,11 @@ public class BoardController {
 	private ReplyService reply;
 	@Inject
 	private NoticeService noticeService;
+	@Inject
+	VisitcountService visitcountService;
+	@Inject
+	private RegisterService registerService;
+	private static List<String> list = new ArrayList<String>();
 	
 	//게시판 목록 조회
 	@RequestMapping(value = "/board/{cateid}")
@@ -56,6 +66,27 @@ public class BoardController {
 		List<BoardVO> GetBoardList = service.GetBoardList(cateid, page, keyword, startList, listSize);
 		model.addAttribute("pagination", pagination);
 		model.addAttribute("GetBoardList", GetBoardList);
+		
+		//접속자 수, 접속자 아이디 가져온다.
+		int num = AccessorVO.getHttpSession().size();
+		for(int i = 0; i < AccessorVO.getHttpSession().size(); i++) {
+			String memberid = (String) AccessorVO.getHttpSession().get(i).getAttribute("memberid");
+			MembersVO vo = registerService.ListNameAccessor(memberid);
+			list.add(vo.getNickname());
+		}
+		System.out.println("list 크기 == " + list.size());
+		
+		System.out.println("현재 접속자 수 :: " + AccessorVO.getHttpSession().size());
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
+		
+		/*
+		 * model.addAttribute("list", list); //접속자 아이디
+		 */		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
+		model.addAttribute("TotalCount", visitcountService.getTotalCount().getTotalcount());//총 방문자 수
+		model.addAttribute("TodayCount", visitcountService.getTodayCount());//오늘 방문자 수
+		
 		return "/board";
 	}
 	
@@ -75,6 +106,26 @@ public class BoardController {
 		
 		List<ReplyVO> GetReply = reply.GetReply(b_num);
 		model.addAttribute("GetReply", GetReply);
+		
+		//접속자 수, 접속자 아이디 가져온다.
+		int num = AccessorVO.getHttpSession().size();
+		for(int i = 0; i < AccessorVO.getHttpSession().size(); i++) {
+			String memberid = (String) AccessorVO.getHttpSession().get(i).getAttribute("memberid");
+			MembersVO vo = registerService.ListNameAccessor(memberid);
+			list.add(vo.getNickname());
+		}
+		System.out.println("list 크기 == " + list.size());
+		
+		System.out.println("현재 접속자 수 :: " + AccessorVO.getHttpSession().size());
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
+		
+		/*
+		 * model.addAttribute("list", list); //접속자 아이디
+		 */		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
+		model.addAttribute("TotalCount", visitcountService.getTotalCount().getTotalcount());//총 방문자 수
+		model.addAttribute("TodayCount", visitcountService.getTodayCount());//오늘 방문자 수
 
 		return "/viewboard";
 	}

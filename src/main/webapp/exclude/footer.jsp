@@ -10,5 +10,5 @@
  ${list.nickname },
 </c:forEach> --%>
  <br>
-접속자 수 : ${size }<br>
+현재 접속자 수 : ${size }<br>
 </div>

@@ -1,0 +1,7 @@
+create table pause (
+	no int auto_increment not null,
+    nickname varchar(20) not null,
+    startdate date,
+    enddate date,
+    primary key(no)
+) DEFAULT CHARSET=utf8 COLLATE utf8_general_ci;

@@ -58,7 +58,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpServletRequest request) throws Exception {
 		List<String> list = new ArrayList<String>();
-		
+		System.out.println("client ip == " + request.getRemoteAddr());
 		HttpSession session = request.getSession(true);
 		String SessionID = (String)session.getAttribute("memberid");
 		

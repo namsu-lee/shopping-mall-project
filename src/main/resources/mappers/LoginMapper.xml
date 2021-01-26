@@ -6,7 +6,7 @@
 	
 	<!-- 로그인 -->
 	<select id="LoginCheck" parameterType="LoginVO" resultType="LoginVO">
-		select memberid, nickname from members where memberid = #{memberid} and password = #{password}
+		select memberid, nickname, stopflag from members where memberid = #{memberid} and password = #{password}
 	</select>
 
 </mapper> 

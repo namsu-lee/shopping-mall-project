@@ -67,10 +67,17 @@
 								<option value="d" <c:if test="${list.membershipflag eq 'd'}"> selected</c:if>>D</option>
 								<option value="f" <c:if test="${list.membershipflag eq 'f'}"> selected</c:if>>F</option>
 							</select>
+							<button type="button" onclick="Msh(${status.count})">수정</button>
 						</td>
 						<td>
-							<button type="button" onclick="Msh(${status.count})">수정</button>
-							<button type="button">정지</button>
+							<c:choose>
+								<c:when test="${list.stopflag eq 'g'}">
+									<button type="button" id="stop_${status.count}" onclick="Stop(${status.count})">정지</button>
+								</c:when>
+								<c:otherwise>
+									<button type="button" id="stop_cancel_${status.count}" onclick="Stop_Cancel(${status.count})">정지 취소</button>
+								</c:otherwise>
+							</c:choose>
 							<button type="button">강퇴</button>
 						</td>
 					</tr>
@@ -80,22 +87,28 @@
 	</body>
 	<script>
 function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
+	
+	var input, filter, table, tr, td, i, txtValue;
+	
+	input  = document.getElementById("myInput");
+	filter = input.value.toUpperCase();
+	table  = document.getElementById("myTable");
+	tr     = table.getElementsByTagName("tr");
+	
+	for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[0];
+    	if (td) {
+			
+    		txtValue = td.textContent || td.innerText;
+			
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+			}
+			else {
+				tr[i].style.display = "none";
+			}
+		}       
+	}
 }
 </script>
 </html>

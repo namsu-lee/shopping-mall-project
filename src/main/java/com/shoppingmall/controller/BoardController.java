@@ -6,13 +6,15 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shoppingmall.service.BoardService;
@@ -93,12 +95,55 @@ public class BoardController {
 	
 	//게시글 조회
 	@RequestMapping(value = "/board/{cateid}/{b_num}")
-	public String ViewBoard(@PathVariable Integer cateid, @PathVariable Integer b_num, Integer notice_no, Locale locale, Model model) throws Exception {
+	public String ViewBoard(HttpServletRequest request, HttpServletResponse response, @PathVariable Integer cateid, @PathVariable Integer b_num, Integer notice_no, Locale locale, Model model) throws Exception {
 		List<String> list = new ArrayList<String>();
 		
-		//조회수 상승;
+		//조회수 중복 방지
+		Cookie cookies[] = request.getCookies();
 		
-		service.UpdateBoardHit(b_num);
+		HttpSession session = request.getSession();
+		
+		String SessionID = (String)session.getAttribute("memberid");
+		System.out.println("현재 로그인 한 사람의 아이디 ::: " + SessionID);
+		
+		//비교 쿠키
+		Cookie TargetCookie = null;
+		
+		//쿠키가 있다면
+		if(cookies != null && cookies.length > 0) {
+			for(int i = 0; i < cookies.length; i++) {
+				if(cookies[i].getName().equals(SessionID + "cookie" + b_num)) {
+					System.out.println("쿠키 생성 뒤 입장.....");
+					TargetCookie = cookies[i];
+				}
+			}
+		}
+		//만약 TargetCookie가 null일 경우 쿠키 생성 및 조회수 증가 로직
+		if(TargetCookie == null) {
+			System.out.println("쿠키 x");
+			
+			//쿠기 생성
+			Cookie newCookie = new Cookie(SessionID + "cookie" + b_num, "IILLiiLLllIIl" +  + b_num + "|" + SessionID);
+			newCookie.setMaxAge(60*60*24);
+			
+			//쿠키 추가
+			response.addCookie(newCookie);
+			
+			try {
+				//쿠키 추가 후 조회수 증가
+				service.UpdateBoardHit(b_num);
+				System.out.println("조회수 잘 들어감......");
+			} catch(Exception e) {
+				System.out.println("조회수 증가 하다 오류....");
+			}
+		}
+		else {
+			System.out.println("cookie 있다 ~~~~");
+			System.out.println("Cookie :::: " + TargetCookie.getValue());
+		}
+		
+		
+		
 		
 		List<CategoryVO> selectList = cate.CategoryGet();
 		model.addAttribute("selectList", selectList);

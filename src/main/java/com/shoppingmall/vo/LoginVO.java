@@ -9,7 +9,7 @@ public class LoginVO {
 	private String Auto_Login;		//�ڵ� �α��� üũ
 	private String Auto_ID;			//���̵� ���� üũ
 	private String nickname;
-
+	private String stopflag;
 	
 
 	final static char[] hexArray = "0123456789abcdef".toCharArray();
@@ -70,10 +70,21 @@ public class LoginVO {
 		this.nickname = nickname;
 	}
 
+	public String getStopflag() {
+		return stopflag;
+	}
+
+	public void setStopflag(String stopflag) {
+		this.stopflag = stopflag;
+	}
+
 	@Override
 	public String toString() {
-		return "LoginVO [memberid=" + memberid + ", password=" + password + ", Auto_Login=" + Auto_Login + ", Auto_ID=" + Auto_ID + ", nickname=" + nickname + "]";
+		return "LoginVO [memberid=" + memberid + ", password=" + password + ", Auto_Login=" + Auto_Login + ", Auto_ID="
+				+ Auto_ID + ", nickname=" + nickname + ", stopflag=" + stopflag + "]";
 	}
+
+	
 
 
 }

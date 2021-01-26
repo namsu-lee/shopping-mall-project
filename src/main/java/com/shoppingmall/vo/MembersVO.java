@@ -17,6 +17,7 @@ public class MembersVO {
 	private String fileName = "man.jpg";
 	private String membershipflag = "f";//a b c d f
 	private String stopflag = "g";	//g or s
+	
 	// 회원가입시 기본이미지로 저장해준다.
 
 	final static char[] hexArray = "0123456789abcdef".toCharArray();
@@ -135,7 +136,6 @@ public class MembersVO {
 		this.stopflag = stopflag;
 	}
 
-	
 	@Override
 	public String toString() {
 		return "MembersVO [memberid=" + memberid + ", nickname=" + nickname + ", password=" + password + ", membername="

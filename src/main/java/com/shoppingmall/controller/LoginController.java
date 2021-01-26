@@ -95,13 +95,24 @@ public class LoginController {
 		LoginVO result = loginService.Login(vo);
 		if(result == null) {
 			out.print("<script>");
-			out.println("	alert('아이디 또는 비밀번호가 틀립니다.');");
-			out.println("	history.back();");
+			out.print("		alert('아이디 또는 비밀번호가 틀립니다.');");
+			out.print("		location.href='/login';");
 			out.print("</script>");
+			out.flush();
 			return "/login";
 		}
 		
 		if(vo.getMemberid().equals(result.getMemberid())) {
+			
+			System.out.println(result.getStopflag());
+			if(result.getStopflag().equals("s")) {		//g or s
+				out.print("<script>");
+				out.print("		alert('당신은 정지먹었네요..');");
+				out.print("		location.href='/login';");
+				out.print("</script>");
+				out.flush();
+				return "/login";
+			}
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("memberid", result.getMemberid());

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shoppingmall.mapper.PauseMapper">
+	
+	<!-- 회원 정지 추가 -->
+	<insert id="insertMembershipstop" parameterType="PauseVO">
+		insert into pause (nickname, startdate, enddate) values (#{nickname}, now(), date_add(now(), interval 7 day));
+	</insert>
+	
+	<!-- 추가 되었나 체크 -->
+	<select id="getMembershipNick" parameterType="PauseVO" resultType="Integer">
+		select count(*) from pause where nickname = #{nickname};
+	</select>
+	
+	<!-- 회원 정지 -->
+	<update id="updateMemberStopflag" parameterType="PauseVO">
+		update members set stopflag = 's' where nickname = #{nickname};
+	</update>
+	
+	<!-- 회원 정지 해지1 -->
+	<update id="Modifystopflag" parameterType="PauseVO">
+		update members set stopflag = 'g' where nickname = #{nickname};
+	</update>
+	
+	<!-- 회원 정지 해지2 -->
+	<delete id="RemoveNick" parameterType="PauseVO">
+		delete from pause where nickname = #{nickname};
+	</delete>
+	
+	<!-- 정지가 풀리는 날을 가져옴 -->
+	<select id="PauseCheck">
+		select nickname from pause where enddate = curdate();
+	</select>
+	
+	<update id="PauseUpdate">
+		update members set stopflag = 'g' where nickname = #{nickname}
+	</update>
+	
+	<!-- 정지 풀림 -->
+	<delete id="PauseRemove">
+		select nickname from pause where enddate = curdate();
+	</delete>
+</mapper>

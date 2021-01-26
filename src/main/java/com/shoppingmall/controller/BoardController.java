@@ -1,9 +1,11 @@
 package com.shoppingmall.controller;
 
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -89,8 +91,16 @@ public class BoardController {
 	
 	//게시글 작성 로직
 	@RequestMapping(value = "/board/{cateid}/wroteboard")
-	public String WroteBoard(@PathVariable Integer cateid, BoardVO vo, Locale locale, Model model) throws Exception {
-
+	public String WroteBoard(@PathVariable Integer cateid, /* String b_title, */BoardVO vo, Locale locale, Model model, HttpServletResponse response) throws Exception {
+		
+//		//제목에 공백만 있으면 리턴
+//		if(b_title == null) {
+//			PrintWriter pw = response.getWriter();
+//			pw.println("<script>alert('제목을 입력해 주세요.'); location.href='/category'</script>");
+//			pw.flush();
+//			return "/board/{cateid}/wroteboard";
+//		}
+		
 		service.WroteBoard(vo);
 		
 		return "redirect:/board/{cateid}";

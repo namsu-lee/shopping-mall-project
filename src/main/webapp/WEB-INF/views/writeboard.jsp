@@ -36,11 +36,10 @@
 		<input type="hidden" name="memberid" value="${sessionScope.memberid}">
 		<input type="hidden" name="nickname" value="${sessionScope.nickname}">
 		<input type="text" name="b_title" id="b_title" size="40"placeholder="제목을 입력해주세요">
-		<textarea name="b_content" ></textarea>
+		<textarea id="b_content" name="b_content" ></textarea>
 		<br>
-		
-    	<button class="btn info" style="float:right" type="submit">완료</button>
-    	</form>
+		</form>
+    	<button class="btn info" style="float:right" onclick="submitContents()">완료</button>
     	<button class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
     </div>
 </div>
@@ -50,6 +49,26 @@ CKEDITOR.replace('b_content',{
 	autoGrow_minHeight : 400,
 	filebrowserUploadUrl:'/imageupload.do'
 });
+function submitContents() {	
+
+	var title = document.getElementById('b_title').value;
+	var cont = document.getElementById('b_content').value;
+
+	for(var i=0; i<100; i++){ // 값이 들어간 길이 만큼 제목과 본문의 공백을 제거
+		title = title.replace(" ","");
+		cont = cont.replace(" ","");
+	}
+	
+	if(title != "" && cont !=""){ // 내용이 작성되어 있는 경우 submit() 한다. 
+		document.forms[0].submit();
+	}
+	else if(title == ""){ // 작성 된 내용이 하나도 없을 경우 안내 메세지 창 출력
+		alert("제목을 입력해주세요.");
+	}else if(cont == ""){
+		alert("내용을 입력해주세요.");
+	}
+}
+
 </script>
 </body>
 </html>

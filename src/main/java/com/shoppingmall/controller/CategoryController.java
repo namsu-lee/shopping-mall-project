@@ -60,16 +60,6 @@ public class CategoryController {
 			}
 		}
 		
-		//이름 중복이면 리턴
-		for(CategoryVO s : selectNameList) {
-			if(s.getCatename().equals(vo.getCatename())) {
-				PrintWriter pw = response.getWriter();
-				pw.println("<script>alert('이름이 중복되면 안됩니다.'); location.href='/category'</script>");
-				pw.flush();
-				return "/category";
-			}
-		}
-		
 		service.CategoryInsert(vo);
 		
 		return "redirect:/category";

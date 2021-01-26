@@ -43,14 +43,14 @@
      }
     </style>
 <div class="category">
-	<form id="frm1" class="frm1" method="POST" action="/category">
+	<form id="frm1" name="frm1" class="frm1" method="POST" action="/category/insert">
 		<div style="display: inline-block;">
 			
 			<div style="float: left; margin: 10px;">
-				카테고리 순서<br> <input type="number" name="catesort">
+				카테고리 순서<br> <input type="number" name="catesort" id="catesort">
 			</div>
 			<div style="float: left; margin: 10px;">
-				카테고리 이름<br> <input type="text" name="catename">
+				카테고리 이름<br> <input type="text" name="catename" id="catename">
 			</div>
 			<div style="float: left; margin: 10px;">
 				글쓰기 권한<br> 
@@ -72,8 +72,8 @@
 		</div>
 		<br>
 		<br>
-		<button type="submit" class="submit" onclick='btn_click("insert");'>추가</button>
 	</form>
+	<button class="submit" onclick='btn_click("insert");'>추가</button>
 	<br><br>
 <table id="myTable">
     <tr class="header">
@@ -99,10 +99,23 @@
  </table>
  </div>
  <script>
-    function btn_click(str){                             
-        if(str=="insert"){
-        	frm1.action="/category/insert"; 
-        }
+    function btn_click(str){      
+    	var sort = document.getElementById('catesort').value;
+    	var name = document.getElementById('catename').value;
+
+    	for(var i=0; i<100; i++){ // 값이 들어간 길이 만큼 제목과 본문의 공백을 제거
+    		sort = sort.replace(" ","");
+    		name = name.replace(" ","");
+    	}
+    	
+    	if(sort != "" && name !=""){ // 내용이 작성되어 있는 경우 submit() 한다. 
+    		 document.frm1.submit();
+    	}
+    	else if(sort == ""){ // 작성 된 내용이 하나도 없을 경우 안내 메세지 창 출력
+    		alert("순서를 입력해주세요.");
+    	}else if(name == ""){
+    		alert("이름을 입력해주세요.");
+    	}
     }
     
     function del(i) {

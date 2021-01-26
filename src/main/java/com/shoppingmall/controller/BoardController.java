@@ -44,13 +44,14 @@ public class BoardController {
 	VisitcountService visitcountService;
 	@Inject
 	private RegisterService registerService;
-	private static List<String> list = new ArrayList<String>();
+	
 	
 	//게시판 목록 조회
 	@RequestMapping(value = "/board/{cateid}")
 	public String MoveBoard(@RequestParam(required = false, defaultValue = "1") int page
 			, @RequestParam(required = false, defaultValue = "1") int range, 
 			@PathVariable Integer cateid, String keyword, Locale locale, Model model) throws Exception {
+		List<String> list = new ArrayList<String>();
 		
 		List<CategoryVO> selectList = cate.CategoryGet();
 		model.addAttribute("selectList", selectList);
@@ -81,9 +82,9 @@ public class BoardController {
 			System.out.println(list.get(i));
 		}
 		
-		/*
-		 * model.addAttribute("list", list); //접속자 아이디
-		 */		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
+		
+		model.addAttribute("list", list); //접속자 아이디
+		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
 		model.addAttribute("TotalCount", visitcountService.getTotalCount().getTotalcount());//총 방문자 수
 		model.addAttribute("TodayCount", visitcountService.getTodayCount());//오늘 방문자 수
 		
@@ -93,6 +94,7 @@ public class BoardController {
 	//게시글 조회
 	@RequestMapping(value = "/board/{cateid}/{b_num}")
 	public String ViewBoard(@PathVariable Integer cateid, @PathVariable Integer b_num, Integer notice_no, Locale locale, Model model) throws Exception {
+		List<String> list = new ArrayList<String>();
 		
 		//noticeService.ReadCheck_Change(notice_no);
 		System.out.println("notice === " + notice_no);
@@ -121,9 +123,9 @@ public class BoardController {
 			System.out.println(list.get(i));
 		}
 		
-		/*
-		 * model.addAttribute("list", list); //접속자 아이디
-		 */		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
+		
+		model.addAttribute("list", list); //접속자 아이디
+		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
 		model.addAttribute("TotalCount", visitcountService.getTotalCount().getTotalcount());//총 방문자 수
 		model.addAttribute("TodayCount", visitcountService.getTodayCount());//오늘 방문자 수
 

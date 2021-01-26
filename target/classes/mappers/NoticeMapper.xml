@@ -13,12 +13,12 @@
 	
 	<!-- 방금 작성한 댓글 번호를 가져옴 -->
 	<select id="getReplyNo" resultType="Integer">
-	    select count(replynum) from reply;
+	    select max(replynum) from reply;
 	</select>
 	
 	
 	<!-- 댓글을 쓰면 notice 테이블에 저장 -->
-	<insert id="NoticeList">
+	<insert id="NoticeList" parameterType="NoticeVO">
 		insert into notice (board_no, reply_no, memberid, another_memberid, read_check, regdate, cateid) 
 			values (#{board_no}, #{reply_no}, #{memberid}, #{another_memberid}, #{read_check}, now(), #{cateid});	
 	</insert>

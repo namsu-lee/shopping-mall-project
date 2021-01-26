@@ -48,7 +48,7 @@ public class ReplyController {
 		NoticeVO noticeVO = new NoticeVO();
 		noticeVO.setCateid(cateid); 			//카테고리 아이디
 		noticeVO.setBoard_no(b_num);			//게시글 번호
-		noticeVO.setReply_no(noticeService.getReplyNo());//댓글 번호
+		noticeVO.setReply_no(vo.getReplynum());//댓글 번호
 		noticeVO.setMemberid(map.get("memberid"));		//게시글을 쓴 사람의 id(알람 받을 사람)
 		noticeVO.setAnother_memberid(vo.getMemberid());//댓글을 쓴 사람의 아이디
 		

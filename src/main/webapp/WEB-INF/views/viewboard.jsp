@@ -147,6 +147,7 @@
 	</c:choose>
 	</div>
 </div>
+<%@ include file="../../exclude/footer.jsp" %> 
 </div>	
 
 	

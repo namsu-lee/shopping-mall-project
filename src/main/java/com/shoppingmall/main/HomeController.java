@@ -50,13 +50,14 @@ public class HomeController {
 	@Inject
 	private NoticeService noticeService;
 	 
-	private static List<String> list = new ArrayList<String>();
+	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 * @throws Exception 
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpServletRequest request) throws Exception {
+		List<String> list = new ArrayList<String>();
 		
 		HttpSession session = request.getSession(true);
 		String SessionID = (String)session.getAttribute("memberid");

@@ -12,6 +12,7 @@ create table members (
     primary key (memberid)
     )DEFAULT CHARSET=utf8 COLLATE utf8_general_ci; 
     
+    //학원가서 아래 두개 추가
     alter table members add membershipflag varchar(2); 	-- //a b c d f
 
 alter table members add stopflag varchar(2); 	-- g or s

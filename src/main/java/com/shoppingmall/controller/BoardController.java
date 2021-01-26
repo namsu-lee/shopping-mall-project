@@ -96,8 +96,8 @@ public class BoardController {
 	public String ViewBoard(@PathVariable Integer cateid, @PathVariable Integer b_num, Integer notice_no, Locale locale, Model model) throws Exception {
 		List<String> list = new ArrayList<String>();
 		
-		//noticeService.ReadCheck_Change(notice_no);
-		System.out.println("notice === " + notice_no);
+		//조회수 상승;
+		
 		service.UpdateBoardHit(b_num);
 		
 		List<CategoryVO> selectList = cate.CategoryGet();

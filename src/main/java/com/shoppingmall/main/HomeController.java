@@ -84,7 +84,7 @@ public class HomeController {
 		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
 		model.addAttribute("TotalCount", visitcountService.getTotalCount());//총 방문자 수
 		model.addAttribute("TodayCount", visitcountService.getTodayCount());//오늘 방문자 수
-		
+		 
 		//게시판 목록 불러오기
 		List<CategoryVO> selectList = service.CategoryGet();
 		model.addAttribute("selectList", selectList);

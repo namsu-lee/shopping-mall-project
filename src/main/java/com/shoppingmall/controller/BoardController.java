@@ -58,10 +58,10 @@ public class BoardController {
 	
 	//게시글 조회
 	@RequestMapping(value = "/board/{cateid}/{b_num}")
-	public String ViewBoard(@PathVariable Integer cateid, @PathVariable Integer b_num, Locale locale, Model model) throws Exception {
+	public String ViewBoard(@PathVariable Integer cateid, @PathVariable Integer b_num, Integer notice_no, Locale locale, Model model) throws Exception {
 		
 		//noticeService.ReadCheck_Change(notice_no);
-		
+		System.out.println("notice === " + notice_no);
 		service.UpdateBoardHit(b_num);
 		
 		List<CategoryVO> selectList = cate.CategoryGet();

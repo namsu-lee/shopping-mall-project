@@ -6,9 +6,9 @@
 <hr>
 오늘 방문자 수 : ${TodayCount }<br>
 전체 방문자 수 : ${TotalCount }<br>현재 접속 아이디 :
-<%-- <c:forEach items="${list}" var="list">
- ${list.nickname },
-</c:forEach> --%>
+<c:forEach items="${list}" var="list">
+ ${list},
+</c:forEach>
  <br>
 접속자 수 : ${size }<br>
 </div>

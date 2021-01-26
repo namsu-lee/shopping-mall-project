@@ -76,12 +76,12 @@ public class HomeController {
 		
 		System.out.println("현재 접속자 수 :: " + AccessorVO.getHttpSession().size());
 		for(int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i));
+			System.out.println(list.get(i).toString());
 		}
 		
-		/*
-		 * model.addAttribute("list", list); //접속자 아이디
-		 */		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
+		
+		model.addAttribute("list", list); //접속자 아이디
+		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
 		model.addAttribute("TotalCount", visitcountService.getTotalCount().getTotalcount());//총 방문자 수
 		model.addAttribute("TodayCount", visitcountService.getTodayCount());//오늘 방문자 수
 		

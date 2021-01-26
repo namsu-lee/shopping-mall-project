@@ -5,13 +5,21 @@ function Msh(no) {
 
 	//alert(nickname);
 	//alert(membershipflag);
-	var data = {nickname:nickname, membershipflag: membershipflag}
+	var data = { nickname: nickname, membershipflag: membershipflag}
 	$.ajax({
-		url:"/Membershipmodify",
-		type:"POST",
-		data:data,
-		success:function(result) {
-			alert("과연" + result);
+		url: "/Membershipmodify",
+		type: "POST",
+		data: data,
+		success: function(result) {
+			$(result).find("HashMap").each(function() {
+				if ($(this).find("num").text() == 1) {
+					alert("수정 하였습니다.");
+					$("#select_" + no + " option:selected").val();
+				}
+				if ($(this).find("num").text() == 0) {
+					alert("수정에 실패했다.");
+				}
+			});
 		}
 	});
 }

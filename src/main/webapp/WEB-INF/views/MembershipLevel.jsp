@@ -61,47 +61,11 @@
 						<td id="td_${status.count}">${list.nickname}</td>
 						<td>
 							<select name="level" id="select_${status.count}">
-								<c:choose>
-									<c:when test="${list.membershipflag == a}">
-										<option value="a" selected>A</option>
-										<option value="b">B</option>
-										<option value="c">C</option>
-										<option value="d">D</option>
-										<option value="f">F</option>
-									</c:when>
-									
-									<c:when test="${list.membershipflag == b}">
-										<option value="a">A</option>
-										<option value="b" selected>B</option>
-										<option value="c">C</option>
-										<option value="d">D</option>
-										<option value="f">F</option>
-									</c:when>
-									
-									<c:when test="${list.membershipflag == c}">
-										<option value="a">A</option>
-										<option value="b">B</option>
-										<option value="c" selected>C</option>
-										<option value="d">D</option>
-										<option value="f">F</option>
-									</c:when>
-									
-									<c:when test="${list.membershipflag == d}">
-										<option value="a">A</option>
-										<option value="b">B</option>
-										<option value="c">C</option>
-										<option value="d" selected>D</option>
-										<option value="f">F</option>
-									</c:when>
-									
-									<c:otherwise>
-										<option value="a">A</option>
-										<option value="b">B</option>
-										<option value="c">C</option>
-										<option value="d">D</option>
-										<option value="f" selected>F</option>
-									</c:otherwise>
-								</c:choose>
+								<option value="a" <c:if test="${list.membershipflag eq 'a'}"> selected</c:if>>A</option>
+								<option value="b" <c:if test="${list.membershipflag eq 'b'}"> selected</c:if>>B</option>
+								<option value="c" <c:if test="${list.membershipflag eq 'c'}"> selected</c:if>>C</option>
+								<option value="d" <c:if test="${list.membershipflag eq 'd'}"> selected</c:if>>D</option>
+								<option value="f" <c:if test="${list.membershipflag eq 'f'}"> selected</c:if>>F</option>
 							</select>
 						</td>
 						<td>

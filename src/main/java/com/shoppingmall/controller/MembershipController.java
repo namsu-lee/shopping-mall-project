@@ -1,5 +1,6 @@
 package com.shoppingmall.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -45,6 +46,9 @@ public class MembershipController {
 		System.out.println(vo.toString());
 		int num = registerService.MembershipModify(vo);
 		
-		return null;
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("num", num);
+		
+		return map;
 	}
 }

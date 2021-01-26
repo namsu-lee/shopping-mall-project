@@ -50,22 +50,17 @@ CKEDITOR.replace('b_content',{
 	filebrowserUploadUrl:'/imageupload.do'
 });
 function submitContents() {	
-
 	var title = document.getElementById('b_title').value;
-	var cont = document.getElementById('b_content').value;
 
 	for(var i=0; i<100; i++){ // 값이 들어간 길이 만큼 제목과 본문의 공백을 제거
 		title = title.replace(" ","");
-		cont = cont.replace(" ","");
 	}
 	
-	if(title != "" && cont !=""){ // 내용이 작성되어 있는 경우 submit() 한다. 
+	if(title != ""){ // 내용이 작성되어 있는 경우 submit() 한다. 
 		document.forms[0].submit();
 	}
 	else if(title == ""){ // 작성 된 내용이 하나도 없을 경우 안내 메세지 창 출력
 		alert("제목을 입력해주세요.");
-	}else if(cont == ""){
-		alert("내용을 입력해주세요.");
 	}
 }
 

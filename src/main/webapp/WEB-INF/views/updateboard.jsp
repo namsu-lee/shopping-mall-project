@@ -37,9 +37,8 @@
 		<input type="text" name="b_title" id="b_title" size="40"placeholder="제목을 입력해주세요" value="${ UpdateGetBoard.b_title}">
 		<textarea name="b_content" ></textarea>
 		<br>
-		
-    	<button class="btn info" style="float:right" type="submit">완료</button>
     	</form>
+    	<button class="btn info" style="float:right" onclick="submitContents()">완료</button>
     	<button class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
     </div>
 </div>
@@ -52,6 +51,22 @@ CKEDITOR.replace('b_content',{
 });
 var test = document.getElementById("test").value;
 CKEDITOR.instances.b_content.setData(test);
+
+function submitContents() {	
+
+	var title = document.getElementById('b_title').value;
+
+	for(var i=0; i<100; i++){ // 값이 들어간 길이 만큼 제목과 본문의 공백을 제거
+		title = title.replace(" ","");
+	}
+	
+	if(title != ""){ // 내용이 작성되어 있는 경우 submit() 한다. 
+		document.forms[0].submit();
+	}
+	else if(title == ""){ // 작성 된 내용이 하나도 없을 경우 안내 메세지 창 출력
+		alert("제목을 입력해주세요.");
+	}
+}
 </script>
 </body>
 </html>

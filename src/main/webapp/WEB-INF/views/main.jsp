@@ -23,7 +23,8 @@
         <button class="btn info" onclick="location.href='/mainupdate'">메인화면 수정</button>
         <br>
 		${UpdateGetMain.m_content }
-    </div>    
+    </div>   
+    <%@ include file="../../exclude/footer.jsp" %> 
 </div>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -39,4 +40,5 @@
 </script>
 <!--End of Tawk.to Script-->
 </body>
+
 </html>

@@ -113,16 +113,18 @@
 	<c:choose>
  	<c:when test="${sessionScope.memberid != null }">
 	<div class="replywrite" style="width:100%;">
-		<form action="/board/${cateid}/${ViewBoard.b_num}/wrotereply" method="post">
-			<input type="hidden" name="memberid" value="${sessionScope.memberid}">
-			<input type="hidden" name="nickname" value="${sessionScope.nickname}">
+		
+			
 			<table style="width:100%;">
 				<tr>
-					<td style="width:80%; "><textarea name="replycontent" style="resize: none; width:95%; font-size:20px; padding:10px; " rows="1"></textarea></td>
-					<td style="width:10%;"><button class="replybtn" type="submit" >댓글입력</button></td>
+					<form id="writereply" name="writereply" action="/board/${cateid}/${ViewBoard.b_num}/wrotereply" method="post">
+						<input type="hidden" name="memberid" value="${sessionScope.memberid}">
+						<input type="hidden" name="nickname" value="${sessionScope.nickname}">
+						<td style="width:80%; "><textarea name="replycontent" id="replycontent" style="resize: none; width:95%; font-size:20px; padding:10px; " rows="1"></textarea></td>
+					</form>
+					<td style="width:10%;"><button class="replybtn" onclick="submitWriteReply()" >댓글입력</button></td>
 				</tr>
 			</table>
-		</form>
 		</div>
 		</c:when> 
  </c:choose>
@@ -162,6 +164,20 @@ function deleteconfirm(){
 function myFunction() {
 	  document.getElementById("myDropdown").classList.toggle("show");
 	}
+	
+function submitWriteReply() {	
+	var content = document.getElementById('replycontent').value;
+
+	for(var i=0; i<100; i++){ // 값이 들어간 길이 만큼 제목과 본문의 공백을 제거
+		content = content.replace(" ","");
+	}
+	if(content != ""){ // 내용이 작성되어 있는 경우 submit() 한다. 
+		document.writereply.submit();
+	}
+	else if(content == ""){ // 작성 된 내용이 하나도 없을 경우 안내 메세지 창 출력
+		alert("내용을 입력해주세요.");
+	}
+}
 </script>
 
 </body>

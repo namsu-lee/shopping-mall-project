@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shoppingmall.service.BoardService;
@@ -60,10 +61,10 @@ public class BoardController {
 	
 	//게시글 조회
 	@RequestMapping(value = "/board/{cateid}/{b_num}")
-	public String ViewBoard(@PathVariable Integer cateid, @PathVariable Integer b_num, Locale locale, Model model) throws Exception {
+	public String ViewBoard(@PathVariable Integer cateid, @PathVariable Integer b_num, Integer notice_no, Locale locale, Model model) throws Exception {
 		
 		//noticeService.ReadCheck_Change(notice_no);
-		
+		System.out.println("notice === " + notice_no);
 		service.UpdateBoardHit(b_num);
 		
 		List<CategoryVO> selectList = cate.CategoryGet();
@@ -137,5 +138,19 @@ public class BoardController {
 		service.DeleteBoard(b_num);
 		
 		return "redirect:/board/{cateid}";
+	}
+	
+	//writerboard 글쓴이 클릭 했을때 글쓴이가 쓴 게시글만 가져옴
+	@RequestMapping(value = "/writerboard", method = RequestMethod.GET)
+	public String writerboard(String nickname, Model model) throws Exception {
+		
+		List<BoardVO> list = service.getWriterBoard(nickname);
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i).toString());
+		}
+		
+		model.addAttribute("list", list);
+		
+		return "redirect:/board";
 	}
 }

@@ -11,6 +11,7 @@
 <meta charset="UTF-8">
 <title> </title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="/resources/js/jquery-3.5.1.min.js"></script>
 <style>
 .board{
      width:75%;
@@ -115,9 +116,9 @@ form.example::after {
 			</a></td>
 			<td style="text-align: center;">
 				<c:choose>
-				<c:when test="${param.keyword == null}">
-				${list.nickname} 
-				</c:when>
+					<c:when test="${param.keyword == null}">
+						<a href="/writerboard?nickname=${list.nickname}">${list.nickname}</a> 
+					</c:when>
 				<c:when test="${param.keyword != null}">
 					 <c:set var="highlight" value="<label style='background-color:yellow'> 
 					 ${param.keyword}
@@ -200,6 +201,18 @@ function fn_next(page, range, rangeSize) {
 	</c:if>
 	location.href = url;
 }
+/* 
+function doDisplay(b_num) {
+	var con = document.getElementById("myDiv_" + b_num);
+	if(con.style.display == "none") {
+		//con.style.display = 'block';
+		document.getElementById("myDiv").style.display = "block";
+	}
+	else {
+		//con.style.display = 'none';
+		document.getElementById("myDiv").style.display = "none";
+	}
+} */
 </script>
 </body>
 </html>

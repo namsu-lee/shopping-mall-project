@@ -59,4 +59,8 @@
 		update board set b_hit = b_hit + 1 where b_num = #{b_num}
 	</update>
 	
+	
+	<select id="getWriterBoard" resultType="BoardVO">
+		select * from board where nickname = #{nickname}
+	</select>
 </mapper>

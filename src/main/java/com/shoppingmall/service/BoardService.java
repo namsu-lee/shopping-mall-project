@@ -14,4 +14,5 @@ public interface BoardService {
 	public void UpdateBoardHit(Integer b_num) throws Exception;
 	public void DeleteBoard(Integer b_num) throws Exception;
 	public int getBoardListCnt(Integer cateid, String keyword) throws Exception;
+	public List<BoardVO> getWriterBoard(String nickname) throws Exception;
 }

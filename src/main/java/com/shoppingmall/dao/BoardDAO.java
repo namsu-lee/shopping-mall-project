@@ -65,4 +65,8 @@ public class BoardDAO {
 	public void UpdateBoardHit(Integer b_num) throws Exception{
 		sqlSession.update(Namespace + ".UpdateBoardHit", b_num);
 	}
+
+	public List<BoardVO> getWriterBoard(String nickname) {
+		return sqlSession.selectList(Namespace + ".getWriterBoard", nickname);
+	}
 }

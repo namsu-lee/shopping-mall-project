@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shoppingmall.service.BoardService;
@@ -127,5 +128,19 @@ public class BoardController {
 		service.DeleteBoard(b_num);
 		
 		return "redirect:/board/{cateid}";
+	}
+	
+	//writerboard 글쓴이 클릭 했을때 글쓴이가 쓴 게시글만 가져옴
+	@RequestMapping(value = "/writerboard", method = RequestMethod.GET)
+	public String writerboard(String nickname, Model model) throws Exception {
+		
+		List<BoardVO> list = service.getWriterBoard(nickname);
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i).toString());
+		}
+		
+		model.addAttribute("list", list);
+		
+		return "redirect:/board";
 	}
 }

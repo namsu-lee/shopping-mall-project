@@ -59,4 +59,9 @@ public class BoardServiceImpl implements BoardService{
 		return BoardDAO.getBoardListCnt(cateid, keyword);
 	}
 
+	@Override
+	public List<BoardVO> getWriterBoard(String nickname) throws Exception {
+		return BoardDAO.getWriterBoard(nickname);
+	}
+
 }

@@ -60,7 +60,8 @@
 	</update>
 	
 	
-	<select id="getWriterBoard" resultType="BoardVO">
-		select * from board where nickname = #{nickname}
+	<select id="getWriterBoard" resultType="BoardVO" >
+		select b_num, memberid, nickname, b_title, b_wdate, b_hit, cateid 
+		from board where nickname = #{nickname} order by b_num desc
 	</select>
 </mapper>

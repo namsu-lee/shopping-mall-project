@@ -92,15 +92,15 @@ public class BoardController {
 	
 	//게시글 작성 로직
 	@RequestMapping(value = "/board/{cateid}/wroteboard")
-	public String WroteBoard(@PathVariable Integer cateid, /* String b_title, */BoardVO vo, Locale locale, Model model, HttpServletResponse response) throws Exception {
+	public String WroteBoard(@PathVariable Integer cateid, String b_title, BoardVO vo, Locale locale, Model model, HttpServletResponse response) throws Exception {
 		
-//		//제목에 공백만 있으면 리턴
-//		if(b_title == null) {
-//			PrintWriter pw = response.getWriter();
-//			pw.println("<script>alert('제목을 입력해 주세요.'); location.href='/category'</script>");
-//			pw.flush();
-//			return "/board/{cateid}/wroteboard";
-//		}
+		//제목에 공백만 있으면 리턴
+		if(b_title == null) {
+			PrintWriter pw = response.getWriter();
+			pw.println("<script>alert('제목을 입력해 주세요.');</script>");
+			pw.flush();
+			return "redirect:/board/{cateid}";
+		}
 		
 		service.WroteBoard(vo);
 		
@@ -141,16 +141,16 @@ public class BoardController {
 	}
 	
 	//writerboard 글쓴이 클릭 했을때 글쓴이가 쓴 게시글만 가져옴
-	@RequestMapping(value = "/writerboard", method = RequestMethod.GET)
+	@RequestMapping(value = "/writerboard")
 	public String writerboard(String nickname, Model model) throws Exception {
 		
-		List<BoardVO> list = service.getWriterBoard(nickname);
-		for(int i = 0; i < list.size(); i++) {
-			System.out.println(list.get(i).toString());
+		List<BoardVO> GetBoardList = service.getWriterBoard(nickname);
+		for(int i = 0; i < GetBoardList.size(); i++) {
+			System.out.println(GetBoardList.get(i).toString());
 		}
 		
-		model.addAttribute("list", list);
+		model.addAttribute("GetBoardList", GetBoardList);
 		
-		return "redirect:/board";
+		return "/board";
 	}
 }

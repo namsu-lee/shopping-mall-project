@@ -9,9 +9,14 @@
 	</select>
 	<!-- 댓글 입력 -->
 	<insert id="WroteReply" parameterType="ReplyVO">
+	<![CDATA[
 		insert into Reply 
 		(b_num, memberid, nickname, replycontent, replydate, replydepth) 
-		values(#{b_num}, #{memberid}, #{nickname}, #{replycontent}, now(),#{replydepth}) 
+		values(#{b_num}, #{memberid}, #{nickname}, #{replycontent}, now(),#{replydepth})
+	]]> 
+	<selectKey order="AFTER" keyColumn="replynum" resultType="int">
+		select max(replynum) as replynum  from Reply
+	</selectKey>
 	</insert>
 	<!-- 댓글 삭제 -->
 	<delete id="DeleteReply" parameterType="Integer">

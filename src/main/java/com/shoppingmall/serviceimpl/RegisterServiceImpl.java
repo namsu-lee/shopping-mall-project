@@ -1,5 +1,7 @@
 package com.shoppingmall.serviceimpl;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -54,6 +56,20 @@ public class RegisterServiceImpl implements RegisterService{
 	@Override
 	public int NaverCheck(String memberid) throws Exception {
 		return registerDAO.NaverCheck(memberid);
+	}
+
+
+	//회원 등급과 닉네임을 가져옴
+	@Override
+	public List<MembersVO> getMembership() throws Exception {
+		return registerDAO.getMembership();
+	}
+
+
+	//회원 등급 변경
+	@Override
+	public int MembershipModify(MembersVO vo) throws Exception {
+		return registerDAO.MembershipModify(vo);
 	}  
  
 	

@@ -18,8 +18,8 @@
 
 	<!-- 회원가입 -->
 	<insert id="Register" parameterType="MembersVO">
-		insert into members (memberid, nickname, password, membername, email, address, phone, uuid, uploadPath, fileName)
-			 values (#{memberid}, #{nickname}, #{password}, #{membername}, #{email}, #{address}, #{phone}, #{uuid}, #{uploadPath}, #{fileName})
+		insert into members (memberid, nickname, password, membername, email, address, phone, uuid, uploadPath, fileName, membershipflag, stopflag)
+			 values (#{memberid}, #{nickname}, #{password}, #{membername}, #{email}, #{address}, #{phone}, #{uuid}, #{uploadPath}, #{fileName}, #{membershipflag}, #{stopflag})
 	</insert>
 	
 	<select id="NaverCheck" resultType="Integer">
@@ -37,4 +37,15 @@
 	<select id="ListNickName" resultType="MembersVO">
 		select nickname from members where memberid = #{memberid}
 	</select>
+	
+	<!-- 회원 등급과 닉네임을 가져옴 -->
+	<select id="getMembership" resultType="MembersVO">
+		select nickname, membershipflag from members
+	</select>
+	
+	
+	<!-- 회원 등급 변경 -->
+	<update id="MembershipModify" parameterType="MembersVO">
+		update members set membershipflag = #{} where nickname = #{};
+	</update>
 </mapper> 

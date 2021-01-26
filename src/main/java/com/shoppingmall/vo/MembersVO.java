@@ -15,7 +15,8 @@ public class MembersVO {
 	private String uuid = "";
 	private String uploadPath = "";
 	private String fileName = "man.jpg";
-
+	private String membershipflag = "f";//a b c d f
+	private String stopflag = "g";	//g or s
 	// 회원가입시 기본이미지로 저장해준다.
 
 	final static char[] hexArray = "0123456789abcdef".toCharArray();
@@ -117,11 +118,30 @@ public class MembersVO {
 		this.fileName = fileName;
 	}
 
+
+	public String getMembershipflag() {
+		return membershipflag;
+	}
+
+	public void setMembershipflag(String membershipflag) {
+		this.membershipflag = membershipflag;
+	}
+
+	public String getStopflag() {
+		return stopflag;
+	}
+
+	public void setStopflag(String stopflag) {
+		this.stopflag = stopflag;
+	}
+
+	
 	@Override
 	public String toString() {
 		return "MembersVO [memberid=" + memberid + ", nickname=" + nickname + ", password=" + password + ", membername="
 				+ membername + ", email=" + email + ", address=" + address + ", phone=" + phone + ", uuid=" + uuid
-				+ ", uploadPath=" + uploadPath + ", fileName=" + fileName + "]";
+				+ ", uploadPath=" + uploadPath + ", fileName=" + fileName + ", membershipflag=" + membershipflag
+				+ ", stopflag=" + stopflag + "]";
 	}
 
 	// 난수 생성

@@ -1,5 +1,7 @@
 package com.shoppingmall.service;
 
+import java.util.List;
+
 import com.shoppingmall.vo.MembersVO;
 
 public interface RegisterService {
@@ -21,5 +23,11 @@ public interface RegisterService {
 
 	//이미 디비에 저장되어있나 검사 해주는 로직
 	public int NaverCheck(String string) throws Exception;
+
+	//회원 등급과 닉네임을 가져옴
+	public List<MembersVO> getMembership() throws Exception;
+
+	//회원 등급 변경
+	public int MembershipModify(MembersVO vo) throws Exception;
 
 }

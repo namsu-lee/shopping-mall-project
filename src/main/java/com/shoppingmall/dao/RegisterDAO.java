@@ -1,5 +1,7 @@
 package com.shoppingmall.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -50,6 +52,18 @@ public class RegisterDAO {
 	//이미 디비에 저장되어있나 검사 해주는 로직
 	public int NaverCheck(String memberid) {
 		return sqlSession.selectOne(Namespace + ".NaverCheck", memberid);
+	}
+
+
+	//회원 등급과 닉네임을 가져옴
+	public List<MembersVO> getMembership() {
+		return sqlSession.selectList(Namespace + ".getMembership");
+	}
+
+
+	//회원 등급 변경
+	public int MembershipModify(MembersVO vo) {
+		return sqlSession.update(Namespace + ".MembershipModify", vo);
 	}
 
 

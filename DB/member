@@ -12,5 +12,8 @@ create table members (
     primary key (memberid)
     )DEFAULT CHARSET=utf8 COLLATE utf8_general_ci; 
     
+    alter table members add membershipflag varchar(2); 	-- //a b c d f
+
+alter table members add stopflag varchar(2); 	-- g or s
     
     회원가입 하면 기본 이미지 사진으로 저장....

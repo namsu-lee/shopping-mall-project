@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -41,6 +42,8 @@
 				background-color: #f1f1f1;
 				}
 			</style>
+			<script src="/resources/js/jquery-3.5.1.min.js"></script>
+			<script src="/resources/js/MembershipLevel.js"></script>
 	</head>
 	<body>
 
@@ -53,142 +56,61 @@
 					<th style="width:50%;">Level</th>
 					<th style="width:30%;">*</th>
 				</tr>
-				<tr>
-					<td>Alfreds Futterkiste</td>
-					<td>
-						<select name="level">
-							<option value="a" selected>A</option>
-							<option value="b">B</option>
-							<option value="c">C</option>
-							<option value="d">D</option>
-							<option value="f">F</option>
-						</select>
-					</td>
-					<td>
-						<button>수정</button>
-						<button>정지</button>
-						<button>강퇴</button>
-					</td>
-				</tr>
-				<tr>
-					<td>Berglunds snabbkop</td>
-					<td>
-						<select name="level">
-							<option value="a">A</option>
-							<option value="b">B</option>
-							<option value="c" selected>C</option>
-							<option value="d">D</option>
-							<option value="f">F</option>
-						</select>
-					</td>
-					<td>
-						<button>수정</button>
-						<button>정지</button>
-						<button>강퇴</button>
-					</td>
-				</tr>
-				<tr>
-					<td>Island Trading</td>
-					<td>
-						<select name="level">
-							<option value="a">A</option>
-							<option value="b">B</option>
-							<option value="c">C</option>
-							<option value="d" selected>D</option>
-							<option value="f">F</option>
-						</select>
-					</td>
-					<td>
-						<button>수정</button>
-						<button>정지</button>
-						<button>강퇴</button>
-					</td>
-				</tr>
-				<tr>
-					<td>Koniglich Essen</td>
-					<td>
-						<select name="level">
-							<option value="a">A</option>
-							<option value="b">B</option>
-							<option value="c">C</option>
-							<option value="d">D</option>
-							<option value="f" selected>F</option>
-						</select>
-					</td>
-					<td>
-						<button>수정</button>
-						<button>정지</button>
-						<button>강퇴</button>
-					</td>
-				</tr>
-				<tr>
-					<td>Laughing Bacchus Winecellars</td>
-					<td>
-						<select name="level">
-							<option value="a">A</option>
-							<option value="b">B</option>
-							<option value="c" selected>C</option>
-							<option value="d">D</option>
-							<option value="f">F</option>
-						</select>
-					</td>
-					<td>
-						<button>수정</button>
-						<button>정지</button>
-						<button>강퇴</button>
-					</td>
-				</tr>
-				<tr>
-					<td>Magazzini Alimentari Riuniti</td>
-					<td>
-						<select name="level">
-							<option value="a" selected>A</option>
-							<option value="b">B</option>
-							<option value="c">C</option>
-							<option value="d">D</option>
-							<option value="f">F</option>
-						</select>
-					</td>
-					<td>
-						<button>수정</button>
-						<button>정지</button>
-						<button>강퇴</button>
-					</td>
-				</tr>
-				<tr>
-					<td>North/South</td>
-					<td>
-						<select name="level">
-							<option value="a">A</option>
-							<option value="b">B</option>
-							<option value="c">C</option>
-							<option value="d">D</option>
-							<option value="f" selected>F</option>
-						</select>
-					</td>
-					<td>
-						<button>수정</button>
-						<button>정지</button>
-						<button>강퇴</button>
-					</td>
-				</tr>
-				<tr>
-					<td>Paris specialites</td>
-					<td>
-						<select name="level">
-							<option value="a" selected>A</option>
-							<option value="b">B</option>
-							<option value="c">C</option>
-							<option value="d">D</option>
-							<option value="e">F</option>
-						</select>
-					</td>
-					<td>
-						<button>수정</button>
-						<button>정지</button>
-						<button>강퇴</button>
-					</td>
-				</tr>
+				<c:forEach items="${list}" var="list" varStatus="status">
+					<tr>
+						<td id="td_${status.count}">${list.nickname}</td>
+						<td>
+							<select name="level" id="select_${status.count}">
+								<c:choose>
+									<c:when test="${list.membershipflag == a}">
+										<option value="a" selected>A</option>
+										<option value="b">B</option>
+										<option value="c">C</option>
+										<option value="d">D</option>
+										<option value="f">F</option>
+									</c:when>
+									
+									<c:when test="${list.membershipflag == b}">
+										<option value="a">A</option>
+										<option value="b" selected>B</option>
+										<option value="c">C</option>
+										<option value="d">D</option>
+										<option value="f">F</option>
+									</c:when>
+									
+									<c:when test="${list.membershipflag == c}">
+										<option value="a">A</option>
+										<option value="b">B</option>
+										<option value="c" selected>C</option>
+										<option value="d">D</option>
+										<option value="f">F</option>
+									</c:when>
+									
+									<c:when test="${list.membershipflag == d}">
+										<option value="a">A</option>
+										<option value="b">B</option>
+										<option value="c">C</option>
+										<option value="d" selected>D</option>
+										<option value="f">F</option>
+									</c:when>
+									
+									<c:otherwise>
+										<option value="a">A</option>
+										<option value="b">B</option>
+										<option value="c">C</option>
+										<option value="d">D</option>
+										<option value="f" selected>F</option>
+									</c:otherwise>
+								</c:choose>
+							</select>
+						</td>
+						<td>
+							<button type="button" onclick="Msh(${status.count})">수정</button>
+							<button type="button">정지</button>
+							<button type="button">강퇴</button>
+						</td>
+					</tr>
+				</c:forEach>
 			</table>
 			<button type="button" onclick="#">뒤로가기</button>
 	</body>

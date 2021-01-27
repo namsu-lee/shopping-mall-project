@@ -1,8 +1,10 @@
 package com.shoppingmall.main;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.Cookie;
@@ -66,7 +68,7 @@ public class HomeController {
 		
 		HttpSession session = request.getSession(true);
 		String SessionID = (String)session.getAttribute("memberid");
-		
+
 		//읽지 않은 알람의 개수를 구해옴
 		int read_count = noticeService.getReadCount(SessionID);
 		System.out.println("read_count == " + read_count);
@@ -84,7 +86,12 @@ public class HomeController {
 		for(int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).toString());
 		}
-		
+		Map<String, String> map = null;
+		if(SessionID != null) {
+			map = mainService.getMembershipflag(SessionID);
+			System.out.println(map.get("membershipflag"));
+			model.addAttribute("membershipflag", map.get("membershipflag"));
+		}
 		
 		model.addAttribute("list", list); //접속자 아이디
 		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수

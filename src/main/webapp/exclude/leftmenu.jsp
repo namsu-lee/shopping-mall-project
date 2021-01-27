@@ -30,7 +30,9 @@
 </style>
 
 <div style="width:15%; float:left; min-width:157px;">
-<button  class="btn info" onclick="location.href='/category'">카테고리 수정</button>
+<c:if test="${membershipflag eq 'm'}">
+	<button  class="btn info" onclick="location.href='/category'">카테고리 수정</button>
+</c:if>	
         <br>
 <c:forEach items="${selectList}" var="cate">
 

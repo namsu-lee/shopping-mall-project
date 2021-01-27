@@ -20,8 +20,11 @@
 <div class="main">
 	<%@ include file="../../exclude/leftmenu.jsp" %>
 	<div style="width: 80%; float:right;">
-        <button class="btn info" onclick="location.href='/mainupdate'">메인화면 수정</button>
-        <button class="btn info" onclick="location.href='/Membership'">회원등급 관리</button>
+		<!-- 여기부분 권한 부여 해야한다...................................... -->
+		<c:if test="${membershipflag eq 'm'}">
+	        <button class="btn info" onclick="location.href='/mainupdate'">메인화면 수정</button>
+	        <button class="btn info" onclick="location.href='/Membership'">회원등급 관리</button>
+        </c:if>	
         <br>
 		${UpdateGetMain.m_content }
     </div>   

@@ -12,4 +12,9 @@
 	<update id="UpdateMain" parameterType="MainVO">
 		UPDATE main SET m_content=#{m_content}
 	</update>
+	
+	<!-- 로그인 한 유저의 회원 등급을 가져옴 -->
+	<select id="getMembershipflag" resultType="HashMap">
+		select membershipflag from members where memberid = #{memberid}
+	</select>
 </mapper>

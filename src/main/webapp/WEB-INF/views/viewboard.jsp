@@ -157,7 +157,7 @@ function showReplyList(){
                   			htmls +='<form action="updatedreply('+this.replynum+')">';
                   			htmls +='<textarea rows="1" style="width:100%;resize:none;" name="replycontent" id="replycontent"></textarea>';
                   			htmls +='</form>';
-                  			htmls +='<button type="button" onclick="submitUpdateReply()" class="replybtn" >';
+                  			htmls +='<button type="button" onclick="submitUpdateReply('+this.replynum+')" class="replybtn" >';
                   			htmls +='수정완료</button>';
                   			htmls +='</div>';
                   			htmls +='</div>';

@@ -28,14 +28,15 @@ function submitWriteReply() {
 	}
 }
 
-function submitUpdateReply() {	
-	var content = document.getElementById('replycontent').value;
+/* 댓글 수정 */
+function submitUpdateReply(replynum) {	
+	var content = document.getElementById('replycontent'+replynum).value;
 
 	for(var i=0; i<100; i++){ // 값이 들어간 길이 만큼 제목과 본문의 공백을 제거
 		content = content.replace(" ","");
 	}
 	if(content != ""){ // 내용이 작성되어 있는 경우 submit() 한다. 
-		document.writereply.submit();
+		updatedreply+replynum.submit();
 	}
 	else if(content == ""){ // 작성 된 내용이 하나도 없을 경우 안내 메세지 창 출력
 		alert("내용을 입력해주세요.");

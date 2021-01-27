@@ -35,7 +35,7 @@
 		<form method="post" action="/board/${cateid}/wroteboard">
 		<input type="hidden" name="memberid" value="${sessionScope.memberid}">
 		<input type="hidden" name="nickname" value="${sessionScope.nickname}">
-		<input type="text" name="b_title" id="b_title" size="40"placeholder="제목을 입력해주세요">
+		<input type="text" name="b_title" id="b_title" size="40"placeholder="제목을 입력해주세요" onkeyup="chkword(this, 100)">
 		<textarea id="b_content" name="b_content" ></textarea>
 		<br>
 		</form>
@@ -64,6 +64,37 @@ function submitContents() {
 	}
 }
 
+function chkword(obj, maxByte) {
+
+	var strValue = obj.value;
+	var strLen = strValue.length;
+	var totalByte = 0;
+	var len = 0;
+	var oneChar = "";
+	var str2 = "";
+
+	for (var i = 0; i < strLen; i++) {
+		oneChar = strValue.charAt(i);
+		if (escape(oneChar).length > 4) {
+			totalByte += 2;
+		} else {
+			totalByte++;
+		}
+
+		// 입력한 문자 길이보다 넘치면 잘라내기 위해 저장
+		if (totalByte <= maxByte) {
+			len = i + 1;
+		}
+	}
+
+	// 넘어가는 글자는 자른다.
+	if (totalByte > maxByte) {
+		alert(maxByte + "자를 초과 입력 할 수 없습니다.");
+		str2 = strValue.substr(0, len);
+		obj.value = str2;
+		chkword(obj, 4000);
+	}
+}
 </script>
 </body>
 </html>

@@ -26,6 +26,7 @@
 			<h2>
 				서비스를 사용할 수 없습니다...
 			</h2>
+			<a href="/" style="color:black;">메인으로 이동</a>
 		</div>
 	</center>
 </body>

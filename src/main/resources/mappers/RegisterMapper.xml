@@ -40,7 +40,7 @@
 	
 	<!-- 회원 등급과 닉네임을 가져옴 -->
 	<select id="getMembership" resultType="MembersVO">
-		select nickname, membershipflag, stopflag from members
+		select nickname, membershipflag, stopflag from members where membershipflag not in ('m')
 	</select>
 	
 	

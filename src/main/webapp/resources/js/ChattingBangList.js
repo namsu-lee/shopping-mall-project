@@ -33,26 +33,28 @@ function Make_ChattingBang() {
 	});
 }
 
-
-//채팅방 제목 수정
-function chat_modify(no) {
-	alert("modify" + no);
-}
-
-
-
-
-
-
-
 //채팅방 삭제
 function chat_remove(no) {
-	alert("remove" + no);	
+	var title = $("#btn_" + no).text();
+	//alert(title);
+	var data = {title: title}
+	$.ajax({
+		url:"/chattitleremove",
+		type:"POST",
+		data:data,
+		success:function(result) {
+			$(result).find("HashMap").each(function() {
+				if($(this).find("num").text() == 1) {
+					alert("채팅방을 삭제 하였습니다.");
+					$("#tr_" + no).remove();
+				}
+				if($(this).find("num").text() == 0) {
+					alert("채팅방 삭제를 못했네....");
+				}
+			});
+		}
+	});
 }
-
-
-
-
 
 
 

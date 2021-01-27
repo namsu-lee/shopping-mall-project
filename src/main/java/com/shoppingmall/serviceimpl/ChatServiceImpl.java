@@ -1,6 +1,7 @@
 package com.shoppingmall.serviceimpl;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -35,6 +36,20 @@ public class ChatServiceImpl implements ChatService{
 	@Override
 	public List<ChattingBangVO> getChattingBang() throws Exception {
 		return chatDAO.getChattingBang();
+	}
+
+
+	//로그인 한 사람의 회원 등급을 가져온다.
+	@Override
+	public Map<String, String> getMemberShipflag(String memberid) throws Exception {
+		return chatDAO.getMemberShipflag(memberid);
+	}
+
+
+	//채팅방 삭제
+	@Override
+	public int ChatTitleRemove(String title) throws Exception {
+		return chatDAO.ChatTitleRemove(title);
 	}
 	
 }

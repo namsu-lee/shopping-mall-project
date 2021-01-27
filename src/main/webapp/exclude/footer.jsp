@@ -7,9 +7,9 @@
 	background-color:#E6E6E6; 
 	overflow-x:hidden; 
 	overflow-y:auto; 
-	padding-left:0px; 
-	width:150px; 
-	max-height:150px;
+	width:130px; 
+	padding:5px; 
+	height:130px;
 	}
 	.group-list::-webkit-scrollbar{
 	width: 10px;

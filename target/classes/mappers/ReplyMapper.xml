@@ -5,7 +5,10 @@
 <mapper namespace="com.shoppingmall.mapper.ReplyMapper">
 	<!-- 댓글 불러오기 -->
 	<select id="GetReply" resultType="ReplyVO" parameterType="Integer">
-		select * from reply where b_num = #{b_num} 
+		select replynum, b_num, memberid, nickname, replycontent,
+		date_format(replydate,'%Y-%m-%d') as replydate from reply
+		where b_num = #{b_num}
+		<!-- order by replynum, replypnum -->
 	</select>
 	<!-- 댓글 입력 -->
 	<insert id="WroteReply" parameterType="ReplyVO">

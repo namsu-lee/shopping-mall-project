@@ -40,6 +40,9 @@
         <params>
             <param name="b_content" useDefender="false" />
         </params>
+        <params>
+            <param name="m_content" useDefender="false" />
+        </params>
     </global>
 
 </config>

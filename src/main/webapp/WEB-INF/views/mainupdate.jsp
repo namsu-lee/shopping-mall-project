@@ -37,7 +37,7 @@
     	
     </div>
 </div>
-<input type="hidden" id="test" value="<c:out value='${ UpdateGetMain.m_content}' />">
+<input type="hidden" id="test" value="<c:out value='${UpdateGetMain.m_content}' />">
 <script>
 CKEDITOR.replace('m_content',{
 	height:400,
@@ -45,7 +45,7 @@ CKEDITOR.replace('m_content',{
 	filebrowserUploadUrl:'/imageupload.do'
 });
 var test = document.getElementById("test").value;
-CKEDITOR.instances.b_content.setData(test);
+CKEDITOR.instances.m_content.setData(test);
 </script>
 </body>
 </html>

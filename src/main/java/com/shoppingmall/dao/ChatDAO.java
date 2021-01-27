@@ -1,6 +1,7 @@
 package com.shoppingmall.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -29,6 +30,16 @@ public class ChatDAO {
 	//채팅방 목록
 	public List<ChattingBangVO> getChattingBang() {
 		return sqlSession.selectList(Namespace + ".getChattingBang");
+	}
+
+	//로그인 한 사람의 회원 등급을 가져온다.
+	public Map<String, String> getMemberShipflag(String memberid) {
+		return sqlSession.selectOne(Namespace + ".getMemberShipflag", memberid);
+	}
+
+	//채팅방 삭제
+	public int ChatTitleRemove(String title) {
+		return sqlSession.delete(Namespace + ".ChatTitleRemove", title);
 	}
 	
 	

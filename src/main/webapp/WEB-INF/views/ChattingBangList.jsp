@@ -21,10 +21,12 @@
 </head>
 <body>
 	<div>
-		<label id="title">채팅방 제목 : </label> <input type="text" id="titlechat"
-			name="title">
-		<button type="button" id="Make_ChattingBang"
-			onclick="Make_ChattingBang()">방 만들기</button>
+		<c:if test="${membershipflag eq 'm'}">
+			<label id="title">채팅방 제목 : </label> <input type="text" id="titlechat"
+				name="title">
+			<button type="button" id="Make_ChattingBang"
+				onclick="Make_ChattingBang()">방 만들기</button>
+		</c:if>
 	</div>
 	<h2>
 		<strong>채팅방 목록</strong>
@@ -36,10 +38,12 @@
 			<th style="width: 20%;">  </th>
 		</tr>
 		<c:forEach items="${list}" var="list" varStatus="status">
-			<tr>
+			<tr id="tr_${list.no}">
 				<td><a href="javascript:winOpen(<c:out value="${list.no}" />);" id="btn_<c:out value="${list.no}" />"><c:out value="${list.title}" /></a></td>
 				<td style="text-align:right;">
-					<button type="button" id="chat_remove_<c:out value="${list.no}" />" onclick="chat_remove(<c:out value="${list.no}" />)">삭제</button>
+					<c:if test="${membershipflag eq 'm'}">
+						<button type="button" id="chat_remove_<c:out value="${list.no}" />" onclick="chat_remove(<c:out value="${list.no}" />)">삭제</button>
+					</c:if>
 				</td>
 			</tr>
 		</c:forEach>

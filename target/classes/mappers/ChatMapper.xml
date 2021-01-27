@@ -25,4 +25,15 @@
 	<select id="getChattingBang" resultType="ChattingBangVO">
 		select * from chattingbang;
 	</select>
+	
+	<!-- 로그인 한 사람의 회원 등급을 가져온다. -->
+	<select id = "getMemberShipflag" resultType="HashMap">
+		select membershipflag from members where memberid = #{memberid};
+	</select>
+	
+	
+	<!-- 채팅방 삭제 -->
+	<delete id="ChatTitleRemove">
+		delete from chattingbang where title = #{title}
+	</delete>
 </mapper>

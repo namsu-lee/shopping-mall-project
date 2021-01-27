@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,13 +29,22 @@ public class ChatController {
 	@RequestMapping(value = "/ChattingBangList", method = RequestMethod.GET)
 	public String ChattingBangList(Model model, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		HttpSession session = request.getSession();
+		String memberid = (String)session.getAttribute("memberid");
+		
+		System.out.println("memberid == " + memberid);
+		
+		//로그인 한 사람의 회원 등급을 가져온다.
+		Map<String, String> map = chatService.getMemberShipflag(memberid);
+		System.out.println("membershipflag == " + map.get("membershipflag"));
+		
 		//채팅방 목록 뿌려준다
 		List<ChattingBangVO> list = chatService.getChattingBang();
 		
 		if(list.size() == 0) {
 			System.out.println("listChat가 null 입니다......");
 		}
-		
+		model.addAttribute("membershipflag", map.get("membershipflag"));
 		model.addAttribute("list", list);
 		return "/ChattingBangList";
 	}
@@ -66,8 +76,18 @@ public class ChatController {
 	}
 	
 	
-	
-	
+	//채팅방 삭제
+	@ResponseBody
+	@RequestMapping(value = "/chattitleremove", method = RequestMethod.POST)
+	public Map<String, Integer> ChatTitleRemove(ChattingBangVO vo) throws Exception {
+		
+		System.out.println(" vo == " + vo.getTitle());
+
+		//채팅방 삭제
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("num", chatService.ChatTitleRemove(vo.getTitle()));
+		return map;
+	}
 	
 	
 	

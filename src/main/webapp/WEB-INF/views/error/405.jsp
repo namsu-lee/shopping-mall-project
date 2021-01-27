@@ -26,6 +26,7 @@
 			<h2>
 				요청된 메소드가 허용되지 않습니다.
 			</h2>
+			<a href="/" style="color:black;">메인으로 이동</a>
 		</div>
 	</center>
 </body>

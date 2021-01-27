@@ -29,7 +29,8 @@
 				서버 트래픽 과부하<br/>
 				<br/>
 				서버 언어의 구문 에러(스크립트 문법 오류)<br/>
-				<br/>
+				<br/><br/><br/>
+				<a href="/" style="color:black;">메인으로 이동</a>
 			</h2>
 		</div>
 	</center>

@@ -33,7 +33,7 @@
   </div>
 </div>
 <div style="float:left; margin-left:30px;">
-    <div>오늘 ${TodayCount }</div> <div>전체 ${TotalCount }</div>
+    <div>오늘 방문자 ${TodayCount }</div> <div>전체 방문자 ${TotalCount }</div>
 </div>
 
 </div>

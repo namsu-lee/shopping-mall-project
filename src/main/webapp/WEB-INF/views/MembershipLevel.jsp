@@ -78,7 +78,6 @@
 									<button type="button" id="stop_cancel_${status.count}" onclick="Stop_Cancel(${status.count})">정지 취소</button>
 								</c:otherwise>
 							</c:choose>
-							<button type="button">강퇴</button>
 						</td>
 					</tr>
 				</c:forEach>

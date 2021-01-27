@@ -86,10 +86,12 @@ public class LoginController {
 
 	//로그인 처리
 	@RequestMapping(value = "/loginok", method = RequestMethod.POST, produces = "application/text; charset=utf8")
-	public @ResponseBody String LoginOk(Locale locale, Model model, LoginVO vo, HttpServletRequest request, HttpServletResponse response) throws Exception {
-		request.setCharacterEncoding("UTF-8");
+	public String LoginOk(Locale locale, Model model, LoginVO vo, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		System.out.println(vo.toString());
+		response.setCharacterEncoding("UTF-8"); 
+		response.setContentType("text/html; charset=UTF-8");
+		
 		PrintWriter out = response.getWriter();
 		
 		//비밀번호 암호화
@@ -97,11 +99,13 @@ public class LoginController {
 		
 		LoginVO result = loginService.Login(vo);
 		if(result == null) {
+			System.out.println("아이디 또는 비밀번호가 틀립니다.");
 			out.print("<script>");
 			out.print("		alert('아이디 또는 비밀번호가 틀립니다.');");
 			out.print("		location.href='/login';");
 			out.print("</script>");
 			out.flush();
+			out.close();
 			return "/login";
 		}
 		
@@ -109,11 +113,13 @@ public class LoginController {
 			
 			System.out.println(result.getStopflag());
 			if(result.getStopflag().equals("s")) {		//g or s
+				System.out.println("당신은 정지먹었네요..");
 				out.print("<script>");
 				out.print("		alert('당신은 정지먹었네요..');");
 				out.print("		location.href='/login';");
 				out.print("</script>");
 				out.flush();
+				out.close();
 				return "/login";
 			}
 			

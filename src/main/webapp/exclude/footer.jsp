@@ -4,11 +4,16 @@
 
 <div style="float:right; width:100%; margin-top:30px; margin-bottom:30px; right:0px;"> 
 <hr>
-오늘 방문자 수 : ${TodayCount }<br>
-전체 방문자 수 : ${TotalCount }<br>현재 접속 아이디 :
-<c:forEach items="${list}" var="list">
- ${list} 
-</c:forEach>
- <br>
-현재 접속자 수 : ${size }<br>
+<div>
+    접속 인원 ${size }명
+  <div>
+      <c:forEach items="${list}" var="list">
+		 ${list} 
+	  </c:forEach>
+  </div>
+</div>
+<div>
+    <div>오늘 ${TodayCount }</div> <div>전체 ${TotalCount }</div>
+</div>
+
 </div>

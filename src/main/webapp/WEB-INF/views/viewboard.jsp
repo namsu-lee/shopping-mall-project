@@ -100,7 +100,7 @@
 			</div>
 			</td>
 			<td style="width:5%;">
-				<button  class="replybtn" onclick="location.href='/board/${cateid}/${b_num}/${GetReply.replynum}/deletereply'">
+				<button  class="replybtn" onclick="replydel(${cateid},${b_num},${GetReply.replynum})">
 				삭제</button>
 			</td>
 			</c:when>
@@ -179,6 +179,14 @@ function submitWriteReply() {
 		alert("내용을 입력해주세요.");
 	}
 }
+function replydel(cateid, b_num, replynum){
+	if (confirm("삭제하시겠습니까??") == true){    //확인
+		location.href = "/board/"+cateid+"/"+b_num+"/"+replynum+"/deletereply";
+	}else{   //취소
+	    return;
+	}
+	}
+
 </script>
 
 </body>

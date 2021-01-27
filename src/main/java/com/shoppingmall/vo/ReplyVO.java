@@ -8,7 +8,7 @@ public class ReplyVO {
 	private String memberid;
 	private String nickname;
 	private String replycontent;
-	private Date replydate;
+	private String replydate;
 	private Integer replydepth;
 	public Integer getReplynum() {
 		return replynum;
@@ -40,10 +40,10 @@ public class ReplyVO {
 	public void setReplycontent(String replycontent) {
 		this.replycontent = replycontent;
 	}
-	public Date getReplydate() {
+	public String getReplydate() {
 		return replydate;
 	}
-	public void setReplydate(Date replydate) {
+	public void setReplydate(String replydate) {
 		this.replydate = replydate;
 	}
 	public Integer getReplydepth() {

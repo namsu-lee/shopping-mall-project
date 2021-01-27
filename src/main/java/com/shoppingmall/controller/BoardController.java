@@ -154,9 +154,6 @@ public class BoardController {
 		BoardVO ViewBoard = service.ViewBoard(b_num);
 		model.addAttribute("ViewBoard", ViewBoard);
 		
-		List<ReplyVO> GetReply = reply.GetReply(b_num);
-		model.addAttribute("GetReply", GetReply);
-		
 		//접속자 수, 접속자 아이디 가져온다.
 		int num = AccessorVO.getHttpSession().size();
 		for(int i = 0; i < AccessorVO.getHttpSession().size(); i++) {

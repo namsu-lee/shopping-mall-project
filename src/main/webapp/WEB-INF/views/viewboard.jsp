@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>${ViewBoard.b_title}</title>
+<script src="/resources/js/jquery-3.5.1.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <style>
 	.view{
@@ -80,33 +81,10 @@
 		<hr>
 	<div class="reply" style="width:100%;display: inline-block;">
 	<table>
-	<c:forEach items="${GetReply}" var="GetReply">
-		<tr id="reply${GetReply.replynum }" >
-			<td style="width:10%;">${GetReply.nickname}</td>
-			<td style="width:55%;">${GetReply.replycontent}</td>
-			<td style="width:15%;">${GetReply.replydate}</td>
-			<c:choose>
-			<c:when test="${GetReply.memberid == sessionScope.memberid}">
-			<td style="width:5%; ">
-			<div class="dropdown">
-				<button onclick="myFunction()" class="replybtn">수정</button>
-				<div id="myDropdown" class="dropdown-content">
-					<form action="/board/${cateid}/${b_num}/${GetReply.replynum}/updatedreply">
-					<textarea rows="1" style="width:100%;resize:none;" name="replycontent"></textarea>
-					<button type="submit"  class="replybtn" >
-					수정완료</button>
-					</form>
-				</div>
-			</div>
-			</td>
-			<td style="width:5%;">
-				<button  class="replybtn" onclick="replydel(${cateid},${b_num},${GetReply.replynum})">
-				삭제</button>
-			</td>
-			</c:when>
-			</c:choose>
-		</tr>
-	</c:forEach>
+	<div class="my-3 p-3 bg-white rounded shadow-sm" style="padding-top: 10px">
+		<h6 class="border-bottom pb-2 mb-0">댓글 목록</h6>
+		<div id="replyList"></div>
+	</div> 
 	</table>
 		
 	</div>
@@ -118,11 +96,11 @@
 			<table style="width:100%;">
 				<tr>
 					<form id="writereply" name="writereply" action="/board/${cateid}/${ViewBoard.b_num}/wrotereply" method="post">
-						<input type="hidden" name="memberid" value="${sessionScope.memberid}">
-						<input type="hidden" name="nickname" value="${sessionScope.nickname}">
+						<input type="hidden" name="memberid" id="memberid" value="${sessionScope.memberid}">
+						<input type="hidden" name="nickname" id="nickname" value="${sessionScope.nickname}">
 						<td style="width:80%; "><textarea name="replycontent" onkeyup="enterkey();" id="replycontent" style="resize: none; width:95%; font-size:20px; padding:10px; " rows="1"></textarea></td>
 					</form>
-					<td style="width:10%;"><button class="replybtn" onclick="submitWriteReply()" >댓글입력</button></td>
+					<td style="width:10%;"><button type="button" class="replybtn" onclick="submitWriteReply()" >댓글입력</button></td>
 				</tr>
 			</table>
 		</div>
@@ -148,54 +126,102 @@
 	</div>
 </div>
 <%@ include file="../../exclude/footer.jsp" %> 
-</div>	
-
-	
+</div>
+<script src="/resources/js/viewboard.js"></script>
 <script>
-function deleteconfirm(){ 
-		var deletecon = confirm("삭제 하시겠습니까?")
-		
-		if(deletecon==true){
-			document.location.href = "/board/${cateid}/${b_num}/deleteboard";
-		}else if(deletecon==false){
-			return false;
-		
+//댓글 불러오기
+function showReplyList(){
+	var url = "${pageContext.request.contextPath}/GetReply";
+	var paramData = {"b_num" : "${ViewBoard.b_num}"};
+	var sessionid= "${sessionScope.memberid}";
+	$.ajax({
+        type: 'POST',
+        url: url,
+        data: paramData,
+        dataType: 'json',
+        success: function(result) {
+           	var htmls = "";
+		if(result.length < 1){
+			htmls +="등록된 댓글이 없습니다.";
+		} else {
+                    $(result).each(function(){
+                    	htmls += '<tr style="height:50px;vertical-align: middle;" id="reply'+this.replynum+'">';
+                    	htmls += '<td style="width:10%;">'+this.nickname+'</td>';
+                    	htmls +='<td style="width:55%;">'+this.replycontent+'</td>';
+                    	htmls +='<td style="width:15%;">'+this.replydate+'</td>';
+                    	if(this.memberid==sessionid){
+                    		htmls +='<td style="width:5%; ">';
+                   			htmls +='<div class="dropdown">';
+               				htmls +='<button onclick="myFunction()" class="replybtn">수정</button>';
+                  			htmls +='<div id="myDropdown" class="dropdown-content">';
+                  			htmls +='<form action="/board/${cateid}/${b_num}/'+this.replynum+'/updatedreply">';
+                  			htmls +='<textarea rows="1" style="width:100%;resize:none;" name="replycontent"></textarea>';
+                  			htmls +='<button type="submit"  class="replybtn" >';
+                  			htmls +='수정완료</button>';
+                  			htmls +='</form>';
+                  			htmls +='</div>';
+                  			htmls +='</div>';
+                  			htmls +='</td>';
+                  			htmls +='<td style="width:5%;">';
+                  			htmls +='<button  class="replybtn" onclick="fn_deleteReply('+this.replynum+')">';
+                  			htmls +='삭제</button>';
+                  			htmls +='</td>';
+                  			htmls +='</tr>';
+                    	}else{
+                    		htmls +='<td colspan="2" style="width:10%;"></td>';
+                    		htmls +='</tr>';
+                    	}
+                });	//each end
 		}
-	}
-
-
-function myFunction() {
-	  document.getElementById("myDropdown").classList.toggle("show");
-	}
-	
-function submitWriteReply() {	
-	var content = document.getElementById('replycontent').value;
-
-	for(var i=0; i<100; i++){ // 값이 들어간 길이 만큼 제목과 본문의 공백을 제거
-		content = content.replace(" ","");
-	}
-	if(content != ""){ // 내용이 작성되어 있는 경우 submit() 한다. 
-		document.writereply.submit();
-	}
-	else if(content == ""){ // 작성 된 내용이 하나도 없을 경우 안내 메세지 창 출력
-		alert("내용을 입력해주세요.");
-	}
+		$("#replyList").html(htmls);
+        }	   // Ajax success end
+	});	// Ajax end
 }
-function replydel(cateid, b_num, replynum){
-	if (confirm("삭제하시겠습니까??") == true){    //확인
-		location.href = "/board/"+cateid+"/"+b_num+"/"+replynum+"/deletereply";
-	}else{   //취소
-	    return;
-	}
+$(document).ready(function(){
+	showReplyList();
+});
+//댓글 입력
+function submitreply(){
+	var replyContent = $('#replycontent').val();
+	var replyReg_id = $('#memberid').val();
+	var nickname = $('#nickname').val();
+	var paramData = JSON.stringify({"replycontent": replyContent
+			, "memberid": replyReg_id
+			, "nickname" : nickname
+			, "b_num":'${ViewBoard.b_num}'
+	});
+	var headers = {"Content-Type" : "application/json"
+			, "X-HTTP-Method-Override" : "POST"};
+	$.ajax({
+		url: '/wrotereply'
+		, headers : headers
+		, data : paramData
+		, type : 'POST'
+		, dataType : 'text'
+		, success: function(result){
+			showReplyList();
+			$('#replycontent').val('');
+			$('#memberid').val('');
+		}
+		, error: function(error){
+			console.log("에러 : " + error);
+		}
+	});
 }
-
-function enterkey() {
-    if (window.event.keyCode == 13) {
-         // 엔터키가 눌렸을 때 실행할 내용
-         submitWriteReply();
-    }
+//댓글 삭제
+function fn_deleteReply(replynum){
+	$.ajax({
+		url: "/deletereply"
+		, data : {"replynum": replynum}
+		, type : 'POST'
+		, success: function(result){
+			showReplyList();
+		}
+		, error: function(error){
+			console.log("에러 : " + error);
+		}
+	});
 }
-
 
 </script>
 

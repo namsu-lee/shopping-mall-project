@@ -33,8 +33,15 @@ function Make_ChattingBang() {
 	});
 }
 
+
+var webSocket = {
+	disconnect: function() {
+		this._socket.close();
+	}
+}
 //채팅방 삭제
 function chat_remove(no) {
+	
 	var title = $("#btn_" + no).text();
 	//alert(title);
 	var data = {title: title}

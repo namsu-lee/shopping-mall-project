@@ -1,7 +1,6 @@
 package com.shoppingmall.main;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -73,7 +72,7 @@ public class HomeController {
 		int read_count = noticeService.getReadCount(SessionID);
 		System.out.println("read_count == " + read_count);
 		
-		//접속자 수, 접속자 아이디 가져온다.
+		//현재 접속자 수, 현재 접속자 아이디 가져온다.
 		int num = AccessorVO.getHttpSession().size();
 		for(int i = 0; i < AccessorVO.getHttpSession().size(); i++) {
 			String memberid = (String) AccessorVO.getHttpSession().get(i).getAttribute("memberid");
@@ -83,17 +82,20 @@ public class HomeController {
 		System.out.println("list 크기 == " + list.size());
 		
 		System.out.println("현재 접속자 수 :: " + AccessorVO.getHttpSession().size());
+		
 		for(int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i).toString());
 		}
+		
 		Map<String, String> map = null;
+		
 		if(SessionID != null) {
 			map = mainService.getMembershipflag(SessionID);
 			System.out.println(map.get("membershipflag"));
 			model.addAttribute("membershipflag", map.get("membershipflag"));
 		}
 		
-		model.addAttribute("list", list); //접속자 아이디
+		model.addAttribute("list", list); //접속자 닉네임
 		model.addAttribute("size", AccessorVO.getHttpSession().size()); //접속자 수
 		model.addAttribute("TotalCount", visitcountService.getTotalCount().getTotalcount());//총 방문자 수
 		model.addAttribute("TodayCount", visitcountService.getTodayCount());//오늘 방문자 수

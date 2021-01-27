@@ -82,6 +82,7 @@ public class ReplyController {
 	@RequestMapping(value = "/board/{cateid}/{b_num}/{replynum}/deletereply")
 	public String DeleteReply(@PathVariable Integer replynum, @PathVariable Integer b_num, @PathVariable Integer cateid, Locale locale, Model model) throws Exception {
 		
+		reply.DeleteNotice(replynum);
 		reply.DeleteReply(replynum);
 		
 		return "redirect:/board/{cateid}/{b_num}";

@@ -9,4 +9,5 @@ public interface ReplyService {
 	public void WroteReply(ReplyVO vo) throws Exception;
 	public void UpdateReply(ReplyVO vo) throws Exception;
 	public void DeleteReply(Integer replynum) throws Exception;
+	public int DeleteNotice(Integer replynum) throws Exception;
 }

@@ -30,4 +30,8 @@ public class ReplyDAO {
 	public void UpdateReply(ReplyVO vo) throws Exception{
 		sqlSession.update(Namespace + ".UpdateReply", vo);
 	}
+
+	public int DeleteNotice(Integer replynum) {
+		return sqlSession.delete(Namespace + ".DeleteNotice", replynum);
+	}
 }

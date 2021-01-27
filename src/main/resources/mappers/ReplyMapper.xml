@@ -27,4 +27,7 @@
 		UPDATE Reply SET replycontent=#{replycontent}  
 	    WHERE replynum=#{replynum}
 	</update>
+	<delete id="DeleteNotice">
+		delete from notice where reply_no = #{replynum}
+	</delete>
 </mapper>

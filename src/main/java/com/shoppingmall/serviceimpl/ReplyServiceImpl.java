@@ -36,4 +36,9 @@ public class ReplyServiceImpl implements ReplyService{
 	public void DeleteReply(Integer replynum) throws Exception{
 		ReplyDAO.DeleteReply(replynum);
 	}
+
+	@Override
+	public int DeleteNotice(Integer replynum) throws Exception {
+		return ReplyDAO.DeleteNotice(replynum);
+	}
 }

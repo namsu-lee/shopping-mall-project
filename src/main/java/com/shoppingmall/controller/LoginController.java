@@ -17,6 +17,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.shoppingmall.service.LoginService;
@@ -81,10 +82,12 @@ public class LoginController {
 		model.addAttribute("Auto_ID", cookie);
 		return "/login";
 	}
-	
+	 
+
 	//로그인 처리
-	@RequestMapping(value = "/loginok", method = RequestMethod.POST)
-	public String LoginOk(Locale locale, Model model, LoginVO vo, HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(value = "/loginok", method = RequestMethod.POST, produces = "application/text; charset=utf8")
+	public @ResponseBody String LoginOk(Locale locale, Model model, LoginVO vo, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("UTF-8");
 		
 		System.out.println(vo.toString());
 		PrintWriter out = response.getWriter();

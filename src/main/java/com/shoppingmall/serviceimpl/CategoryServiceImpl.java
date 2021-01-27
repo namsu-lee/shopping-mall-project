@@ -38,5 +38,8 @@ public class CategoryServiceImpl implements CategoryService{
 		CategoryDAO.DeleteCategory(CateNum);
 	}
 	
-	
+	@Override
+	public CategoryVO getOneCategoryName(Integer cateid) throws Exception{
+		return CategoryDAO.getOneCategoryName(cateid);
+	}
 }

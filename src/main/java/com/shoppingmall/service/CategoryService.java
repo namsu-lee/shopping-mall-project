@@ -11,4 +11,5 @@ public interface CategoryService {
 	public void CategoryDelete(int CateNum) throws Exception;
 	public List<CategoryVO> CategorySortGet() throws Exception;
 	public List<CategoryVO> CategoryNameGet() throws Exception;
+	public CategoryVO getOneCategoryName(Integer cateid) throws Exception;
 }

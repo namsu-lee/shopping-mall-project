@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title></title>
+<title>${ViewBoard.b_title}</title>
 
 <style>
 	.view{
@@ -120,7 +120,7 @@
 					<form id="writereply" name="writereply" action="/board/${cateid}/${ViewBoard.b_num}/wrotereply" method="post">
 						<input type="hidden" name="memberid" value="${sessionScope.memberid}">
 						<input type="hidden" name="nickname" value="${sessionScope.nickname}">
-						<td style="width:80%; "><textarea name="replycontent" id="replycontent" style="resize: none; width:95%; font-size:20px; padding:10px; " rows="1"></textarea></td>
+						<td style="width:80%; "><textarea name="replycontent" onkeyup="enterkey();" id="replycontent" style="resize: none; width:95%; font-size:20px; padding:10px; " rows="1"></textarea></td>
 					</form>
 					<td style="width:10%;"><button class="replybtn" onclick="submitWriteReply()" >댓글입력</button></td>
 				</tr>
@@ -162,6 +162,8 @@ function deleteconfirm(){
 		
 		}
 	}
+
+
 function myFunction() {
 	  document.getElementById("myDropdown").classList.toggle("show");
 	}
@@ -185,7 +187,15 @@ function replydel(cateid, b_num, replynum){
 	}else{   //취소
 	    return;
 	}
-	}
+}
+
+function enterkey() {
+    if (window.event.keyCode == 13) {
+         // 엔터키가 눌렸을 때 실행할 내용
+         submitWriteReply();
+    }
+}
+
 
 </script>
 

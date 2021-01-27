@@ -57,7 +57,10 @@ public class CategoryDAO {
 			sqlSession.delete(Namespace+".deleteCategory", CateNum);
 		}
 		
+		//카테고리 이름 하나 가져오기
 		
-
+		public CategoryVO getOneCategoryName(Integer cateid) throws Exception{
+			return sqlSession.selectOne(Namespace+".getOneCategoryName", cateid);
+		}
 	
 }

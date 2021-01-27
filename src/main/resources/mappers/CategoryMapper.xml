@@ -28,4 +28,7 @@
 		DELETE FROM category WHERE cateid = #{cateid}
 	</delete>
 	
+	<select id="getOneCategoryName" resultType="CategoryVO" parameterType="Integer">
+		select catename from category where cateid=#{cateid} 
+	</select>
 </mapper>

@@ -55,6 +55,9 @@ public class BoardController {
 			@PathVariable Integer cateid, String keyword, Locale locale, Model model) throws Exception {
 		List<String> list = new ArrayList<String>();
 		
+		CategoryVO getOneCategoryName = cate.getOneCategoryName(cateid);
+		model.addAttribute("catename", getOneCategoryName);
+		
 		List<CategoryVO> selectList = cate.CategoryGet();
 		model.addAttribute("selectList", selectList);
 		

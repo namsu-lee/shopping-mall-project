@@ -30,7 +30,7 @@
 	</delete>
 	
 	<!-- 정지가 풀리는 날을 가져옴 -->
-	<select id="PauseCheck">
+	<select id="PauseCheck" resultType="PauseVO">
 		select nickname from pause where enddate = curdate();
 	</select>
 	

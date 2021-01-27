@@ -21,6 +21,7 @@ import com.shoppingmall.service.MainService;
 import com.shoppingmall.service.NoticeService;
 import com.shoppingmall.service.RegisterService;
 import com.shoppingmall.service.VisitcountService;
+import com.shoppingmall.task.IP;
 import com.shoppingmall.vo.AccessorVO;
 import com.shoppingmall.vo.CategoryVO;
 import com.shoppingmall.vo.MainVO;
@@ -50,15 +51,19 @@ public class HomeController {
 	@Inject
 	private NoticeService noticeService;
 	 
-	
+	//-Djava.net.preferIPv4Stack=true
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 * @throws Exception 
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model, HttpServletRequest request) throws Exception {
+		
 		List<String> list = new ArrayList<String>();
-		System.out.println("client ip == " + request.getRemoteAddr());
+		
+		System.out.println("client ip == " + IP.getIp(request));
+		
 		HttpSession session = request.getSession(true);
 		String SessionID = (String)session.getAttribute("memberid");
 		

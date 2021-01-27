@@ -95,7 +95,7 @@
 			
 			<table style="width:100%;">
 				<tr>
-					<form id="writereply" name="writereply" action="/board/${cateid}/${ViewBoard.b_num}/wrotereply" method="post">
+					<form id="writereply" name="writereply" action="submitreply()" method="post">
 						<input type="hidden" name="memberid" id="memberid" value="${sessionScope.memberid}">
 						<input type="hidden" name="nickname" id="nickname" value="${sessionScope.nickname}">
 						<td style="width:80%; "><textarea name="replycontent" onkeyup="enterkey();" id="replycontent" style="resize: none; width:95%; font-size:20px; padding:10px; " rows="1"></textarea></td>
@@ -154,11 +154,11 @@ function showReplyList(){
                    			htmls +='<div class="dropdown">';
                				htmls +='<button onclick="myFunction()" class="replybtn">수정</button>';
                   			htmls +='<div id="myDropdown" class="dropdown-content">';
-                  			htmls +='<form action="/board/${cateid}/${b_num}/'+this.replynum+'/updatedreply">';
-                  			htmls +='<textarea rows="1" style="width:100%;resize:none;" name="replycontent"></textarea>';
-                  			htmls +='<button type="submit"  class="replybtn" >';
-                  			htmls +='수정완료</button>';
+                  			htmls +='<form action="updatedreply('+this.replynum+')">';
+                  			htmls +='<textarea rows="1" style="width:100%;resize:none;" name="replycontent" id="replycontent"></textarea>';
                   			htmls +='</form>';
+                  			htmls +='<button type="button" onclick="submitUpdateReply()" class="replybtn" >';
+                  			htmls +='수정완료</button>';
                   			htmls +='</div>';
                   			htmls +='</div>';
                   			htmls +='</td>';
@@ -169,8 +169,8 @@ function showReplyList(){
                   			htmls +='</tr>';
                     	}else{
                     		htmls +='<td colspan="2" style="width:10%;"></td>';
-                    		htmls +='</tr>';
                     	}
+                    	htmls +='</tr>';
                 });	//each end
 		}
 		$("#replyList").html(htmls);
@@ -180,8 +180,10 @@ function showReplyList(){
 $(document).ready(function(){
 	showReplyList();
 });
+
 //댓글 입력
 function submitreply(){
+	
 	var replyContent = $('#replycontent').val();
 	var replyReg_id = $('#memberid').val();
 	var nickname = $('#nickname').val();
@@ -223,6 +225,28 @@ function fn_deleteReply(replynum){
 	});
 }
 
+//댓글 수정
+function fn_updateReply(rid, reg_id){
+	var replyEditContent = $('#replycontent').val();
+	var paramData = JSON.stringify({"content": replyEditContent
+	});
+	var headers = {"Content-Type" : "application/json"
+			, "X-HTTP-Method-Override" : "POST"};
+	$.ajax({
+		url: "/updatedreply"
+		, headers : headers
+		, data : paramData
+		, type : 'POST'
+		, dataType : 'text'
+		, success: function(result){
+            console.log(result);
+			showReplyList();
+		}
+		, error: function(error){
+			console.log("에러 : " + error);
+		}
+	});
+}
 </script>
 
 </body>

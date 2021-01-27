@@ -27,6 +27,22 @@ function submitWriteReply() {
 		alert("내용을 입력해주세요.");
 	}
 }
+
+function submitUpdateReply() {	
+	var content = document.getElementById('replycontent').value;
+
+	for(var i=0; i<100; i++){ // 값이 들어간 길이 만큼 제목과 본문의 공백을 제거
+		content = content.replace(" ","");
+	}
+	if(content != ""){ // 내용이 작성되어 있는 경우 submit() 한다. 
+		document.writereply.submit();
+	}
+	else if(content == ""){ // 작성 된 내용이 하나도 없을 경우 안내 메세지 창 출력
+		alert("내용을 입력해주세요.");
+		
+	}
+}
+
 function replydel(cateid, b_num, replynum){
 	if (confirm("삭제하시겠습니까??") == true){    //확인
 		location.href = "/board/"+cateid+"/"+b_num+"/"+replynum+"/deletereply";

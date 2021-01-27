@@ -38,6 +38,7 @@ public class ReplyController {
 		return reply.GetReply(b_num);
 	}
 	
+	//댓글 작성
 	@RequestMapping(value = "/wrotereply")
 	public Map<String, Object> WroteReply(@RequestBody ReplyVO vo, 
 			Locale locale, Model model) throws Exception {
@@ -53,13 +54,20 @@ public class ReplyController {
 		}
 		return result;
 	}
+	
 	//댓글 수정
-	@RequestMapping(value = "/board/{cateid}/{b_num}/{replynum}/updatedreply")
-	public String UpdatedReply(@PathVariable Integer replynum, @PathVariable Integer b_num, @PathVariable Integer cateid, ReplyVO vo, Locale locale, Model model) throws Exception {
+	@RequestMapping(value = "/updatedreply")
+	public Map<String, Object> UpdatedReply(@RequestBody ReplyVO vo, Locale locale, Model model) throws Exception {
+		Map<String, Object> result = new HashMap<>();
 		
-		reply.UpdateReply(vo);
-		
-		return "redirect:/board/{cateid}/{b_num}";
+		try {
+			reply.UpdateReply(vo);
+		result.put("status", "OK");
+		} catch (Exception e) {
+		e.printStackTrace();
+		result.put("status", "False");
+		}
+		return result;
 	}
 	
 	//댓글 삭제

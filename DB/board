@@ -11,6 +11,7 @@ create table board(
     boardflag varchar(2),
 );
 
+
 //조회수 default 값 0으로 수정
 ALTER TABLE board
 CHANGE COLUMN `b_hit` `b_hit` INT NULL DEFAULT 0 ;

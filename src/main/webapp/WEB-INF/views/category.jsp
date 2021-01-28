@@ -170,17 +170,51 @@ function chkword(obj, maxByte) {
 function fn_editcate(cateid, catesort, catename, cateauth, categroup){
 	var htmls = "";
 	htmls +='<tr id="cateedit'+cateid+'" name="cateedit'+cateid+'">'; 	
-	htmls +='<td colspan="4"><form id="edit'+cateid+'" name="edit'+cateid+'" method="POST" action="/categoryedit/'+cateid+'"><table style="padding:0;border:0px; width:100%;"><tr><td style="width:18.60465116%;"><input type="number" name="catesort" id="catesort">';
-	htmls +='<td style="width:34.88372093%;"><input type="text" name="catename" id="catename" onkeyup="chkword(this, 100)"></td>';
-	htmls +='<td style="width:34.88372093%;"><input type="checkbox" name="cateauth" value="M" checked> 관리자 <br>';
-	htmls +='<input type="checkbox" name="cateauth" value="A"> A <br>';
-	htmls +='<input type="checkbox" name="cateauth" value="B"> B <br>';
-	htmls +='<input type="checkbox" name="cateauth" value="C"> C <br>';
-	htmls +='<input type="checkbox" name="cateauth" value="D"> D <br>';
-	htmls +='<input type="checkbox" name="cateauth" value="F"> F <br></td>';
+	htmls +='<td colspan="4"><form id="edit'+cateid+'" name="edit'+cateid+'" method="POST" action="/categoryedit/'+cateid+'"><table style="padding:0;border:0px; width:100%;"><tr><td style="width:18.60465116%;"><input type="number" name="catesort" id="catesort" value=\''+catesort+'\'>';
+	htmls +='<td style="width:34.88372093%;"><input type="text" name="catename" id="catename" onkeyup="chkword(this, 100)" value=\''+catename+'\'></td>';
+	htmls +='<td style="width:34.88372093%;">';
+	htmls += '<input type="checkbox" name="cateauth" ';
+	if (cateauth.indexOf('M')!=-1) {
+		htmls +='checked';
+	}
+	htmls += ' value="M"> 관리자 <br>';
+	htmls +='<input type="checkbox" name="cateauth" ';
+	if (cateauth.indexOf('A')!=-1) {
+		htmls +='checked';
+	}
+	htmls += ' value="A"> A <br>';
+	htmls +='<input type="checkbox" name="cateauth" ';
+	if (cateauth.indexOf('B')!=-1) {
+		htmls +='checked';
+	}
+	htmls +=' value="B"> B <br>';
+	htmls +='<input type="checkbox" name="cateauth" ';
+	if (cateauth.indexOf('C')!=-1) {
+		htmls +='checked';
+	}
+	htmls +=' value="C"> C <br>';
+	htmls +='<input type="checkbox" name="cateauth" ';
+	if (cateauth.indexOf('D')!=-1) {
+		htmls +='checked';
+	}
+	htmls += ' value="D"> D <br>';
+	htmls +='<input type="checkbox" name="cateauth" ';
+	if (cateauth.indexOf('F')!=-1) {
+		htmls +='checked';
+	}
+	htmls += ' value="F"> F <br></td>';
 	htmls +='<td style="width:11.62790698%;"><select name="categroup">';
-	htmls +='<option value="Y">예';
-	htmls +='<option value="N" selected>아니오';
+	//
+	htmls +='<option value="Y"';
+	if (categroup.indexOf('Y')!=-1) {
+		htmls +='selected';
+	}
+	htmls +='>예';
+	htmls +='<option value="N"';
+	if (categroup.indexOf('N')!=-1) {
+		htmls +='selected';
+	}
+	htmls +=' >아니오';
 	htmls +='</select></td></tr></table></form>';				
 	htmls +='';
 	htmls +='<td><button type="button" class="submit" onclick="editEvent('+cateid+', \'edit'+cateid+'\')">수정완료</button></td>';

@@ -36,6 +36,13 @@
 		<input type="hidden" name="memberid" value="${sessionScope.memberid}">
 		<input type="hidden" name="nickname" value="${sessionScope.nickname}">
 		<input type="text" name="b_title" id="b_title" size="40"placeholder="제목을 입력해주세요" onkeyup="chkword(this, 100)">
+		게시물 권한 :	<select name="boardflag" id="select_${status.count}">
+						<option value="a">A</option>
+						<option value="b">B</option>
+						<option value="c">C</option>
+						<option value="d">D</option>
+						<option value="f" selected>F</option>
+					</select>
 		<textarea id="b_content" name="b_content" ></textarea>
 		<br>
 		</form>

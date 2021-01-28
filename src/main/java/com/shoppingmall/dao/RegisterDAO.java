@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.shoppingmall.vo.LoginVO;
 import com.shoppingmall.vo.MembersVO;
 
 @Repository
@@ -64,6 +65,12 @@ public class RegisterDAO {
 	//회원 등급 변경
 	public int MembershipModify(MembersVO vo) {
 		return sqlSession.update(Namespace + ".MembershipModify", vo);
+	}
+
+
+	//membershipflag 가져와야한다..
+	public LoginVO getMembershipflag(String memberid) {
+		return sqlSession.selectOne(Namespace + ".getMembershipflag", memberid);
 	}
 
 

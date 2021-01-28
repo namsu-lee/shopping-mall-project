@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.mchange.v1.lang.holders.VolatileBooleanHolder;
 import com.shoppingmall.service.BoardService;
 import com.shoppingmall.service.CategoryService;
 import com.shoppingmall.service.NoticeService;
@@ -72,6 +73,11 @@ public class BoardController {
 		List<BoardVO> GetBoardList = service.GetBoardList(cateid, page, keyword, startList, listSize);
 		model.addAttribute("pagination", pagination);
 		model.addAttribute("GetBoardList", GetBoardList);
+		
+		for(int i = 0; i < GetBoardList.size(); i++) {
+			System.out.println(GetBoardList.get(i).toString());
+		}
+		
 		
 		//접속자 수, 접속자 아이디 가져온다.
 		int num = AccessorVO.getHttpSession().size();
@@ -199,7 +205,7 @@ public class BoardController {
 			pw.flush();
 			return "redirect:/board/{cateid}";
 		}
-		
+		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaa" + vo.getBoardflag());
 		service.WroteBoard(vo);
 		
 		return "redirect:/board/{cateid}";

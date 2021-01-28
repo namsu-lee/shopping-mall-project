@@ -48,4 +48,11 @@
 	<update id="MembershipModify" parameterType="MembersVO">
 		update members set membershipflag = #{membershipflag} where nickname = #{nickname};
 	</update>
+	
+	<!-- membershipflag 가져와야한다.. -->
+	<select id="getMembershipflag" resultType="LoginVO">
+		select membershipflag from members where memberid = #{memberid}
+	</select>
+	
+	
 </mapper> 

@@ -66,7 +66,7 @@ function test(cateid, b_num, boardflag, boardmemberid) {
 		}
 	}else if(SessionID == 'b'){
 		if(boardflag == 'm' || boardflag == 'a'){
-			if(sessionid == boardmemberid) {
+			if(sessionid == boardmemberid || sessionid == null) {
 				location.href="/board/"+cateid+"/"+ b_num;
 			}
 			else {
@@ -108,6 +108,9 @@ function test(cateid, b_num, boardflag, boardmemberid) {
 		}else{
 			location.href="/board/"+cateid+"/"+ b_num;
 		}
+	}else if(sessionid == "") {
+		alert("로그인을 합시다...");
+		location.href="/login";
 	}
 	
 }

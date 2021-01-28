@@ -198,7 +198,10 @@ form.example::after {
 					</c:when>
 					
 				</c:choose>
-			<!-- </a> --></a></td>
+			<!-- </a> --></a><c:if test="${list.replycnt ne '0'}">
+			[${list.replycnt}]
+		</c:if>
+		</td></td>
 			<td style="text-align: center;">
 				<c:choose>
 					<c:when test="${param.keyword == null}">

@@ -13,3 +13,4 @@ CREATE TABLE `members` (
   `stopflag` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`memberid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

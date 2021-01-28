@@ -8,6 +8,7 @@ create table board(
     b_content text,
     b_wdate datetime,
     b_hit int
+    boardflag varchar(2),
 );
 
 //조회수 default 값 0으로 수정

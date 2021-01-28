@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.shoppingmall.dao.RegisterDAO;
 import com.shoppingmall.service.RegisterService;
+import com.shoppingmall.vo.LoginVO;
 import com.shoppingmall.vo.MembersVO;
 @Service
 public class RegisterServiceImpl implements RegisterService{
@@ -70,6 +71,13 @@ public class RegisterServiceImpl implements RegisterService{
 	@Override
 	public int MembershipModify(MembersVO vo) throws Exception {
 		return registerDAO.MembershipModify(vo);
+	}
+
+
+	//membershipflag 가져와야한다..
+	@Override
+	public LoginVO getMembershipflag(String memberid) throws Exception {
+		return registerDAO.getMembershipflag(memberid);
 	}  
  
 	

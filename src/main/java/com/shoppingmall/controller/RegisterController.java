@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.shoppingmall.service.RegisterService;
 import com.shoppingmall.service.VisitcountService;
 import com.shoppingmall.vo.AccessorVO;
+import com.shoppingmall.vo.LoginVO;
 import com.shoppingmall.vo.MembersVO;
 
 @Controller
@@ -37,7 +38,7 @@ public class RegisterController {
 
 	@Inject
 	VisitcountService visitcountService;
-	
+
 	//회원가입 페이지로 이동
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String register(Locale locale, Model model) throws Exception {
@@ -126,6 +127,14 @@ public class RegisterController {
 		if (result == 1) {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("memberid", membersVO.getMemberid());
+			
+			
+			String SessionID = (String)session.getAttribute("memberid");
+			//membershipflag 가져와야한다..
+			LoginVO vo = registerService.getMembershipflag(SessionID);
+			System.out.println("vo.getMembershipflag === === =" + vo.getMembershipflag());
+			//@@@@@@@@@@@@@@@@@@@@@@@@@@@
+			session.setAttribute("vo", vo);
 			
 			//1. 접속자의 session을 리스트에 추가
 			AccessorVO.getHttpSession().add(session);

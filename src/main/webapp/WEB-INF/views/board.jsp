@@ -104,16 +104,20 @@ form.example::after {
 			<td ><a href="/board/${cateid}/${list.b_num}"> 
 				<c:choose>
 				<c:when test="${param.keyword == null}">
-				${list.b_title} 
+				${list.b_title}
 				</c:when>
 				<c:when test="${param.keyword != null}">
 					 <c:set var="highlight" value="<label style='background-color:yellow'> 
 					 ${param.keyword}
 					 </label>" />
-					${fn:replace(list.b_title, param.keyword , highlight )} 
+					${fn:replace(list.b_title, param.keyword , highlight )}
 				</c:when>
 				</c:choose>
-			</a></td>
+			</a>
+			<c:if test="${list.replycnt ne '0'}">
+			[${list.replycnt}]
+			</c:if>
+			</td>
 			<td style="text-align: center;">
 				<c:choose>
 					<c:when test="${param.keyword == null}">

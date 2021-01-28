@@ -6,6 +6,8 @@
 	<!-- 게시판 리스트 불러오기 -->
 	<select id="GetBoardList" resultType="BoardVO">
 		select b_num, memberid, nickname, b_title, b_wdate, b_hit, cateid
+		,(select count(*) from reply
+		where b_num = board.b_num)as replycnt
 		 from board where cateid = #{cateid} 
 		  <if test="keyword != null ">
 		    AND  (nickname LIKE CONCAT('%',#{keyword},'%')

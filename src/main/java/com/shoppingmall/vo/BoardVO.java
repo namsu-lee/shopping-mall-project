@@ -11,6 +11,14 @@ public class BoardVO {
     private String b_content;
     private Date b_wdate;
     private Integer b_hit;
+    private Integer replycnt;
+    
+	public Integer getReplycnt() {
+		return replycnt;
+	}
+	public void setReplycnt(Integer replycnt) {
+		this.replycnt = replycnt;
+	}
 	public Integer getB_num() {
 		return b_num;
 	}
@@ -61,8 +69,8 @@ public class BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [b_num=" + b_num + ", memberid=" + memberid + ", nickname=" + nickname + ", cateid=" + cateid + ", b_title=" + b_title + ", b_content=" + b_content + ", b_wdate=" + b_wdate + ", b_hit=" + b_hit + "]";
+		return "BoardVO [b_num=" + b_num + ", memberid=" + memberid + ", nickname=" + nickname + ", cateid=" + cateid + ", b_title=" + b_title + ", b_content=" + b_content + ", b_wdate=" + b_wdate + ", b_hit=" + b_hit + ", replycnt="
+				+ replycnt + "]";
 	}
-    
     
 }

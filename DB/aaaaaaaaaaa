@@ -1,0 +1,119 @@
+-- ---------------------------------------------------------------------------------------------------------
+-- board
+CREATE TABLE `board` (
+  `b_num` int(11) NOT NULL AUTO_INCREMENT,
+  `memberid` varchar(20) DEFAULT NULL,
+  `nickname` varchar(20) DEFAULT NULL,
+  `cateid` int(11) DEFAULT NULL,
+  `b_title` varchar(100) DEFAULT NULL,
+  `b_content` text,
+  `b_wdate` datetime DEFAULT NULL,
+  `b_hit` int(11) DEFAULT '0',
+  PRIMARY KEY (`b_num`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ---------------------------------------------------------------------------------------------------------
+-- category
+
+CREATE TABLE `category` (
+  `cateid` int(11) NOT NULL AUTO_INCREMENT,
+  `catesort` int(11) DEFAULT NULL,
+  `catename` varchar(100) DEFAULT NULL,
+  `cateauth` varchar(50) DEFAULT NULL,
+  `categroup` varchar(2) DEFAULT NULL,
+  PRIMARY KEY (`cateid`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ---------------------------------------------------------------------------------------------------------
+-- chattingbang
+
+CREATE TABLE `chattingbang` (
+  `no` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ---------------------------------------------------------------------------------------------------------
+-- main
+
+CREATE TABLE `main` (
+  `m_content` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ---------------------------------------------------------------------------------------------------------
+-- members
+
+CREATE TABLE `members` (
+  `memberid` varchar(20) NOT NULL,
+  `nickname` varchar(20) NOT NULL,
+  `password` text NOT NULL,
+  `membername` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `phone` varchar(13) NOT NULL,
+  `uuid` varchar(50) DEFAULT NULL,
+  `uploadPath` varchar(50) DEFAULT NULL,
+  `fileName` varchar(50) DEFAULT NULL,
+  `membershipflag` varchar(2) DEFAULT NULL,
+  `stopflag` varchar(2) DEFAULT NULL,
+  PRIMARY KEY (`memberid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ---------------------------------------------------------------------------------------------------------
+-- notice
+
+CREATE TABLE `notice` (
+  `board_no` int(11) DEFAULT '0',
+  `reply_no` int(11) DEFAULT '0',
+  `notice_no` int(11) NOT NULL AUTO_INCREMENT,
+  `memberid` varchar(20) DEFAULT NULL,
+  `another_memberid` varchar(20) DEFAULT NULL,
+  `read_check` char(2) DEFAULT NULL,
+  `regdate` datetime DEFAULT NULL,
+  `cateid` int(11) NOT NULL,
+  PRIMARY KEY (`notice_no`),
+  KEY `board_no` (`board_no`),
+  KEY `reply_no` (`reply_no`),
+  CONSTRAINT `notice_ibfk_1` FOREIGN KEY (`board_no`) REFERENCES `board` (`b_num`),
+  CONSTRAINT `notice_ibfk_2` FOREIGN KEY (`reply_no`) REFERENCES `reply` (`replynum`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+
+-- ---------------------------------------------------------------------------------------------------------
+-- pause
+
+CREATE TABLE `pause` (
+  `no` int(11) NOT NULL AUTO_INCREMENT,
+  `nickname` varchar(20) NOT NULL,
+  `startdate` date DEFAULT NULL,
+  `enddate` date DEFAULT NULL,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- ---------------------------------------------------------------------------------------------------------
+-- reply
+
+CREATE TABLE `reply` (
+  `replynum` int(11) NOT NULL AUTO_INCREMENT,
+  `b_num` int(11) DEFAULT NULL,
+  `memberid` varchar(20) DEFAULT NULL,
+  `nickname` varchar(20) DEFAULT NULL,
+  `replycontent` text,
+  `replydate` datetime DEFAULT NULL,
+  `replydepth` int(11) DEFAULT NULL,
+  PRIMARY KEY (`replynum`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ---------------------------------------------------------------------------------------------------------
+-- todaycount
+
+CREATE TABLE `todaycount` (
+  `today` date DEFAULT NULL,
+  `memberid` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- ---------------------------------------------------------------------------------------------------------
+-- totalcount
+
+CREATE TABLE `totalcount` (
+  `totalcount` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

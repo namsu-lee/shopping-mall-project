@@ -31,4 +31,10 @@
 	<select id="getOneCategoryName" resultType="CategoryVO" parameterType="Integer">
 		select catename from category where cateid=#{cateid} 
 	</select>
+	
+	<update id="UpdateCategory" parameterType="BoardVO">
+		UPDATE category SET catesort=#{catesort}, catename=#{catename},  
+		cateauth=#{cateauth}, categroup=#{categroup}
+	    WHERE cateid=#{cateid}
+	</update>
 </mapper>

@@ -42,4 +42,9 @@ public class CategoryServiceImpl implements CategoryService{
 	public CategoryVO getOneCategoryName(Integer cateid) throws Exception{
 		return CategoryDAO.getOneCategoryName(cateid);
 	}
+	
+	@Override
+	public void UpdateCategory(CategoryVO vo) throws Exception{
+		CategoryDAO.UpdateCategory(vo);
+	}
 }

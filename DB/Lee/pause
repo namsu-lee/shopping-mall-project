@@ -1,0 +1,7 @@
+CREATE TABLE `pause` (
+  `no` int NOT NULL AUTO_INCREMENT,
+  `nickname` varchar(20) NOT NULL,
+  `startdate` date DEFAULT NULL,
+  `enddate` date DEFAULT NULL,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;

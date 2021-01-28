@@ -1,0 +1,11 @@
+CREATE TABLE `board` (
+  `b_num` int NOT NULL AUTO_INCREMENT,
+  `memberid` varchar(20) DEFAULT NULL,
+  `nickname` varchar(20) DEFAULT NULL,
+  `cateid` int DEFAULT NULL,
+  `b_title` varchar(100) DEFAULT NULL,
+  `b_content` text,
+  `b_wdate` datetime DEFAULT NULL,
+  `b_hit` int DEFAULT '0',
+  PRIMARY KEY (`b_num`)
+) ENGINE=InnoDB AUTO_INCREMENT=196 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

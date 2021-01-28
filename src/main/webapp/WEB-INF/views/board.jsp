@@ -53,10 +53,9 @@ function fn_next(page, range, rangeSize) {
 
 
 //제목을 클릭 했을때 실행 ㄱ
-function test(cateid, b_num, boardflag) {
-	alert(cateid + " ,,,, " + b_num);
-	alert("boardflag === " + boardflag);
+function test(cateid, b_num, boardflag, boardmemberid) {
 	var SessionID = "${sessionScope.vo.membershipflag}";
+	var sessionid = "${sessionScope.memberid}";
 	if(SessionID == 'm'){
 		location.href="/board/"+cateid+"/"+ b_num;
 	}else if(SessionID == 'a'){
@@ -67,25 +66,45 @@ function test(cateid, b_num, boardflag) {
 		}
 	}else if(SessionID == 'b'){
 		if(boardflag == 'm' || boardflag == 'a'){
-			alert("접근권한이 없습니다.");
-		}else{
+			if(sessionid == boardmemberid) {
+				location.href="/board/"+cateid+"/"+ b_num;
+			}
+			else {
+				alert("접근권한이 없습니다.");
+			}
+		}else {
 			location.href="/board/"+cateid+"/"+ b_num;
 		}
 	}else if(SessionID == 'c'){
 		if(boardflag == 'm' || boardflag == 'a'|| boardflag == 'b'){
-			alert("접근권한이 없습니다.");
+			if(sessionid == boardmemberid) {
+				location.href="/board/"+cateid+"/"+ b_num;
+			}
+			else {
+				alert("접근권한이 없습니다.");
+			}
 		}else{
 			location.href="/board/"+cateid+"/"+ b_num;
 		}
 	}else if(SessionID == 'd'){
 		if(boardflag == 'm' || boardflag == 'a' || boardflag == 'b' || boardflag == 'c'){
-			alert("접근권한이 없습니다.");
+			if(sessionid == boardmemberid) {
+				location.href="/board/"+cateid+"/"+ b_num;
+			}
+			else {
+				alert("접근권한이 없습니다.");
+			}
 		}else{
 			location.href="/board/"+cateid+"/"+ b_num;
 		}
 	}else if(SessionID == 'f'){
 		if(boardflag == 'm' || boardflag == 'a' || boardflag == 'b' || boardflag == 'c' || boardflag == 'd'){
-			alert("접근권한이 없습니다.");
+			if(sessionid == boardmemberid) {
+				location.href="/board/"+cateid+"/"+ b_num;
+			}
+			else {
+				alert("접근권한이 없습니다.");
+			}
 		}else{
 			location.href="/board/"+cateid+"/"+ b_num;
 		}
@@ -184,7 +203,7 @@ form.example::after {
 			<td style="text-align: center;">${list.b_num}</td>
 			<!-- @@@@@@@@@@@@@@@@@@@@@@@ --><!-- @@@@@@@@@@@@@@@@@@@@@@@ -->
 			<td ><%-- <a href="/board/${cateid}/${list.b_num}"> --%>  <!-- @@@@@@@@@@@@@@@@@@@@@@@ -->
-				<a href="javascript:test(${cateid}, ${list.b_num}, '${list.boardflag}');">
+				<a href="javascript:test(${cateid}, ${list.b_num}, '${list.boardflag}', '${list.memberid}');">
 				<c:choose>
 					<c:when test="${param.keyword == null}">
 						${list.b_title} 

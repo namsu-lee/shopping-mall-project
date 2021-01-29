@@ -13,14 +13,14 @@ function deleteconfirm(){
 		}
 	}
 //글자 수 확인
-function submitWriteReply() {	
+function submitWriteReply(cateid, b_num) {	
 	var content = document.getElementById('replycontent').value;
 
 	for(var i=0; i<100; i++){ // 값이 들어간 길이 만큼 제목과 본문의 공백을 제거
 		content = content.replace(" ","");
 	}
 	if(content != ""){ // 내용이 작성되어 있는 경우 submit() 한다. 
-		submitreply();
+		submitreply(cateid, b_num);
 	}
 	else if(content == ""){ // 작성 된 내용이 하나도 없을 경우 안내 메세지 창 출력
 		alert("내용을 입력해주세요.");
@@ -71,7 +71,7 @@ function showReplyList(){
 		htmls+='</table>';
 		$("#replyList").html(htmls);
 		//대댓글 토글
-		/* var acc = document.getElementsByClassName("accordion");
+		 /* var acc = document.getElementsByClassName("accordion");
 		var j;
 	
 		for (j = 0; j < acc.length; j++) {
@@ -82,9 +82,9 @@ function showReplyList(){
 		      panel.style.display = "none";
 		    } else {
 		      panel.style.display = "block";
-		    } */
+		    } 
 		  });
-		}
+		} */
       }	   // Ajax success end
       
 });	// Ajax end
@@ -94,8 +94,7 @@ $(document).ready(function(){
 });
 
 //댓글 입력
-function submitreply(){
-	
+function submitreply(cateid, b_num){
 	var replyContent = $('#replycontent').val();
 	var replyReg_id = $('#memberid').val();
 	var nickname = $('#nickname').val();
@@ -107,7 +106,7 @@ function submitreply(){
 	var headers = {"Content-Type" : "application/json"
 			, "X-HTTP-Method-Override" : "POST"};
 	$.ajax({
-		url: '/wrotereply'
+		url: '/wrotereply?cateid='+cateid+'&b_num='+b_num
 		, headers : headers
 		, data : paramData
 		, type : 'POST'
@@ -115,7 +114,6 @@ function submitreply(){
 		, success: function(result){
 			showReplyList();
 			$('#replycontent').val('');
-			$('#memberid').val('');
 		}
 		, error: function(error){
 			console.log("에러 : " + error);

@@ -126,7 +126,7 @@
 				<input type="hidden" name="nickname" id="nickname" value="${sessionScope.nickname}">
 				<td style="width:80%; "><textarea name="replycontent" onkeyup="enterkey();" id="replycontent" style="resize: none; width:95%; font-size:20px; padding:10px; " rows="1"></textarea></td>
 			</form>
-			<td style="width:10%;"><button type="button" class="replybtn" onclick="submitWriteReply()" >댓글입력</button></td>
+			<td style="width:10%;"><button type="button" class="replybtn" onclick="submitWriteReply('${cateid}', '${b_num}')" >댓글입력</button></td>
 		</tr>
 	</table>
 </div>

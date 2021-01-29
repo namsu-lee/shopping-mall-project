@@ -67,11 +67,30 @@
 	}
 	.show {display: block;}
 	
-	#editContent{
+	.form-control{
 	resize: none; 
 	width:95%; 
 	font-size:15px; 
 	padding:10px; 
+	}
+	.accordion {
+  cursor: pointer;
+  transition: 0.4s;
+  width: 95%;
+  background-color:white;
+  border: none;
+  text-align: left;
+  }
+
+	.active, .accordion:hover {
+	  background-color: #ccc; 
+	}
+	
+	.panel {
+	  padding: 0 18px;
+	  display: none;
+	  background-color: white;
+	  overflow: hidden;
 	}
 </style>
 </head>

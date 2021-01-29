@@ -5,57 +5,83 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.shoppingmall</groupId>
 	<artifactId>main</artifactId>
-	<name>shopping_mall_project</name>
+	<name>shopping_mall_project</name> 
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
 		<java-version>1.8</java-version>
-		<org.springframework-version>4.1.7.RELEASE</org.springframework-version>
+		<org.springframework-version>3.1.1.RELEASE</org.springframework-version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-websocket</artifactId>
-			<version>${org.springframework-version}</version>
+		<dependency> 
+			<groupId>mysql</groupId> 
+			<artifactId>mysql-connector-java</artifactId> 
+			<version>8.0.17</version> 
+		</dependency> 
+		<!-- MyBatis 3.4.1 --> 
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis --> 
+		<dependency> 
+			<groupId>org.mybatis</groupId> 
+			<artifactId>mybatis</artifactId> 
+			<version>3.4.1</version> 
+		</dependency> 
+		<!-- MyBatis-Spring --> 
+		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring --> 
+		<dependency> 
+			<groupId>org.mybatis</groupId> 
+			<artifactId>mybatis-spring</artifactId> 
+			<version>1.3.0</version> 
+		</dependency> 
+		<!-- Mybatis log --> 
+		<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4.1 --> 
+		<dependency> 
+			<groupId>org.bgee.log4jdbc-log4j2</groupId> 
+			<artifactId>log4jdbc-log4j2-jdbc4</artifactId> 
+			<version>1.16</version> 
+		</dependency> 
+		<!-- Spring-jdbc --> 
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc --> 
+		<dependency> 
+			<groupId>org.springframework</groupId> 
+			<artifactId>spring-jdbc</artifactId> 
+			<version>${org.springframework-version}</version> 
+		</dependency> 
+		<!-- Spring-test --> 
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test --> 
+		<dependency> 
+			<groupId>org.springframework</groupId> 
+			<artifactId>spring-test</artifactId> 
+			<version>${org.springframework-version}</version> 
+		</dependency> 
+		<!-- Common-dbcp --> 
+		<dependency> 
+			<groupId>commons-dbcp</groupId> 
+			<artifactId>commons-dbcp</artifactId> 
+			<version>1.4</version> 
 		</dependency>
-
-
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.17</version>
-		</dependency>
-		
-		<!-- XSS 방어 naver lucy -->
-		<dependency>
-			<groupId>com.navercorp.lucy</groupId>
-			<artifactId>lucy-xss-servlet</artifactId>
-			<version>2.0.0</version>
-		</dependency>
-		
 		<!-- MyBatis 3.4.1 -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>3.4.1</version>
-		</dependency>
+		</dependency> -->
 		<!-- MyBatis-Spring -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.3.0</version>
-		</dependency>
+		</dependency> -->
 		<!-- Mybatis log -->
 		<!-- https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4.1 -->
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.bgee.log4jdbc-log4j2</groupId>
 			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
 			<version>1.16</version>
-		</dependency>
+		</dependency> -->
 		<!-- Spring-jdbc -->
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
 		<dependency>
@@ -148,47 +174,32 @@
 		<!-- 데이터를 json로 변환하기 위해 라이브러리 다운 -->
 		<!-- jackson-databind 라이브러리는 jackson-core 및 jackson-annotation 라이브러리의 의존성을 
 			포함하기 때문에 메이븐을 사용하는 경우 jackson-databind 라이브러리만 추가하면 된다. -->
-
-
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.13</version>
+			<version>1.9.2</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-asl</artifactId>
-			<version>1.9.13</version>
+			<version>1.9.2</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>2.12.1</version>
+			<version>2.5.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>2.12.1</version>
+			<version>2.5.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.12.1</version>
+			<version>2.5.1</version>
 		</dependency>
 
-
-		<dependency>
-			<groupId>com.github.scribejava</groupId>
-			<artifactId>scribejava-core</artifactId>
-			<version>2.8.1</version>
-		</dependency>
-
-		<!-- 제이슨 파싱 -->
-		<dependency>
-			<groupId>com.googlecode.json-simple</groupId>
-			<artifactId>json-simple</artifactId>
-			<version>1.1.1</version>
-		</dependency>
 		<!-- <dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-databind</artifactId> 
 			<version>2.12.0</version> </dependency> -->
 		<!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
@@ -228,18 +239,8 @@
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.3.3</version>
 		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.2</version>
-		</dependency>
-		<dependency>
-		    <groupId>org.apache.commons</groupId>
-		    <artifactId>commons-lang3</artifactId>
-		    <version>3.4</version>
-		</dependency> 
 		<!-- 섬네일을 제작하기 위한 라이브러리 -->
-		<dependency>
+		<dependency>      
 			<groupId>net.coobird</groupId>
 			<artifactId>thumbnailator</artifactId>
 			<version>0.4.13</version>
@@ -250,28 +251,6 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
-
-		<!-- 메일 전송 -->
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context-support -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context-support</artifactId>
-			<version>${org.springframework-version}</version>
-		</dependency>
-		<!-- 메일 관련 라이브러리 -->
-		<dependency>
-			<groupId>com.sun.mail</groupId>
-			<artifactId>javax.mail</artifactId>
-			<version>1.6.2</version>
-		</dependency>
-
-		<!-- 메일 관련 라이브러리 -->
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>1.4</version>
-		</dependency>
-
 
 		<!-- Servlet -->
 		<!-- 파일을 처리하기 위해 서블릿 3.1.0버전을 사용함 -->
@@ -292,7 +271,6 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -322,8 +300,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.5.1</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>1.6</source>
+					<target>1.6</target>
 					<compilerArgument>-Xlint:all</compilerArgument>
 					<showWarnings>true</showWarnings>
 					<showDeprecation>true</showDeprecation>

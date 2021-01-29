@@ -28,6 +28,13 @@
 			<version>8.0.17</version>
 		</dependency>
 		
+		<!-- XSS 방어 naver lucy -->
+		<dependency>
+			<groupId>com.navercorp.lucy</groupId>
+			<artifactId>lucy-xss-servlet</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+		
 		<!-- MyBatis 3.4.1 -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>

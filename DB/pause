@@ -1,7 +1,7 @@
-create table pause (
-	no int auto_increment not null,
-    nickname varchar(20) not null,
-    startdate date,
-    enddate date,
-    primary key(no)
-) DEFAULT CHARSET=utf8 COLLATE utf8_general_ci;
+CREATE TABLE `pause` (
+  `no` int NOT NULL AUTO_INCREMENT,
+  `nickname` varchar(20) NOT NULL,
+  `startdate` date DEFAULT NULL,
+  `enddate` date DEFAULT NULL,
+  PRIMARY KEY (`no`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;

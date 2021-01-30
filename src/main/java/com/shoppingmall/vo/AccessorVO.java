@@ -6,7 +6,7 @@ import javax.servlet.http.HttpSession;
 
 
 public class AccessorVO {
-	// 홈페이지 접속자 수 접속자 아이디 관리
+
 	private static ArrayList<HttpSession> httpSession = new ArrayList<HttpSession>();
 
 	public static ArrayList<HttpSession> getHttpSession() {
@@ -16,5 +16,5 @@ public class AccessorVO {
 	public static void setHttpSession(ArrayList<HttpSession> httpSession) {
 		AccessorVO.httpSession = httpSession;
 	}
-
+	
 }

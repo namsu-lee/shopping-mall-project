@@ -66,6 +66,32 @@
 	padding:0;
 	}
 	.show {display: block;}
+	
+	.form-control{
+	resize: none; 
+	width:95%; 
+	font-size:15px; 
+	padding:10px; 
+	}
+	.accordion {
+  cursor: pointer;
+  transition: 0.4s;
+  width: 95%;
+  background-color:white;
+  border: none;
+  text-align: left;
+  }
+
+	.active, .accordion:hover {
+	  background-color: #ccc; 
+	}
+	
+	.panel {
+	  padding: 0 18px;
+	  display: none;
+	  background-color: white;
+	  overflow: hidden;
+	}
 </style>
 </head>
 <body>
@@ -90,22 +116,22 @@
 	</div>
 	<c:choose>
  	<c:when test="${sessionScope.memberid != null }">
+ 	
+ 	<!-- 댓글 입력 창 -->
 	<div class="replywrite" style="width:100%;">
-		
-			
-			<table style="width:100%;">
-				<tr>
-					<form id="writereply" name="writereply" action="submitreply()" method="post">
-						<input type="hidden" name="memberid" id="memberid" value="${sessionScope.memberid}">
-						<input type="hidden" name="nickname" id="nickname" value="${sessionScope.nickname}">
-						<td style="width:80%; "><textarea name="replycontent" onkeyup="enterkey();" id="replycontent" style="resize: none; width:95%; font-size:20px; padding:10px; " rows="1"></textarea></td>
-					</form>
-					<td style="width:10%;"><button type="button" class="replybtn" onclick="submitWriteReply()" >댓글입력</button></td>
-				</tr>
-			</table>
-		</div>
-		</c:when> 
- </c:choose>
+	<table style="width:100%;">
+		<tr>
+			<form id="writereply" name="writereply" action="submitreply()" method="post">
+				<input type="hidden" name="memberid" id="memberid" value="${sessionScope.memberid}">
+				<input type="hidden" name="nickname" id="nickname" value="${sessionScope.nickname}">
+				<td style="width:80%; "><textarea name="replycontent" onkeyup="enterkey();" id="replycontent" style="resize: none; width:95%; font-size:20px; padding:10px; " rows="1"></textarea></td>
+			</form>
+			<td style="width:10%;"><button type="button" class="replybtn" onclick="submitWriteReply('${cateid}', '${b_num}')" >댓글입력</button></td>
+		</tr>
+	</table>
+</div>
+</c:when> 
+</c:choose>
 	<div style="float:left;">
 		<button  class="btn info" onclick="location.href='/board/${cateid}'">목록</button>
 	</div>
@@ -127,127 +153,7 @@
 </div>
 <%@ include file="../../exclude/footer.jsp" %> 
 </div>
-<script src="/resources/js/viewboard.js"></script>
-<script>
-//댓글 불러오기
-function showReplyList(){
-	var url = "${pageContext.request.contextPath}/GetReply";
-	var paramData = {"b_num" : "${ViewBoard.b_num}"};
-	var sessionid= "${sessionScope.memberid}";
-	$.ajax({
-        type: 'POST',
-        url: url,
-        data: paramData,
-        dataType: 'json',
-        success: function(result) {
-           	var htmls = "";
-		if(result.length < 1){
-			htmls +="등록된 댓글이 없습니다.";
-		} else {
-                    $(result).each(function(){
-                    	htmls += '<tr style="height:50px;vertical-align: middle;" id="reply'+this.replynum+'">';
-                    	htmls += '<td style="width:10%;">'+this.nickname+'</td>';
-                    	htmls +='<td style="width:55%;">'+this.replycontent+'</td>';
-                    	htmls +='<td style="width:15%;">'+this.replydate+'</td>';
-                    	if(this.memberid==sessionid){
-                    		htmls +='<td style="width:5%; ">';
-                   			htmls +='<div class="dropdown">';
-               				htmls +='<button onclick="myFunction()" class="replybtn">수정</button>';
-                  			htmls +='<div id="myDropdown" class="dropdown-content">';
-                  			htmls +='<form action="updatedreply('+this.replynum+')">';
-                  			htmls +='<textarea rows="1" style="width:100%;resize:none;" name="replycontent" id="replycontent"></textarea>';
-                  			htmls +='</form>';
-                  			htmls +='<button type="button" onclick="submitUpdateReply('+this.replynum+')" class="replybtn" >';
-                  			htmls +='수정완료</button>';
-                  			htmls +='</div>';
-                  			htmls +='</div>';
-                  			htmls +='</td>';
-                  			htmls +='<td style="width:5%;">';
-                  			htmls +='<button  class="replybtn" onclick="fn_deleteReply('+this.replynum+')">';
-                  			htmls +='삭제</button>';
-                  			htmls +='</td>';
-                  			htmls +='</tr>';
-                    	}else{
-                    		htmls +='<td colspan="2" style="width:10%;"></td>';
-                    	}
-                    	htmls +='</tr>';
-                });	//each end
-		}
-		$("#replyList").html(htmls);
-        }	   // Ajax success end
-	});	// Ajax end
-}
-$(document).ready(function(){
-	showReplyList();
-});
-
-//댓글 입력
-function submitreply(){
-	
-	var replyContent = $('#replycontent').val();
-	var replyReg_id = $('#memberid').val();
-	var nickname = $('#nickname').val();
-	var paramData = JSON.stringify({"replycontent": replyContent
-			, "memberid": replyReg_id
-			, "nickname" : nickname
-			, "b_num":'${ViewBoard.b_num}'
-	});
-	var headers = {"Content-Type" : "application/json"
-			, "X-HTTP-Method-Override" : "POST"};
-	$.ajax({
-		url: '/wrotereply'
-		, headers : headers
-		, data : paramData
-		, type : 'POST'
-		, dataType : 'text'
-		, success: function(result){
-			showReplyList();
-			$('#replycontent').val('');
-			$('#memberid').val('');
-		}
-		, error: function(error){
-			console.log("에러 : " + error);
-		}
-	});
-}
-//댓글 삭제
-function fn_deleteReply(replynum){
-	$.ajax({
-		url: "/deletereply"
-		, data : {"replynum": replynum}
-		, type : 'POST'
-		, success: function(result){
-			showReplyList();
-		}
-		, error: function(error){
-			console.log("에러 : " + error);
-		}
-	});
-}
-
-//댓글 수정
-function fn_updateReply(rid, reg_id){
-	var replyEditContent = $('#replycontent').val();
-	var paramData = JSON.stringify({"content": replyEditContent
-	});
-	var headers = {"Content-Type" : "application/json"
-			, "X-HTTP-Method-Override" : "POST"};
-	$.ajax({
-		url: "/updatedreply"
-		, headers : headers
-		, data : paramData
-		, type : 'POST'
-		, dataType : 'text'
-		, success: function(result){
-            console.log(result);
-			showReplyList();
-		}
-		, error: function(error){
-			console.log("에러 : " + error);
-		}
-	});
-}
-</script>
-
+<!-- <script src="/resources/js/viewboard.js"></script> -->
+<%@ include file="/resources/js/viewboard.jsp" %>
 </body>
 </html>

@@ -17,7 +17,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.shoppingmall.service.LoginService;
@@ -124,6 +123,7 @@ public class LoginController {
 			}
 			
 			HttpSession session = request.getSession();
+			session.setAttribute("vo", result);	//membershipflag가져옴
 			session.setAttribute("memberid", result.getMemberid());
 			session.setAttribute("nickname", result.getNickname());
 			session.setMaxInactiveInterval(60*60);
@@ -162,8 +162,9 @@ public class LoginController {
 		//총 방문자 수 +1 , 오늘 방문자 수 +1
 		if(visitcountService.getTodayUser(vo.getMemberid()) == 0) {
 			visitcountService.UpdateTodayCount(vo.getMemberid());
+			visitcountService.UpdateTotalCount();
 		}
-		visitcountService.UpdateTotalCount();
+		
 		
 		
 		//return "redirect:/main"; 리다이엑트는 uri를 탄다.
@@ -252,12 +253,12 @@ public class LoginController {
 				
 				//AccessorVO.list에 해당 사용자의 세션 추가
 				session.setAttribute("memberid", (String)response.get("id")); //세션 생성
-				
+				session.setAttribute("vo", result);	//membershipflag가져옴
 				//총 방문자 수 +1 , 오늘 방문자 수 +1
 				if(visitcountService.getTodayUser(vo.getMemberid()) == 0) {
 					visitcountService.UpdateTodayCount(vo.getMemberid());
+					visitcountService.UpdateTotalCount();
 				}
-				visitcountService.UpdateTotalCount();
 			}
 		}
 		else {

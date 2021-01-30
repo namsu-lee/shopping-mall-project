@@ -9,11 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.shoppingmall.service.CategoryService;
+import com.shoppingmall.vo.BoardVO;
 import com.shoppingmall.vo.CategoryVO;
 
 @Controller
@@ -82,5 +84,13 @@ public class CategoryController {
 		return "redirect:/category";
 	}
 	
+	//수정하기
+	@RequestMapping(value = "/categoryedit/{cateid}")
+	public String UpdateCategory( @PathVariable Integer cateid, CategoryVO vo, Locale locale, Model model) throws Exception {
+		
+		service.UpdateCategory(vo);
+		
+		return "redirect:/category";
+	}
 	
 }

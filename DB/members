@@ -1,0 +1,16 @@
+CREATE TABLE `members` (
+  `memberid` varchar(20) NOT NULL,
+  `nickname` varchar(20) NOT NULL,
+  `password` text NOT NULL,
+  `membername` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `phone` varchar(13) NOT NULL,
+  `uuid` varchar(50) DEFAULT NULL,
+  `uploadPath` varchar(50) DEFAULT NULL,
+  `fileName` varchar(50) DEFAULT NULL,
+  `membershipflag` varchar(2) DEFAULT NULL,
+  `stopflag` varchar(2) DEFAULT NULL,
+  PRIMARY KEY (`memberid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

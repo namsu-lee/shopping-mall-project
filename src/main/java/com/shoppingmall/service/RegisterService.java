@@ -2,6 +2,7 @@ package com.shoppingmall.service;
 
 import java.util.List;
 
+import com.shoppingmall.vo.LoginVO;
 import com.shoppingmall.vo.MembersVO;
 
 public interface RegisterService {
@@ -29,5 +30,8 @@ public interface RegisterService {
 
 	//회원 등급 변경
 	public int MembershipModify(MembersVO vo) throws Exception;
+
+	//membershipflag 가져와야한다..
+	public LoginVO getMembershipflag(String memberid) throws Exception;
 
 }

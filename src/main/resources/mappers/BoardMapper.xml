@@ -5,7 +5,9 @@
 <mapper namespace="com.shoppingmall.mapper.BoardMapper">
 	<!-- 게시판 리스트 불러오기 -->
 	<select id="GetBoardList" resultType="BoardVO">
-		select b_num, memberid, nickname, b_title, b_wdate, b_hit, cateid
+		select b_num, memberid, nickname, b_title, b_wdate, b_hit, cateid, boardflag
+		,(select count(*) from reply
+		where b_num = board.b_num)as replycnt
 		 from board where cateid = #{cateid} 
 		  <if test="keyword != null ">
 		    AND  (nickname LIKE CONCAT('%',#{keyword},'%')
@@ -35,8 +37,8 @@
 	
 	<!-- 게시글 작성 -->
 	<insert id="WroteBoard" parameterType="BoardVO">
-		insert into board (cateid, memberid, nickname, b_title, b_content, b_wdate) 
-		values(#{cateid}, #{memberid}, #{nickname}, #{b_title}, #{b_content}, now()) 
+		insert into board (cateid, memberid, nickname, b_title, b_content, b_wdate, boardflag) 
+		values(#{cateid}, #{memberid}, #{nickname}, #{b_title}, #{b_content}, now(), #{boardflag}) 
 	</insert>
 	
 	<!-- 게시글 수정하기 위해 불러오기 -->
@@ -52,6 +54,8 @@
 	
 	<!-- 게시글 삭제 -->
 	<delete id="DeleteBoard" parameterType="Integer">
+		delete from notice where board_no=#{b_num};
+		delete from reply where b_num=#{b_num};
 		DELETE FROM board WHERE b_num=#{b_num};
 	</delete>
 	

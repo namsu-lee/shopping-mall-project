@@ -48,7 +48,7 @@ div .paginator {
 					</c:if>
 					<c:forEach items="${list}" var="list" varStatus="status">
 							<tr class="active" id="tr_${list.notice_no}">		<!-- @@@여기 고쳐야함....@@@@ -->
-								<td width="10%" nowrap><p>${list.notice_no}</p></td>
+								<td width="10%" nowrap><p>&nbsp;*&nbsp;</p></td>
 								<td><p>${list.nickname}님이 
 									글 제목이<a href="/board/${list.cateid}/${list.board_no}?notice_no=${list.notice_no}">
 									${list.b_title}</a>에 

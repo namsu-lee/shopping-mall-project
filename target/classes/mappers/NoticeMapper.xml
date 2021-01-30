@@ -9,13 +9,10 @@
 		select memberid from board where cateid = #{cateid} and b_num = #{b_num}
 	</select>
 	
-	
-	
 	<!-- 방금 작성한 댓글 번호를 가져옴 -->
 	<select id="getReplyNo" resultType="Integer">
 	    select max(replynum) from reply;
 	</select>
-	
 	
 	<!-- 댓글을 쓰면 notice 테이블에 저장 -->
 	<insert id="NoticeList" parameterType="NoticeVO">

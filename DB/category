@@ -1,17 +1,8 @@
-create table category(
-	cateid int auto_increment primary key,
-    catesort int,
-    catename varchar(100),
-    cateauth varchar(50),
-    categroup varchar(2)
-);
-
-select * from category;
-
-insert into category(sortnum, catename, cateauth, categroup) 
-values(?, ?, ?, ?);
-
-UPDATE category SET sortnum=?, catename=?, cateauth=?  
-WHERE cateid=?;
-
-DELETE FROM category WHERE cateid=?;
+CREATE TABLE `category` (
+  `cateid` int NOT NULL AUTO_INCREMENT,
+  `catesort` int DEFAULT NULL,
+  `catename` varchar(100) DEFAULT NULL,
+  `cateauth` varchar(50) DEFAULT NULL,
+  `categroup` varchar(2) DEFAULT NULL,
+  PRIMARY KEY (`cateid`)
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

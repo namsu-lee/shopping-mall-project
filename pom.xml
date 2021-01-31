@@ -76,6 +76,14 @@
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-text -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-text</artifactId>
+		    <version>1.8</version>
+		</dependency>
+				
+		
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>

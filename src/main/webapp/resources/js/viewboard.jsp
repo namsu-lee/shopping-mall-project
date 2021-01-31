@@ -27,10 +27,10 @@ function submitWriteReply(cateid, b_num) {
 	}
 }
 //댓글 enter키 입력
-function enterkey() {
+function enterkey(cateid, b_num) {
     if (window.event.keyCode == 13) {
          // 엔터키가 눌렸을 때 실행할 내용
-         submitWriteReply();
+         submitWriteReply(cateid, b_num);
     }
 }
 //댓글 불러오기
@@ -96,6 +96,11 @@ $(document).ready(function(){
 //댓글 입력
 function submitreply(cateid, b_num){
 	var replyContent = $('#replycontent').val();
+	replyContent = replyContent.replaceAll("<", "&lt;");
+	replyContent = replyContent.replaceAll(">", "&gt;");
+	replyContent = replyContent.replaceAll("/b", "\/b");
+	replyContent = replyContent.replaceAll("/n", "\/n");
+
 	var replyReg_id = $('#memberid').val();
 	var nickname = $('#nickname').val();
 	var paramData = JSON.stringify({"replycontent": replyContent

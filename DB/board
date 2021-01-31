@@ -8,7 +8,7 @@ create table board(
     b_content text,
     b_wdate datetime,
     b_hit int,
-    boardflag varchar(2),
+    boardflag varchar(2)
 );
 
 

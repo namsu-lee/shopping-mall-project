@@ -39,7 +39,7 @@
 				style="background-color: #9E9D99; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer;">저장</button>
 			<button type="button" onclick="history.back()">뒤로가기</button>
 			<!-- <button type="button" class="PasswordChange" onclick="PasswordChange()">비밀번호 변경</button> -->
-			<button type="button" onclick="Withdrawal()">회원탈퇴</button>
+			<!-- <button type="button" onclick="Withdrawal()">회원탈퇴</button> -->
 		</form>
 		<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 		<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />

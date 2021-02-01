@@ -51,8 +51,14 @@
 	// 아이디 중복확인 버튼을 눌렀을때 실행되는 함수
 	var IDKimCheck = false;
 	function idcheck()	{
+			
 		var id = document.form.memberid.value;
 		//alert(id);
+		if(id.indexOf(" ", 0) != -1) {		
+			alert("공백은 입력할 수 없습니다.");
+			$("#memberid").focus();
+			return;
+		}
 		$.ajax({
 			url:"/signup/idcheck",
 			type:"POST", 
@@ -78,6 +84,11 @@
 	function nickcheck() {
 		var nickname = document.form.nickname.value;
 		//alert(nickname);
+		if(nickname.indexOf(" ", 0) != -1) {		
+			alert("공백은 입력할 수 없습니다.");
+			$("#nickname").focus();
+			return;
+		}
 		$.ajax({
 			url:"/signup/nicknamecheck",
 			type:"POST", 
@@ -89,6 +100,7 @@
 						alert("사용 가능한 닉네임입니다.");
 					}
 					if($(this).find("num").text() == 1)	{
+						NickKimCheck = true;
 						alert("사용중인 닉네임입니다.");
 					}
 				});
@@ -108,7 +120,7 @@
 		return false;
 	}
 	if(email.indexOf("@") == -1 || email.indexOf(".") == -1)	{
-		alert("이메일 형식이 올바르지 않습니다.1111111111");
+		alert("이메일 형식이 올바르지 않습니다.");
 		return false;
 	}
 	

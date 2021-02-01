@@ -6,7 +6,6 @@ CREATE TABLE `reply` (
   `replycontent` text,
   `replydate` datetime DEFAULT NULL,
   `replydepth` int DEFAULT '1',
-  `replypnum` int DEFAULT NULL,
   PRIMARY KEY (`replynum`)
 ) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 

@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
-<%@ include file="../../exclude/topnav.jsp" %>
+<%@ include file="/resources/topnav.jsp" %>
 
 <!DOCTYPE html>
 <html>
@@ -183,7 +183,7 @@ form.example::after {
 </head>
 <body>
 <div class="board">
-<%@ include file="../../exclude/leftmenu.jsp" %>
+<%@ include file="/resources/leftmenu.jsp" %>
 	<div class="boardlist" style="float:right; width:80%;">
 	
 	<form class="example" action="/board/${cateid}" method="get" >
@@ -273,7 +273,7 @@ form.example::after {
 </div>
 </div> 	
 </div>
-<%@ include file="../../exclude/footer.jsp" %> 
+<%@ include file="/resources/footer.jsp" %> 
 </div>
 </body>
 </html>

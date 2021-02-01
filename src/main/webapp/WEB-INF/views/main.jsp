@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../../exclude/topnav.jsp" %>
+<%@ include file="/resources/topnav.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,7 @@
 </style>
 
 <div class="main">
-	<%@ include file="../../exclude/leftmenu.jsp" %>
+	<%@ include file="/resources/leftmenu.jsp" %>
 	<div style="width: 80%; float:right; max-width: 80%; overflow-x:auto;">
 		<!-- 여기부분 권한 부여 해야한다...................................... -->
 		<c:if test="${membershipflag eq 'm'}">
@@ -28,7 +28,7 @@
         <br>
 		${UpdateGetMain.m_content }
     </div>   
-    <%@ include file="../../exclude/footer.jsp" %> 
+    <%@ include file="/resources/footer.jsp" %> 
 </div>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">

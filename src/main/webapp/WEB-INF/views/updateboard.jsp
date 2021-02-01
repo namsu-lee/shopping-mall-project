@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ include file="../../exclude/topnav.jsp" %>
+<%@ include file="/resources/topnav.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +30,7 @@
 </head>
 <body>
 <div class="write">
-<%@ include file="../../exclude/leftmenu.jsp" %>
+<%@ include file="/resources/leftmenu.jsp" %>
 	<div class="writecon">
 		<form method="post" action="/board/${cateid}/${b_num}/updatedboard">
 		

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ include file="../../exclude/topnav.jsp" %>
+<%@ include file="/resources/topnav.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,7 +96,7 @@
 </head>
 <body>
 <div class="view">
-<%@ include file="../../exclude/leftmenu.jsp" %>
+<%@ include file="/resources/leftmenu.jsp" %>
 	<div class="viewcon" style="float:right; width:80%">
 	
 		<div class="title">${ViewBoard.b_title}</div>
@@ -151,7 +151,7 @@
 	</c:choose>
 	</div>
 </div>
-<%@ include file="../../exclude/footer.jsp" %> 
+<%@ include file="/resources/footer.jsp" %> 
 </div>
 <!-- <script src="/resources/js/viewboard.js"></script> -->
 <%@ include file="/resources/js/viewboard.jsp" %>

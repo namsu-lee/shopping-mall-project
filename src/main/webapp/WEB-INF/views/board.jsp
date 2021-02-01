@@ -28,13 +28,13 @@ function fn_prev(page, range, rangeSize) {
 	}
 
 //페이지 번호 클릭
-function fn_pagination(page, range, rangeSize, searchType, keyword) {
+function fn_pagination(page, range, rangeSize, keyword) {
 	var url = "${pageContext.request.contextPath}/board/${cateid}";
 	url = url + "?page=" + page;
 	url = url + "&range=" + range;
-	<c:if test='${pagekeyword != null}'>
-	url = url +  "${pagekeyword}";
-	</c:if>
+	if(keyword != ''){
+		url += '&keyword='+ keyword;
+	}
 	location.href = url;	
 }
 
@@ -249,10 +249,6 @@ form.example::after {
 	 </div>
  </c:when> 
  </c:choose>
-<!-- 검색어 변수로 받아오기 -->
-<c:if test='${param.keyword != null}'>
-	<c:set var="pagekeyword" value="&keyword=${param.keyword}" />
-</c:if>
 <div style="margin-top:30px; margin-left:40%;">
 
 <!-- 페이지네이션 -->
@@ -263,7 +259,7 @@ form.example::after {
 			<li class="page-item"><a class="page-link" onClick="fn_prev('${pagination.page}', '${pagination.range}', '${pagination.rangeSize}')">Previous</a></li>
 		</c:if>
 		<c:forEach begin="${pagination.startPage}" end="${pagination.endPage}" var="idx">
-			<li class="page-item <c:out value="${pagination.page == idx ? 'active' : ''}"/> "><a class="page-link" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}')"> ${idx} </a></li>
+			<li class="page-item <c:out value="${pagination.page == idx ? 'active' : ''}"/> "><a class="page-link" onClick="fn_pagination('${idx}', '${pagination.range}', '${pagination.rangeSize}', '${param.keyword}')"> ${idx} </a></li>
 		</c:forEach>
 		<c:if test="${pagination.next}">
 			<li class="page-item"><a class="page-link" onClick="fn_next('${pagination.range}', 

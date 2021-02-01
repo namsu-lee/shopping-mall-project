@@ -6,7 +6,7 @@ function Make_ChattingBang() {
 		alert("공백은 입력안됩니다.");
 		return;	
 	}
-	if(!confirm("채팅방을 게설하시겠습니까?")) {
+	if(!confirm("채팅방을 개설하시겠습니까?")) {
 		return;
 	}
 	var data = {title : title}
@@ -25,7 +25,7 @@ function Make_ChattingBang() {
 					output += "<button>"+ data.title +"</button>";
 					/*$("#title").val("");
 					$("#chtting_list_box").html(output);*/
-					alert("채팅방을 게설하였습니다.");
+					alert("채팅방을 개설하였습니다.");
 					window.location.reload();
 				}
 			});

@@ -99,7 +99,7 @@
 </head>
 <body>
 	<div style="width: 800px; height: 700px; padding: 10px; border: solid 1px #e1e3e9;">
-		<div id="divChatData" style="overflow-y :auto;">
+		<div id="divChatData" style="overflow-y :auto; max-height:700px;">
 			
 		</div>
 	</div>

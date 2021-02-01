@@ -82,7 +82,7 @@
 					</tr>
 				</c:forEach>
 			</table>
-			<button type="button" onclick="#">뒤로가기</button>
+			<button type="button" onclick="history.back()">뒤로가기</button>
 	</body>
 	<script>
 function myFunction() {

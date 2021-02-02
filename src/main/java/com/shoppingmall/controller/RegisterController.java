@@ -86,10 +86,10 @@ public class RegisterController {
 		String num = membersVO.Random_Number(); //
 		String setfrom = "gudxo12261@gmail.com";
 		String tomail = email;
-		String title = "man게시판 이메일 인증번호가 왔어요~";
-		String content = "<img src=\"cid:man.jpg\" style='width:300px; height:100px;'>"
-				+ "<br/><h1>man쇼핑몰을 찾아주셔서 감사합니다.</h1><br/>" + "<h2>인증번호는 <font color='pink'>" + num
-				+ "</font>니다.</h2>";
+		String title = "게시판 이메일 인증번호가 왔어요~";
+		String content = "<img src=\"cid:man.jpg\" style='width:500px; height:300px;'>"
+				+ "<br/><h1>저희 홈페이지를 찾아주셔서 감사합니다.</h1><br/>" + "<h1>인증번호는 <font color='pink'>" + num
+				+ "</font>니다.</h1>";
 
 		try {
 			MimeMessage message = mailSender.createMimeMessage();

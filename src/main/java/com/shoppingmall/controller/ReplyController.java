@@ -54,11 +54,13 @@ public class ReplyController {
 			result.put("status", "False");
 		}
 		
-		
+		//생성자 호출하면 코드양이 줄어든다.
 		BoardVO boardVO = new BoardVO();
-		boardVO.setCateid(cateid);
-		boardVO.setB_num(b_num);
 		
+		//boardVO.setCateid(cateid);
+		//boardVO.setB_num(b_num);
+		
+		boardVO.setBoardVO(b_num, cateid);
 		System.out.println(boardVO.getCateid());
 		System.out.println(boardVO.getB_num());
 		
@@ -70,14 +72,19 @@ public class ReplyController {
 		//System.out.println("방금 작성한 댓글 번호 == " + num);
 		
 		
+		//생성자 호출하면 코드양이 줄어든다.
 		//알람 로직
 		//가지고 올것 -> b_num : 게시글 번호, 댓글 번호
 		NoticeVO noticeVO = new NoticeVO();
+		noticeVO.setNoticeVO(cateid, b_num, vo.getReplynum(), map.get("memberid"), vo.getMemberid());
+		System.out.println(noticeVO.toString());
+		/*
 		noticeVO.setCateid(cateid); 			//카테고리 아이디
 		noticeVO.setBoard_no(b_num);			//게시글 번호
 		noticeVO.setReply_no(vo.getReplynum());//댓글 번호
 		noticeVO.setMemberid(map.get("memberid"));		//게시글을 쓴 사람의 id(알람 받을 사람)
 		noticeVO.setAnother_memberid(vo.getMemberid());//댓글을 쓴 사람의 아이디
+		*/
 		
 		//notice 테이블에 저장 (확인차 찍어봅니다......)
 		int result1 = noticeService.NoticeList(noticeVO);

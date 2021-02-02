@@ -12,6 +12,14 @@ public class NoticeVO {
 	private String nickname; // 댓글을 쓴 사람의 닉네임
 	private String b_title; // 게시글의 제목
 
+	public void setNoticeVO(int cateid, int board_no, int reply_no, String memberid, String another_memberid) {
+		this.cateid = cateid;
+		this.board_no = board_no;
+		this.reply_no = reply_no;
+		this.memberid = memberid;
+		this.another_memberid = another_memberid; 
+	}
+	
 	public int getCateid() {
 		return cateid;
 	}

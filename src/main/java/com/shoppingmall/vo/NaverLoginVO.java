@@ -18,12 +18,12 @@ import com.shoppingmall.task.NaverLoginApi;
 
 public class NaverLoginVO {
 	
-	private final static String CLIENT_ID = "RcWig0reR6rRlMvYhXT5";
-	private final static String CLIENT_SECRET = "3LAN0aAmpp";
-	private final static String REDIRECT_URI = "http://localhost:9090/callback/test";
+	private final static String CLIENT_ID = "amiY9NLTm6FpDV9Mbz9f";
+	private final static String CLIENT_SECRET = "JJmeAQZBKj";
+	private final static String REDIRECT_URI = "http://192.168.0.42:9090/callback/test";
 	private final static String SESSION_STATE = "oauth_state";
 	
-	/* ?”„ë¡œí•„ ì¡°íšŒ API URL */
+	/* ?ï¿½ï¿½ë¡œí•„ ì¡°íšŒ API URL */
 	private final static String PROFILE_API_URL = "https://openapi.naver.com/v1/nid/me";
 
 	public String getAuthorizationUrl(HttpSession session) {
@@ -38,14 +38,14 @@ public class NaverLoginVO {
 		return oauthService.getAuthorizationUrl();
 	}
 
-	/* ?„¤?´ë²„ì•„?´?””ë¡? Callback ì²˜ë¦¬ ë°? AccessToken ?š?“ Method */
+	/* ?ï¿½ï¿½?ï¿½ï¿½ë²„ì•„?ï¿½ï¿½?ï¿½ï¿½ï¿½? Callback ì²˜ë¦¬ ï¿½? AccessToken ?ï¿½ï¿½?ï¿½ï¿½ Method */
 	public OAuth2AccessToken getAccessToken(HttpSession session, String code, String state) throws IOException {
-		/* Callback?œ¼ë¡? ? „?‹¬ë°›ì? ?„¸?„ ê²?ì¦ìš© ?‚œ?ˆ˜ê°’ê³¼ ?„¸?…˜?— ???¥?˜?–´?ˆ?Š” ê°’ì´ ?¼ì¹˜í•˜?Š”ì§? ?™•?¸ */
+		/* Callback?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ë°›ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ï¿½?ì¦ìš© ?ï¿½ï¿½?ï¿½ï¿½ê°’ê³¼ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ???ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ê°’ì´ ?ï¿½ï¿½ì¹˜í•˜?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ */
 		String sessionState = getSession(session);
 		if (StringUtils.pathEquals(sessionState, state)) {
 			OAuth20Service oauthService = new ServiceBuilder().apiKey(CLIENT_ID).apiSecret(CLIENT_SECRET)
 					.callback(REDIRECT_URI).state(state).build(NaverLoginApi.instance());
-			/* Scribe?—?„œ ? œê³µí•˜?Š” AccessToken ?š?“ ê¸°ëŠ¥?œ¼ë¡? ?„¤?•„ë¡? Access Token?„ ?š?“ */
+			/* Scribe?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ê³µí•˜?ï¿½ï¿½ AccessToken ?ï¿½ï¿½?ï¿½ï¿½ ê¸°ëŠ¥?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½ï¿½? Access Token?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ */
 			OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
 			return accessToken;
 		}
@@ -57,17 +57,17 @@ public class NaverLoginVO {
 		return UUID.randomUUID().toString();
 	}
 
-	/* http session?— ?°?´?„° ???¥ */
+	/* http session?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ???ï¿½ï¿½ */
 	private void setSession(HttpSession session, String state) {
 		session.setAttribute(SESSION_STATE, state);
 	}
 
-	/* http session?—?„œ ?°?´?„° ê°?? ¸?˜¤ê¸? */
+	/* http session?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ï¿½??ï¿½ï¿½?ï¿½ï¿½ï¿½? */
 	private String getSession(HttpSession session) {
 		return (String) session.getAttribute(SESSION_STATE);
 	}
 
-	/* Access Token?„ ?´?š©?•˜?—¬ ?„¤?´ë²? ?‚¬?š©? ?”„ë¡œí•„ APIë¥? ?˜¸ì¶? */
+	/* Access Token?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ ?ï¿½ï¿½ë¡œí•„ APIï¿½? ?ï¿½ï¿½ï¿½? */
 	public String getUserProfile(OAuth2AccessToken oauthToken) throws IOException {
 		OAuth20Service oauthService = new ServiceBuilder().apiKey(CLIENT_ID).apiSecret(CLIENT_SECRET)
 				.callback(REDIRECT_URI).build(NaverLoginApi.instance());

@@ -14,6 +14,11 @@ public class BoardVO {
 	private String boardflag;
 	private Integer replycnt;
     
+	public void setBoardVO(Integer b_num, Integer cateid) {
+		this.b_num = b_num;
+		this.cateid = cateid;
+	}
+	
 	public Integer getReplycnt() {
 		return replycnt;
 	}

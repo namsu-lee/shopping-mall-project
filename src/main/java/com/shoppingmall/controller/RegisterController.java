@@ -135,6 +135,9 @@ public class RegisterController {
 			System.out.println("vo.getMembershipflag === === =" + vo.getMembershipflag());
 			//@@@@@@@@@@@@@@@@@@@@@@@@@@@
 			session.setAttribute("vo", vo);
+			session.setAttribute("memberid", vo.getMemberid());
+			session.setAttribute("nickname", vo.getNickname());
+			session.setMaxInactiveInterval(60*60);
 			
 			//1. 접속자의 session을 리스트에 추가
 			AccessorVO.getHttpSession().add(session);

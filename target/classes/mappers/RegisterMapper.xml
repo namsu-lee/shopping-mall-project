@@ -51,7 +51,7 @@
 	
 	<!-- membershipflag 가져와야한다.. -->
 	<select id="getMembershipflag" resultType="LoginVO">
-		select membershipflag from members where memberid = #{memberid}
+		select membershipflag, memberid, nickname from members where memberid = #{memberid}
 	</select>
 	
 	
